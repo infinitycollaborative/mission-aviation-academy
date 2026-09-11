@@ -51,14 +51,21 @@
   .quote { background: var(--light); border-left: 3px solid var(--gold); padding: 1.8rem 1.8rem; margin: 2.5rem 0; }
   .quote p { font-size: 1.12rem; font-style: italic; color: var(--navy); margin: 0; }
 
-  .sign { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #E2DCD0; }
-  .sign .name { font-family: Arial, sans-serif; font-weight: bold; color: var(--navy); font-size: .95rem; margin-bottom: .2rem; }
-  .sign .role { font-family: Arial, sans-serif; font-size: .85rem; color: var(--mid); }
+
+  .dateline { font-family: Arial, sans-serif; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase;
+              color: var(--mid); margin-bottom: 2.2rem; }
+  .beat { font-size: clamp(1.35rem, 3vw, 1.7rem); color: var(--navy); line-height: 1.35; margin: 2.2rem 0; }
 
   .closing { background: var(--navy); padding: 3.5rem 2rem; text-align: center; }
   .closing .motto { color: var(--gold); font-size: clamp(1.1rem, 2.4vw, 1.45rem); line-height: 1.7; max-width: 34rem; margin: 0 auto 1.6rem; }
   .closing .thanks { font-family: Arial, sans-serif; color: rgba(255,255,255,.6); font-size: .9rem; }
 
+  .closing .semper-fi { color: var(--gold); font-family: Arial, sans-serif; font-size: .95rem;
+                       letter-spacing: .09em; margin: 2.4rem 0 1.3rem; }
+  .closing .sign-off { border-top: 1px solid rgba(255,255,255,.14); padding-top: 1.3rem;
+                       max-width: 24rem; margin: 0 auto; }
+  .closing .so-name { color: var(--white); font-family: Arial, sans-serif; font-weight: bold; font-size: .92rem; }
+  .closing .so-role { color: rgba(255,255,255,.6); font-family: Arial, sans-serif; font-size: .84rem; margin-top: .25rem; }
   .back-link { background: #060f1c; padding: 2rem; text-align: center; }
   .back-link a { color: var(--gold); font-family: Arial, sans-serif; text-decoration: none; font-size: .88rem; }
   .back-link a:hover { text-decoration: underline; }
@@ -89,7 +96,15 @@
 <section class="letter">
   <div class="inner">
 
-    <p class="lead">On September 11, we pause to honor and remember the lives lost, the families forever changed, the survivors, and everyone who answered the call to serve in the years that followed.</p>
+    <div class="dateline">September 11, 2026 &nbsp;·&nbsp; Wesley Chapel, Florida</div>
+
+    <p class="lead">Twenty-five years ago today, I was a student Naval aviator in Pensacola. I had just arrived. I had worked hard to get there, and I was finally learning how to fly.</p>
+
+    <p class="beat">Then the towers fell.</p>
+
+    <p>I remember exactly where I was standing. It was devastating, and it broke my heart. I have carried that morning with me every day since.</p>
+
+    <p>Today we pause to honor the lives lost, the families forever changed, the survivors who still carry it, and everyone who answered the call to serve in the years that followed.</p>
 
     <div class="refrain">
       <span>We remember.</span>
@@ -97,27 +112,14 @@
       <span>We will never forget.</span>
     </div>
 
-    <h2>Where I was</h2>
+    <p>Twenty-eight years in uniform. Every one of them an honor and a privilege.</p>
 
-    <p>I remember exactly where I was that day, twenty-five years ago. I was a student Naval aviator in Pensacola. I'd just arrived, I had worked hard to get there, and I was finally learning how to fly.</p>
+    <p>And on this solemn day, I am humbled to share something rooted in hope for the future. Our new website went live about an hour ago.</p>
 
-    <p>When I saw what happened, it was incredible and it was devastating, all at once. It broke my heart.</p>
-
-    <p>I've carried these years with me ever since, and it's been an honor and a privilege to serve twenty-eight of them.</p>
-
-    <h2>Building forward</h2>
-
-    <p>On this solemn day, I'm humbled to share something rooted in hope for the future. Our new website is live, and with it we're able to build a legacy that will last.</p>
-
-    <p>This is more than a website. It's a platform built for a mission: to change lives, open doors, inspire the next generation, and make a real difference in communities around the world.</p>
+    <p>It is more than a website. It is a platform built for a mission &mdash; to change lives, open doors, inspire the next generation, and make a real difference in communities around the world. Now we can build a legacy that lasts.</p>
 
     <div class="quote">
-      <p>Today, we remember what happened on this tragic day. We pray for the survivors. We pray for the families. We just pray for them. Thank you.</p>
-    </div>
-
-    <div class="sign">
-      <div class="name">LCDR Ricardo "Tattoo" Foster, USN (Ret.)</div>
-      <div class="role">Founder &amp; CEO, Mission Aviation Academy</div>
+      <p>Today we remember what happened. We pray for the survivors. We pray for the families and the military personnel who have carried these twenty-five years. We keep praying for them all, in Jesus' name, amen.</p>
     </div>
 
   </div>
@@ -126,6 +128,11 @@
 <div class="closing">
   <div class="motto">Never Forget.<br>Keep Serving. Keep Building. Keep Impacting Lives.</div>
   <div class="thanks">Thank you to everyone who helped make this day possible.</div>
+  <div class="semper-fi">Semper Fi.</div>
+  <div class="sign-off">
+    <div class="so-name">&mdash; LCDR Ricardo "Tattoo" Foster, USN (Ret.)</div>
+    <div class="so-role">Founder &amp; CEO, Mission Aviation Academy</div>
+  </div>
 </div>
 
 <div class="back-link">
