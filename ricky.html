@@ -65,6 +65,27 @@
   .detail-val { font-family: Arial, sans-serif; font-size: .95rem; color: var(--navy); font-weight: bold; }
   .back-link { background: var(--navy); padding: 2rem; text-align: center; }
   .back-link a { color: var(--gold); font-family: Arial, sans-serif; text-decoration: none; font-size: .9rem; }
+
+  /* --- SIGNUP FORM --- */
+  .form-row { margin-bottom: .9rem; text-align: left; }
+  .form-row label { display: block; font-family: Arial, sans-serif; font-size: .76rem; font-weight: bold;
+    letter-spacing: .04em; text-transform: uppercase; color: var(--navy); margin-bottom: .3rem; }
+  .form-row input, .form-row select { width: 100%; font-family: Arial, sans-serif; font-size: .92rem;
+    padding: .7rem .8rem; border: 1px solid #C9C3B6; background: #fff; color: var(--text); }
+  .form-row input:focus, .form-row select:focus { outline: 2px solid var(--sky); outline-offset: 1px; border-color: var(--sky); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-status { font-family: Arial, sans-serif; font-size: .84rem; margin: .7rem 0 0; min-height: 1.2em; color: var(--mid); }
+  .form-status.is-error { color: #B22222; font-weight: bold; }
+  .form-submit { display: block; width: 100%; border: 0; cursor: pointer; background: var(--gold); color: var(--navy);
+    font-family: Arial, sans-serif; font-weight: bold; font-size: 1rem; padding: 1rem; text-align: center; }
+  .form-submit:hover { background: #a87e1a; color: var(--white); }
+  .form-submit:disabled { opacity: .6; cursor: default; }
+  /* --- END SIGNUP FORM --- */
+
+  .preorder { background: var(--white); }
+  .preorder .inner { max-width: 520px; }
+  .preorder .box { border: 1px solid #E2DCD0; padding: 2rem 1.8rem; background: var(--light); }
+  @media (max-width: 480px) { .preorder .box { padding: 1.5rem 1.2rem; } }
 </style>
 </head>
 <body>
@@ -81,7 +102,7 @@
   <div class="age-badge">Ages 6–10 · A picture book · By Ricardo Foster</div>
   <p class="sub">Before the Blueprint, there was the boy. A story carrying the Tuskegee legacy and Red Tail Roost spirit into words a five-year-old can hold onto.</p>
   <div class="cta-row">
-    <a class="cta cta-gold" href="mailto:admissions@missionaviationacademy.org?subject=Ricky the Explorer Pre-order">Pre-order notification — email us</a>
+    <a class="cta cta-gold" href="#preorder">Tell me when pre-orders open</a>
     <a class="cta cta-outline" href="tel:8335973836">(833) FLY-STEM</a>
   </div>
 </div>
@@ -114,6 +135,41 @@
   </div>
 </div>
 
+
+<!-- PRE-ORDER -->
+<section class="preorder" id="preorder">
+  <div class="inner">
+    <h2>Be first in line</h2>
+    <p style="margin-bottom:1.6rem;">Pre-orders open October 26, 2026. Leave your name and we'll email you the moment they do — nothing before that.</p>
+    <div class="box">
+<form data-signup action="/api/lead" method="POST">
+  <input type="hidden" name="form" value="rte-preorder">
+  <div class="hp" aria-hidden="true"><label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+  <div class="form-row">
+    <label for="p-name">Your name</label>
+    <input id="p-name" name="name" type="text" autocomplete="name" required>
+  </div>
+  <div class="form-row">
+    <label for="p-email">Email</label>
+    <input id="p-email" name="email" type="email" autocomplete="email" required>
+  </div>
+  <div class="form-row">
+    <label for="p-age">Age</label>
+    <select id="p-age" name="ageBand" required>
+      <option value="">Select one</option>
+      <option>Under 13</option>
+      <option>13&ndash;17</option>
+      <option>18 or older</option>
+    </select>
+  </div>
+  <button class="form-submit" type="submit">Notify me when pre-orders open</button>
+  <p class="form-status" data-status role="status" aria-live="polite"></p>
+</form>
+      <p class="form-status" style="margin-top:1rem;">Bulk, school, JROTC and library orders: <a href="mailto:admissions@missionaviationacademy.org" style="color:var(--sky);">email us</a> and we'll take care of you directly. See our <a href="/privacy" style="color:var(--sky);">privacy policy</a>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- DETAILS -->
 <section class="details">
   <div class="inner">
@@ -135,5 +191,6 @@
   <a href="/yab" style="color:rgba(255,255,255,.6)">Your Aviation Blueprint →</a>
 </div>
 
+<script src="/signup.js" defer></script>
 </body>
 </html>

@@ -13,11 +13,28 @@ A plain static site: hand-written HTML with inline CSS, no build step, no depend
 | `yab.html`     | `/yab`    | Aviation & Aerospace Career Pathway Guide           |
 | `ricky.html`   | `/ricky`  | Ricky the Explorer: Takes a Magic Flight            |
 | `remember.html`| `/remember` | Founder's September 11 remembrance message       |
+| `privacy.html` | `/privacy` | Privacy policy (required — the forms collect email) |
+| `thanks-guide.html` | `/thanks-guide` | Post-signup download page |
+| `thanks-preorder.html` | `/thanks-preorder` | Post-signup pre-order confirmation |
+| `api/lead.js`  | `/api/lead` | Serverless relay: website forms → GoHighLevel |
+| `signup.js`    | —         | Progressive enhancement for the forms |
 | `404.html`     | —         | Served automatically for unmatched URLs             |
 | `favicon.svg`  | —         | Site icon                                           |
 | `robots.txt`   | —         | Crawler policy + sitemap pointer                    |
 | `sitemap.xml`  | —         | Search engine index of the three public pages       |
 | `vercel.json`  | —         | Routing and response headers                        |
+
+## Forms and CRM
+
+The two signup forms (`/yab` career guide, `/ricky` pre-order waitlist) post to
+`/api/lead`, which creates a tagged contact in GoHighLevel. GHL workflows send
+every email — this codebase sends none.
+
+Setup, tags, workflows and testing: **[GHL-SETUP.md](GHL-SETUP.md)**.
+
+Requires two environment variables in Vercel (`GHL_API_TOKEN`,
+`GHL_LOCATION_ID`); see `.env.example`. The forms return a visible error
+rather than dropping a lead if they are missing.
 
 ## Deployment
 
@@ -30,6 +47,7 @@ Vercel project settings this repo expects:
 - **Root Directory:** `./` (repo root — *not* a subfolder)
 - **Build Command:** none / empty
 - **Output Directory:** none / empty
+- **Environment Variables:** `GHL_API_TOKEN`, `GHL_LOCATION_ID`
 - **Production Branch:** `main`
 
 To ship a change: commit to a branch, open a PR, check the preview URL, merge to `main`.
