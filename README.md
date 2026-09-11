@@ -12,6 +12,7 @@ A plain static site: hand-written HTML with inline CSS, no build step, no depend
 | `index.html`   | `/`       | Home — mission, book cards, contact                 |
 | `yab.html`     | `/yab`    | Aviation & Aerospace Career Pathway Guide           |
 | `ricky.html`   | `/ricky`  | Ricky the Explorer: Takes a Magic Flight            |
+| `remember.html`| `/remember` | Founder's September 11 remembrance message       |
 | `404.html`     | —         | Served automatically for unmatched URLs             |
 | `favicon.svg`  | —         | Site icon                                           |
 | `robots.txt`   | —         | Crawler policy + sitemap pointer                    |
@@ -46,7 +47,7 @@ The production hostname is written in five places. If the domain ever changes, u
 
 - `robots.txt` — the `Sitemap:` line
 - `sitemap.xml` — all three `<loc>` entries
-- `index.html`, `yab.html`, `ricky.html` — the `canonical` link and the `og:url` meta
+- `index.html`, `yab.html`, `ricky.html`, `remember.html` — the `canonical` link and the `og:url` meta
 
 Nothing else is hostname-dependent; all in-page links are root-relative.
 

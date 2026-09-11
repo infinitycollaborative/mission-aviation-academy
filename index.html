@@ -66,6 +66,16 @@
     section { padding: 2.8rem 1.2rem; }
     .contact-row { gap: 1.4rem; }
   }
+
+  /* --- REMEMBRANCE RIBBON (seasonal — safe to remove, see markup below) --- */
+  .remember-ribbon { background: #060f1c; border-bottom: 1px solid rgba(201,162,39,.28);
+    padding: .7rem 2rem; text-align: center; font-family: Arial, sans-serif; font-size: .82rem;
+    color: rgba(255,255,255,.72); display: flex; gap: .6rem; justify-content: center;
+    align-items: center; flex-wrap: wrap; }
+  .remember-ribbon .sep { color: rgba(255,255,255,.25); }
+  .remember-ribbon a { color: var(--gold); text-decoration: none; font-weight: bold; }
+  .remember-ribbon a:hover { text-decoration: underline; }
+  /* --- END REMEMBRANCE RIBBON --- */
 </style>
 </head>
 <body>
@@ -73,6 +83,19 @@
 <nav>
   <a class="nav-brand" href="/">Mission Aviation Academy</a>
 </nav>
+
+<!-- ============================================================
+     REMEMBRANCE RIBBON — seasonal, for the September 11 period.
+     To take it down: delete this block (through END RIBBON below)
+     and the .remember-ribbon CSS rules in the <style> above.
+     The /remember page itself is permanent and stays either way.
+     ============================================================ -->
+<div class="remember-ribbon">
+  <span>September 11 &nbsp;·&nbsp; Twenty-five years &nbsp;·&nbsp; We remember.</span>
+  <span class="sep">|</span>
+  <a href="/remember">Read our founder's message →</a>
+</div>
+<!-- ===================== END RIBBON ===================== -->
 
 <section class="hero">
   <div class="hero-tag">Tampa Bay, Florida · Flight Plan 2030</div>
@@ -133,6 +156,7 @@
 
 <footer>
   <div class="gold-line">Mission Aviation Academy — Flight Plan 2030</div>
+  <div style="margin-bottom:.6rem;"><a href="/remember" style="color:rgba(201,162,39,.75);text-decoration:none;">We Remember — September 11</a></div>
   A nonprofit program of Infinity Aero Club Tampa Bay, Inc. · 501(c)(3) ·
   Tampa North Aero Park (X39), Wesley Chapel, Florida<br>
   © 2026 Infinity Aero Club Tampa Bay, Inc. All rights reserved.
