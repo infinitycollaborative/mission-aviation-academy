@@ -46,6 +46,22 @@
   .back-link { background: var(--navy); padding: 2rem; text-align: center; }
   .back-link a { color: var(--gold); font-family: Arial, sans-serif; text-decoration: none; font-size: .9rem; }
   @media (max-width: 480px) { section { padding: 3rem 1.2rem; } .download-box { padding: 1.6rem 1.2rem; } }
+
+  /* --- SIGNUP FORM --- */
+  .form-row { margin-bottom: .9rem; text-align: left; }
+  .form-row label { display: block; font-family: Arial, sans-serif; font-size: .76rem; font-weight: bold;
+    letter-spacing: .04em; text-transform: uppercase; color: var(--navy); margin-bottom: .3rem; }
+  .form-row input, .form-row select { width: 100%; font-family: Arial, sans-serif; font-size: .92rem;
+    padding: .7rem .8rem; border: 1px solid #C9C3B6; background: #fff; color: var(--text); }
+  .form-row input:focus, .form-row select:focus { outline: 2px solid var(--sky); outline-offset: 1px; border-color: var(--sky); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-status { font-family: Arial, sans-serif; font-size: .84rem; margin: .7rem 0 0; min-height: 1.2em; color: var(--mid); }
+  .form-status.is-error { color: #B22222; font-weight: bold; }
+  .form-submit { display: block; width: 100%; border: 0; cursor: pointer; background: var(--gold); color: var(--navy);
+    font-family: Arial, sans-serif; font-weight: bold; font-size: 1rem; padding: 1rem; text-align: center; }
+  .form-submit:hover { background: #a87e1a; color: var(--white); }
+  .form-submit:disabled { opacity: .6; cursor: default; }
+  /* --- END SIGNUP FORM --- */
 </style>
 </head>
 <body>
@@ -65,8 +81,41 @@
   <div class="download-box">
     <h2>Download the current edition</h2>
     <p>The Fall 2026 guide covers eight career families — cockpit and beyond. Salary tables, program lists, and contact points are updated every edition because they change faster than a print run.</p>
-    <a class="dl-btn" href="mailto:admissions@missionaviationacademy.org?subject=Career Pathway Guide Request">Request the Guide — admissions@missionaviationacademy.org</a>
-    <p class="note">The guide is free. We will email it to you within one business day. You can also call (833) FLY-STEM.</p>
+<form data-signup action="/api/lead" method="POST">
+  <input type="hidden" name="form" value="yab-guide">
+  <div class="hp" aria-hidden="true"><label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+  <div class="form-row">
+    <label for="g-name">Your name</label>
+    <input id="g-name" name="name" type="text" autocomplete="name" required>
+  </div>
+  <div class="form-row">
+    <label for="g-email">Email</label>
+    <input id="g-email" name="email" type="email" autocomplete="email" required>
+  </div>
+  <div class="form-row">
+    <label for="g-role">I am a&hellip;</label>
+    <select id="g-role" name="role" required>
+      <option value="">Select one</option>
+      <option>Student</option>
+      <option>Parent or guardian</option>
+      <option>Veteran or transitioning service member</option>
+      <option>Educator or counselor</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="g-age">Age</label>
+    <select id="g-age" name="ageBand" required>
+      <option value="">Select one</option>
+      <option>Under 13</option>
+      <option>13&ndash;17</option>
+      <option>18 or older</option>
+    </select>
+  </div>
+  <button class="form-submit" type="submit">Send me the guide</button>
+  <p class="form-status" data-status role="status" aria-live="polite"></p>
+</form>
+    <p class="note">Free, and the download starts the moment you sign up — a copy lands in your inbox too. Under 13? Ask a parent or guardian to sign up on your behalf. See our <a href="/privacy" style="color:var(--sky);">privacy policy</a>, or just <a href="mailto:admissions@missionaviationacademy.org" style="color:var(--sky);">email us</a>.</p>
   </div>
 </div>
 
@@ -93,5 +142,6 @@
   <a href="tel:8335973836" style="color:rgba(255,255,255,.6)">(833) FLY-STEM</a>
 </div>
 
+<script src="/signup.js" defer></script>
 </body>
 </html>
