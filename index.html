@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission Aviation Academy — Flight Plan 2030</title>
+<meta name="description" content="Mission Aviation Academy prepares underserved youth and veterans for high-income aviation careers. Based in Tampa Bay, FL.">
+<style>
+  :root { --navy:#0D2240; --gold:#C9A227; --sky:#1A7A8A; --light:#F7F4EE; --white:#FFFFFF; --text:#1A1A1A; --mid:#5A5A5A; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: var(--text); background: var(--white); line-height: 1.65; }
+
+  nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; height: 56px; }
+  .nav-brand { color: var(--gold); font-weight: bold; font-size: 1rem; letter-spacing: .02em; text-decoration: none; font-family: Arial, sans-serif; }
+
+  .hero { background: var(--navy); padding: 4.5rem 2rem 3.5rem; text-align: center; }
+  .hero-tag { display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-family: Arial, sans-serif; font-size: .75rem; letter-spacing: .12em; padding: .35rem .9rem; margin-bottom: 1.6rem; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); color: var(--white); line-height: 1.18; max-width: 700px; margin: 0 auto 1.1rem; }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub { font-family: Arial, sans-serif; color: rgba(255,255,255,.75); font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+
+  .mission-stripe { background: var(--gold); padding: 1.1rem 2rem; text-align: center; font-family: Arial, sans-serif; font-weight: bold; font-size: .92rem; color: var(--navy); letter-spacing: .02em; }
+
+  section { padding: 3.5rem 2rem; }
+  .inner { max-width: 900px; margin: 0 auto; }
+  .section-label { font-family: Arial, sans-serif; font-size: .78rem; color: var(--sky); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .6rem; text-align: center; }
+  h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--navy); text-align: center; margin-bottom: 2rem; }
+
+  /* BOOK LINK CARDS */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; }
+  .card { background: var(--light); border-top: 4px solid var(--gold); padding: 2rem 1.6rem; text-align: center; }
+  .card h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: .5rem; }
+  .card p { font-family: Arial, sans-serif; font-size: .88rem; color: var(--mid); margin-bottom: 1.4rem; }
+  .card-link { display: inline-block; background: var(--navy); color: var(--white); font-family: Arial, sans-serif; font-weight: bold; font-size: .85rem; padding: .8rem 1.6rem; text-decoration: none; }
+  .card-link:hover { background: var(--sky); }
+
+  /* ABOUT STRIP */
+  .about { background: var(--light); text-align: center; }
+  .about p { color: var(--mid); max-width: 62ch; margin: 0 auto; font-size: .98rem; }
+
+  /* CONTACT */
+  .contact { background: var(--navy); padding: 3.5rem 2rem; text-align: center; }
+  .contact h2 { color: var(--white); }
+  .contact-row { display: flex; justify-content: center; gap: 2.4rem; flex-wrap: wrap; margin-top: 1.6rem; font-family: Arial, sans-serif; }
+  .contact-item a { color: var(--gold); text-decoration: none; font-size: .92rem; }
+  .contact-item a:hover { text-decoration: underline; }
+  .contact-label { font-size: .72rem; color: rgba(255,255,255,.45); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .25rem; }
+
+  footer { background: #060f1c; padding: 1.8rem; text-align: center; font-family: Arial, sans-serif; font-size: .78rem; color: rgba(255,255,255,.35); }
+  footer .gold-line { color: var(--gold); margin-bottom: .4rem; font-size: .85rem; }
+
+  @media (max-width: 480px) {
+    nav { padding: 0 1rem; }
+    .hero { padding: 3rem 1.2rem 2.5rem; }
+    section { padding: 2.8rem 1.2rem; }
+    .contact-row { gap: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">Mission Aviation Academy</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">Tampa Bay, Florida · Flight Plan 2030</div>
+  <h1>The sky isn't the limit.<br><span>It's your launchpad.</span></h1>
+  <p class="hero-sub">Mission Aviation Academy prepares underserved youth and veterans for high-income aviation careers — pilot, mechanic, drone operator, air traffic control, and beyond.</p>
+</section>
+
+<div class="mission-stripe">
+  "It's ALL About the Kids." — LCDR Ricardo "Tattoo" Foster, USN (Ret.), Founder & CEO
+</div>
+
+<!-- BOOK CARDS -->
+<section>
+  <div class="inner">
+    <div class="section-label">From Our Authors</div>
+    <h2>Start here</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Your Aviation Blueprint</h3>
+        <p>How to launch a $1M aviation career without a college degree. Eight career families, every certificate, every cost.</p>
+        <a class="card-link" href="/yab">Get the Career Guide →</a>
+      </div>
+      <div class="card">
+        <h3>Ricky the Explorer</h3>
+        <p>Takes a Magic Flight — a picture book for ages 6–10 carrying the Tuskegee legacy into a story kids can hold onto.</p>
+        <a class="card-link" href="/ricky">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="inner">
+    <div class="section-label">Our Story</div>
+    <p>Mission Aviation Academy is a 501(c)(3) nonprofit DBA of Infinity Aero Club Tampa Bay, Inc., operating at Tampa North Aero Park (X39) in Wesley Chapel, Florida. Built on the legacy of the Tuskegee Airmen, MAA expands access to aviation, STEM, and entrepreneurship for underserved youth and veterans — with no degree, cost, or circumstance standing in the way.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h2>Get in touch</h2>
+  <div class="contact-row">
+    <div class="contact-item">
+      <div class="contact-label">Phone</div>
+      <a href="tel:8335973836">(833) FLY-STEM</a>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Email</div>
+      <a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Location</div>
+      <a href="https://maps.google.com/?q=Tampa+North+Aero+Park+X39" target="_blank">Tampa North Aero Park (X39), Wesley Chapel, FL</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="gold-line">Mission Aviation Academy — Flight Plan 2030</div>
+  A nonprofit program of Infinity Aero Club Tampa Bay, Inc. · 501(c)(3) ·
+  Tampa North Aero Park (X39), Wesley Chapel, Florida<br>
+  © 2026 Infinity Aero Club Tampa Bay, Inc. All rights reserved.
+</footer>
+
+</body>
+</html>
