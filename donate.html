@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate — Mission Aviation Academy</title>
+<link rel="stylesheet" href="maa-shared.css">
+<style>
+.page-hero{background:var(--navy);padding:4rem 2rem 3rem;text-align:center;}
+.page-hero h1{color:var(--white);font-size:clamp(1.8rem,4vw,2.8rem);max-width:700px;margin:0 auto .8rem;}
+.page-hero p{font-family:Arial,sans-serif;color:rgba(255,255,255,.7);max-width:54ch;margin:0 auto;}
+.give-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2rem;}
+.give-card{border-top:3px solid var(--gold);padding:1.6rem;background:var(--light);}
+.give-card h3{font-family:Arial,sans-serif;font-size:1rem;font-weight:bold;color:var(--navy);margin-bottom:.5rem;}
+.give-card p{font-family:Arial,sans-serif;font-size:.85rem;color:var(--mid);line-height:1.55;margin-bottom:.8rem;}
+.give-card .give-btn{background:var(--navy);color:var(--white);font-family:Arial,sans-serif;font-size:.85rem;font-weight:bold;padding:.6rem 1.2rem;text-decoration:none;display:inline-block;}
+.give-card .give-btn:hover{background:var(--sky);}
+.sponsor-phases{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#ddd;border:1px solid #ddd;margin-top:2rem;}
+.phase{background:var(--white);padding:1.2rem;text-align:center;}
+.phase-num{font-family:Arial,sans-serif;font-size:1.5rem;font-weight:bold;color:var(--gold);margin-bottom:.3rem;}
+.phase h3{font-family:Arial,sans-serif;font-size:.85rem;font-weight:bold;color:var(--navy);margin-bottom:.3rem;}
+.phase p{font-family:Arial,sans-serif;font-size:.75rem;color:var(--mid);line-height:1.5;}
+.phase-arrow{font-size:1.2rem;color:var(--gold);display:flex;align-items:center;justify-content:center;background:var(--light);}
+@media(max-width:640px){.sponsor-phases{grid-template-columns:1fr 1fr;}.phase-arrow{display:none;}}
+</style>
+</head>
+<body>
+<nav class="maa-nav">
+  <a class="maa-nav-brand" href="/">Mission Aviation Academy</a>
+  <ul class="maa-nav-links">
+    <li><a href="/programs">Programs</a></li>
+    <li><a href="/scholarships">Scholarships</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/donate" style="color:var(--gold)">Donate</a></li>
+    <li><a href="/saturday#rsvp" class="maa-nav-cta">Enroll Now</a></li>
+  </ul>
+</nav>
+<div class="page-hero">
+  <span class="section-label" style="color:var(--gold);display:block;margin-bottom:.6rem;">501(c)(3) · EIN 85-1110607</span>
+  <h1>You're not funding a program. You're building a legacy.</h1>
+  <p>Every gift puts a student in a cockpit, a drone in a young person's hands, or a book in a community that's never seen themselves in aviation.</p>
+</div>
+<section>
+  <div class="inner">
+    <span class="section-label">Ways to Give</span>
+    <h2>Every dollar goes to the mission.</h2>
+    <div class="give-grid">
+      <div class="give-card">
+        <h3>Give Online</h3>
+        <p>Tax-deductible donation to Infinity Aero Club Tampa Bay, Inc. 501(c)(3) · EIN 85-1110607. Any amount. Every dollar funds student training.</p>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Online Donation" class="give-btn">Donate Now</a>
+      </div>
+      <div class="give-card" id="topgun">
+        <h3>Top Gun Trophy Scholarship</h3>
+        <p>Fund the Tuskegee Airman "1st Top Gun Trophy" Scholarship for an underserved youth. Covers enrollment in MAA programs.</p>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Top Gun Scholarship Donation" class="give-btn">Fund a Scholarship</a>
+      </div>
+      <div class="give-card" id="bravebess">
+        <h3>Brave Bess Scholarship</h3>
+        <p>Fund the Brave Bess "Never Stop Learning" Scholarship for a young female aviator. Named for Bessie Coleman.</p>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Brave Bess Scholarship Donation" class="give-btn">Fund a Scholarship</a>
+      </div>
+      <div class="give-card">
+        <h3>Red Tail Aircraft Fund</h3>
+        <p>Support the restoration and operation of the Red Tail Roost 1960 Cessna 172B — the Tuskegee tribute aircraft that has carried 1,380+ students on their first flight.</p>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Red Tail Aircraft Fund" class="give-btn">Support the Aircraft</a>
+      </div>
+      <div class="give-card">
+        <h3>Book Bulk Order</h3>
+        <p><em>Your Aviation Blueprint</em> at $10/copy (bulk) or $16/copy (retail). Sponsor a school, library, or community organization. iACT gift model — books distributed free to students.</p>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Book Bulk Order" class="give-btn">Order Books</a>
+      </div>
+      <div class="give-card">
+        <h3>Corporate Partnership</h3>
+        <p>Named sponsorship opportunities, logo placement, speaking access, hiring pipeline connection, and community impact reports. Contact Ricardo directly.</p>
+        <a href="mailto:ricardo@missionaviationacademy.org?subject=Corporate Partnership" class="give-btn">Contact Ricardo</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--light);">
+  <div class="inner">
+    <span class="section-label">Corporate Sponsor Pipeline</span>
+    <h2>Every partnership moves through four phases.</h2>
+    <p class="section-intro">Managed by Rev. Reginald Davis and Ricardo Foster. Named targets: CAE (HIGH) · Boeing · Honeywell · Lockheed · Quantum Interface · Truist.</p>
+    <div class="sponsor-phases">
+      <div class="phase"><div class="phase-num">1</div><h3>Identify</h3><p>Rev. Davis + Ricardo. Master donor tracker. Target list. 5-year strategy.</p></div>
+      <div class="phase-arrow">→</div>
+      <div class="phase"><div class="phase-num">2</div><h3>Engage</h3><p>Rev. Davis leads. 46 pre-written emails. Callback SOP. Short pitch deck.</p></div>
+      <div class="phase-arrow">→</div>
+      <div class="phase"><div class="phase-num">3</div><h3>Propose</h3><p>Ricardo joins for large asks. Audience deck. Budget tracker. Book bundle offer.</p></div>
+      <div class="phase-arrow">→</div>
+      <div class="phase"><div class="phase-num">4</div><h3>Close</h3><p>Sponsorship tiers, deliverables table. Agreement paperwork. Logged in tracker.</p></div>
+    </div>
+  </div>
+</section>
+<footer class="maa-footer">
+  <div class="maa-footer-inner">
+    <div class="maa-footer-legal">
+      <p>Infinity Aero Club Tampa Bay, Inc. is a Florida 501(c)(3) nonprofit organization. EIN 85-1110607. All donations are tax-deductible to the extent permitted by law. No goods or services are provided in exchange for donations unless otherwise noted.</p>
+      <p style="margin-top:.5rem;">© 2026 Infinity Aero Club Tampa Bay, Inc. · <a href="mailto:admissions@missionaviationacademy.org" style="color:var(--gold);">admissions@missionaviationacademy.org</a> · 813-445-8889</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

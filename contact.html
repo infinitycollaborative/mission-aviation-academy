@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Enroll — Mission Aviation Academy</title>
+<link rel="stylesheet" href="maa-shared.css">
+<style>
+.page-hero{background:var(--navy);padding:4rem 2rem 3rem;text-align:center;}
+.page-hero h1{color:var(--white);font-size:clamp(1.8rem,4vw,2.5rem);margin:0 auto .8rem;}
+.page-hero p{font-family:Arial,sans-serif;color:rgba(255,255,255,.7);max-width:52ch;margin:0 auto;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem;}
+.contact-block h3{font-family:Arial,sans-serif;font-size:1rem;font-weight:bold;color:var(--navy);margin-bottom:1rem;}
+.contact-item{display:flex;gap:.8rem;margin-bottom:1.2rem;align-items:flex-start;}
+.contact-icon{width:36px;height:36px;background:var(--navy);color:var(--gold);font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem;}
+.contact-text h4{font-family:Arial,sans-serif;font-size:.85rem;font-weight:bold;color:var(--navy);margin-bottom:.1rem;}
+.contact-text p{font-family:Arial,sans-serif;font-size:.85rem;color:var(--mid);line-height:1.5;}
+.contact-text a{color:var(--sky);text-decoration:none;}
+.enroll-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2rem;}
+.enroll-card{background:var(--light);padding:1.6rem;border-top:3px solid var(--gold);}
+.enroll-card h3{font-family:Arial,sans-serif;font-size:.95rem;font-weight:bold;color:var(--navy);margin-bottom:.5rem;}
+.enroll-card p{font-family:Arial,sans-serif;font-size:.82rem;color:var(--mid);line-height:1.55;margin-bottom:.8rem;}
+.enroll-card a{background:var(--navy);color:var(--white);font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;padding:.5rem 1rem;text-decoration:none;display:inline-block;}
+.map-placeholder{background:var(--navy);height:260px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.8rem;margin-top:1.5rem;}
+.map-placeholder p{font-family:Arial,sans-serif;font-size:.85rem;color:rgba(255,255,255,.6);}
+.map-placeholder a{color:var(--gold);font-family:Arial,sans-serif;font-size:.9rem;font-weight:bold;}
+@media(max-width:640px){.contact-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="maa-nav">
+  <a class="maa-nav-brand" href="/">Mission Aviation Academy</a>
+  <ul class="maa-nav-links">
+    <li><a href="/saturday">Saturday</a></li>
+    <li><a href="/programs">Programs</a></li>
+    <li><a href="/scholarships">Scholarships</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/saturday#rsvp" class="maa-nav-cta">Enroll Now</a></li>
+  </ul>
+</nav>
+<div class="page-hero">
+  <h1>Ready to take off?</h1>
+  <p>Whether you're 11 or 41, active duty or recently separated, a parent or a principal — there is a path here for you.</p>
+</div>
+<!-- CONTACT -->
+<section>
+  <div class="inner">
+    <span class="section-label">Get in Touch</span>
+    <h2>Every message goes to a real person.</h2>
+    <div class="contact-grid">
+      <div class="contact-block">
+        <h3>Direct Contact</h3>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text">
+            <h4>Phone</h4>
+            <p><a href="tel:8134458889">813-445-8889</a><br><a href="tel:8335978363">(833) FLY-STEM</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div class="contact-text">
+            <h4>Admissions</h4>
+            <p><a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🎓</div>
+          <div class="contact-text">
+            <h4>Scholarships</h4>
+            <p><a href="mailto:scholarships@missionaviationacademy.org">scholarships@missionaviationacademy.org</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💼</div>
+          <div class="contact-text">
+            <h4>CEO / Corporate / B2B</h4>
+            <p><a href="mailto:ricardo@missionaviationacademy.org">ricardo@missionaviationacademy.org</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📅</div>
+          <div class="contact-text">
+            <h4>Book a Call</h4>
+            <p><a href="https://calendly.com/admissions-missionaviationacademy/new-meeting">calendly.com/admissions-missionaviationacademy</a><br>15-minute free consultation</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-block">
+        <h3>Find Us</h3>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-text">
+            <h4>Address</h4>
+            <p>Tampa North Aero Park (X39)<br>4639 Birdsong Blvd<br>Lutz, FL 33559<br><em>Parking GPS: 4651 Birdsong Blvd</em></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-text">
+            <h4>Walk-in Hours</h4>
+            <p>Saturdays 10:15am–12:15pm (Free Open House — RSVP required)<br>Wednesdays 11am–12pm (Lunch &amp; Learn)<br>Other times by appointment</p>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <p>Tampa North Aero Park (X39) · Lutz / Wesley Chapel, FL</p>
+          <a href="https://maps.google.com/?q=4639+Birdsong+Blvd+Lutz+FL+33559" target="_blank">Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENROLL -->
+<section style="background:var(--light);">
+  <div class="inner">
+    <span class="section-label">Enrollment Pathways</span>
+    <h2>Choose how you want to start.</h2>
+    <p class="section-intro">All enrollment is pre-pay before Saturday. No walk-ins for classes. Open House is always free — RSVP required.</p>
+    <div class="enroll-options">
+      <div class="enroll-card">
+        <h3>Saturday Classes</h3>
+        <p>Class A (Drone Part 1) · Class B (AI Part 1) · Simulator · sUAS Flight Training. All require pre-payment before Friday.</p>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Saturday Class Enrollment">Enroll via Email</a>
+      </div>
+      <div class="enroll-card">
+        <h3>Free Saturday Open House</h3>
+        <p>10:15am–12:15pm every Saturday. 5 segments. Free. Capacity 10–12. RSVP so we know you're coming.</p>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Saturday Open House RSVP">RSVP via Email</a>
+      </div>
+      <div class="enroll-card">
+        <h3>Traditional Courses</h3>
+        <p>PPL Ground School, Part 107, LSRM pathway, AI Innovation full bundle. Mon/Wed/Fri online. 8 or 16 weeks. $200 registration fee applies.</p>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Traditional Course Inquiry">Ask About a Course</a>
+      </div>
+      <div class="enroll-card">
+        <h3>SUFS Scholarship Families</h3>
+        <p>Confirm your scholarship type first (FES-UA, PEP, FES-EO). We'll confirm which programs qualify and apply funds directly — no out-of-pocket for eligible families.</p>
+        <a href="mailto:scholarships@missionaviationacademy.org?subject=SUFS Scholarship Enrollment">SUFS Enrollment</a>
+      </div>
+      <div class="enroll-card">
+        <h3>Group / School / JROTC</h3>
+        <p>Unit licensing, group bookings, school partnerships, administrator tours. Contact Ricardo or request a curriculum licensing consultation.</p>
+        <a href="mailto:ricardo@missionaviationacademy.org?subject=Group Enrollment Inquiry">Contact Ricardo</a>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:2rem;">
+      <p><strong>Reminder on age policy:</strong> Ages 10–18+ for all Saturday classes. Children under 10 must have an adult in class with them (counts as one of the 6–8 student slots). No age floor for the Free Open House.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy);padding:3rem 2rem;text-align:center;">
+  <div class="inner-narrow">
+    <h2 style="color:var(--white);">Friday Zoom Preview — This Week</h2>
+    <p style="font-family:Arial,sans-serif;color:rgba(255,255,255,.65);margin:.8rem 0 1.8rem;line-height:1.65;">Every Friday at 11am and 4pm. We cover Saturday's schedule, answer every question, and collect payment so your student has a confirmed seat. Passcode-protected — text to get the link.</p>
+    <a href="sms:8134458889" class="btn btn-gold">Text 813-445-8889 for Friday Zoom Link</a>
+  </div>
+</section>
+
+<footer class="maa-footer">
+  <div class="maa-footer-inner">
+    <div class="maa-footer-legal">
+      <p>Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit. Not a certificated flight school. Flight instruction through partner CFIs.</p>
+      <p style="margin-top:.5rem;">© 2026 Infinity Aero Club Tampa Bay, Inc. · EIN 85-1110607 · 813-445-8889</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

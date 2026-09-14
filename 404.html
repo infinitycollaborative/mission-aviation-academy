@@ -1,60 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page not found — Mission Aviation Academy</title>
-<meta name="robots" content="noindex">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Mission Aviation Academy</title>
+<link rel="stylesheet" href="maa-shared.css">
 <style>
-  :root { --navy:#0D2240; --gold:#C9A227; --sky:#1A7A8A; --white:#FFFFFF; }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { font-size: 18px; }
-  body { font-family: Georgia, serif; background: var(--navy); color: var(--white); line-height: 1.65;
-         min-height: 100vh; display: flex; flex-direction: column; }
-  nav { padding: 0 2rem; display: flex; align-items: center; height: 56px; }
-  .nav-brand { color: var(--gold); font-weight: bold; font-size: 1rem; text-decoration: none; font-family: Arial, sans-serif; }
-  main { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
-         text-align: center; padding: 3rem 1.5rem 4rem; }
-  .code { font-family: Arial, sans-serif; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase;
-          color: var(--gold); border: 1px solid var(--gold); padding: .35rem .9rem; margin-bottom: 1.6rem; }
-  h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); max-width: 560px; line-height: 1.2; margin-bottom: 1rem; }
-  h1 span { color: var(--gold); }
-  p { font-family: Arial, sans-serif; color: rgba(255,255,255,.72); font-size: .95rem; max-width: 44ch; margin-bottom: 2.4rem; }
-  .links { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-  .btn { display: inline-block; font-family: Arial, sans-serif; font-weight: bold; font-size: .88rem;
-         padding: .85rem 1.6rem; text-decoration: none; }
-  .btn-gold { background: var(--gold); color: var(--navy); }
-  .btn-gold:hover { background: #a87e1a; color: var(--white); }
-  .btn-outline { border: 2px solid rgba(255,255,255,.4); color: var(--white); }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  footer { padding: 1.8rem; text-align: center; font-family: Arial, sans-serif; font-size: .8rem; color: rgba(255,255,255,.45); }
-  footer a { color: var(--gold); text-decoration: none; }
-  @media (max-width: 480px) { nav { padding: 0 1.2rem; } }
+.notfound{background:var(--navy);min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem;}
+.notfound-inner{max-width:540px;}
+.notfound h1{font-size:5rem;color:var(--gold);font-family:Arial,sans-serif;font-weight:bold;line-height:1;margin-bottom:.5rem;}
+.notfound h2{color:var(--white);font-size:1.4rem;margin-bottom:1rem;}
+.notfound p{font-family:Arial,sans-serif;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:2rem;}
+.notfound-links{display:flex;flex-direction:column;gap:.6rem;max-width:280px;margin:0 auto;}
+.notfound-links a{background:rgba(255,255,255,.08);color:var(--white);font-family:Arial,sans-serif;font-size:.9rem;padding:.7rem 1.2rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);transition:.2s;}
+.notfound-links a:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
 </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-brand" href="/">Mission Aviation Academy</a>
+<nav class="maa-nav">
+  <a class="maa-nav-brand" href="/">Mission Aviation Academy</a>
+  <ul class="maa-nav-links">
+    <li><a href="/saturday">Saturday</a></li>
+    <li><a href="/programs">Programs</a></li>
+    <li><a href="/saturday#rsvp" class="maa-nav-cta">Enroll Now</a></li>
+  </ul>
 </nav>
-
-<main>
-  <div class="code">Error 404</div>
-  <h1>This one's <span>off the flight plan.</span></h1>
-  <p>The page you're looking for doesn't exist or has moved. Let's get you back on course.</p>
-  <div class="links">
-    <a class="btn btn-gold" href="/">Return home</a>
-    <a class="btn btn-outline" href="/yab">Career Pathway Guide</a>
-    <a class="btn btn-outline" href="/ricky">Ricky the Explorer</a>
+<div class="notfound">
+  <div class="notfound-inner">
+    <h1>404</h1>
+    <h2>That page is still being built.</h2>
+    <p>Every airport has taxiways under construction. This one just hasn't opened yet. Here's where you probably want to go:</p>
+    <div class="notfound-links">
+      <a href="/">Homepage</a>
+      <a href="/saturday">Saturday Program &amp; Open House</a>
+      <a href="/programs">All Programs</a>
+      <a href="/scholarships">SUFS Scholarships</a>
+      <a href="/yab">Free Career Guide</a>
+      <a href="/contact">Contact Us</a>
+    </div>
   </div>
-</main>
-
-<footer>
-  Need a hand? <a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a>
-  &nbsp;·&nbsp; <a href="tel:8335973836">(833) FLY-STEM</a>
-  &nbsp;·&nbsp; <a href="tel:8134458889">(813) 445-8889</a>
-</footer>
-
+</div>
 </body>
 </html>
