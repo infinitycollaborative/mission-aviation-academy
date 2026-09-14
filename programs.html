@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs — Mission Aviation Academy</title>
+<meta name="description" content="7 career families, 8 enrollment lanes, JROTC partnerships. Drone, pilot, A&P, ATC, aerospace, AI innovation — all with SUFS scholarship funding. Tampa Bay, FL.">
+<link rel="stylesheet" href="maa-shared.css">
+<style>
+.page-hero{background:var(--navy);padding:4rem 2rem 3rem;text-align:center;}
+.page-hero h1{color:var(--white);font-size:clamp(1.8rem,4vw,3rem);max-width:680px;margin:0 auto .8rem;}
+.page-hero p{font-family:Arial,sans-serif;color:rgba(255,255,255,.7);max-width:54ch;margin:0 auto 2rem;}
+.family-section{padding:3.5rem 2rem;border-bottom:1px solid #eee;}
+.family-section:nth-child(even){background:var(--light);}
+.family-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:2.5rem;align-items:start;}
+.family-sidebar{}
+.family-label{font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:var(--sky);margin-bottom:.4rem;}
+.family-sidebar h2{font-size:1.5rem;color:var(--navy);line-height:1.2;margin-bottom:.8rem;}
+.family-sidebar .salary{font-family:Arial,sans-serif;font-size:1.1rem;font-weight:bold;color:var(--gold);margin-bottom:.4rem;}
+.family-sidebar .salary-note{font-family:Arial,sans-serif;font-size:.75rem;color:var(--mid);}
+.family-sidebar .maa-badge{margin-top:1rem;background:var(--navy);color:var(--white);font-family:Arial,sans-serif;font-size:.78rem;padding:.6rem .9rem;display:inline-block;}
+.family-body p{color:var(--mid);margin-bottom:1rem;font-size:.95rem;}
+.credentials{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.8rem;margin:1.2rem 0;}
+.cred-card{background:var(--white);border:1px solid #ddd;padding:.9rem 1rem;border-left:3px solid var(--gold);}
+.cred-card h4{font-family:Arial,sans-serif;font-size:.85rem;font-weight:bold;color:var(--navy);margin-bottom:.2rem;}
+.cred-card p{font-family:Arial,sans-serif;font-size:.78rem;color:var(--mid);line-height:1.45;margin:0;}
+.cred-sufs{font-family:Arial,sans-serif;font-size:.7rem;color:var(--green);font-weight:bold;margin-top:.3rem;}
+.family-cta{margin-top:1.5rem;}
+
+/* CATALOG LANES */
+.lanes-bg{background:var(--navy);padding:4rem 2rem;}
+.lanes-bg h2{color:var(--white);}
+.lanes-bg .section-label{color:var(--gold);}
+.lanes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.1);margin-top:2rem;}
+.lane-card{background:rgba(255,255,255,.04);padding:1.4rem 1.2rem;}
+.lane-num{font-family:Arial,sans-serif;font-size:1.8rem;font-weight:bold;color:rgba(201,162,39,.3);line-height:1;margin-bottom:.4rem;}
+.lane-card h3{font-family:Arial,sans-serif;font-size:.9rem;font-weight:bold;color:var(--gold);margin-bottom:.4rem;}
+.lane-card p{font-family:Arial,sans-serif;font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.5;}
+.lane-price{font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;color:var(--white);margin-top:.6rem;}
+
+/* JROTC */
+.jrotc-bg{background:var(--light);padding:4rem 2rem;}
+.jrotc-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
+.jrotc-card{background:var(--navy);padding:2rem;}
+.jrotc-card h3{font-family:Arial,sans-serif;font-size:1rem;font-weight:bold;color:var(--gold);margin-bottom:.8rem;}
+.jrotc-card p{font-family:Arial,sans-serif;font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:.8rem;}
+.jrotc-card ul{list-style:none;margin:0;}
+.jrotc-card ul li{font-family:Arial,sans-serif;font-size:.82rem;color:rgba(255,255,255,.6);padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.jrotc-card ul li::before{content:"→ ";color:var(--gold);}
+
+@media(max-width:768px){
+  .family-inner{grid-template-columns:1fr;}
+  .jrotc-inner{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="maa-nav">
+  <a class="maa-nav-brand" href="/">Mission Aviation Academy</a>
+  <ul class="maa-nav-links">
+    <li><a href="/saturday">Saturday</a></li>
+    <li><a href="/programs" style="color:var(--gold)">Programs</a></li>
+    <li><a href="/scholarships">Scholarships</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/saturday#rsvp" class="maa-nav-cta">Enroll Now</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <span class="section-label" style="color:var(--gold);display:block;margin-bottom:.6rem;">7 Career Families · 8 Enrollment Lanes</span>
+  <h1>Aviation is bigger than the cockpit.</h1>
+  <p>Every program below leads to a real, high-income career. None require a four-year degree. Every one is available with SUFS scholarship funding where eligible.</p>
+  <a href="/saturday#rsvp" class="btn btn-gold">Start with a Saturday Class</a>
+</div>
+
+<!-- FAMILY 1: DRONE -->
+<div class="family-section">
+  <div class="family-inner">
+    <div class="family-sidebar">
+      <div class="family-label">Fastest Entry · Family 1</div>
+      <h2>Drone / UAS Operations</h2>
+      <div class="salary">Up to $215K</div>
+      <div class="salary-note">Defense sector roles · Seven industries hiring now</div>
+      <span class="maa-badge">✓ Available Every Saturday</span>
+    </div>
+    <div class="family-body">
+      <p>The fastest entry point in all of aviation. FAA Part 107 Remote Pilot test prep starting at age 14, certificate eligible at 16. MAA runs a 90th–95th percentile pass rate on the knowledge exam.</p>
+      <p>Beyond hobbyist flying — drone operators work in agriculture, construction, infrastructure inspection, first responder support, cinematography, and defense. Each DB101–108 course covers a specific industry.</p>
+      <div class="credentials">
+        <div class="cred-card">
+          <h4>FAA TRUST Certificate</h4>
+          <p>Hobbyist drone certification · Online test in class · Ages 12+</p>
+          <div class="cred-sufs">✓ SUFS Eligible · $450</div>
+        </div>
+        <div class="cred-card">
+          <h4>FAA Part 107 — Remote Pilot</h4>
+          <p>Commercial drone pilot · 3-phase program · 16+ for certificate</p>
+          <div class="cred-sufs">✓ SUFS Eligible · $1,999 bundle</div>
+        </div>
+        <div class="cred-card">
+          <h4>DB101–108 · Drone Business</h4>
+          <p>8 industry-specific courses · Agriculture, construction, inspection &amp; more</p>
+          <div class="cred-sufs">✓ SUFS Eligible · $350–$450 each</div>
+        </div>
+      </div>
+      <a href="/saturday" class="btn btn-gold btn-sm">Start with Drone Intro Saturday →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAMILY 2: PILOT -->
+<div class="family-section">
+  <div class="family-inner">
+    <div class="family-sidebar">
+      <div class="family-label">Flight Operations · Family 2</div>
+      <h2>Pilot Pathway</h2>
+      <div class="salary">$226,600 median</div>
+      <div class="salary-note">Airline Captain · BLS May 2024</div>
+      <span class="maa-badge">✓ Simulator at X39</span>
+    </div>
+    <div class="family-body">
+      <p>The full ladder from Student Pilot through ATP. MAA's Three-Room Method — ground school, simulator, then the aircraft — mirrors the same sequence that produced the Red Tails. Every step builds on the last.</p>
+      <p>Flight instruction is delivered through partner CFIs and Central Florida Flight Training. MAA's 1960 Cessna 172B is available for discovery flights and club use.</p>
+      <div class="credentials">
+        <div class="cred-card">
+          <h4>PPL Ground School</h4>
+          <p>36 hrs · Mon/Wed/Fri online · 16+ wks</p>
+          <div class="cred-sufs">✓ SUFS Eligible · $2,400</div>
+        </div>
+        <div class="cred-card">
+          <h4>PPL Flight Simulator</h4>
+          <p>26 sessions · FAA-approved BATD · CFI-signed logbook · X39</p>
+          <div class="cred-sufs">✓ SUFS Eligible · $3,395/semester</div>
+        </div>
+        <div class="cred-card">
+          <h4>Discovery Flight</h4>
+          <p>30 min flight + 30 min prep · CFI present · Logbook entry</p>
+          <div class="cred-sufs">$100 · May qualify for reimbursement</div>
+        </div>
+      </div>
+      <a href="/saturday#classes" class="btn btn-gold btn-sm">Book a Simulator Slot →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAMILY 3: MAINTENANCE -->
+<div class="family-section">
+  <div class="family-inner">
+    <div class="family-sidebar">
+      <div class="family-label">No Degree Required · Family 3</div>
+      <h2>Aviation Maintenance</h2>
+      <div class="salary">$78,680 median</div>
+      <div class="salary-note">#1 no-degree job · CNBC January 2026</div>
+      <span class="maa-badge">✓ Pathway to PHSC</span>
+    </div>
+    <div class="family-body">
+      <p>The national mechanic shortage is real — 10% below certificated need in 2025. A&P certification opens doors immediately. No degree required, no ceiling on advancement.</p>
+      <p>MAA's Rivet Line pathway leads from beginner hands-on work through LSRM-M certification, OJT with partner facilities, and PHSC articulation credit toward a full A&P.</p>
+      <div class="credentials">
+        <div class="cred-card">
+          <h4>Rivet Line · Beginner</h4>
+          <p>Aircraft systems intro · Blueprint reading · Airframe basics</p>
+          <div class="cred-sufs">Coming Soon · PHSC articulation eligible</div>
+        </div>
+        <div class="cred-card">
+          <h4>LSRM-M Certificate</h4>
+          <p>FAA Light Sport Repairman · Partner delivery (Hangar 777, CA)</p>
+          <div class="cred-sufs">$4,500 own travel · $12,000 all-inclusive</div>
+        </div>
+        <div class="cred-card">
+          <h4>Youth Aircraft Factory</h4>
+          <p>Real kit-plane construction · ICP Savannah S · Zenith CH750</p>
+          <div class="cred-sufs">SUFS Aerospace Track · $949.50–$1,050/qtr</div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-gold btn-sm">Ask About the Maintenance Pathway →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAMILY 4: ATC -->
+<div class="family-section">
+  <div class="family-inner">
+    <div class="family-sidebar">
+      <div class="family-label">Highest No-Degree Median · Family 4</div>
+      <h2>Air Traffic Control &amp; Safety</h2>
+      <div class="salary">$144,580–$228,000</div>
+      <div class="salary-note">BLS May 2024 · Age-capped entry — start early</div>
+      <span class="maa-badge">✓ PHSC Pathway</span>
+    </div>
+    <div class="family-body">
+      <p>The highest no-degree median salary in all of aviation. FAA actively hiring. Age cap at 30 for most controller positions — start the pipeline now.</p>
+      <p>MAA feeds into PHSC's AS in Professional Pilot Technology and maintains JROTC partnerships that open early pathways into FAA and military ATC programs.</p>
+      <div class="credentials">
+        <div class="cred-card">
+          <h4>ATC Prep Track</h4>
+          <p>FAA hiring pipeline · PHSC AS feeder · Contact for current openings</p>
+          <div class="cred-sufs">Contact admissions for pathway details</div>
+        </div>
+        <div class="cred-card">
+          <h4>Airport Operations</h4>
+          <p>Ground ops, safety inspection, flight service · Entry-level to leadership</p>
+          <div class="cred-sufs">Part of Aviation Management family</div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-gold btn-sm">Start the ATC Conversation →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAMILY 5: AI INNOVATION -->
+<div class="family-section">
+  <div class="family-inner">
+    <div class="family-sidebar">
+      <div class="family-label">AI · Tech · Entrepreneurship · Family 5</div>
+      <h2>AI Innovation &amp; App Building</h2>
+      <div class="salary">$99 to start</div>
+      <div class="salary-note">Beginner → Advanced → Launch</div>
+      <span class="maa-badge">✓ Every Saturday</span>
+    </div>
+    <div class="family-body">
+      <p>Four parts. Eight hours. One working prototype. Students learn to build real apps using Claude Code, GitHub, and Vercel — not just theory, actual deployed products.</p>
+      <p>Part 3 includes a pitch competition. Part 4 is about launching for profitability. Every level earns a graduation certificate.</p>
+      <div class="credentials">
+        <div class="cred-card">
+          <h4>Part 1 — Tools &amp; Coding Intro</h4>
+          <p>Choosing tools · AI workbook · Claude intro · 2 hrs</p>
+          <div class="cred-sufs">✓ SUFS Eligible · $450 standalone</div>
+        </div>
+        <div class="cred-card">
+          <h4>Part 2 — Build a Prototype</h4>
+          <p>Claude Code · GitHub · Vercel · Working app · 2 hrs</p>
+          <div class="cred-sufs">✓ SUFS Eligible · $450 standalone</div>
+        </div>
+        <div class="cred-card">
+          <h4>Parts 1 &amp; 2 Bundle</h4>
+          <p>10 seats · 20 hrs total · Saves $75</p>
+          <div class="cred-sufs">✓ SUFS Eligible · $825 bundle</div>
+        </div>
+      </div>
+      <a href="/saturday#classes" class="btn btn-gold btn-sm">Enroll in Class B This Saturday →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAMILY 6: AEROSPACE -->
+<div class="family-section">
+  <div class="family-inner">
+    <div class="family-sidebar">
+      <div class="family-label">Engineering Track · Family 6</div>
+      <h2>Aerospace &amp; Defense</h2>
+      <div class="salary">$134,830 median</div>
+      <div class="salary-note">Aerospace Engineer · BLS May 2024</div>
+      <span class="maa-badge">✓ SUFS STEM Track</span>
+    </div>
+    <div class="family-body">
+      <p>Engineering, intelligence, cyber, systems analysis, program management, and manufacturing. The careers that design, build, and sustain the aviation industry. CubeSats to rocketry to Space Guardian Academy.</p>
+      <div class="credentials">
+        <div class="cred-card">
+          <h4>Aerospace &amp; Mech Eng · SUFS Track</h4>
+          <p>sUAS/FPV build · Blueprint reading · Aerodynamics · 12–24 month</p>
+          <div class="cred-sufs">✓ SUFS Eligible · $949.50–$1,050/qtr</div>
+        </div>
+        <div class="cred-card">
+          <h4>Space Guardian Academy</h4>
+          <p>4 tiers · CubeSat engineering · Space Domain Awareness · Cyber Defense</p>
+          <div class="cred-sufs">$75–$2,499 per tier</div>
+        </div>
+        <div class="cred-card">
+          <h4>RC Aircraft Build (RoT &amp; iACT)</h4>
+          <p>320 hrs · 4 phases · AMA class · Ages 9–18 · P-51, C-172 models</p>
+          <div class="cred-sufs">~$4K/year · Contact for details</div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-gold btn-sm">Explore the Aerospace Pathway →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAMILY 7: MANAGEMENT -->
+<div class="family-section">
+  <div class="family-inner">
+    <div class="family-sidebar">
+      <div class="family-label">Leadership Track · Family 7</div>
+      <h2>Aviation Management &amp; Education</h2>
+      <div class="salary">Growing demand</div>
+      <div class="salary-note">Dispatch · Airport Ops · Curriculum · Insurance</div>
+      <span class="maa-badge">✓ Career Coaching Available</span>
+    </div>
+    <div class="family-body">
+      <p>The careers that run the airfield — dispatch, airport ops, logistics, curriculum design, safety, and education. Leadership roles that grow with the industry.</p>
+      <p>Includes Flight Instruction — CFI, CFII, MEI. The credential that keeps you in the cockpit while airline slots fill, and pays consistently across all market conditions.</p>
+      <div class="credentials">
+        <div class="cred-card">
+          <h4>Dispatch &amp; Airport Ops</h4>
+          <p>FAA Dispatcher certificate · Airport leadership track · Entry through executive</p>
+          <div class="cred-sufs">Contact for current program details</div>
+        </div>
+        <div class="cred-card">
+          <h4>CFI / CFII / MEI</h4>
+          <p>Flight instruction certification · MAA-affiliated: Matthews, Mednick, Floyd</p>
+          <div class="cred-sufs">VR&amp;E eligible for veterans · Contact for pathway</div>
+        </div>
+        <div class="cred-card">
+          <h4>Curriculum Licensing</h4>
+          <p>B2B — license MAA curriculum to your school, camp, or nonprofit</p>
+          <div class="cred-sufs">3 tiers · <a href="/licensing" style="color:var(--sky);">See licensing page</a></div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-gold btn-sm">Discuss a Career Plan →</a>
+    </div>
+  </div>
+</div>
+
+<!-- 8 CATALOG LANES -->
+<section class="lanes-bg">
+  <div class="inner">
+    <span class="section-label">Master Course Catalog</span>
+    <h2>8 Enrollment Lanes</h2>
+    <p class="section-intro" style="color:rgba(255,255,255,.6);">How programs are organized for enrollment and SUFS billing. Different from the 7 Career Families — these are the lanes families use to enroll.</p>
+    <div class="lanes-grid">
+      <div class="lane-card">
+        <div class="lane-num">0</div>
+        <h3>Onboarding</h3>
+        <p>Registration, orientation, personalized training blueprint, Gleim materials.</p>
+        <div class="lane-price">$200 one-time (traditional courses only)</div>
+      </div>
+      <div class="lane-card">
+        <div class="lane-num">1</div>
+        <h3>Enrichment Tiers</h3>
+        <p>Monthly subscription: Tier 1–4 ($99–$249/mo). À la carte $99/session.</p>
+        <div class="lane-price">SUFS Eligible · 4 tiers</div>
+      </div>
+      <div class="lane-card">
+        <div class="lane-num">2</div>
+        <h3>Academic Tutoring</h3>
+        <p>Reading, math, STEM, writing, test prep. $90–$100/hr.</p>
+        <div class="lane-price">SUFS Eligible</div>
+      </div>
+      <div class="lane-card">
+        <div class="lane-num">3</div>
+        <h3>AI Innovation</h3>
+        <p>Parts 1–4. Standalone and bundle pricing. 10 seats per cohort.</p>
+        <div class="lane-price">SUFS Eligible · $450–$825</div>
+      </div>
+      <div class="lane-card">
+        <div class="lane-num">4</div>
+        <h3>Drone &amp; Flight</h3>
+        <p>TRUST, Part 107 (3-phase), Ground School, PPL Simulator.</p>
+        <div class="lane-price">SUFS Eligible · $450–$3,395</div>
+      </div>
+      <div class="lane-card">
+        <div class="lane-num">5</div>
+        <h3>Aerospace &amp; Mech Eng</h3>
+        <p>SUFS-eligible sUAS/FPV build track. 12–24 month program.</p>
+        <div class="lane-price">SUFS Eligible · $949.50–$1,050/qtr</div>
+      </div>
+      <div class="lane-card">
+        <div class="lane-num">6</div>
+        <h3>Workforce Development</h3>
+        <p>Naval Aviator / Solo Flight, career tracks, adult programs. Private pay.</p>
+        <div class="lane-price">Private pay · Contact for pricing</div>
+      </div>
+      <div class="lane-card">
+        <div class="lane-num">7</div>
+        <h3>JROTC / ROTC</h3>
+        <p>B2B licensing for units and schools. Dedicated program below.</p>
+        <div class="lane-price">B2B · See licensing page</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="/catalog" class="btn btn-gold">View Full Course Catalog (22 slides)</a>
+    </div>
+  </div>
+</section>
+
+<!-- JROTC / ROTC -->
+<section class="jrotc-bg" id="jrotc">
+  <div class="inner">
+    <span class="section-label">Military Youth Pipeline</span>
+    <h2>JROTC &amp; ROTC Aviation Programs</h2>
+    <p class="section-intro">MAA works with JROTC/ROTC units across Tampa Bay and Florida as a K-12 feeder partner and pre-collegiate CROP volunteer with Pasco-Hernando State College (PHSC).</p>
+    <div class="jrotc-inner">
+      <div>
+        <div class="jrotc-card">
+          <h3>For Unit Commanders</h3>
+          <p>MAA offers curriculum licensing that brings FAA-credentialed drone, flight, and STEM programming directly to your unit's training schedule.</p>
+          <ul>
+            <li>FAA TRUST drone certification in-unit</li>
+            <li>Part 107 prep for 16+ cadets</li>
+            <li>Aviation history and Tuskegee Airmen curriculum</li>
+            <li>AI innovation and entrepreneurship modules</li>
+            <li>PHSC dual-enrollment feeder pipeline</li>
+            <li>USF Air Force ROTC partnership track (100% placement record)</li>
+          </ul>
+          <div style="margin-top:1.2rem;">
+            <a href="/licensing" class="btn btn-gold btn-sm">See Licensing Options</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="jrotc-card">
+          <h3>For Cadets &amp; Families</h3>
+          <p>JROTC cadets can enroll in Saturday programs and traditional courses individually, with MAA's program counting toward extracurricular aviation credentials.</p>
+          <ul>
+            <li>Saturday drone and AI classes open to all cadets</li>
+            <li>AFJROTC Flight Academy scholarship pipeline ($22,500)</li>
+            <li>VR&amp;E eligible for veterans and dependents</li>
+            <li>PHSC articulation credit toward AS degrees</li>
+            <li>Mentorship from LCDR Foster and Rev. Reginald Davis</li>
+            <li>Flight Plan 2030 career coaching included</li>
+          </ul>
+          <div style="margin-top:1.2rem;">
+            <a href="/saturday#rsvp" class="btn btn-gold btn-sm">RSVP for Saturday →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATHWAYS CTA -->
+<section style="background:var(--navy);padding:3rem 2rem;text-align:center;">
+  <div class="inner">
+    <h2 style="color:var(--white);">Not sure where to start?</h2>
+    <p style="font-family:Arial,sans-serif;color:rgba(255,255,255,.65);max-width:50ch;margin:.8rem auto 1.8rem;">Come to a Saturday Open House. Bring your student. No commitment. We'll map a pathway together.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="/saturday#rsvp" class="btn btn-gold">RSVP Free Open House</a>
+      <a href="/contact" class="btn btn-ghost">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<footer class="maa-footer">
+  <div class="maa-footer-inner">
+    <div class="maa-footer-legal">
+      <p>Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit organization. iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate. Flight instruction is delivered through partner schools. PHSC articulation available for qualifying programs. Salary figures are national BLS medians and do not guarantee individual earnings.</p>
+      <p style="margin-top:.5rem;">© 2026 Infinity Aero Club Tampa Bay, Inc. · EIN 85-1110607 · 813-445-8889 · <a href="mailto:admissions@missionaviationacademy.org" style="color:var(--gold);">admissions@missionaviationacademy.org</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Mission Aviation Academy</title>
+<meta name="description" content="Founded by LCDR Ricardo Foster, USN (Ret.), mentored by Tuskegee Airmen. Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc. — impacting 1M lives by 2030.">
+<link rel="stylesheet" href="maa-shared.css">
+<style>
+.page-hero{background:var(--navy);padding:4rem 2rem 3rem;text-align:center;}
+.page-hero h1{color:var(--white);font-size:clamp(1.8rem,4vw,2.8rem);max-width:680px;margin:0 auto .8rem;}
+.page-hero p{font-family:Arial,sans-serif;color:rgba(255,255,255,.7);max-width:56ch;margin:0 auto;}
+
+/* ABOUT */
+.founder-grid{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;align-items:start;margin-top:2rem;}
+.founder-sidebar{background:var(--navy);padding:1.8rem;}
+.founder-sidebar h3{font-family:Arial,sans-serif;font-size:1rem;font-weight:bold;color:var(--gold);margin-bottom:.8rem;}
+.founder-sidebar p{font-family:Arial,sans-serif;font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:.6rem;}
+.founder-cred{font-family:Arial,sans-serif;font-size:.78rem;color:rgba(255,255,255,.45);padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.founder-body p{color:var(--mid);margin-bottom:1.1rem;font-size:.95rem;line-height:1.7;}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#ddd;border:1px solid #ddd;margin-top:2rem;}
+.team-card{background:var(--white);padding:1.4rem;}
+.team-card h3{font-family:Arial,sans-serif;font-size:.95rem;font-weight:bold;color:var(--navy);margin-bottom:.2rem;}
+.team-card .cred{font-family:Arial,sans-serif;font-size:.8rem;color:var(--sky);font-weight:bold;margin-bottom:.3rem;}
+.team-card p{font-family:Arial,sans-serif;font-size:.82rem;color:var(--mid);line-height:1.5;}
+.org-chart{background:var(--light);padding:2rem;margin-top:2rem;}
+.org-chart h3{font-family:Arial,sans-serif;font-size:.9rem;font-weight:bold;color:var(--navy);margin-bottom:1.2rem;text-align:center;}
+.org-row{display:flex;justify-content:center;gap:0;margin-bottom:0;}
+.org-node{background:var(--navy);color:var(--white);font-family:Arial,sans-serif;font-size:.78rem;padding:.7rem 1.2rem;text-align:center;position:relative;}
+.org-node .name{font-weight:bold;color:var(--gold);display:block;}
+.org-node .role{color:rgba(255,255,255,.55);font-size:.7rem;margin-top:.1rem;}
+.org-connector{display:flex;justify-content:center;gap:3rem;margin:.4rem 0;}
+.org-connector span{font-size:1.2rem;color:var(--gold);}
+.org-children{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:.8rem;}
+.org-child{background:var(--sky);color:var(--white);font-family:Arial,sans-serif;font-size:.75rem;padding:.6rem .8rem;text-align:center;}
+.org-child .c-name{font-weight:bold;display:block;margin-bottom:.1rem;}
+.org-child .c-tag{color:rgba(255,255,255,.65);font-size:.68rem;}
+.compliance-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;}
+.comp-badge{font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;background:var(--greenbg);color:var(--green);border:1px solid #b2d8b9;padding:.3rem .8rem;}
+.partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+.partner-group h4{font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;color:var(--sky);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem;}
+.partner-group ul{list-style:none;}
+.partner-group ul li{font-family:Arial,sans-serif;font-size:.82rem;color:var(--mid);padding:.25rem 0;border-bottom:1px solid #eee;line-height:1.4;}
+@media(max-width:768px){
+  .founder-grid{grid-template-columns:1fr;}
+  .org-children{grid-template-columns:1fr 1fr;}
+  .partners-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="maa-nav">
+  <a class="maa-nav-brand" href="/">Mission Aviation Academy</a>
+  <ul class="maa-nav-links">
+    <li><a href="/saturday">Saturday</a></li>
+    <li><a href="/programs">Programs</a></li>
+    <li><a href="/scholarships">Scholarships</a></li>
+    <li><a href="/about" style="color:var(--gold)">About</a></li>
+    <li><a href="/saturday#rsvp" class="maa-nav-cta">Enroll Now</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <span class="section-label" style="color:var(--gold);display:block;margin-bottom:.6rem;">Infinity Aero Club Tampa Bay, Inc. · DBA Mission Aviation Academy</span>
+  <h1>Before our story, theirs.</h1>
+  <p>Founded by a Tuskegee Airmen mentee. Built for the kids nobody saw coming.</p>
+</div>
+
+<!-- LEGAL NOTICE -->
+<div style="background:var(--sky);padding:1rem 2rem;text-align:center;">
+  <p style="font-family:Arial,sans-serif;font-size:.82rem;color:var(--white);max-width:900px;margin:0 auto;line-height:1.65;">
+    <strong>Our Legal Structure:</strong> Mission Aviation Academy (MAA) is the academic division of Infinity Aero Club Tampa Bay, Inc. (iACT), a Florida 501(c)(3) nonprofit flying club. MAA operates as a DBA of iACT for official filing and tax purposes. iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 school certificate. Flight instruction is delivered through our partner CFIs and flight schools.
+  </p>
+</div>
+
+<!-- FOUNDER -->
+<section>
+  <div class="inner">
+    <span class="section-label">The Founder</span>
+    <h2>LCDR Ricardo "Tattoo" Foster, USN (Ret.)</h2>
+    <div class="founder-grid">
+      <div class="founder-sidebar">
+        <h3>Credentials</h3>
+        <div class="founder-cred">28 years U.S. Navy · 100% Disabled Veteran</div>
+        <div class="founder-cred">B.S. Aviation Science, magna cum laude · Norfolk State</div>
+        <div class="founder-cred">M.A. National Security &amp; Strategic Studies, cum laude · Naval War College</div>
+        <div class="founder-cred">FAA Remote Pilot (Part 107) · LSRM Certificate</div>
+        <div class="founder-cred">TS/SCI Clearance</div>
+        <div class="founder-cred">Founding Charter Member · Tuskegee Airmen Inc. Tampa Bay Chapter (Q1 2026)</div>
+        <p style="margin-top:.8rem;">Commands: VFA-105 · USCENTCOM · 4th Fleet/DESRON 40 · Fleet Forces · NALF Fentress · SOCOM Tampa</p>
+        <p>Ships: USS Enterprise · USS Harry S. Truman · USS Ronald Reagan (plank owner) · USS Theodore Roosevelt · USNS Comfort</p>
+      </div>
+      <div class="founder-body">
+        <p>Ricardo Foster grew up in Jamaica and Brooklyn watching planes overhead and wondering if that sky was for him. In 1990 he enlisted in the U.S. Navy — E-1 to LCDR, 28 years, naval aviation intelligence, advanced to commissioned officer. He retired and spent eight more years in civilian aviation before founding iACT in 2020.</p>
+        <p>His philosophy is built on the six traits of the Tuskegee Airmen who mentored him: Courage, Perseverance, Excellence, Teamwork, Discipline, and Service. It is also built on Ubuntu — "I am because we are" — and the conviction that cost, geography, or circumstance do not get to determine who flies.</p>
+        <p>He was personally mentored by Lt. Col. George Hardy (Class 44-H-SE, 332nd Fighter Group, the youngest Red Tail at 19 and the last combat pilot at 100), Brig. Gen. Charles McGee, Flight Officer Daniel Keel (103 years young, triple-rated airman), and inspired by Rev. Reginald Davis — carrier pilot, American Airlines Captain, and student of Chief Charles Alfred Anderson, the Father of Black Aviation.</p>
+        <p>Today Ricardo leads Flight Plan 2030 — an initiative targeting one million youth impacted and $10 million raised by 2030. He is also a two-time author: <em>Your Aviation Blueprint</em> (Nov 2, 2026) and <em>Ricky the Explorer: Takes a Magic Flight</em> (Nov 16, 2026).</p>
+        <p>"I saw talented kids with no pathway. I built the bridge."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section style="padding-top:0;">
+  <div class="inner">
+    <span class="section-label">Flight Instructors</span>
+    <h2>The Team at X39</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <h3>LCDR Ricardo Foster</h3>
+        <div class="cred">Founder &amp; CEO · FAA Remote Pilot · LSRM</div>
+        <p>28 years Navy. Program lead, curriculum design, and the CFI pathway. Personally completing the pilot credential MAA teaches.</p>
+      </div>
+      <div class="team-card">
+        <h3>Walter Matthews</h3>
+        <div class="cred">CFI · Flight Instructor · Board Secretary</div>
+        <p>Chief CFI and Skyway Bound Aviation Services founder. Conducts certificate flight instruction through partner aircraft.</p>
+      </div>
+      <div class="team-card">
+        <h3>Phil Mednick</h3>
+        <div class="cred">CFI · Flight Mentor</div>
+        <p>Flight instructor and mentor at MAA. Conducts certificate instruction through partner schools' aircraft at X39.</p>
+      </div>
+      <div class="team-card">
+        <h3>Ahviyona Floyd</h3>
+        <div class="cred">CFI / CFII / MEI · Flight Instructor</div>
+        <p>Multi-rated CFI with commercial, instrument, and multi-engine instructor qualifications. Community-facing role.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORG ARCHITECTURE -->
+<section style="background:var(--light);padding:3.5rem 2rem;">
+  <div class="inner">
+    <span class="section-label">Our Structure</span>
+    <h2>One legal entity. Four public brands.</h2>
+    <div class="org-chart">
+      <h3>iACT Ecosystem</h3>
+      <div style="text-align:center;margin-bottom:.8rem;">
+        <div class="org-node" style="display:inline-block;min-width:280px;">
+          <span class="name">Infinity Aero Club Tampa Bay, Inc. (iACT)</span>
+          <span class="role">Florida 501(c)(3) · EIN 85-1110607 · Legal entity, flying club, all assets</span>
+        </div>
+      </div>
+      <div class="org-children">
+        <div class="org-child">
+          <span class="c-name">Mission Aviation Academy</span>
+          <span class="c-tag">Academic DBA · This site · Programs &amp; enrollment</span>
+        </div>
+        <div class="org-child">
+          <span class="c-name">Hidden Treasures Network</span>
+          <span class="c-tag">Community DBA · htn.org · Red Tail Dispatch</span>
+        </div>
+        <div class="org-child">
+          <span class="c-name">Red Tail Roost</span>
+          <span class="c-tag">Flying exhibit · Tuskegee tribute · flightplan2030.org</span>
+        </div>
+        <div class="org-child">
+          <span class="c-name">Flight Plan 2030</span>
+          <span class="c-tag">Campaign · 1M lives · $10M · by 2030</span>
+        </div>
+      </div>
+    </div>
+    <div class="compliance-row">
+      <span class="comp-badge">✓ 501(c)(3) — Oct 7, 2020</span>
+      <span class="comp-badge">✓ EIN 85-1110607</span>
+      <span class="comp-badge">✓ SAM.gov ACTIVE</span>
+      <span class="comp-badge">✓ SUFS Approved Provider</span>
+      <span class="comp-badge">✓ PHSC Partner</span>
+      <span class="comp-badge">✓ USF AF ROTC Partner</span>
+      <span class="comp-badge">✓ Tuskegee Airmen Inc. Tampa Bay — Founding Member</span>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section>
+  <div class="inner">
+    <span class="section-label">Our Partners</span>
+    <h2>Who we work with</h2>
+    <div class="partners-grid">
+      <div class="partner-group">
+        <h4>Education &amp; Workforce (MAA)</h4>
+        <ul>
+          <li>Pasco-Hernando State College (PHSC) — Articulation &amp; Dual Enrollment</li>
+          <li>Step Up For Students (SUFS) — Scholarship Provider</li>
+          <li>Gleim Aviation — Ground School &amp; BATD (vendor)</li>
+          <li>USF Air Force ROTC — 100% cadet placement rate</li>
+          <li>Central Florida Flight Training — Partner CFI delivery</li>
+          <li>AviationStart.org — Jamail Larkins · 24,000+ students</li>
+          <li>The Skills Center Tampa Bay — Workforce Development</li>
+        </ul>
+      </div>
+      <div class="partner-group">
+        <h4>Community &amp; Outreach (HTN)</h4>
+        <ul>
+          <li>Tampa Housing Authority — Community Outreach</li>
+          <li>Pasco County Housing Authority — OZ Community</li>
+          <li>Lacoochee Boys &amp; Girls Club — Youth Outreach</li>
+          <li>Skyway Bound Aviation Services — Walter Matthews</li>
+          <li>CareerSource Tampa Bay — Workforce Partner</li>
+          <li>Redtails of Tomorrow — RC Aircraft Build Program</li>
+        </ul>
+      </div>
+      <div class="partner-group">
+        <h4>Heritage &amp; Legacy (Red Tail Roost)</h4>
+        <ul>
+          <li>Tuskegee Airmen Inc. Tampa Bay Chapter — Heritage Partner</li>
+          <li>AviNation, Inc. — Industry Media Partner</li>
+          <li>Fly Compton Foundation — Equity Aviation Partner</li>
+          <li>Rev. Reginald Davis — Program Mentor, Naval Aviator</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RED TAIL ROOST -->
+<section style="background:var(--navy);padding:4rem 2rem;" id="red-tail-roost">
+  <div class="inner">
+    <span class="section-label" style="color:var(--gold);">The Aircraft</span>
+    <h2 style="color:var(--white);">Red Tail Roost — A Tuskegee Tribute</h2>
+    <div class="grid-2" style="gap:2.5rem;margin-top:2rem;">
+      <div>
+        <p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.7;margin-bottom:1rem;">
+          A 1960 Cessna 172B Skyhawk painted in Tuskegee Airmen tribute colors. Operated at Tampa North Aero Park (X39). The aircraft that has carried more than 1,380 students on their first flight.
+        </p>
+        <p style="color:rgba(255,255,255,.7);font-size:.95rem;line-height:1.7;margin-bottom:1.5rem;">
+          Named Red Tail Roost in honor of the 332nd Fighter Group — the Red Tails who proved that Black pilots could fly, fight, and lead. The same sky they opened is still open.
+        </p>
+        <a href="https://flightplan2030.org" class="btn btn-gold">Red Tail Roost &amp; Tour → flightplan2030.org</a>
+      </div>
+      <div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(201,162,39,.2);padding:1.5rem;margin-bottom:1rem;">
+          <div style="font-family:Arial,sans-serif;font-weight:bold;color:var(--gold);margin-bottom:.5rem;">Tuskegee Airman "1st Top Gun Trophy" Scholarship</div>
+          <p style="font-family:Arial,sans-serif;font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.6;">A beacon of hope for underserved youth. The 1% Mindset — fighter pilots judged by skill, not race.</p>
+          <a href="/scholarships#topgun" style="color:var(--gold);font-family:Arial,sans-serif;font-size:.8rem;">Apply or Donate →</a>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(201,162,39,.2);padding:1.5rem;">
+          <div style="font-family:Arial,sans-serif;font-weight:bold;color:var(--gold);margin-bottom:.5rem;">Brave Bess "Never Stop Learning" Scholarship</div>
+          <p style="font-family:Arial,sans-serif;font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.6;">For young female aviators. Modeled after Bessie Coleman's enduring motto: never stop learning.</p>
+          <a href="/scholarships#bravebess" style="color:var(--gold);font-family:Arial,sans-serif;font-size:.8rem;">Apply or Donate →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="maa-footer">
+  <div class="maa-footer-inner">
+    <div class="maa-footer-legal">
+      <p>© 2026 Infinity Aero Club Tampa Bay, Inc. (iACT) DBA Mission Aviation Academy · EIN 85-1110607 · Florida 501(c)(3) · SAM.gov Active · SUFS Approved Provider · Tampa North Aero Park (X39) · 813-445-8889 · <a href="mailto:admissions@missionaviationacademy.org" style="color:var(--gold);">admissions@missionaviationacademy.org</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
