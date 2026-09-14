@@ -3,163 +3,581 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mission Aviation Academy — Flight Plan 2030</title>
-<meta name="description" content="Mission Aviation Academy prepares underserved youth and veterans for high-income aviation careers. Based in Tampa Bay, FL.">
-<link rel="canonical" href="https://missionaviationacademy.org/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Mission Aviation Academy">
-<meta property="og:url" content="https://missionaviationacademy.org/">
-<meta property="og:title" content="Mission Aviation Academy — Flight Plan 2030">
-<meta property="og:description" content="Mission Aviation Academy prepares underserved youth and veterans for high-income aviation careers. Based in Tampa Bay, FL.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mission Aviation Academy — Flight Plan 2030">
-<meta name="twitter:description" content="Mission Aviation Academy prepares underserved youth and veterans for high-income aviation careers. Based in Tampa Bay, FL.">
+<title>Mission Aviation Academy — Aviation · Aerospace · STEM · AI · Entrepreneurship</title>
+<meta name="description" content="Mission Aviation Academy prepares underserved youth and veterans for high-income aviation careers through hands-on training, FAA certifications, and SUFS scholarship funding. Tampa Bay, FL.">
 <style>
-  :root { --navy:#0D2240; --gold:#C9A227; --sky:#1A7A8A; --light:#F7F4EE; --white:#FFFFFF; --text:#1A1A1A; --mid:#5A5A5A; }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { font-size: 18px; }
-  body { font-family: Georgia, 'Times New Roman', serif; color: var(--text); background: var(--white); line-height: 1.65; }
+:root {
+  --navy:#0D2240; --gold:#C9A227; --sky:#1A7A8A;
+  --light:#F7F4EE; --white:#FFFFFF; --text:#1A1A1A; --mid:#5A5A5A;
+  --green:#1F6B2F; --greenbg:#E8F4EB;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:18px;scroll-behavior:smooth;}
+body{font-family:Georgia,serif;color:var(--text);background:var(--white);line-height:1.65;}
 
-  nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; height: 56px; }
-  .nav-brand { color: var(--gold); font-weight: bold; font-size: 1rem; letter-spacing: .02em; text-decoration: none; font-family: Arial, sans-serif; }
+/* NAV */
+nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+.nav-brand{color:var(--gold);font-family:Arial,sans-serif;font-weight:bold;font-size:.9rem;text-decoration:none;}
+.nav-links{display:flex;gap:1.6rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.75);font-family:Arial,sans-serif;font-size:.82rem;text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy)!important;font-weight:bold!important;padding:.35rem .9rem;}
+.nav-cta:hover{background:#a87e1a;color:var(--white)!important;}
 
-  .hero { background: var(--navy); padding: 4.5rem 2rem 3.5rem; text-align: center; }
-  .hero-tag { display: inline-block; border: 1px solid var(--gold); color: var(--gold); font-family: Arial, sans-serif; font-size: .75rem; letter-spacing: .12em; padding: .35rem .9rem; margin-bottom: 1.6rem; text-transform: uppercase; }
-  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); color: var(--white); line-height: 1.18; max-width: 700px; margin: 0 auto 1.1rem; }
-  .hero h1 span { color: var(--gold); }
-  .hero-sub { font-family: Arial, sans-serif; color: rgba(255,255,255,.75); font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+/* HERO */
+.hero{background:var(--navy);padding:5rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,122,138,.12) 0%,transparent 60%);pointer-events:none;}
+.hero-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.hero-left{}
+.hero-eyebrow{font-family:Arial,sans-serif;font-size:.78rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:1.2rem;}
+.hero h1{font-size:clamp(2rem,4.5vw,3.2rem);color:var(--white);line-height:1.15;margin-bottom:1rem;}
+.hero h1 strong{color:var(--gold);font-weight:inherit;}
+.hero-sub{font-family:Arial,sans-serif;font-size:.95rem;color:rgba(255,255,255,.72);max-width:48ch;margin-bottom:2rem;line-height:1.65;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn{font-family:Arial,sans-serif;font-weight:bold;font-size:.95rem;padding:.85rem 1.8rem;text-decoration:none;display:inline-block;transition:.2s;}
+.btn-gold{background:var(--gold);color:var(--navy);}
+.btn-gold:hover{background:#a87e1a;color:var(--white);}
+.btn-ghost{border:2px solid rgba(255,255,255,.35);color:var(--white);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.hero-right{display:flex;flex-direction:column;gap:1rem;}
+.stat-card{background:rgba(255,255,255,.07);border:1px solid rgba(201,162,39,.25);padding:1.2rem 1.4rem;}
+.stat-num{font-family:Arial,sans-serif;font-size:2rem;font-weight:bold;color:var(--gold);line-height:1;}
+.stat-label{font-family:Arial,sans-serif;font-size:.8rem;color:rgba(255,255,255,.65);margin-top:.3rem;}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 
-  .mission-stripe { background: var(--gold); padding: 1.1rem 2rem; text-align: center; font-family: Arial, sans-serif; font-weight: bold; font-size: .92rem; color: var(--navy); letter-spacing: .02em; }
+/* STRIP — Saturday */
+.saturday-strip{background:var(--sky);padding:1.2rem 2rem;}
+.saturday-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.saturday-strip p{font-family:Arial,sans-serif;font-size:.92rem;color:var(--white);}
+.saturday-strip strong{color:var(--gold);}
+.strip-ctas{display:flex;gap:.8rem;}
+.strip-btn{font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;padding:.4rem 1rem;text-decoration:none;}
+.strip-btn-primary{background:var(--gold);color:var(--navy);}
+.strip-btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:var(--white);}
 
-  section { padding: 3.5rem 2rem; }
-  .inner { max-width: 900px; margin: 0 auto; }
-  .section-label { font-family: Arial, sans-serif; font-size: .78rem; color: var(--sky); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .6rem; text-align: center; }
-  h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--navy); text-align: center; margin-bottom: 2rem; }
+/* MISSION STRIPE */
+.mission-stripe{background:var(--gold);padding:2rem 2rem;}
+.mission-stripe blockquote{font-family:Arial,sans-serif;font-size:clamp(1rem,2.5vw,1.3rem);font-weight:bold;color:var(--navy);max-width:760px;margin:0 auto;text-align:center;line-height:1.4;}
+.mission-stripe cite{display:block;font-family:Arial,sans-serif;font-size:.82rem;font-weight:normal;color:rgba(13,34,64,.65);margin-top:.6rem;font-style:normal;}
 
-  /* BOOK LINK CARDS */
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; }
-  .card { background: var(--light); border-top: 4px solid var(--gold); padding: 2rem 1.6rem; text-align: center; }
-  .card h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: .5rem; }
-  .card p { font-family: Arial, sans-serif; font-size: .88rem; color: var(--mid); margin-bottom: 1.4rem; }
-  .card-link { display: inline-block; background: var(--navy); color: var(--white); font-family: Arial, sans-serif; font-weight: bold; font-size: .85rem; padding: .8rem 1.6rem; text-decoration: none; }
-  .card-link:hover { background: var(--sky); }
+/* SECTIONS */
+section{padding:4.5rem 2rem;}
+.inner{max-width:960px;margin:0 auto;}
+.section-label{font-family:Arial,sans-serif;font-size:.76rem;font-weight:bold;color:var(--sky);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+h2{font-size:clamp(1.5rem,3vw,2.2rem);color:var(--navy);line-height:1.2;margin-bottom:1rem;}
+.section-intro{color:var(--mid);max-width:65ch;margin-bottom:2.5rem;font-size:1rem;}
 
-  /* ABOUT STRIP */
-  .about { background: var(--light); text-align: center; }
-  .about p { color: var(--mid); max-width: 62ch; margin: 0 auto; font-size: .98rem; }
+/* PROGRAMS GRID */
+.programs-bg{background:var(--light);}
+.programs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;}
+.program-card{background:var(--white);padding:1.6rem 1.4rem;border-top:3px solid var(--gold);transition:transform .15s,box-shadow .15s;}
+.program-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(13,34,64,.1);}
+.program-card h3{font-family:Arial,sans-serif;font-size:1rem;font-weight:bold;color:var(--navy);margin-bottom:.4rem;}
+.program-card p{font-size:.88rem;color:var(--mid);line-height:1.55;}
+.program-salary{font-family:Arial,sans-serif;font-weight:bold;color:var(--gold);font-size:.9rem;margin-top:.7rem;display:block;}
+.program-tag{font-family:Arial,sans-serif;font-size:.72rem;color:var(--sky);font-weight:bold;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;display:block;}
 
-  /* CONTACT */
-  .contact { background: var(--navy); padding: 3.5rem 2rem; text-align: center; }
-  .contact h2 { color: var(--white); }
-  .contact-row { display: flex; justify-content: center; gap: 2.4rem; flex-wrap: wrap; margin-top: 1.6rem; font-family: Arial, sans-serif; }
-  .contact-item a { color: var(--gold); text-decoration: none; font-size: .92rem; }
-  .contact-item a:hover { text-decoration: underline; }
-  .contact-label { font-size: .72rem; color: rgba(255,255,255,.45); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .25rem; }
+/* BOOKS */
+.books-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;}
+.book-card{background:var(--navy);padding:2rem;display:flex;flex-direction:column;gap:1rem;}
+.book-card h3{font-family:Arial,sans-serif;font-size:1.1rem;font-weight:bold;color:var(--gold);}
+.book-card p{font-family:Arial,sans-serif;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.55;}
+.book-meta{font-family:Arial,sans-serif;font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.6;}
+.book-cta{background:var(--gold);color:var(--navy);font-family:Arial,sans-serif;font-weight:bold;font-size:.9rem;padding:.7rem 1.4rem;text-decoration:none;text-align:center;margin-top:auto;}
+.book-cta:hover{background:#a87e1a;color:var(--white);}
+.book-badge{font-family:Arial,sans-serif;font-size:.72rem;font-weight:bold;background:var(--sky);color:var(--white);padding:.2rem .6rem;display:inline-block;margin-bottom:.3rem;}
 
-  footer { background: #060f1c; padding: 1.8rem; text-align: center; font-family: Arial, sans-serif; font-size: .78rem; color: rgba(255,255,255,.35); }
-  footer .gold-line { color: var(--gold); margin-bottom: .4rem; font-size: .85rem; }
+/* FLIGHT PLAN 2030 */
+.fp2030-bg{background:var(--navy);}
+.fp2030-bg h2{color:var(--white);}
+.fp2030-bg .section-label{color:var(--gold);}
+.fp2030-bg .section-intro{color:rgba(255,255,255,.65);}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+.pillar{border-top:3px solid var(--gold);padding-top:1.2rem;}
+.pillar h3{font-family:Arial,sans-serif;font-size:.95rem;font-weight:bold;color:var(--gold);margin-bottom:.5rem;}
+.pillar p{font-family:Arial,sans-serif;font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.55;}
+.fp-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem;border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;}
+.fp-stat .num{font-family:Arial,sans-serif;font-size:2rem;font-weight:bold;color:var(--gold);}
+.fp-stat .lbl{font-family:Arial,sans-serif;font-size:.8rem;color:rgba(255,255,255,.55);margin-top:.2rem;}
 
-  @media (max-width: 480px) {
-    nav { padding: 0 1rem; }
-    .hero { padding: 3rem 1.2rem 2.5rem; }
-    section { padding: 2.8rem 1.2rem; }
-    .contact-row { gap: 1.4rem; }
-  }
+/* TUSKEGEE */
+.tuskegee-bg{background:var(--light);}
+.tuskegee-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.tuskegee-quote{font-size:1.15rem;color:var(--navy);font-style:italic;line-height:1.7;border-left:4px solid var(--gold);padding-left:1.4rem;margin-bottom:1.5rem;}
+.tuskegee-body{font-size:.95rem;color:var(--mid);line-height:1.7;}
+.mentors{margin-top:1.5rem;}
+.mentor{font-family:Arial,sans-serif;font-size:.85rem;color:var(--navy);font-weight:bold;margin-bottom:.3rem;}
+.mentor span{font-weight:normal;color:var(--mid);}
+.aircraft-card{background:var(--navy);padding:2rem;}
+.aircraft-card h3{font-family:Arial,sans-serif;font-size:1rem;font-weight:bold;color:var(--gold);margin-bottom:.8rem;}
+.aircraft-card p{font-family:Arial,sans-serif;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:.8rem;}
+.aircraft-stat{font-family:Arial,sans-serif;font-size:1.5rem;font-weight:bold;color:var(--white);}
+.aircraft-stat span{font-size:.8rem;font-weight:normal;color:rgba(255,255,255,.5);display:block;}
 
-  /* --- REMEMBRANCE RIBBON (seasonal — safe to remove, see markup below) --- */
-  .remember-ribbon { background: #060f1c; border-bottom: 1px solid rgba(201,162,39,.28);
-    padding: .7rem 2rem; text-align: center; font-family: Arial, sans-serif; font-size: .82rem;
-    color: rgba(255,255,255,.72); display: flex; gap: .6rem; justify-content: center;
-    align-items: center; flex-wrap: wrap; }
-  .remember-ribbon .sep { color: rgba(255,255,255,.25); }
-  .remember-ribbon a { color: var(--gold); text-decoration: none; font-weight: bold; }
-  .remember-ribbon a:hover { text-decoration: underline; }
-  /* --- END REMEMBRANCE RIBBON --- */
+/* ABOUT STRIP */
+.about-strip{background:var(--sky);padding:3rem 2rem;}
+.about-inner{max-width:760px;margin:0 auto;text-align:center;}
+.about-strip h2{color:var(--white);}
+.about-strip p{font-family:Arial,sans-serif;font-size:.92rem;color:rgba(255,255,255,.8);margin:1rem 0 1.5rem;line-height:1.65;}
+
+/* RESOURCE STRIP */
+.resource-strip{background:var(--light);padding:2rem 2rem;}
+.resource-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.resource-text h3{font-family:Arial,sans-serif;font-size:1rem;font-weight:bold;color:var(--navy);margin-bottom:.3rem;}
+.resource-text p{font-family:Arial,sans-serif;font-size:.85rem;color:var(--mid);}
+
+/* SUFS STRIP */
+.sufs-strip{background:var(--green);padding:1.2rem 2rem;text-align:center;}
+.sufs-strip p{font-family:Arial,sans-serif;font-size:.88rem;color:var(--white);}
+.sufs-strip strong{color:var(--gold);}
+.sufs-strip a{color:var(--gold);}
+
+/* RED TAIL DISPATCH */
+.dispatch-bg{background:var(--navy);}
+.dispatch-inner{max-width:600px;margin:0 auto;text-align:center;}
+.dispatch-bg h2{color:var(--white);}
+.dispatch-bg p{font-family:Arial,sans-serif;font-size:.9rem;color:rgba(255,255,255,.65);margin:1rem 0 1.5rem;line-height:1.65;}
+.dispatch-form{display:flex;gap:.5rem;max-width:440px;margin:0 auto;}
+.dispatch-form input{flex:1;padding:.8rem 1rem;font-family:Arial,sans-serif;font-size:.9rem;border:none;background:rgba(255,255,255,.1);color:var(--white);border:1px solid rgba(255,255,255,.2);}
+.dispatch-form input::placeholder{color:rgba(255,255,255,.4);}
+.dispatch-form button{background:var(--gold);color:var(--navy);font-family:Arial,sans-serif;font-weight:bold;font-size:.9rem;padding:.8rem 1.4rem;border:none;cursor:pointer;}
+.dispatch-note{font-family:Arial,sans-serif;font-size:.75rem;color:rgba(255,255,255,.4);margin-top:.8rem;}
+
+/* NETWORK */
+.network-bg{background:var(--light);}
+.network-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#ddd;border:1px solid #ddd;margin-top:2rem;}
+.network-card{background:var(--white);padding:1.4rem 1.2rem;}
+.network-card h3{font-family:Arial,sans-serif;font-size:.9rem;font-weight:bold;color:var(--navy);margin-bottom:.4rem;}
+.network-card p{font-family:Arial,sans-serif;font-size:.82rem;color:var(--mid);line-height:1.5;}
+.network-card a{color:var(--sky);font-size:.8rem;font-family:Arial,sans-serif;text-decoration:none;display:block;margin-top:.6rem;}
+.network-label{font-family:Arial,sans-serif;font-size:.7rem;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:var(--sky);margin-bottom:.3rem;}
+
+/* FOOTER */
+footer{background:var(--navy);padding:3rem 2rem 2rem;}
+.footer-inner{max-width:960px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;margin-bottom:2rem;}
+.footer-brand p{font-family:Arial,sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.65;margin-top:.6rem;}
+.footer-col h4{font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;color:var(--gold);margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.06em;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:.4rem;}
+.footer-col ul a{font-family:Arial,sans-serif;font-size:.82rem;color:rgba(255,255,255,.55);text-decoration:none;}
+.footer-col ul a:hover{color:var(--gold);}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom:1.5rem;}
+.footer-bottom{font-family:Arial,sans-serif;font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.7;}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-right{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+  .stat-row{grid-template-columns:1fr 1fr;}
+  .books-grid{grid-template-columns:1fr;}
+  .pillars{grid-template-columns:1fr;}
+  .fp-stat-row{grid-template-columns:1fr 1fr;}
+  .tuskegee-inner{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  .saturday-inner{flex-direction:column;}
+  section{padding:3rem 1.2rem;}
+}
 </style>
 </head>
 <body>
 
 <nav>
   <a class="nav-brand" href="/">Mission Aviation Academy</a>
+  <ul class="nav-links">
+    <li><a href="/saturday">Saturday</a></li>
+    <li><a href="/programs">Programs</a></li>
+    <li><a href="/scholarships">Scholarships</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/donate">Donate</a></li>
+    <li><a href="/saturday#rsvp" class="nav-cta">Enroll Now</a></li>
+  </ul>
 </nav>
 
-<!-- ============================================================
-     REMEMBRANCE RIBBON — seasonal, for the September 11 period.
-     To take it down: delete this block (through END RIBBON below)
-     and the .remember-ribbon CSS rules in the <style> above.
-     The /remember page itself is permanent and stays either way.
-     ============================================================ -->
-<div class="remember-ribbon">
-  <span>September 11 &nbsp;·&nbsp; Twenty-five years &nbsp;·&nbsp; We remember.</span>
-  <span class="sep">|</span>
-  <a href="/remember">Read our founder's message →</a>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <span class="hero-eyebrow">Tampa North Aero Park (X39) · Lutz / Wesley Chapel, FL · Flight Plan 2030</span>
+      <h1>It's ALL About<br><strong>The Kids.</strong></h1>
+      <p class="hero-sub">
+        Mission Aviation Academy prepares underserved youth, veterans, and families
+        for high-income careers in aviation, aerospace, STEM, and AI —
+        through hands-on training, FAA credentials, and scholarship funding.
+      </p>
+      <div class="hero-ctas">
+        <a href="/saturday#rsvp" class="btn btn-gold">RSVP Saturday Open House</a>
+        <a href="/programs" class="btn btn-ghost">Explore Programs</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-num">725</div>
+          <div class="stat-label">FAA credentials issued since 2020</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">1,380+</div>
+          <div class="stat-label">Students flown on actual aircraft</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-num">300K+</div>
+          <div class="stat-label">Individuals impacted across 4 countries</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">$0–$10K+</div>
+          <div class="stat-label">Typical family cost via SUFS scholarship</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">24</div>
+        <div class="stat-label">Live SUFS-approved course offerings today · 8 career lanes · 1,999+ drone flights logged</div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- ===================== END RIBBON ===================== -->
 
-<section class="hero">
-  <div class="hero-tag">Tampa Bay, Florida · Flight Plan 2030</div>
-  <h1>The sky isn't the limit.<br><span>It's your launchpad.</span></h1>
-  <p class="hero-sub">Mission Aviation Academy prepares underserved youth and veterans for high-income aviation careers — pilot, mechanic, drone operator, air traffic control, and beyond.</p>
+<!-- SATURDAY STRIP -->
+<div class="saturday-strip">
+  <div class="saturday-inner">
+    <p><strong>Every Saturday · 8am–6pm · X39 Lutz / Wesley Chapel</strong> — Drone certification, AI app building, PPL simulator, free open house.</p>
+    <div class="strip-ctas">
+      <a href="/saturday#rsvp" class="strip-btn strip-btn-primary">RSVP Free Open House</a>
+      <a href="/saturday#classes" class="strip-btn strip-btn-ghost">Enroll — $99</a>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION STRIPE -->
+<div class="mission-stripe">
+  <blockquote>
+    "To impact ONE MILLION LIVES by 2030 through aviation, STEM education, and entrepreneurship —
+    honoring the legacy of the Tuskegee Airmen."
+    <cite>— LCDR Ricardo "Tattoo" Foster, USN (Ret.) · Founder &amp; CEO, Mission Aviation Academy</cite>
+  </blockquote>
+</div>
+
+<!-- SUFS STRIP -->
+<div class="sufs-strip">
+  <p>
+    ✓ <strong>Step Up For Students Approved Provider</strong> ·
+    Accepting PEP &amp; FES-UA Scholarships ·
+    Direct Pay — No Out-of-Pocket Cost for Eligible Families ·
+    <a href="/scholarships">Check eligibility →</a>
+  </p>
+</div>
+
+<!-- PROGRAMS -->
+<section class="programs-bg">
+  <div class="inner">
+    <p class="section-label">7 Career Families</p>
+    <h2>Aviation is bigger than the cockpit.</h2>
+    <p class="section-intro">
+      Every path below leads to a real, high-income career.
+      None of them require a four-year degree. All of them are short of people right now.
+    </p>
+    <div class="programs-grid">
+      <div class="program-card">
+        <span class="program-tag">Fastest entry</span>
+        <h3>Drone / UAS Operations</h3>
+        <p>FAA Part 107 Remote Pilot. Test prep from age 14. Certificate from 16. Seven industries hiring now.</p>
+        <span class="program-salary">Up to $215K · Defense sector roles</span>
+      </div>
+      <div class="program-card">
+        <span class="program-tag">Flight Operations</span>
+        <h3>Pilot Pathway</h3>
+        <p>Student Pilot through ATP. Ground school, simulator, and real flight time at X39. Every certificate on the ladder.</p>
+        <span class="program-salary">$226,600 median · Airline Captain (BLS 2024)</span>
+      </div>
+      <div class="program-card">
+        <span class="program-tag">No degree required</span>
+        <h3>Aviation Maintenance</h3>
+        <p>A&amp;P certification, LSRM, and the 30-month OJT clock. National mechanic shortage means hiring is immediate.</p>
+        <span class="program-salary">$78,680 median · #1 no-degree job (CNBC 2026)</span>
+      </div>
+      <div class="program-card">
+        <span class="program-tag">Highest no-degree median</span>
+        <h3>Air Traffic Control</h3>
+        <p>ATC, FAA safety inspection, flight service, and airport operations. Age-capped entry — start early.</p>
+        <span class="program-salary">$144,580 median · $228,000 supervisors (BLS 2024)</span>
+      </div>
+      <div class="program-card">
+        <span class="program-tag">AI · Tech · Space</span>
+        <h3>AI Innovation &amp; App Building</h3>
+        <p>Build real apps with Claude Code. GitHub, Vercel, prototype to launch. Four parts — earn a certificate.</p>
+        <span class="program-salary">Starting $99 · Beginner through Advanced</span>
+      </div>
+      <div class="program-card">
+        <span class="program-tag">Engineering track</span>
+        <h3>Aerospace &amp; Defense</h3>
+        <p>Engineering, intelligence, cyber, program management. CubeSats, rocketry, Space Guardian Academy.</p>
+        <span class="program-salary">$134,830 median · Aerospace Engineer (BLS 2024)</span>
+      </div>
+      <div class="program-card">
+        <span class="program-tag">Leadership track</span>
+        <h3>Aviation Management</h3>
+        <p>Dispatch, airport ops, logistics, curriculum development, insurance. The careers that run the airfield.</p>
+        <span class="program-salary">Growing demand · Entry through executive</span>
+      </div>
+    </div>
+    <div style="margin-top:2rem;text-align:center;">
+      <a href="/programs" class="btn btn-gold">View All Programs &amp; Pathways</a>
+    </div>
+  </div>
 </section>
 
-<div class="mission-stripe">
-  "It's ALL About the Kids." — LCDR Ricardo "Tattoo" Foster, USN (Ret.), Founder & CEO
-</div>
-
-<!-- BOOK CARDS -->
+<!-- BOOKS -->
 <section>
   <div class="inner">
-    <div class="section-label">From Our Authors</div>
-    <h2>Start here</h2>
-    <div class="cards">
-      <div class="card">
+    <p class="section-label">From the Academy</p>
+    <h2>Two books. One mission.</h2>
+    <p class="section-intro">
+      Written by the people who built this program —
+      for the students who are about to take flight.
+    </p>
+    <div class="books-grid">
+      <div class="book-card">
+        <span class="book-badge">Pre-order Oct 2 · Launches Nov 2</span>
         <h3>Your Aviation Blueprint</h3>
-        <p>How to launch a $1M aviation career without a college degree. Eight career families, every certificate, every cost.</p>
-        <a class="card-link" href="/yab">Get the Career Guide →</a>
+        <p>How to launch a $1M aviation career without a college degree.
+        By LCDR Ricardo "Tattoo" Foster, USN (Ret.) &amp; MAJ Bruce "BOMBER" Blashka, USMC (Ret.).
+        Foreword by Jamail Larkins, AviationStart.org.</p>
+        <div class="book-meta">
+          Ages 16–25+ · Hardcover / Softcover / Ebook<br>
+          ISBNs: pb 979-8-9967339-9-6 · hc 979-8-9967339-8-9
+        </div>
+        <a href="/yab" class="book-cta">Pre-order &amp; Career Guide →</a>
       </div>
-      <div class="card">
-        <h3>Ricky the Explorer</h3>
-        <p>Takes a Magic Flight — a picture book for ages 6–10 carrying the Tuskegee legacy into a story kids can hold onto.</p>
-        <a class="card-link" href="/ricky">Learn More →</a>
+      <div class="book-card">
+        <span class="book-badge">Pre-order Oct 26 · Release Nov 16</span>
+        <h3>Ricky the Explorer: Takes a Magic Flight</h3>
+        <p>A Tuskegee Airmen tribute story for young aviators.
+        Book 1 in the Ricky the Explorer series.
+        By Ricardo Foster. For the student who is just beginning to look up.</p>
+        <div class="book-meta">
+          Ages 6–10 · Paperback · ISBN 979-8-9967339-0-3<br>
+          Series: Book 2 = Tuskegee Airmen · Book 3 = Bessie Coleman
+        </div>
+        <a href="/ricky" class="book-cta">Learn More &amp; Pre-order →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about">
+<!-- FREE RESOURCE STRIP -->
+<div class="resource-strip">
+  <div class="resource-inner">
+    <div class="resource-text">
+      <h3>Free: Aviation &amp; Aerospace Career Pathway Guide</h3>
+      <p>7 career families · BLS-verified salaries · Every credential · Every cost · Updated Fall 2026</p>
+    </div>
+    <a href="/yab" class="btn btn-gold" style="white-space:nowrap;">Get the Free Guide</a>
+  </div>
+</div>
+
+<!-- FLIGHT PLAN 2030 -->
+<section class="fp2030-bg">
   <div class="inner">
-    <div class="section-label">Our Story</div>
-    <p>Mission Aviation Academy is a 501(c)(3) nonprofit DBA of Infinity Aero Club Tampa Bay, Inc., operating at Tampa North Aero Park (X39) in Wesley Chapel, Florida. Built on the legacy of the Tuskegee Airmen, MAA expands access to aviation, STEM, and entrepreneurship for underserved youth and veterans — with no degree, cost, or circumstance standing in the way.</p>
+    <p class="section-label">Flight Plan 2030</p>
+    <h2>One million lives. By 2030.</h2>
+    <p class="section-intro">
+      Everything at MAA — every Saturday class, every scholarship family, every book —
+      feeds one campaign: 1,000,000 youth impacted and $10,000,000 raised by 2030.
+    </p>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Outreach</h3>
+        <p>Hidden Treasures Tour, Red Tail Roost, books, discovery flights, school visits, museum partnerships across 4 countries.</p>
+      </div>
+      <div class="pillar">
+        <h3>Workforce Development</h3>
+        <p>Drone certification, Part 107, flight training, A&amp;P pathway, entrepreneurship, AI innovation, career placement.</p>
+      </div>
+      <div class="pillar">
+        <h3>Organizational Development</h3>
+        <p>Board, funding, corporate partnerships, grants, operations, HR, marketing — building the capacity to serve 1M youth.</p>
+      </div>
+    </div>
+    <div class="fp-stat-row">
+      <div class="fp-stat">
+        <div class="num">$790K+</div>
+        <div class="lbl">Raised since 2020</div>
+      </div>
+      <div class="fp-stat">
+        <div class="num">4</div>
+        <div class="lbl">Countries reached</div>
+      </div>
+      <div class="fp-stat">
+        <div class="num">2030</div>
+        <div class="lbl">Target year · 1M lives</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Get in touch</h2>
-  <div class="contact-row">
-    <div class="contact-item">
-      <div class="contact-label">Phone</div>
-      <a href="tel:8335973836">(833) FLY-STEM</a>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">Email</div>
-      <a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">Location</div>
-      <a href="https://maps.google.com/?q=Tampa+North+Aero+Park+X39" target="_blank">Tampa North Aero Park (X39), Wesley Chapel, FL</a>
+<!-- TUSKEGEE / ABOUT -->
+<section class="tuskegee-bg">
+  <div class="inner">
+    <div class="tuskegee-inner">
+      <div>
+        <p class="section-label">The Legacy</p>
+        <h2>Before our story, theirs.</h2>
+        <blockquote class="tuskegee-quote">
+          "The 332nd Fighter Group proved that Black pilots could fly, fight,
+          and lead with the same skill and courage as anyone else.
+          Their baton is in our hands now."
+        </blockquote>
+        <p class="tuskegee-body">
+          Ricardo Foster was personally mentored by Tuskegee Airmen.
+          That mentorship shaped a leadership philosophy built on six traits:
+          Courage, Perseverance, Excellence, Teamwork, Discipline, and Service.
+          MAA carries that same standard into every classroom, every Saturday, every flight.
+        </p>
+        <div class="mentors" style="margin-top:1.5rem;">
+          <div class="mentor">Lt. Col. George Hardy <span>· Class 44-H-SE · 332nd Fighter Group · Mentor to Ricardo Foster</span></div>
+          <div class="mentor">Brig. Gen. Charles McGee <span>· Tuskegee Airman · Mentor</span></div>
+          <div class="mentor">Flight Officer Daniel Keel <span>· Class 45-G-TE · Triple-rated Airman · 103 years young</span></div>
+          <div class="mentor">Rev. Reginald Davis <span>· Naval Aviator · Student of Chief Alfred Anderson</span></div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="/about" class="btn btn-gold">Our Story &amp; Mission</a>
+        </div>
+      </div>
+      <div>
+        <div class="aircraft-card">
+          <h3>Red Tail Roost — The Aircraft</h3>
+          <p>A 1960 Cessna 172B Skyhawk painted in Tuskegee Airmen tribute colors.
+          Operated at Tampa North Aero Park (X39). Used for discovery flights and the Hidden Treasures Tour.</p>
+          <p>The same aircraft that has carried more than 1,380 students on their first flight.</p>
+          <div class="aircraft-stat">
+            1,380+
+            <span>students on their first flight</span>
+          </div>
+          <div style="margin-top:1.5rem;">
+            <a href="https://flightplan2030.org" class="btn btn-gold" style="font-size:.85rem;padding:.6rem 1.2rem;">
+              Red Tail Roost &amp; Flight Plan 2030 →
+            </a>
+          </div>
+        </div>
+        <div style="margin-top:1rem;padding:1.2rem;background:var(--white);border-left:4px solid var(--gold);">
+          <p style="font-family:Arial,sans-serif;font-size:.82rem;color:var(--mid);line-height:1.6;">
+            <strong style="color:var(--navy);">Two Named Scholarships</strong><br>
+            Tuskegee Airman "1st Top Gun Trophy" Scholarship ·
+            Brave Bess "Never Stop Learning" Scholarship
+            <br><a href="/scholarships" style="color:var(--sky);">Apply or donate →</a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- RED TAIL DISPATCH -->
+<section class="dispatch-bg">
+  <div class="inner">
+    <div class="dispatch-inner">
+      <p class="section-label" style="color:var(--gold);">Red Tail Dispatch</p>
+      <h2 style="color:var(--white);">The Briefing — Ricardo's newsletter.</h2>
+      <p>Specific students, specific partners, specific flights — never vague nonprofit language.
+      First-person. Every week. The real story of what's happening at X39 and beyond.</p>
+      <form class="dispatch-form" onsubmit="event.preventDefault();window.location='mailto:admissions@missionaviationacademy.org?subject=Subscribe Red Tail Dispatch&body=Please subscribe me: '+document.querySelector('.dispatch-email').value;">
+        <input class="dispatch-email" type="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="dispatch-note">Published by Hidden Treasures Network (HTN) · htn.org · No spam. Real content.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUR NETWORK -->
+<section class="network-bg">
+  <div class="inner">
+    <p class="section-label">The Ecosystem</p>
+    <h2>One legal entity. Four public brands.</h2>
+    <p class="section-intro">Every site serves a different audience. All of them advance one mission.</p>
+    <div class="network-grid">
+      <div class="network-card">
+        <div class="network-label">Legal Entity</div>
+        <h3>Infinity Aero Club Tampa Bay, Inc.</h3>
+        <p>The 501(c)(3) parent. Flying club, legal infrastructure, all financial and grant operations. EIN 85-1110607.</p>
+        <a href="https://infinityaeroclub.org">infinityaeroclub.org →</a>
+      </div>
+      <div class="network-card">
+        <div class="network-label">You Are Here</div>
+        <h3>Mission Aviation Academy</h3>
+        <p>Academic division DBA of iACT. Programs, enrollment, catalog, scholarships. Not a certificated flight school.</p>
+        <a href="/">missionaviationacademy.org</a>
+      </div>
+      <div class="network-card">
+        <div class="network-label">Community Platform</div>
+        <h3>Hidden Treasures Network</h3>
+        <p>Partner schools, JROTC units, housing authorities. Publishes Red Tail Dispatch. Global reach.</p>
+        <a href="https://htn.org">htn.org →</a>
+      </div>
+      <div class="network-card">
+        <div class="network-label">The Campaign</div>
+        <h3>Flight Plan 2030</h3>
+        <p>The aircraft, the tour, the Tuskegee tribute, the one-million-lives campaign. Donors and sponsors.</p>
+        <a href="https://flightplan2030.org">flightplan2030.org →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="gold-line">Mission Aviation Academy — Flight Plan 2030</div>
-  <div style="margin-bottom:.6rem;"><a href="/remember" style="color:rgba(201,162,39,.75);text-decoration:none;">We Remember — September 11</a></div>
-  A nonprofit program of Infinity Aero Club Tampa Bay, Inc. · 501(c)(3) ·
-  Tampa North Aero Park (X39), Wesley Chapel, Florida<br>
-  © 2026 Infinity Aero Club Tampa Bay, Inc. All rights reserved.
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="color:var(--gold);font-family:Arial,sans-serif;font-weight:bold;font-size:1rem;margin-bottom:.5rem;">Mission Aviation Academy</div>
+        <p>
+          Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc.,
+          a Florida 501(c)(3) nonprofit organization. iACT/MAA is not a certificated flight school
+          and does not hold an FAA Part 61 or Part 141 certificate.
+        </p>
+        <p style="margin-top:.8rem;">
+          Tampa North Aero Park (X39) · 4639 Birdsong Blvd, Lutz FL 33559<br>
+          813-445-8889 · (833) FLY-STEM<br>
+          <a href="mailto:admissions@missionaviationacademy.org" style="color:var(--gold);">admissions@missionaviationacademy.org</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/saturday">Saturday Open House</a></li>
+          <li><a href="/programs">All 7 Career Families</a></li>
+          <li><a href="/programs#drone">Drone / Part 107</a></li>
+          <li><a href="/programs#ai">AI Innovation</a></li>
+          <li><a href="/programs#pilot">Pilot Pathway</a></li>
+          <li><a href="/programs#jrotc">JROTC / ROTC</a></li>
+          <li><a href="/licensing">Curriculum Licensing</a></li>
+          <li><a href="/catalog">Course Catalog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="/scholarships">SUFS Scholarships</a></li>
+          <li><a href="/scholarships#topgun">Top Gun Scholarship</a></li>
+          <li><a href="/scholarships#bravebess">Brave Bess Scholarship</a></li>
+          <li><a href="/enroll">Enroll</a></li>
+          <li><a href="/donate">Donate</a></li>
+          <li><a href="/about">About MAA</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/yab">Free Career Guide</a></li>
+          <li><a href="/remember">We Remember — Sept 11</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <p>© 2026 Infinity Aero Club Tampa Bay, Inc. (iACT) DBA Mission Aviation Academy · EIN 85-1110607 · Florida 501(c)(3) · SAM.gov Active · SUFS Approved Provider</p>
+      <p style="margin-top:.4rem;">Salaries sourced from BLS May 2024 Occupational Employment Statistics. Salary figures are national medians and do not guarantee individual earnings.</p>
+    </div>
+  </div>
 </footer>
 
 </body>
