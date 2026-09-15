@@ -176,6 +176,7 @@ h2{font-size:clamp(1.5rem,3vw,2.2rem);color:var(--navy);line-height:1.2;margin-b
 .aircraft-card p{font-family:Arial,sans-serif;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:.8rem;}
 .aircraft-stat{font-family:Arial,sans-serif;font-size:1.5rem;font-weight:bold;color:var(--white);}
 .aircraft-stat span{font-size:.8rem;font-weight:normal;color:rgba(255,255,255,.5);display:block;}
+.btn-grid-2x2{max-width:100%;}
 
 /* ABOUT STRIP */
 .about-strip{background:var(--sky);padding:3rem 2rem;}
@@ -227,6 +228,8 @@ footer{background:var(--navy);padding:3rem 2rem 2rem;}
 .footer-col ul a:hover{color:var(--gold);}
 .footer-divider{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom:1.5rem;}
 .footer-bottom{font-family:Arial,sans-serif;font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.7;}
+footer a{color:rgba(255,255,255,.55);text-decoration:none;}
+footer a:hover{color:var(--gold);}
 
 /* HAMBURGER */
 .maa-nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;}
@@ -251,6 +254,9 @@ footer{background:var(--navy);padding:3rem 2rem 2rem;}
   .footer-top{grid-template-columns:1fr;}
   .saturday-inner{flex-direction:column;}
   section{padding:3rem 1.2rem;}
+  body{overflow-x:hidden;}
+  .dispatch-form{flex-direction:column;}
+  .dispatch-form input,.dispatch-form button{width:100%;}
 }
 </style>
 </head>
@@ -550,9 +556,9 @@ footer{background:var(--navy);padding:3rem 2rem 2rem;}
             50+
             <span>aircraft · 100+ pilots &amp; CFIs · 1,380+ first flights</span>
           </div>
-          <div style="margin-top:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+          <div class="btn-grid-2x2" style="margin-top:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
             <a href="mailto:admissions@missionaviationacademy.org?subject=Discovery Flight Request" style="background:var(--gold);color:var(--navy);font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;padding:.55rem .8rem;text-decoration:none;text-align:center;display:block;">✈ Discovery Flight</a>
-            <a href="mailto:admissions@missionaviationacademy.org?subject=School or Group Visit Request" style="background:var(--gold);color:var(--navy);font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;padding:.55rem .8rem;text-decoration:none;text-align:center;display:block;">🏫 Group Visit</a>
+            <a href="mailto:admissions@missionaviationacademy.org?subject=School or Group Visit Request" style="background:var(--gold);color:var(--navy);font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;padding:.55rem .8rem;text-decoration:none;text-align:center;display:block;">🏫<br>Group Visit</a>
             <a href="mailto:ricardo@missionaviationacademy.org?subject=Speaking Engagement Request" style="background:var(--gold);color:var(--navy);font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;padding:.55rem .8rem;text-decoration:none;text-align:center;display:block;">🎤 Book Ricardo</a>
             <a href="mailto:admissions@missionaviationacademy.org?subject=Book Order for School or Event" style="background:var(--gold);color:var(--navy);font-family:Arial,sans-serif;font-size:.75rem;font-weight:bold;padding:.55rem .8rem;text-decoration:none;text-align:center;display:block;">📚 Order Books</a>
           </div>
