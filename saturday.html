@@ -581,10 +581,19 @@ footer p {
 }
 footer a { color: var(--gold); text-decoration: none; }
 
+/* HAMBURGER */
+.maa-nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;}
+.maa-nav-toggle span{display:block;height:2px;background:var(--gold);border-radius:2px;}
+
 /* ── MOBILE ── */
 @media (max-width: 640px) {
-  nav { padding: 0 1rem; }
+  nav { padding: 0 1rem; position: relative; }
+  .maa-nav-toggle { display: flex; }
   .nav-links { display: none; }
+  .nav-links.nav-open{display:flex;flex-direction:column;position:absolute;top:58px;left:0;right:0;background:#0D2240;padding:1.2rem 2rem 1.8rem;gap:0;box-shadow:0 6px 16px rgba(0,0,0,.4);z-index:99;border-top:1px solid rgba(255,255,255,.1);}
+  .nav-links.nav-open li{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.07);list-style:none;}
+  .nav-links.nav-open li:last-child{border-bottom:none;padding-top:.9rem;}
+  .nav-links.nav-open a{font-size:1rem;color:rgba(255,255,255,.85);}
   section { padding: 3rem 1.2rem; }
   .time-block { grid-template-columns: 80px 1fr; }
   .time-block.parallel { grid-template-columns: 80px 1fr; }
@@ -607,6 +616,7 @@ footer a { color: var(--gold); text-decoration: none; }
     <li><a href="/contact">Contact</a></li>
     <li><a href="#rsvp" class="nav-cta">RSVP Now</a></li>
   </ul>
+  <button class="maa-nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ZOOM LEAD-IN STRIP -->
@@ -1108,5 +1118,6 @@ footer a { color: var(--gold); text-decoration: none; }
   </p>
 </footer>
 
+<script src="maa-nav.js"></script>
 </body>
 </html>
