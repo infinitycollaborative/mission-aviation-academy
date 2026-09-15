@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Keep transactional/utility pages out of index
+Disallow: /thanks-guide
+Disallow: /thanks-preorder
+Disallow: /remember
+Disallow: /catalog
+
 Sitemap: https://missionaviationacademy.org/sitemap.xml
