@@ -229,27 +229,9 @@ footer a{color:var(--gold);text-decoration:none}
       <input type="hidden" name="_subject" value="New Application — Take Flight with Us! TPA Career Connection Event">
       <input type="hidden" name="_replyto" id="fs_email">
       <input type="text" name="_gotcha" style="display:none">
-      <input type="hidden" name="age18" id="fs_age18">
-      <input type="hidden" name="available_all_days" id="fs_avail">
-      <input type="hidden" name="has_photo_id" id="fs_id">
       <input type="hidden" name="full_name" id="fs_name">
-      <input type="hidden" name="phone" id="fs_phone">
       <input type="hidden" name="email" id="fs_email2">
-      <input type="hidden" name="city_zip" id="fs_zip">
-      <input type="hidden" name="current_status" id="fs_status">
-      <input type="hidden" name="education" id="fs_edu">
-      <input type="hidden" name="veteran" id="fs_vet">
-      <input type="hidden" name="interests" id="fs_interests">
-      <input type="hidden" name="partner_orgs" id="fs_partners">
-      <input type="hidden" name="airport_career_area" id="fs_dept">
-      <input type="hidden" name="goals_for_week" id="fs_goals">
-      <input type="hidden" name="has_resume" id="fs_resume">
-      <input type="hidden" name="needs_transport" id="fs_transport">
-      <input type="hidden" name="pickup_location" id="fs_pickup">
-      <input type="hidden" name="dietary_restrictions" id="fs_diet">
-      <input type="hidden" name="accessibility_needs" id="fs_access">
-      <input type="hidden" name="additional_notes" id="fs_notes">
-      <input type="hidden" name="submitted_at" id="fs_time">
+      <input type="hidden" name="message" id="fs_message">
     </form>
 
     <!-- STEP 1 -->
@@ -560,29 +542,52 @@ async function submit(){
   btn.disabled=true;btn.textContent='Submitting…';
 
   // Populate hidden Formspree fields
-  document.getElementById('fs_age18').value=getVal('age18');
-  document.getElementById('fs_avail').value=getVal('avail');
-  document.getElementById('fs_id').value=getVal('hasId');
   const email=document.getElementById('inp-email').value.trim();
+  const name=document.getElementById('inp-name').value.trim();
   document.getElementById('fs_email').value=email;
   document.getElementById('fs_email2').value=email;
-  document.getElementById('fs_name').value=document.getElementById('inp-name').value.trim();
-  document.getElementById('fs_phone').value=document.getElementById('inp-phone').value.trim();
-  document.getElementById('fs_zip').value=document.getElementById('inp-zip').value.trim();
-  document.getElementById('fs_status').value=getVal('status');
-  document.getElementById('fs_edu').value=getVal('edu');
-  document.getElementById('fs_vet').value=getVal('veteran');
-  document.getElementById('fs_interests').value=getChecked('interests[]');
-  document.getElementById('fs_partners').value=getChecked('partners[]');
-  document.getElementById('fs_dept').value=getVal('dept');
-  document.getElementById('fs_goals').value=document.getElementById('inp-goals').value.trim();
-  document.getElementById('fs_resume').value=getVal('resume');
-  document.getElementById('fs_transport').value=getVal('transport');
-  document.getElementById('fs_pickup').value=document.getElementById('inp-pickup').value.trim();
-  document.getElementById('fs_diet').value=document.getElementById('inp-diet').value.trim();
-  document.getElementById('fs_access').value=document.getElementById('inp-access').value.trim();
-  document.getElementById('fs_notes').value=document.getElementById('inp-notes').value.trim();
-  document.getElementById('fs_time').value=new Date().toLocaleString('en-US',{timeZone:'America/New_York'});
+  document.getElementById('fs_name').value=name;
+  const submittedAt=new Date().toLocaleString('en-US',{timeZone:'America/New_York'});
+  const msg=[
+    'TAKE FLIGHT WITH US! — TPA Career Connection Event',
+    'Applicant Interest Form · Oct 19–23, 2026',
+    'Submitted: '+submittedAt,
+    '',
+    '--- ELIGIBILITY ---',
+    'Age 18+: '+getVal('age18'),
+    'Available all 5 days (Oct 19–23): '+getVal('avail'),
+    'Has government-issued photo ID: '+getVal('hasId'),
+    '',
+    '--- PERSONAL INFORMATION ---',
+    'Full name: '+name,
+    'Phone: '+document.getElementById('inp-phone').value.trim(),
+    'Email: '+email,
+    'City / ZIP: '+document.getElementById('inp-zip').value.trim(),
+    '',
+    '--- CURRENT STATUS ---',
+    'Current status: '+getVal('status'),
+    'Education level: '+getVal('edu'),
+    'Veteran / active military: '+getVal('veteran'),
+    '',
+    '--- INTERESTS ---',
+    'Areas of interest: '+getChecked('interests[]'),
+    'Partner organizations: '+getChecked('partners[]'),
+    '',
+    '--- CAREER GOALS ---',
+    'Airport career area: '+getVal('dept'),
+    'Goals for the week: '+document.getElementById('inp-goals').value.trim(),
+    'Has a resume: '+getVal('resume'),
+    '',
+    '--- LOGISTICS ---',
+    'Needs transportation: '+getVal('transport'),
+    'Pickup location: '+document.getElementById('inp-pickup').value.trim(),
+    'Dietary restrictions: '+document.getElementById('inp-diet').value.trim(),
+    'Accessibility needs: '+document.getElementById('inp-access').value.trim(),
+    '',
+    '--- ADDITIONAL NOTES ---',
+    document.getElementById('inp-notes').value.trim()||'(none)',
+  ].join('\n');
+  document.getElementById('fs_message').value=msg;
 
   try{
     const form=document.getElementById('fsForm');
