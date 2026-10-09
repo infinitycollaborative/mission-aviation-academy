@@ -127,23 +127,6 @@ nav { background: var(--white); border-bottom: 1px solid var(--gray-200); paddin
 .form-section { border: 1px solid var(--gray-200); border-radius: 10px; padding: 24px; margin-bottom: 40px; background: #fafafa; }
 .form-section h2 { font-size: 20px; font-weight: 800; color: var(--navy); margin: 0 0 6px; }
 .form-section p { font-size: 13px; color: var(--gray-500); margin: 0 0 20px; line-height: 1.6; }
-.ghl-placeholder {
-  width: 100%;
-  min-height: 200px;
-  background: var(--gray-50);
-  border: 1px dashed var(--gray-200);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 24px;
-  text-align: center;
-}
-.ghl-placeholder p { font-size: 14px; color: var(--gray-500); margin: 0; }
-.ghl-placeholder .placeholder-email { font-size: 16px; font-weight: 700; }
-.ghl-placeholder a { color: var(--navy); text-decoration: underline; }
 
 /* VISIT INFO */
 .visit-grid {
@@ -370,12 +353,12 @@ footer { background: var(--navy); border-top: 4px solid var(--gold); padding: 48
     <h2>Get started — we respond within 24 hours</h2>
     <p>Tell us about your student (or yourself), and our team will follow up with available Saturday sessions, scholarship guidance, and enrollment next steps.</p>
     <div id="ghl-form-container">
-      <!-- Enrollment form loads here — contact Mike to add the GHL embed URL -->
-      <div class="ghl-placeholder">
-        <p>Enrollment form coming soon.</p>
-        <p class="placeholder-email">Email us directly: <a href="mailto:admissions@missionaviationacademy.org?subject=Enrollment Inquiry — Your Aviation Blueprint">admissions@missionaviationacademy.org</a></p>
-        <p>Or call/text: <a href="tel:8134458889">(813) 445-8889</a></p>
-      </div>
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/gfmaQ4QXfxJK9jPLI7kq"
+        style="width:100%;min-height:500px;border:none;border-radius:8px;"
+        title="MAA Enrollment — Mission Aviation Academy"
+        loading="lazy"
+      ></iframe>
     </div>
   </div>
 
