@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florida Tour Schedule — Mission Aviation Academy</title>
+<meta name="description" content="Current Florida stops for the MAA Hidden Treasures Tour — Red Tail Roost aviation tribute, AeroSTEM Xperience, and community events. Updated as dates are confirmed.">
+<link rel="canonical" href="https://missionaviationacademy.org/tour">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mission Aviation Academy">
+<meta property="og:url" content="https://missionaviationacademy.org/tour">
+<meta property="og:title" content="Florida Tour Schedule — Mission Aviation Academy">
+<meta property="og:description" content="Current Florida tour stops for the Hidden Treasures Tour — referenced in Your Aviation Blueprint, Appendix D.">
+<meta property="og:image" content="https://missionaviationacademy.org/og-image.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Florida Tour Schedule — Mission Aviation Academy">
+<meta name="twitter:description" content="Current Florida tour stops for the Hidden Treasures Tour — referenced in Your Aviation Blueprint, Appendix D.">
+<style>
+:root {
+  --navy: #001838;
+  --gold: #FFD700;
+  --red:  #8B0000;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --white: #fff;
+  --green-50: #f0fdf4;
+  --green-100: #bbf7d0;
+  --green-800: #14532d;
+  --green-700: #166534;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: var(--gray-900); background: var(--white); line-height: 1.6; }
+
+/* NAV */
+nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  gap: 16px;
+}
+.nav-brand { font-weight: 800; font-size: 15px; color: var(--navy); text-decoration: none; letter-spacing: -0.3px; flex-shrink: 0; }
+.nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 600; color: var(--gray-700); text-decoration: none; padding: 6px 10px; border-radius: 6px; }
+.nav-links a:hover { background: var(--gray-100); }
+.nav-links .nav-cta { font-size: 13px; font-weight: 700; color: var(--white); background: var(--red); text-decoration: none; padding: 8px 16px; border-radius: 6px; white-space: nowrap; }
+.nav-links .nav-cta:hover { background: #6b0000; }
+
+/* PAGE HEADER */
+.page-header { background: var(--gray-50); border-bottom: 1px solid var(--gray-200); padding: 40px 24px 32px; }
+.page-header-inner { max-width: 800px; margin: 0 auto; }
+.breadcrumb { font-size: 13px; color: var(--gray-500); margin-bottom: 8px; font-weight: 500; }
+.page-header h1 { font-size: 36px; font-weight: 800; color: var(--navy); margin: 0 0 12px; line-height: 1.1; }
+.page-header p { font-size: 16px; color: var(--gray-600); margin: 0; line-height: 1.65; max-width: 620px; }
+
+/* LIVE NOTICE */
+.live-notice {
+  background: var(--navy);
+  padding: 10px 24px;
+}
+.live-notice-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+.live-notice-inner a { color: var(--gold); margin-left: 6px; }
+
+/* BODY */
+.body-wrap { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+
+/* STOP CARD */
+.stop-card {
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.stop-card.past { opacity: 0.6; }
+.stop-header {
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+.stop-header h2 { font-size: 17px; font-weight: 800; color: var(--white); margin: 0 0 4px; }
+.stop-date { font-size: 13px; color: var(--gold); margin: 0; font-weight: 600; }
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--white);
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.stop-body { padding: 18px 20px; }
+.stop-venue { display: flex; gap: 8px; margin-bottom: 14px; }
+.stop-venue-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+.stop-venue-addr { font-size: 12px; color: var(--gray-500); }
+.stop-highlights { margin: 0 0 18px; padding-left: 18px; }
+.stop-highlights li { font-size: 13px; color: var(--gray-700); line-height: 1.65; margin-bottom: 4px; }
+.btn-gold-sm {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--gold);
+  padding: 9px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.btn-red-sm {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--red);
+  padding: 9px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* HOST BOX */
+.host-box {
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 8px;
+}
+.host-box h3 { font-size: 18px; font-weight: 800; color: var(--green-800); margin: 0 0 8px; }
+.host-box p { font-size: 14px; color: var(--green-700); margin: 0 0 16px; line-height: 1.65; }
+.host-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-green {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--green-800);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.btn-green-outline {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-800);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid #86efac;
+}
+.sufs-note { font-size: 12px; color: var(--gray-500); margin-top: 20px; line-height: 1.6; }
+.sufs-note a { color: var(--navy); font-weight: 600; }
+
+/* FOOTER */
+footer { background: var(--navy); border-top: 4px solid var(--gold); padding: 48px 24px 24px; margin-top: 64px; color: var(--white); }
+.footer-inner { max-width: 1080px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-col-head { font-size: 10px; font-weight: 800; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+.footer-link { display: block; font-size: 13px; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 6px; line-height: 1.5; }
+.footer-link:hover { color: var(--gold); }
+.footer-brand-text { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 14px; }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 24px 0; }
+.footer-legal { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 700px; margin: 0 auto 16px; text-align: center; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.35); text-align: center; }
+.footer-salary { font-size: 10px; color: rgba(255,255,255,0.3); text-align: center; margin-top: 8px; }
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .page-header { padding: 28px 16px 24px; }
+  .page-header h1 { font-size: 26px; }
+  .body-wrap { padding: 32px 16px; }
+  .nav-links li:not(:last-child) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Mission Aviation Academy</a>
+    <ul class="nav-links">
+      <li><a href="/saturday">Saturday</a></li>
+      <li><a href="/programs">Programs</a></li>
+      <li><a href="/scholarships">Scholarships</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/donate">Donate</a></li>
+      <li><a href="/saturday#rsvp" class="nav-cta">Enroll Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="breadcrumb">Your Aviation Blueprint · Appendix D · Updated as dates are confirmed</p>
+    <h1>Florida Tour Schedule</h1>
+    <p>The Hidden Treasures Tour brings the Red Tail Roost aviation tribute, AeroSTEM experiences, and Flight Plan 2030 directly to schools and communities across Florida. Scan the QR in your book anytime for the latest dates.</p>
+  </div>
+</div>
+
+<div class="live-notice">
+  <div class="live-notice-inner">
+    ✈ This page updates as tour dates are confirmed —
+    <a href="mailto:admissions@missionaviationacademy.org?subject=Tour Date Notification">email us to get notified</a>
+  </div>
+</div>
+
+<div class="body-wrap">
+
+  <!-- STOP: MAA Saturday Home Base -->
+  <div class="stop-card">
+    <div class="stop-header" style="background:#001838;">
+      <div>
+        <h2>MAA Saturday Program — Home Base</h2>
+        <p class="stop-date">Every Saturday · 8:00 AM – 6:00 PM</p>
+      </div>
+      <span class="status-badge">
+        <span class="status-dot" style="background:#16a34a;"></span>
+        Confirmed
+      </span>
+    </div>
+    <div class="stop-body">
+      <div class="stop-venue">
+        <span style="font-size:14px;margin-top:1px;">📍</span>
+        <div>
+          <div class="stop-venue-name">Tampa North Aero Park (X39)</div>
+          <div class="stop-venue-addr">4639 Birdsong Blvd, Lutz, FL 33559</div>
+        </div>
+      </div>
+      <ul class="stop-highlights">
+        <li>Free open house 10:15 AM–12:15 PM — RSVP required</li>
+        <li>Drone certification, AI app building, PPL simulator</li>
+        <li>SUFS scholarship funds accepted — most eligible families pay $0</li>
+        <li>Ages 6 and up · 6–8 students per class · $99/class</li>
+      </ul>
+      <a href="/saturday#rsvp" class="btn-gold-sm">RSVP for Saturday →</a>
+    </div>
+  </div>
+
+  <!-- STOP: TPA Workforce Week -->
+  <div class="stop-card">
+    <div class="stop-header" style="background:#001838;">
+      <div>
+        <h2>TPA Workforce Week 2026</h2>
+        <p class="stop-date">October 19–23, 2026 · Session times TBD</p>
+      </div>
+      <span class="status-badge">
+        <span class="status-dot" style="background:#16a34a;"></span>
+        Confirmed
+      </span>
+    </div>
+    <div class="stop-body">
+      <div class="stop-venue">
+        <span style="font-size:14px;margin-top:1px;">📍</span>
+        <div>
+          <div class="stop-venue-name">Tampa International Airport (TPA)</div>
+          <div class="stop-venue-addr">Tampa, FL</div>
+        </div>
+      </div>
+      <ul class="stop-highlights">
+        <li>Co-branded MAA × TPA workforce development event</li>
+        <li>Aviation and aerospace career pathways for youth and adults</li>
+        <li>Flight Plan 2030 exhibit on-site</li>
+        <li>SUFS enrollment table</li>
+      </ul>
+      <a href="https://www.tampaairport.com" target="_blank" rel="noopener noreferrer" class="btn-gold-sm">Learn more at tampaairport.com →</a>
+    </div>
+  </div>
+
+  <!-- STOP: Tampa Bay Area Schools -->
+  <div class="stop-card">
+    <div class="stop-header" style="background:#78350f;">
+      <div>
+        <h2>Hidden Treasures Tour — Tampa Bay Area Schools</h2>
+        <p class="stop-date">November 2026 · Weekday field trip format</p>
+      </div>
+      <span class="status-badge">
+        <span class="status-dot" style="background:#d97706;"></span>
+        Tentative
+      </span>
+    </div>
+    <div class="stop-body">
+      <div class="stop-venue">
+        <span style="font-size:14px;margin-top:1px;">📍</span>
+        <div>
+          <div class="stop-venue-name">Multiple Hillsborough &amp; Pasco County schools</div>
+          <div class="stop-venue-addr">Tampa Bay, FL — exact schools TBD</div>
+        </div>
+      </div>
+      <ul class="stop-highlights">
+        <li>Red Tail Roost (N7480X) on display at each stop</li>
+        <li>Tuskegee Airmen history exhibit and tribute walk</li>
+        <li>Aerospace engineering kit leave-behind for each student</li>
+        <li>SUFS enrollment table at every stop</li>
+      </ul>
+      <a href="mailto:admissions@missionaviationacademy.org?subject=School Visit Request" class="btn-red-sm">Invite MAA to your school →</a>
+    </div>
+  </div>
+
+  <!-- STOP: Statewide Expansion -->
+  <div class="stop-card">
+    <div class="stop-header" style="background:#1e3a5f;">
+      <div>
+        <h2>Hidden Treasures Tour — Statewide Expansion</h2>
+        <p class="stop-date">2027 — Florida Statewide · Multi-city, multi-week format</p>
+      </div>
+      <span class="status-badge">
+        <span class="status-dot" style="background:#2563eb;"></span>
+        Coming Soon
+      </span>
+    </div>
+    <div class="stop-body">
+      <div class="stop-venue">
+        <span style="font-size:14px;margin-top:1px;">📍</span>
+        <div>
+          <div class="stop-venue-name">Florida Statewide</div>
+          <div class="stop-venue-addr">Cities and dates to be announced</div>
+        </div>
+      </div>
+      <ul class="stop-highlights">
+        <li>Red Tail Roost flies to each stop across Florida</li>
+        <li>Partnering with Idlewild Baptist Church and ITEC networks</li>
+        <li>SUFS enrollment at every Florida stop</li>
+        <li>Target: 10+ Florida cities in Year 1 of statewide expansion</li>
+      </ul>
+      <a href="/enroll" class="btn-gold-sm">Notify me when dates drop →</a>
+    </div>
+  </div>
+
+  <!-- HOST A STOP -->
+  <div class="host-box">
+    <h3>Invite MAA to your school or event</h3>
+    <p>We bring the Red Tail Roost tribute, AeroSTEM stations, aerospace engineering kits, and a SUFS enrollment table — at no cost to Title I and SUFS-eligible schools.</p>
+    <div class="host-btns">
+      <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-green">Book a 15-min call →</a>
+      <a href="mailto:admissions@missionaviationacademy.org?subject=School or Group Visit Request" class="btn-green-outline">Email admissions</a>
+    </div>
+  </div>
+
+  <p class="sufs-note">
+    MAA is an approved Step Up For Students (SUFS) provider, eligible under FES-EO, FES-UA, and PEP scholarships. A SUFS enrollment table is at every Florida tour stop. October cycle deadline is approaching —
+    <a href="/scholarships">check eligibility →</a>
+  </p>
+
+</div><!-- /body-wrap -->
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-col-head">Mission Aviation Academy</div>
+        <p class="footer-brand-text">Academic division of Infinity Aero Club Tampa Bay, Inc.<br>Florida 501(c)(3) · EIN 85-1110607</p>
+        <p class="footer-brand-text">Tampa North Aero Park (X39)<br>4639 Birdsong Blvd, Lutz FL 33559</p>
+        <a href="tel:8134458889" class="footer-link" style="color:#FFD700;font-weight:700;">(813) 445-8889</a>
+        <a href="tel:8335973836" class="footer-link">(833) FLY-STEM</a>
+        <a href="mailto:admissions@missionaviationacademy.org" class="footer-link">admissions@missionaviationacademy.org</a>
+      </div>
+      <div>
+        <div class="footer-col-head">Programs</div>
+        <a href="/saturday" class="footer-link">Saturday Open House</a>
+        <a href="/programs" class="footer-link">All 7 Career Families</a>
+        <a href="/programs#drone" class="footer-link">Drone / Part 107</a>
+        <a href="/programs#ai" class="footer-link">AI Innovation</a>
+        <a href="/programs#pilot" class="footer-link">Pilot Pathway</a>
+        <a href="/programs#jrotc" class="footer-link">JROTC / ROTC</a>
+        <a href="/licensing" class="footer-link">Curriculum Licensing</a>
+        <a href="/catalog" class="footer-link">Course Catalog</a>
+      </div>
+      <div>
+        <div class="footer-col-head">Support &amp; Media</div>
+        <a href="/scholarships" class="footer-link">SUFS Scholarships</a>
+        <a href="/scholarships#topgun" class="footer-link">Top Gun Scholarship</a>
+        <a href="/scholarships#bravebess" class="footer-link">Brave Bess Scholarship</a>
+        <a href="/yab" class="footer-link">Free Career Guide</a>
+        <a href="/about" class="footer-link">About MAA</a>
+        <a href="/contact" class="footer-link">Contact</a>
+        <a href="https://infinityaeroclub.org" target="_blank" rel="noopener noreferrer" class="footer-link">infinityaeroclub.org</a>
+      </div>
+      <div>
+        <div class="footer-col-head">Follow</div>
+        <a href="https://www.facebook.com/infinityaeroclub" target="_blank" rel="noopener noreferrer" class="footer-link">Facebook</a>
+        <a href="https://www.linkedin.com/in/infinity-aero-club-tampa-bay-inc-founder-ricardo-foster-lcdr-usn-ret-9706a1221/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="https://www.youtube.com/@MissionAviationAcademy" target="_blank" rel="noopener noreferrer" class="footer-link">YouTube</a>
+        <a href="https://www.instagram.com/missionaviationacademy" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+        <a href="https://www.tiktok.com/@missionaviationacademy" target="_blank" rel="noopener noreferrer" class="footer-link">TikTok</a>
+        <div class="footer-col-head" style="margin-top:20px;">As Seen In</div>
+        <a href="https://www.wfla.com/daytime/flying-school-takes-stem-learning-to-new-heights/" target="_blank" rel="noopener noreferrer" class="footer-link">WFLA</a>
+        <a href="https://baynews9.com/fl/tampa/news/2024/03/12/flight-club-teaching-underrepresented-kids-to-fly" target="_blank" rel="noopener noreferrer" class="footer-link">Bay News 9</a>
+        <a href="https://www.abcactionnews.com/news/anchors-report/infinity-aero-club-hopes-to-inspire-next-generation-of-aviation-workers" target="_blank" rel="noopener noreferrer" class="footer-link">ABC Action News</a>
+        <a href="https://www.fox13news.com/news/bay-area-stem-program-helps-disadvantaged-teens-take-dreams-to-new-heights" target="_blank" rel="noopener noreferrer" class="footer-link">FOX 13</a>
+        <a href="https://generalaviationnews.com/2024/02/14/not-your-average-teenager/" target="_blank" rel="noopener noreferrer" class="footer-link">General Aviation News</a>
+        <a href="https://www.flyingmag.com/faster-pathways-to-high-paying-aviation-careers/" target="_blank" rel="noopener noreferrer" class="footer-link">Flying Magazine</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <p class="footer-legal">Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit organization. iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate.</p>
+    <p class="footer-copy">© 2026 Infinity Aero Club Tampa Bay, Inc. (iACT) DBA Mission Aviation Academy · EIN 85-1110607 · Florida 501(c)(3) · SAM.gov Active · SUFS Approved Provider · <a href="https://infinityaeroclub.org" style="color:rgba(255,255,255,0.45);">infinityaeroclub.org</a></p>
+    <p class="footer-salary">Salaries sourced from BLS May 2024 Occupational Employment Statistics. Salary figures are national medians and do not guarantee individual earnings.</p>
+  </div>
+</footer>
+
+</body>
+</html>
