@@ -315,6 +315,28 @@ h2 {
 }
 .badge-free { background: var(--greenbg); color: var(--green); }
 .badge-part2 { background: #EEF6FF; color: #1A5C8A; }
+.buy-btn {
+  display: inline-block;
+  margin: .7rem .4rem 0 0;
+  background: var(--navy);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  font-size: .82rem;
+  font-weight: bold;
+  padding: .55rem 1rem;
+  text-decoration: none;
+}
+.buy-btn:hover { background: var(--gold); color: var(--navy); }
+.buy-btn s { opacity: .6; font-weight: normal; }
+.buy-btn.secondary { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+.buy-note {
+  display: block;
+  margin-top: .6rem;
+  font-family: Arial, sans-serif;
+  font-size: .75rem;
+  font-style: italic;
+  color: var(--mid);
+}
 .parallel-note {
   font-family: Arial, sans-serif;
   font-size: .78rem;
@@ -663,7 +685,7 @@ footer a { color: var(--gold); text-decoration: none; }
     <li><a href="/scholarships">Scholarships</a></li>
     <li><a href="/contact">Contact</a></li>
     <li><a href="/donate">Donate</a></li>
-    <li><a href="#rsvp" class="nav-cta">RSVP Now</a></li>
+    <li><a href="#" class="nav-cta">Start Your Flight Path</a></li>
   </ul>
   <button class="maa-nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -727,6 +749,7 @@ footer a { color: var(--gold); text-decoration: none; }
             <strong style="color:var(--navy)">Ages:</strong> 6–18+ (under 6 with adult)
           </div>
           <div class="block-price">$99 per student</div>
+          <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000037040" target="_blank" rel="noopener" class="buy-btn">Register Now — <s>$200</s> $99 · Open House Exclusive</a>
         </div>
       </div>
 
@@ -744,9 +767,12 @@ footer a { color: var(--gold); text-decoration: none; }
             · 15 min post-flight debrief · CFI present · Max 2 per session
           </div>
           <div class="block-meta" style="margin-top:.4rem">
-            <strong style="color:var(--navy)">Room:</strong> Simulator Room · 6 slots available
+            <strong style="color:var(--navy)">Room:</strong> Simulator Room · 6 slots available ·
+            <strong style="color:var(--navy)">Ages:</strong> 10+
           </div>
           <div class="block-price">$99 / hour</div>
+          <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000016504" target="_blank" rel="noopener" class="buy-btn">Book Lesson 1 — $99</a>
+          <a href="#" class="buy-btn secondary">PPL Full Package: Start Your Flight Path</a>
         </div>
         <div class="block-content suas">
           <div class="block-tag tag-suas">sUAS Flight Training — Group</div>
@@ -803,6 +829,7 @@ footer a { color: var(--gold); text-decoration: none; }
           <div class="block-price">
             $99 individual &nbsp;·&nbsp; $49.50 each for 2 or more family members
           </div>
+          <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000037723" target="_blank" rel="noopener" class="buy-btn">Register Now — $99</a>
         </div>
       </div>
 
@@ -825,6 +852,7 @@ footer a { color: var(--gold); text-decoration: none; }
           </div>
           <div class="block-price">$99 per student</div>
           <span class="block-badge badge-part2">Part 2 of 4 — same students as Class A</span>
+          <span class="buy-note">Pre-registered students only — no separate purchase.</span>
         </div>
       </div>
 
@@ -849,6 +877,7 @@ footer a { color: var(--gold); text-decoration: none; }
             $99 individual &nbsp;·&nbsp; $49.50 each for 2 or more family members
           </div>
           <span class="block-badge badge-part2">Part 2 of 4 — same students as Class B</span>
+          <span class="buy-note">Details coming soon.</span>
         </div>
       </div>
 
@@ -1135,24 +1164,28 @@ footer a { color: var(--gold); text-decoration: none; }
 <section style="background:#f8fafc;padding:2.5rem 2rem;border-top:3px solid var(--navy);">
   <div class="inner" style="max-width:820px;">
     <p class="section-label" style="color:var(--navy);">Book Direct · FlightCircle</p>
-    <h2 style="color:var(--navy);margin-bottom:.5rem;">Ready to Buy a Flight?</h2>
-    <p style="font-family:Arial,sans-serif;font-size:.95rem;color:#4b5563;margin-bottom:1.5rem;">Purchase your intro or orientation flight directly through FlightCircle — secure checkout, instant confirmation.</p>
+    <h2 style="color:var(--navy);margin-bottom:.5rem;">Ready to Book?</h2>
+    <p style="font-family:Arial,sans-serif;font-size:.95rem;color:#4b5563;margin-bottom:1.5rem;">Purchase ground school or your intro, orientation, or drone flight directly through FlightCircle — secure checkout, instant confirmation.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+      <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000003257" target="_blank" rel="noopener"
+         style="display:block;background:var(--gold);color:var(--navy);font-family:Arial,sans-serif;font-weight:700;font-size:.9rem;padding:1rem 1.2rem;text-decoration:none;border-radius:8px;text-align:center;">
+        📘 Ground School · Gleim Kit<br><span style="font-size:.75rem;font-weight:400;opacity:.8;">Ages 12+ · Enroll Now — $299</span>
+      </a>
       <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000009067" target="_blank" rel="noopener"
          style="display:block;background:var(--navy);color:#fff;font-family:Arial,sans-serif;font-weight:700;font-size:.9rem;padding:1rem 1.2rem;text-decoration:none;border-radius:8px;text-align:center;">
-        ✈ Introductory Flight<br><span style="font-size:.75rem;font-weight:400;opacity:.8;">60 min · Buy Now</span>
+        ✈ Introductory Flight<br><span style="font-size:.75rem;font-weight:400;opacity:.8;">60 min · Book Now</span>
       </a>
       <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000004570" target="_blank" rel="noopener"
          style="display:block;background:var(--navy);color:#fff;font-family:Arial,sans-serif;font-weight:700;font-size:.9rem;padding:1rem 1.2rem;text-decoration:none;border-radius:8px;text-align:center;">
-        ✈ Introductory Flight<br><span style="font-size:.75rem;font-weight:400;opacity:.8;">30 min · Buy Now</span>
+        ✈ Introductory Flight<br><span style="font-size:.75rem;font-weight:400;opacity:.8;">30 min · Book Now</span>
       </a>
       <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000016759" target="_blank" rel="noopener"
          style="display:block;background:#8B1A1A;color:#fff;font-family:Arial,sans-serif;font-weight:700;font-size:.9rem;padding:1rem 1.2rem;text-decoration:none;border-radius:8px;text-align:center;">
-        🎯 MAA Orientation Flight<br><span style="font-size:.75rem;font-weight:400;opacity:.8;">Buy Now</span>
+        🎯 MAA Orientation Flight<br><span style="font-size:.75rem;font-weight:400;opacity:.8;">Book Now</span>
       </a>
       <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000030175" target="_blank" rel="noopener"
          style="display:block;background:#1A5C2A;color:#fff;font-family:Arial,sans-serif;font-weight:700;font-size:.9rem;padding:1rem 1.2rem;text-decoration:none;border-radius:8px;text-align:center;">
-        🚁 Drone TRUST + Intro Flight<br><span style="font-size:.75rem;font-weight:400;opacity:.8;">1 hr · Buy Now</span>
+        🚁 Drone TRUST + Intro Flight<br><span style="font-size:.75rem;font-weight:400;opacity:.8;">1 hr · Book Now</span>
       </a>
     </div>
   </div>
