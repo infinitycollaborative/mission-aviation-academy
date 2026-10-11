@@ -452,6 +452,13 @@ h2 {
 }
 .cal-date.grad { border-left-color: var(--gold); }
 .cal-date.grad .date-label { color: var(--gold); }
+.cal-date.done { opacity: .5; }
+.cal-date.done .date-label::after {
+  content: " ✓ Completed";
+  font-weight: normal;
+  font-size: .7rem;
+  color: rgba(255,255,255,.7);
+}
 .grad-marker {
   font-family: Arial, sans-serif;
   font-size: .7rem;
@@ -655,6 +662,7 @@ footer a { color: var(--gold); text-decoration: none; }
     <li><a href="/about">About</a></li>
     <li><a href="/scholarships">Scholarships</a></li>
     <li><a href="/contact">Contact</a></li>
+    <li><a href="/donate">Donate</a></li>
     <li><a href="#rsvp" class="nav-cta">RSVP Now</a></li>
   </ul>
   <button class="maa-nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -1014,12 +1022,12 @@ footer a { color: var(--gold); text-decoration: none; }
     <div class="calendar-grid">
       <div class="month-col">
         <h3>September</h3>
-        <div class="cal-date">
-          <div class="date-label">Sept 20</div>
+        <div class="cal-date done" data-date="2026-09-19">
+          <div class="date-label">Sat, Sept 19</div>
           <div class="date-parts">Drone Part 1 + AI Part 1</div>
         </div>
-        <div class="cal-date grad">
-          <div class="date-label">Sept 27</div>
+        <div class="cal-date grad done" data-date="2026-09-26">
+          <div class="date-label">Sat, Sept 26</div>
           <div class="date-parts">Drone Part 2 + AI Part 2</div>
           <div class="grad-marker">🎓 Graduation — Beginner</div>
         </div>
@@ -1027,20 +1035,20 @@ footer a { color: var(--gold); text-decoration: none; }
 
       <div class="month-col">
         <h3>October</h3>
-        <div class="cal-date">
-          <div class="date-label">Oct 4</div>
+        <div class="cal-date done" data-date="2026-10-03">
+          <div class="date-label">Sat, Oct 3</div>
           <div class="date-parts">Intermediate Part 1 + 2</div>
         </div>
-        <div class="cal-date">
-          <div class="date-label">Oct 11</div>
+        <div class="cal-date" data-date="2026-10-10">
+          <div class="date-label">Sat, Oct 10</div>
           <div class="date-parts">Intermediate Part 3 + 4</div>
         </div>
-        <div class="cal-date">
-          <div class="date-label">Oct 18</div>
+        <div class="cal-date" data-date="2026-10-17">
+          <div class="date-label">Sat, Oct 17</div>
           <div class="date-parts">Intermediate Part 5 + 6</div>
         </div>
-        <div class="cal-date grad">
-          <div class="date-label">Oct 25</div>
+        <div class="cal-date grad" data-date="2026-10-24">
+          <div class="date-label">Sat, Oct 24</div>
           <div class="date-parts">Intermediate Part 7 + 8</div>
           <div class="grad-marker">🎓 Graduation — Intermediate</div>
         </div>
@@ -1048,41 +1056,52 @@ footer a { color: var(--gold); text-decoration: none; }
 
       <div class="month-col">
         <h3>November</h3>
-        <div class="cal-date">
-          <div class="date-label">Nov 1</div>
+        <div class="cal-date" data-date="2026-11-07">
+          <div class="date-label">Sat, Nov 7</div>
           <div class="date-parts">Advanced Part 1 + 2</div>
         </div>
-        <div class="cal-date">
-          <div class="date-label">Nov 8</div>
+        <div class="cal-date" data-date="2026-11-14">
+          <div class="date-label">Sat, Nov 14</div>
           <div class="date-parts">Advanced Part 3 + 4</div>
         </div>
-        <div class="cal-date">
-          <div class="date-label">Nov 15</div>
+        <div class="cal-date" data-date="2026-11-21">
+          <div class="date-label">Sat, Nov 21</div>
           <div class="date-parts">Advanced Part 5 + 6</div>
         </div>
-        <div class="holiday-note">Nov 22 &amp; 29 — Thanksgiving break</div>
+        <div class="holiday-note">Nov 28 — Thanksgiving break</div>
       </div>
 
       <div class="month-col">
         <h3>December</h3>
-        <div class="cal-date">
-          <div class="date-label">Dec 6</div>
+        <div class="cal-date" data-date="2026-12-05">
+          <div class="date-label">Sat, Dec 5</div>
           <div class="date-parts">Advanced Part 7 + 8</div>
         </div>
-        <div class="cal-date">
-          <div class="date-label">Dec 13</div>
+        <div class="cal-date" data-date="2026-12-12">
+          <div class="date-label">Sat, Dec 12</div>
           <div class="date-parts">Advanced Part 9 + 10</div>
         </div>
-        <div class="cal-date grad">
-          <div class="date-label">Dec 20</div>
+        <div class="cal-date grad" data-date="2026-12-19">
+          <div class="date-label">Sat, Dec 19</div>
           <div class="date-parts">Advanced Part 11 + 12</div>
           <div class="grad-marker">🎓 Graduation — Advanced</div>
         </div>
-        <div class="holiday-note">Dec 27 — Holiday break</div>
+        <div class="holiday-note">Dec 26 — Holiday break</div>
       </div>
     </div>
   </div>
 </section>
+<script>
+(function () {
+  // Mark any class whose Saturday has passed (Eastern time) as completed.
+  var today = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  today.setHours(0, 0, 0, 0);
+  document.querySelectorAll('.cal-date[data-date]').forEach(function (el) {
+    var p = el.getAttribute('data-date').split('-');
+    if (new Date(+p[0], p[1] - 1, +p[2]) < today) el.classList.add('done');
+  });
+})();
+</script>
 
 <!-- WEEKLY LEAD-IN -->
 <section>

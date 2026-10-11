@@ -37,12 +37,12 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
-    return res.status(405).json({ error: "Method not allowed." });
+    return fail(req, res, 405, "Method not allowed.");
   }
 
   const body = parseBody(req.body);
   const form = FORMS[body.form];
-  if (!form) return res.status(400).json({ error: "Unknown form." });
+  if (!form) return fail(req, res, 400, "Unknown form.");
 
   // Honeypot. It is hidden from people and irresistible to bots; when it is
   // filled we answer exactly as we would on success so the bot learns nothing.
@@ -50,15 +50,14 @@ module.exports = async (req, res) => {
 
   const email = String(body.email || "").trim().toLowerCase();
   if (!EMAIL_RE.test(email)) {
-    return res.status(400).json({ error: "Please enter a valid email address." });
+    return fail(req, res, 400, "Please enter a valid email address.");
   }
 
   // COPPA: never store a child's own contact details. Enforced here rather
   // than in the browser so it holds even if the page script never runs.
   if (slug(body.ageBand) === "under-13") {
-    return res.status(400).json({
-      error: "Because you're under 13, we need a parent or guardian to sign up for you. Please ask them to fill this in with their own email.",
-    });
+    return fail(req, res, 400,
+      "Because you're under 13, we need a parent or guardian to sign up for you. Please ask them to fill this in with their own email.");
   }
 
   const token = process.env.GHL_API_TOKEN;
@@ -66,7 +65,7 @@ module.exports = async (req, res) => {
   if (!token || !locationId) {
     // Never fail silently — a dropped lead is worse than a visible error.
     console.error("GHL not configured; lead not delivered", { form: body.form });
-    return res.status(503).json({ error: "Signup is temporarily unavailable." });
+    return fail(req, res, 503, "Signup is temporarily unavailable.");
   }
 
   const { firstName, lastName } = splitName(body.name);
@@ -99,13 +98,13 @@ module.exports = async (req, res) => {
     if (!ghl.ok) {
       const detail = await ghl.text();
       console.error("GHL rejected the contact", { status: ghl.status, detail });
-      return res.status(502).json({ error: "We could not complete your signup." });
+      return fail(req, res, 502, "We could not complete your signup.");
     }
 
     return succeed(req, res, form.redirect);
   } catch (err) {
     console.error("GHL request failed", err);
-    return res.status(502).json({ error: "We could not complete your signup." });
+    return fail(req, res, 502, "We could not complete your signup.");
   }
 };
 
@@ -117,6 +116,29 @@ function succeed(req, res, redirect) {
   }
   res.setHeader("Location", redirect);
   return res.status(303).end();
+}
+
+// Same split for errors: scripted submits get JSON for the inline message, a
+// plain form submit gets a readable page instead of raw JSON.
+function fail(req, res, status, message) {
+  if (String(req.headers["content-type"] || "").includes("application/json")) {
+    return res.status(status).json({ error: message });
+  }
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  return res.status(status).send(
+    '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">' +
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+    '<meta name="robots" content="noindex"><title>Signup problem — Mission Aviation Academy</title></head>' +
+    '<body style="font-family:Arial,sans-serif;max-width:560px;margin:4rem auto;padding:0 1rem;color:#0D2240;line-height:1.6">' +
+    "<h1>We couldn't complete your signup.</h1><p>" + escapeHtml(message) + "</p>" +
+    '<p><a href="javascript:history.back()">← Go back and try again</a> · ' +
+    '<a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a> · ' +
+    '<a href="tel:8134458889">813-445-8889</a></p></body></html>'
+  );
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
 function parseBody(raw) {
