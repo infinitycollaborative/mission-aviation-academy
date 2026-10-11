@@ -236,7 +236,8 @@ footer a:hover{color:var(--gold);}
 .maa-nav-toggle span{display:block;height:2px;background:var(--gold);border-radius:2px;}
 
 /* MOBILE */
-@media(max-width:768px){
+/* Nav collapses to the hamburger before the links run out of room */
+@media (max-width: 1150px) {
   nav{position:relative;padding:0 1rem;}
   .maa-nav-toggle{display:flex;}
   .nav-links{display:none;}
@@ -244,6 +245,8 @@ footer a:hover{color:var(--gold);}
   .nav-links.nav-open li{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.07);}
   .nav-links.nav-open li:last-child{border-bottom:none;padding-top:.9rem;}
   .nav-links.nav-open a{font-size:1rem;color:rgba(255,255,255,.85);}
+}
+@media(max-width:768px){
   .hero{padding:2.5rem 1.2rem 2rem;}
   .hero-inner{grid-template-columns:1fr;}
   .hero-ctas{flex-direction:column;align-items:flex-start;}
@@ -263,6 +266,11 @@ footer a:hover{color:var(--gold);}
   .dispatch-form{flex-direction:column;}
   .dispatch-form input,.dispatch-form button{width:100%;}
 }
+.seen-in{background:var(--white);border-top:1px solid #e2e2e2;border-bottom:1px solid #e2e2e2;padding:1.1rem 1.5rem;}
+.seen-in-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem 1.6rem;font-family:Arial,sans-serif;}
+.seen-in-label{font-size:.68rem;font-weight:bold;letter-spacing:.14em;text-transform:uppercase;color:#8a8a8a;}
+.seen-in a{font-size:.88rem;font-weight:bold;color:var(--navy);text-decoration:none;}
+.seen-in a:hover{color:var(--gold);}
 </style>
 </head>
 <body>
@@ -274,6 +282,7 @@ footer a:hover{color:var(--gold);}
     <li><a href="/programs">Programs</a></li>
     <li><a href="/scholarships">Scholarships</a></li>
     <li><a href="/about">About</a></li>
+    <li><a href="/press">Press</a></li>
     <li><a href="/donate">Donate</a></li>
     <li><a href="/contact">Contact</a></li>
     <li><a href="#" class="nav-cta">Start Your Flight Path</a></li>
@@ -362,6 +371,20 @@ footer a:hover{color:var(--gold);}
     Direct Pay — No Out-of-Pocket Cost for Eligible Families ·
     <a href="/scholarships">Check eligibility →</a>
   </p>
+</div>
+
+<!-- AS SEEN IN -->
+<div class="seen-in" aria-label="As seen in">
+  <div class="seen-in-inner">
+    <span class="seen-in-label">As Seen In</span>
+    <a href="https://www.wfla.com/daytime/flying-school-takes-stem-learning-to-new-heights/" target="_blank" rel="noopener">WFLA</a>
+    <a href="https://www.fox13news.com/news/bay-area-stem-program-helps-disadvantaged-teens-take-dreams-to-new-heights" target="_blank" rel="noopener">FOX 13</a>
+    <a href="https://baynews9.com/fl/tampa/news/2024/03/12/flight-club-teaching-underrepresented-kids-to-fly" target="_blank" rel="noopener">Bay News 9</a>
+    <a href="https://www.abcactionnews.com/news/anchors-report/infinity-aero-club-hopes-to-inspire-next-generation-of-aviation-workers" target="_blank" rel="noopener">ABC Action News</a>
+    <a href="https://generalaviationnews.com/2024/02/14/not-your-average-teenager/" target="_blank" rel="noopener">General Aviation News</a>
+    <a href="https://www.flyingmag.com/faster-pathways-to-high-paying-aviation-careers/" target="_blank" rel="noopener">Flying Magazine</a>
+    <a href="https://www.tampabay28.com/news/region-hillsborough/tuskegee-airmen-legacy-inspires-young-aviators-at-tampa-bay-fly-in-event" target="_blank" rel="noopener">Tampa Bay 28</a>
+  </div>
 </div>
 
 <!-- PROGRAMS -->

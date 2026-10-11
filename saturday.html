@@ -656,7 +656,8 @@ footer a { color: var(--gold); text-decoration: none; }
 .maa-nav-toggle span{display:block;height:2px;background:var(--gold);border-radius:2px;}
 
 /* ── MOBILE ── */
-@media (max-width: 768px) {
+/* Nav collapses to the hamburger before the links run out of room */
+@media (max-width: 1150px) {
   nav { padding: 0 1rem; position: relative; }
   .maa-nav-toggle { display: flex; }
   .nav-links { display: none; }
@@ -664,6 +665,8 @@ footer a { color: var(--gold); text-decoration: none; }
   .nav-links.nav-open li{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.07);list-style:none;}
   .nav-links.nav-open li:last-child{border-bottom:none;padding-top:.9rem;}
   .nav-links.nav-open a{font-size:1rem;color:rgba(255,255,255,.85);}
+}
+@media (max-width: 768px) {
   section { padding: 3rem 1.2rem; }
   .time-block { grid-template-columns: 80px 1fr; }
   .time-block.parallel { grid-template-columns: 80px 1fr; }
@@ -682,6 +685,7 @@ footer a { color: var(--gold); text-decoration: none; }
   <ul class="nav-links">
     <li><a href="/programs">Programs</a></li>
     <li><a href="/about">About</a></li>
+    <li><a href="/press">Press</a></li>
     <li><a href="/scholarships">Scholarships</a></li>
     <li><a href="/contact">Contact</a></li>
     <li><a href="/donate">Donate</a></li>
