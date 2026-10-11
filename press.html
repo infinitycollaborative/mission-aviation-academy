@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Press & Media — Mission Aviation Academy</title>
+  <meta name="description" content="Press coverage, spotlight videos, and testimonials for Mission Aviation Academy — as seen on WFLA, Fox 13, Bay News 9, ABC Action News, General Aviation News, and Flying Magazine." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://missionaviationacademy.org/press" />
+  <link rel="stylesheet" href="/maa-shared.css" />
+  <style>
+    /* Page-specific styles */
+    .press-hero { background:#001838; border-bottom:4px solid #FFD700; padding:48px 24px 40px; }
+    .press-hero .eyebrow { font-size:13px; color:#FFD700; font-weight:600; letter-spacing:1px; margin-bottom:10px; }
+    .press-hero h1 { font-size:40px; font-weight:800; color:#fff; margin:0 0 12px; line-height:1.05; }
+    .press-hero p { font-size:16px; color:rgba(255,255,255,0.75); margin:0; line-height:1.65; max-width:580px; }
+
+    .page-body { max-width:900px; margin:0 auto; padding:48px 24px; }
+
+    /* Featured video */
+    .video-featured { margin-bottom:56px; }
+    .video-featured h2 { font-size:22px; font-weight:800; color:#001838; margin:0 0 4px; }
+    .video-featured .sub { font-size:13px; color:#6b7280; margin:0 0 20px; }
+    .video-wrap { position:relative; padding-bottom:56.25%; height:0; border-radius:12px; overflow:hidden; border:1px solid #e5e7eb; }
+    .video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+    /* Press list */
+    .press-section { margin-bottom:56px; }
+    .press-section h2 { font-size:22px; font-weight:800; color:#001838; margin:0 0 4px; }
+    .press-section .sub { font-size:13px; color:#6b7280; margin:0 0 20px; }
+    .press-list { display:flex; flex-direction:column; gap:10px; }
+    .press-item { display:flex; align-items:center; gap:14px; padding:14px 18px; border:1px solid #e5e7eb; border-radius:10px; text-decoration:none; background:#fafafa; }
+    .press-item:hover { background:#f0f4fa; }
+    .press-badge { font-size:10px; font-weight:800; border-radius:4px; padding:3px 8px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; flex-shrink:0; }
+    .badge-tv { background:#001838; color:#FFD700; }
+    .badge-print { background:#8B0000; color:#fff; }
+    .badge-video { background:#1A5C2A; color:#fff; }
+    .badge-feature { background:#B8860B; color:#fff; }
+    .press-outlet { font-size:13px; font-weight:700; color:#001838; margin-bottom:1px; }
+    .press-title { font-size:12px; color:#6b7280; }
+    .press-arrow { font-size:12px; color:#9ca3af; flex-shrink:0; margin-left:auto; }
+
+    /* Video grid */
+    .video-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(380px,1fr)); gap:16px; }
+    .video-card { border:1px solid #e5e7eb; border-radius:10px; overflow:hidden; }
+    .video-card-embed { position:relative; padding-bottom:56.25%; height:0; }
+    .video-card-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+    .video-card-link { background:#001838; padding:28px 20px; display:flex; align-items:center; justify-content:center; }
+    .video-card-link a { font-size:13px; font-weight:700; color:#FFD700; text-decoration:none; }
+    .video-card-info { padding:12px 14px; }
+    .video-card-info .title { font-size:13px; font-weight:700; color:#001838; margin-bottom:2px; }
+    .video-card-info .sub { font-size:11px; color:#6b7280; }
+    .release-flag { font-size:10px; color:#8B0000; font-weight:700; margin-top:4px; }
+
+    /* Testimonial */
+    .testimonials { margin-bottom:48px; }
+    .testimonials h2 { font-size:22px; font-weight:800; color:#001838; margin:0 0 20px; }
+    .testimonial-card { border-left:4px solid #FFD700; padding:20px 24px; background:#F0F4FA; border-radius:0 10px 10px 0; margin-bottom:14px; }
+    .testimonial-card blockquote { font-size:17px; font-style:italic; color:#001838; font-weight:600; margin:0 0 12px; line-height:1.55; }
+    .t-name { font-size:13px; font-weight:700; color:#374151; }
+    .t-role { font-size:12px; color:#6b7280; margin-bottom:4px; }
+    .t-note { font-size:12px; color:#6b7280; font-style:italic; margin-bottom:4px; }
+    .t-cta  { font-size:13px; font-weight:800; color:#8B0000; }
+
+    /* Media inquiry CTA */
+    .media-cta { background:#001838; border-radius:12px; padding:24px 28px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; }
+    .media-cta .eyebrow { font-size:11px; font-weight:700; color:#FFD700; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+    .media-cta h3 { font-size:18px; font-weight:800; color:#fff; margin:0 0 6px; }
+    .media-cta p { font-size:13px; color:rgba(255,255,255,0.75); margin:0; max-width:440px; line-height:1.6; }
+    .media-cta-btns { display:flex; flex-direction:column; gap:10px; }
+    .btn-gold { background:#FFD700; color:#001838; font-weight:800; font-size:13px; padding:11px 22px; border-radius:7px; text-decoration:none; text-align:center; display:block; }
+    .btn-outline-gold { background:transparent; color:#FFD700; font-weight:600; font-size:12px; padding:8px 22px; border-radius:7px; text-decoration:none; text-align:center; display:block; border:1px solid rgba(255,215,0,0.4); }
+
+    /* See all link */
+    .see-all { font-size:13px; font-weight:700; color:#001838; text-decoration:none; margin-top:12px; display:inline-block; }
+    .see-all:hover { text-decoration:underline; }
+    .page-body section { padding:0; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="maa-nav">
+  <a class="maa-nav-brand" href="/">Mission Aviation Academy</a>
+  <ul class="maa-nav-links">
+    <li><a href="/saturday">Saturday</a></li>
+    <li><a href="/programs">Programs</a></li>
+    <li><a href="/scholarships">Scholarships</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/press" style="color:var(--gold)">Press</a></li>
+    <li><a href="/community">Community</a></li>
+    <li><a href="/stories">Stories</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/donate">Donate</a></li>
+    <li><a href="#" class="maa-nav-cta">Start Your Flight Path</a></li>
+  </ul>
+  <button class="maa-nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<div class="press-hero">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="eyebrow">As Seen In &middot; Press Coverage &middot; Spotlight Videos</div>
+    <h1>Press &amp; Media</h1>
+    <p>Mission Aviation Academy has been featured in local and national media for its work connecting underserved youth to aviation, STEM, and entrepreneurship careers through the Tuskegee Airmen legacy.</p>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="page-body">
+
+  <!-- FEATURED VIDEO -->
+  <section class="video-featured">
+    <h2>Featured &mdash; Lt. Col. George Hardy &amp; Michael Joseph II</h2>
+    <p class="sub">A tribute conversation with the last surviving Tuskegee Airmen combat pilot &middot; February 2025</p>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/wLnVYuzhKGQ"
+        title="Lt. Col. George Hardy & Michael Joseph II — Tuskegee Airmen Tribute"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- PRESS COVERAGE -->
+  <section class="press-section">
+    <h2>Press Coverage</h2>
+    <p class="sub">Local and national media coverage of MAA and iACT programs</p>
+    <div class="press-list">
+
+      <a href="https://www.wfla.com/daytime/flying-school-takes-stem-learning-to-new-heights/" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-tv">TV</span>
+        <div><div class="press-outlet">WFLA Daytime</div><div class="press-title">Flying School Takes STEM Learning to New Heights</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://www.fox13news.com/news/bay-area-stem-program-helps-disadvantaged-teens-take-dreams-to-new-heights" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-tv">TV</span>
+        <div><div class="press-outlet">FOX 13</div><div class="press-title">Bay Area STEM Program Helps Disadvantaged Teens Take Dreams to New Heights</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://baynews9.com/fl/tampa/news/2024/03/12/flight-club-teaching-underrepresented-kids-to-fly" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-tv">TV</span>
+        <div><div class="press-outlet">Bay News 9</div><div class="press-title">Flight Club Teaching Underrepresented Kids to Fly &middot; March 2024</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://baynews9.com/fl/tampa/news/2024/11/23/aviation-club-gives-students-access-to-stem-experiences" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-tv">TV</span>
+        <div><div class="press-outlet">Bay News 9</div><div class="press-title">Aviation Club Gives Students Access to STEM Experiences &middot; November 2024</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://www.abcactionnews.com/news/anchors-report/infinity-aero-club-hopes-to-inspire-next-generation-of-aviation-workers" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-tv">TV</span>
+        <div><div class="press-outlet">ABC Action News</div><div class="press-title">Infinity Aero Club Hopes to Inspire Next Generation of Aviation Workers</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://www.tampabay28.com/news/region-hillsborough/tuskegee-airmen-legacy-inspires-young-aviators-at-tampa-bay-fly-in-event" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-tv">TV</span>
+        <div><div class="press-outlet">Tampa Bay 28</div><div class="press-title">Tuskegee Airmen Legacy Inspires Young Aviators at Tampa Bay Fly-In Event</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://generalaviationnews.com/2024/02/14/not-your-average-teenager/" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-print">Print</span>
+        <div><div class="press-outlet">General Aviation News</div><div class="press-title">"Not Your Average Teenager" &mdash; by Joni Fisher &middot; February 2024</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://www.flyingmag.com/faster-pathways-to-high-paying-aviation-careers/" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-print">Print</span>
+        <div><div class="press-outlet">Flying Magazine</div><div class="press-title">Faster Pathways to High-Paying Aviation Careers</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://www.flyingmag.com/how-to-build-your-first-home-flight-simulator/" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-print">Print</span>
+        <div><div class="press-outlet">Flying Magazine</div><div class="press-title">How to Build Your First Home Flight Simulator</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://youtu.be/84UVD44bhmc" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-video">Video</span>
+        <div><div class="press-outlet">AviNation</div><div class="press-title">American Dream West Coast "Careers In Aviation" Tour &middot; October 2022</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+      <a href="https://www.facebook.com/share/p/18rFtpTXVS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="press-item">
+        <span class="press-badge badge-feature">Feature</span>
+        <div><div class="press-outlet">Tampa International Airport</div><div class="press-title">Youth Aviation &amp; Workforce Development Visit</div></div>
+        <span class="press-arrow">&#8599;</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- MORE VIDEOS -->
+  <section class="press-section">
+    <h2>Spotlight Videos</h2>
+    <p class="sub">Program features, cadet stories, and community impact</p>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-card-embed">
+          <iframe src="https://www.youtube.com/embed/D2jK1ES0ts4" title="Pasco County SMARTstart" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-card-info">
+          <div class="title">Pasco County SMARTstart</div>
+          <div class="sub">Aviation STEM program feature</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-card-embed">
+          <iframe src="https://www.youtube.com/embed/84UVD44bhmc" title="AviNation — Careers in Aviation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-card-info">
+          <div class="title">AviNation &mdash; Careers in Aviation Tour</div>
+          <div class="sub">American Dream West Coast Tour &middot; October 2022</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-card-link">
+          <a href="https://tomcosolutions-my.sharepoint.com/:v:/p/tommy/Edcs8WVCaPdMp9W76L1tax8BOA7cLBW3Sen1dIqj5WXPQQ" target="_blank" rel="noopener noreferrer">&#9654; The Tuskegee Airmen Tribute &#8599;</a>
+        </div>
+        <div class="video-card-info">
+          <div class="title">The Tuskegee Airmen Tribute</div>
+          <div class="sub">Honoring the legacy that inspires the MAA mission</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-card-link">
+          <a href="https://tomcosolutions-my.sharepoint.com/:v:/p/tommy/ETpMlfOawYFHsX7btJK1aiABs9AzstVjLZAGzc6rAPmtkg" target="_blank" rel="noopener noreferrer">&#9654; iACT Origin Story &#8599;</a>
+        </div>
+        <div class="video-card-info">
+          <div class="title">iACT Origin Story</div>
+          <div class="sub">Foundation story and mission overview</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <h2>Alumni Testimonials</h2>
+    <div class="testimonial-card">
+      <blockquote>&ldquo;I would not be anywhere near where I am today without Infinity Aero Club. They showed me it could become a profession, a network, a business, and a way to inspire the next generation.&rdquo;</blockquote>
+      <div class="t-name">Tyson Mickie, CFI, CFII, ATP</div>
+      <div class="t-role">Commercial Airline Pilot &middot; iACT Alumni</div>
+      <div class="t-note">His first words were &ldquo;the moon&rdquo; &mdash; pointing at an airplane overhead. Today he flies for the airlines.</div>
+      <div class="t-cta">That is what your gift builds.</div>
+    </div>
+  </section>
+
+  <!-- MEDIA INQUIRY CTA -->
+  <div class="media-cta">
+    <div>
+      <div class="eyebrow">Media Inquiries</div>
+      <h3>Press kit &amp; interview requests</h3>
+      <p>LCDR Ricardo &ldquo;Tattoo&rdquo; Foster, USN (Ret.) is available for interviews on aviation, STEM education, workforce development, and the Tuskegee Airmen legacy.</p>
+    </div>
+    <div class="media-cta-btns">
+      <a href="mailto:admissions@missionaviationacademy.org?subject=Media Inquiry" class="btn-gold">Email Press Team &rarr;</a>
+      <a href="tel:8134458889" class="btn-outline-gold">(833) FLY-STEM</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-col-head">Mission Aviation Academy</div>
+        <p class="footer-p">Academic division of Infinity Aero Club Tampa Bay, Inc.<br/>Florida 501(c)(3) &middot; EIN 85-1110607</p>
+        <p class="footer-p">Tampa North Aero Park (X39)<br/>Facility: 4639 Birdsong Blvd, Lutz FL 33559<br/>Parking GPS: 4661 Birdsong Blvd, Lutz FL 33559</p>
+        <a href="tel:8134458889" class="footer-link footer-link-gold">(813) 445-8889</a>
+        <a href="tel:8134458889" class="footer-link">(833) FLY-STEM</a>
+        <a href="mailto:admissions@missionaviationacademy.org" class="footer-link">admissions@missionaviationacademy.org</a>
+      </div>
+      <div>
+        <div class="footer-col-head">Programs</div>
+        <a href="/saturday" class="footer-link">Saturday Open House</a>
+        <a href="/programs" class="footer-link">All 7 Career Families</a>
+        <a href="/programs#drone" class="footer-link">Drone / Part 107</a>
+        <a href="/programs#ai" class="footer-link">AI Innovation</a>
+        <a href="/programs#pilot" class="footer-link">Pilot Pathway</a>
+        <a href="/scholarships" class="footer-link">SUFS Scholarships</a>
+        <a href="/yab" class="footer-link">Free Career Guide</a>
+      </div>
+      <div>
+        <div class="footer-col-head">Partners</div>
+        <a href="/partners" class="footer-link">Partners &amp; Bulk Orders</a>
+        <a href="/partners#donate" class="footer-link">Fund a Student</a>
+        <a href="/partners#mission" class="footer-link">Mission Partners</a>
+        <a href="/press" class="footer-link">Press &amp; Media</a>
+        <a href="/about" class="footer-link">About MAA</a>
+        <a href="/contact" class="footer-link">Contact</a>
+        <a href="https://infinityaeroclub.org" target="_blank" rel="noopener noreferrer" class="footer-link">infinityaeroclub.org</a>
+      </div>
+      <div>
+        <div class="footer-col-head">Follow</div>
+        <a href="https://www.facebook.com/infinityaeroclub" target="_blank" rel="noopener noreferrer" class="footer-link">Facebook</a>
+        <a href="https://www.linkedin.com/in/infinity-aero-club-tampa-bay-inc-founder-ricardo-foster-lcdr-usn-ret-9706a1221/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="https://www.youtube.com/@MissionAviationAcademy" target="_blank" rel="noopener noreferrer" class="footer-link">YouTube</a>
+        <a href="https://www.instagram.com/missionaviationacademy" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+        <div class="footer-col-head" style="margin-top:20px;">As Seen In</div>
+        <a href="https://www.wfla.com/daytime/flying-school-takes-stem-learning-to-new-heights/" target="_blank" rel="noopener noreferrer" class="footer-link">WFLA</a>
+        <a href="https://baynews9.com/fl/tampa/news/2024/03/12/flight-club-teaching-underrepresented-kids-to-fly" target="_blank" rel="noopener noreferrer" class="footer-link">Bay News 9</a>
+        <a href="https://www.abcactionnews.com/news/anchors-report/infinity-aero-club-hopes-to-inspire-next-generation-of-aviation-workers" target="_blank" rel="noopener noreferrer" class="footer-link">ABC Action News</a>
+        <a href="https://www.fox13news.com/news/bay-area-stem-program-helps-disadvantaged-teens-take-dreams-to-new-heights" target="_blank" rel="noopener noreferrer" class="footer-link">FOX 13</a>
+        <a href="https://generalaviationnews.com/2024/02/14/not-your-average-teenager/" target="_blank" rel="noopener noreferrer" class="footer-link">General Aviation News</a>
+        <a href="https://www.flyingmag.com/faster-pathways-to-high-paying-aviation-careers/" target="_blank" rel="noopener noreferrer" class="footer-link">Flying Magazine</a>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-legal">Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit organization. iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate.</p>
+    <p class="footer-copyright">&copy; 2026 Infinity Aero Club Tampa Bay, Inc. (iACT) DBA Mission Aviation Academy &middot; EIN 85-1110607 &middot; Florida 501(c)(3) &middot; <a href="https://infinityaeroclub.org" style="color:rgba(255,255,255,0.35);">infinityaeroclub.org</a></p>
+    <p class="footer-salary-note">Salaries sourced from BLS May 2024 Occupational Employment Statistics. Salary figures are national medians and do not guarantee individual earnings.</p>
+  </div>
+</footer>
+
+<script src="/maa-nav.js"></script>
+</body>
+</html>
