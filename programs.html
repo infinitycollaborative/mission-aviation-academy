@@ -61,6 +61,24 @@
 .cred-sufs{font-family:Arial,sans-serif;font-size:.7rem;color:var(--green);font-weight:bold;margin-top:.3rem;}
 .family-cta{margin-top:1.5rem;}
 
+/* AEROSPACE & MECH ENG CARD */
+.ame-card{background:var(--white);border:1px solid #ddd;border-top:4px solid #001838;padding:1.4rem 1.4rem 1.2rem;margin-top:1.2rem;font-family:Arial,sans-serif;}
+.ame-badge{display:inline-block;background:#001838;color:#fff;font-size:.68rem;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;margin-bottom:.7rem;}
+.ame-card h3{font-family:Georgia,serif;font-size:1.2rem;color:var(--navy);margin-bottom:.3rem;}
+.ame-card .ame-tagline{font-weight:bold;color:var(--gold);font-size:.9rem;margin-bottom:.4rem;}
+.ame-card .ame-meta{font-size:.78rem;color:var(--mid);margin-bottom:.3rem;}
+.ame-table-wrap{overflow-x:auto;margin:.9rem 0;}
+.ame-table{width:100%;border-collapse:collapse;font-size:.8rem;}
+.ame-table th{background:var(--light);color:var(--navy);text-align:left;padding:.5rem .6rem;border-bottom:2px solid #ddd;white-space:nowrap;}
+.ame-table td{padding:.5rem .6rem;border-bottom:1px solid #eee;color:var(--text);}
+.ame-parts{margin:.6rem 0 .9rem;font-size:.82rem;}
+.ame-parts summary{cursor:pointer;font-weight:bold;color:var(--navy);}
+.ame-parts ol{list-style:none;margin:.6rem 0 0;padding:0;}
+.ame-parts li{padding:.3rem 0;border-bottom:1px solid #f0f0f0;color:var(--mid);}
+.ame-card .ame-careers{font-size:.8rem;color:var(--mid);line-height:1.6;margin-bottom:1rem;}
+.ame-card .ame-sublabel{font-size:.75rem;color:var(--mid);margin:.4rem 0 .5rem;}
+.ame-ref{font-size:.78rem;color:var(--sky);text-decoration:none;font-weight:bold;}
+
 /* CATALOG LANES */
 .lanes-bg{background:var(--navy);padding:4rem 2rem;}
 .lanes-bg h2{color:var(--white);}
@@ -97,19 +115,25 @@
     <li><a href="/programs" style="color:var(--gold)">Programs</a></li>
     <li><a href="/scholarships">Scholarships</a></li>
     <li><a href="/about">About</a></li>
-    <li><a href="#" class="maa-nav-cta">Start Your Flight Path</a></li>
+    <li><a href="/press">Press</a></li>
+    <li><a href="/community">Community</a></li>
+    <li><a href="/stories">Stories</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/donate">Donate</a></li>
+    <li><a href="/saturday#rsvp" class="maa-nav-cta">Start Your Flight Path</a></li>
   </ul>
+  <button class="maa-nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="page-hero">
   <span class="section-label" style="color:var(--gold);display:block;margin-bottom:.6rem;">7 Career Families · 8 Enrollment Lanes</span>
   <h1>Aviation is bigger than the cockpit.</h1>
   <p>Every program below leads to a real, high-income career. None require a four-year degree. Every one is available with SUFS scholarship funding where eligible.</p>
-  <a href="#" class="btn btn-gold">Start Your Flight Path</a>
+  <a href="/saturday#rsvp" class="btn btn-gold">Start Your Flight Path</a>
 </div>
 
 <!-- FAMILY 1: DRONE -->
-<div class="family-section">
+<div class="family-section" id="drone">
   <div class="family-inner">
     <div class="family-sidebar">
       <div class="family-label">Fastest Entry · Family 1</div>
@@ -143,7 +167,7 @@
 </div>
 
 <!-- FAMILY 2: PILOT -->
-<div class="family-section">
+<div class="family-section" id="pilot">
   <div class="family-inner">
     <div class="family-sidebar">
       <div class="family-label">Flight Operations · Family 2</div>
@@ -158,12 +182,12 @@
       <div class="credentials">
         <div class="cred-card">
           <h4>PPL Ground School</h4>
-          <p>36 hrs · Mon/Wed/Fri online · 16+ wks</p>
+          <p>36 hrs · Mon/Wed/Fri online · 16+ wks · Ages 12+</p>
           <div class="cred-sufs">✓ SUFS Eligible · $2,400</div>
         </div>
         <div class="cred-card">
           <h4>PPL Flight Simulator</h4>
-          <p>26 sessions · FAA-approved BATD · CFI-signed logbook · X39</p>
+          <p>26 sessions · FAA-approved BATD · CFI-signed logbook · X39 · Ages 10+</p>
           <div class="cred-sufs">✓ SUFS Eligible · $3,395/semester</div>
         </div>
         <div class="cred-card">
@@ -240,7 +264,7 @@
 </div>
 
 <!-- FAMILY 5: AI INNOVATION -->
-<div class="family-section">
+<div class="family-section" id="ai">
   <div class="family-inner">
     <div class="family-sidebar">
       <div class="family-label">AI · Tech · Entrepreneurship · Family 5</div>
@@ -274,7 +298,7 @@
 </div>
 
 <!-- FAMILY 6: AEROSPACE -->
-<div class="family-section">
+<div class="family-section" id="aerospace">
   <div class="family-inner">
     <div class="family-sidebar">
       <div class="family-label">Engineering Track · Family 6</div>
@@ -300,6 +324,42 @@
           <h4>RC Aircraft Build (RoT &amp; iACT)</h4>
           <p>320 hrs · 4 phases · AMA class · Ages 9–18 · P-51, C-172 models</p>
           <div class="cred-sufs">~$4K/year · Contact for details</div>
+        </div>
+      </div>
+      <!-- AEROSPACE & MECHANICAL ENGINEERING WORKFORCE TRAINING — interest list only until 2027, no purchase button -->
+      <div class="ame-card" id="aerospace-engineering">
+        <span class="ame-badge">Coming 2027</span>
+        <h3>Aerospace &amp; Mechanical Engineering Workforce Training</h3>
+        <p class="ame-tagline">Design. Build. Test. Fly. Innovate!</p>
+        <p class="ame-meta">Aviation MiLL™ · Youth Aircraft Factory (YAF) · Ages 12–22+</p>
+        <p class="ame-meta">Tampa North Aero Park (X39) · Facility: 4639 Birdsong Blvd, Lutz FL 33559 · Parking GPS: 4661 Birdsong Blvd, Lutz FL 33559</p>
+        <div class="ame-table-wrap">
+          <table class="ame-table">
+            <thead><tr><th>Pathway</th><th>Parts</th><th>Duration</th><th>Tuition</th></tr></thead>
+            <tbody>
+              <tr><td>Foundation Program</td><td>Parts 1–4</td><td>12 Months</td><td>$3,988 ($997/quarter)</td></tr>
+              <tr><td>Advanced Workforce Program</td><td>Parts 1–8</td><td>24 Months</td><td>$7,976 ($997/quarter)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <details class="ame-parts">
+          <summary>8-part curriculum</summary>
+          <ol>
+            <li><strong>Part 1 (Q1):</strong> Engineering Fundamentals &amp; Aircraft Design</li>
+            <li><strong>Part 2 (Q2):</strong> Mechanical Systems, Tools &amp; Fabrication</li>
+            <li><strong>Part 3 (Q3):</strong> Electrical Systems &amp; Aircraft Assembly</li>
+            <li><strong>Part 4 (Q4):</strong> Aircraft Integration, Testing &amp; Evaluation</li>
+            <li><strong>Part 5 (Q5):</strong> Advanced Aircraft Manufacturing &amp; Quality Assurance</li>
+            <li><strong>Part 6 (Q6):</strong> Aerospace Systems &amp; Emerging Technologies</li>
+            <li><strong>Part 7 (Q7):</strong> Applied Engineering &amp; Workforce Readiness</li>
+            <li><strong>Part 8 (Q8):</strong> Capstone Engineering Project &amp; Career Pathways</li>
+          </ol>
+        </details>
+        <p class="ame-careers"><strong>Career pathways:</strong> Aerospace Engineering · Aircraft Manufacturing · AMT/A&amp;P · Drone &amp; Autonomous Systems · eVTOL · Quality Assurance · Aerospace Entrepreneurship</p>
+        <div class="ame-cta">
+          <a href="/saturday#rsvp" class="btn btn-gold btn-sm">Start Your Flight Path →</a>
+          <p class="ame-sublabel">Join the 2027 interest list — we'll reach out with enrollment details</p>
+          <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000015438" target="_blank" rel="noopener" class="ame-ref">Program details on FlightCircle →</a>
         </div>
       </div>
     </div>
@@ -439,7 +499,7 @@
             <li>Flight Plan 2030 career coaching included</li>
           </ul>
           <div style="margin-top:1.2rem;">
-            <a href="#" class="btn btn-gold btn-sm">Start Your Flight Path</a>
+            <a href="/saturday#rsvp" class="btn btn-gold btn-sm">Start Your Flight Path</a>
           </div>
         </div>
       </div>
@@ -455,16 +515,16 @@
     <p style="font-family:Arial,sans-serif;font-size:.9rem;color:var(--mid);margin-bottom:1.5rem;max-width:56ch;line-height:1.6;">Purchase your intro or orientation flight directly through FlightCircle — secure checkout, instant confirmation.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
       <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000009067" target="_blank" rel="noopener" style="display:block;background:var(--navy);color:#fff;font-family:Arial,sans-serif;font-size:.88rem;font-weight:bold;padding:1rem 1.2rem;text-decoration:none;border-top:3px solid var(--gold);">
-        ✈ Introductory Flight<br><span style="font-size:.75rem;font-weight:normal;opacity:.75;">60 min · Buy Now →</span>
+        ✈ Introductory Flight<br><span style="font-size:.75rem;font-weight:normal;opacity:.75;">60 min · Book Now →</span>
       </a>
       <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000004570" target="_blank" rel="noopener" style="display:block;background:var(--navy);color:#fff;font-family:Arial,sans-serif;font-size:.88rem;font-weight:bold;padding:1rem 1.2rem;text-decoration:none;border-top:3px solid var(--gold);">
-        ✈ Introductory Flight<br><span style="font-size:.75rem;font-weight:normal;opacity:.75;">30 min · Buy Now →</span>
+        ✈ Introductory Flight<br><span style="font-size:.75rem;font-weight:normal;opacity:.75;">30 min · Book Now →</span>
       </a>
       <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000016759" target="_blank" rel="noopener" style="display:block;background:#8B1A1A;color:#fff;font-family:Arial,sans-serif;font-size:.88rem;font-weight:bold;padding:1rem 1.2rem;text-decoration:none;border-top:3px solid var(--gold);">
-        🎯 MAA Orientation Flight<br><span style="font-size:.75rem;font-weight:normal;opacity:.75;">Buy Now →</span>
+        🎯 MAA Orientation Flight<br><span style="font-size:.75rem;font-weight:normal;opacity:.75;">Book Now →</span>
       </a>
       <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000030175" target="_blank" rel="noopener" style="display:block;background:#1A5C2A;color:#fff;font-family:Arial,sans-serif;font-size:.88rem;font-weight:bold;padding:1rem 1.2rem;text-decoration:none;border-top:3px solid var(--gold);">
-        🚁 Drone TRUST + Intro Flight<br><span style="font-size:.75rem;font-weight:normal;opacity:.75;">1 hr · Buy Now →</span>
+        🚁 Drone TRUST + Intro Flight<br><span style="font-size:.75rem;font-weight:normal;opacity:.75;">1 hr · Book Now →</span>
       </a>
     </div>
   </div>
@@ -476,9 +536,9 @@
     <h2 style="color:var(--white);">Not sure where to start?</h2>
     <p style="font-family:Arial,sans-serif;color:rgba(255,255,255,.65);max-width:50ch;margin:.8rem auto 1.8rem;">Come to a Saturday Open House. Bring your student. No commitment. We'll map a pathway together.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="#" class="btn btn-gold">Start Your Flight Path</a>
-      <a href="#" class="btn btn-ghost">Talk to Admissions</a>
-      <a href="#" class="btn" style="background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.35);font-family:Arial,sans-serif;font-size:.95rem;font-weight:700;padding:.85rem 1.8rem;text-decoration:none;display:inline-block;">Become a Co-Op Partner</a>
+      <a href="/saturday#rsvp" class="btn btn-gold">Start Your Flight Path</a>
+      <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" class="btn btn-ghost" target="_blank" rel="noopener">Talk to Admissions</a>
+      <a href="/partners#school" class="btn" style="background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.35);font-family:Arial,sans-serif;font-size:.95rem;font-weight:700;padding:.85rem 1.8rem;text-decoration:none;display:inline-block;">Become a Co-Op Partner</a>
     </div>
   </div>
 </section>
@@ -492,5 +552,6 @@
   </div>
 </footer>
 
+<script src="/maa-nav.js"></script>
 </body>
 </html>
