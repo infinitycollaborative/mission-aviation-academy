@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href="https://missionaviationacademy.org/school-partner" />
+<title>Private School &amp; Homeschool Partner Package — Mission Aviation Academy</title>
+<style>
+:root {
+  --navy: #001838;
+  --navy-mid: #002855;
+  --gold: #C9A227;
+  --gold-light: #E8C547;
+  --red: #8B1A1A;
+  --white: #FFFFFF;
+  --off-white: #F7F6F2;
+  --gray-light: #ECEAE4;
+  --gray-mid: #B0AEAD;
+  --gray-text: #444340;
+  --font-head: 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Helvetica Neue', Arial, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
+body { font-family: var(--font-body); color: var(--gray-text); background: var(--white); font-size: 16px; line-height: 1.65; }
+
+/* NAV */
+nav {
+  background: var(--navy);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--gold);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  gap: 12px;
+}
+.nav-brand { font-family: var(--font-head); font-size: 15px; color: var(--white); font-weight: normal; letter-spacing: 0.02em; }
+.nav-brand span { color: var(--gold); }
+.nav-links { display: flex; gap: 2px; list-style: none; flex-wrap: wrap; }
+.nav-links a { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.75); text-decoration: none; padding: 5px 10px; border-radius: 4px; letter-spacing: 0.04em; }
+.nav-links a:hover { color: var(--gold); }
+
+/* HERO */
+.hero {
+  background: var(--navy);
+  padding: 72px 24px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold);
+}
+.hero-inner { max-width: 860px; margin: 0 auto; }
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+}
+.hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(30px, 5vw, 48px);
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  font-weight: normal;
+  max-width: 720px;
+}
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.75);
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.stat { border-left: 2px solid var(--gold); padding-left: 16px; }
+.stat-num { font-family: var(--font-head); font-size: 28px; color: var(--white); line-height: 1; margin-bottom: 4px; }
+.stat-label { font-size: 11px; color: var(--gray-mid); letter-spacing: 0.06em; font-weight: 600; }
+
+/* SECTION STRUCTURE */
+section { padding: 64px 24px; }
+section:nth-child(even) { background: var(--off-white); }
+.section-inner { max-width: 900px; margin: 0 auto; }
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+}
+h2 {
+  font-family: var(--font-head);
+  font-size: clamp(22px, 3.5vw, 32px);
+  color: var(--navy);
+  font-weight: normal;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.section-intro {
+  font-size: 15px;
+  color: var(--gray-text);
+  max-width: 680px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+/* FAQ */
+.faq-grid { display: flex; flex-direction: column; gap: 0; }
+.faq-item {
+  border-bottom: 1px solid var(--gray-light);
+  padding: 20px 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--gray-light); }
+.faq-q {
+  font-family: var(--font-head);
+  font-size: 17px;
+  color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  user-select: none;
+  line-height: 1.4;
+}
+.faq-q::after {
+  content: '+';
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+  transition: transform 0.2s;
+}
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  display: none;
+  padding-top: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--gray-text);
+  max-width: 760px;
+}
+.faq-item.open .faq-a { display: block; }
+.faq-a strong { color: var(--navy); }
+.faq-a ul { padding-left: 20px; margin-top: 8px; }
+.faq-a ul li { margin-bottom: 6px; }
+.faq-section-head {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-top: 36px;
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gold);
+  font-family: var(--font-body);
+}
+
+/* TIER TABLE */
+.tier-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; }
+.tier-table th { background: var(--navy); color: var(--gold); font-family: var(--font-body); font-size: 11px; letter-spacing: 0.08em; font-weight: 700; padding: 12px 16px; text-align: left; }
+.tier-table td { padding: 14px 16px; border-bottom: 1px solid var(--gray-light); vertical-align: top; line-height: 1.55; }
+.tier-table tr:last-child td { border-bottom: none; }
+.tier-table tr:nth-child(even) td { background: var(--off-white); }
+.tier-name { font-family: var(--font-head); font-size: 15px; color: var(--navy); }
+.tier-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-left: 8px;
+  vertical-align: middle;
+  font-family: var(--font-body);
+}
+
+/* COURSE TABLE */
+.course-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13.5px; }
+.course-table th { background: var(--navy); color: var(--white); font-size: 11px; letter-spacing: 0.06em; font-weight: 700; padding: 10px 14px; text-align: left; font-family: var(--font-body); }
+.course-table td { padding: 11px 14px; border-bottom: 1px solid var(--gray-light); vertical-align: top; line-height: 1.5; }
+.course-table tr:last-child td { border-bottom: none; }
+.course-table tr:hover td { background: #F0EFE9; }
+.price-cell { font-weight: 700; color: var(--navy); white-space: nowrap; }
+.sufs-badge {
+  display: inline-block;
+  background: #1A6B3A;
+  color: var(--white);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-family: var(--font-body);
+}
+.course-group { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--gold); padding: 12px 14px 4px; background: var(--navy); }
+
+/* SCHEDULE */
+.schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 8px; }
+.schedule-card {
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.schedule-day {
+  background: var(--navy);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 10px 16px;
+  font-family: var(--font-body);
+}
+.schedule-day.gold { background: var(--gold); color: var(--navy); }
+.schedule-slot { padding: 10px 16px; border-bottom: 1px solid var(--gray-light); font-size: 13px; line-height: 1.45; }
+.schedule-slot:last-child { border-bottom: none; }
+.slot-time { font-weight: 700; color: var(--navy); font-size: 12px; }
+.slot-desc { color: var(--gray-text); font-size: 12px; }
+
+/* FUND BOXES */
+.fund-box {
+  border: 2px solid var(--gold);
+  border-radius: 4px;
+  padding: 32px;
+  margin-top: 24px;
+  position: relative;
+}
+.fund-box.specific {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
+}
+.fund-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+}
+.fund-title {
+  font-family: var(--font-head);
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.fund-box.specific .fund-title { color: var(--white); }
+.fund-row { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 20px; }
+.fund-item { flex: 1; min-width: 160px; }
+.fund-item-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 4px; font-family: var(--font-body); }
+.fund-item-val { font-size: 14px; line-height: 1.5; }
+.fund-box.specific .fund-item-val { color: rgba(255,255,255,0.85); }
+.fund-item-val strong { color: var(--white); }
+
+/* PRICING CARDS */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+.pricing-card {
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+  padding: 24px;
+}
+.pricing-card.featured {
+  border-color: var(--gold);
+  border-width: 2px;
+  background: var(--navy);
+  color: var(--white);
+}
+.pricing-tier { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 8px; font-family: var(--font-body); }
+.pricing-name { font-family: var(--font-head); font-size: 18px; color: var(--navy); margin-bottom: 4px; }
+.pricing-card.featured .pricing-name { color: var(--white); }
+.pricing-amount { font-family: var(--font-head); font-size: 30px; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+.pricing-period { font-size: 12px; color: var(--gray-mid); margin-bottom: 16px; }
+.pricing-features { list-style: none; font-size: 13px; line-height: 1.6; }
+.pricing-features li { padding: 4px 0; border-top: 1px solid var(--gray-light); }
+.pricing-card.featured .pricing-features li { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); }
+.pricing-features li:first-child { border-top: none; }
+
+/* CTA */
+.cta-bar { background: var(--gold); padding: 48px 24px; text-align: center; }
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-bar h2 { font-family: var(--font-head); font-size: 28px; color: var(--navy); margin-bottom: 12px; font-weight: normal; }
+.cta-bar p { font-size: 15px; color: var(--navy); margin-bottom: 24px; opacity: 0.85; }
+.cta-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.btn { display: inline-block; padding: 12px 28px; border-radius: 3px; font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; font-family: var(--font-body); }
+.btn-navy { background: var(--navy); color: var(--white); }
+.btn-outline { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+
+/* FOOTER */
+footer { background: var(--navy); padding: 32px 24px; }
+.footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-start; }
+.footer-brand { font-family: var(--font-head); font-size: 14px; color: var(--white); }
+.footer-brand span { color: var(--gold); display: block; font-size: 11px; font-family: var(--font-body); letter-spacing: 0.06em; margin-top: 4px; }
+.footer-contact { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.8; }
+.footer-contact a { color: var(--gold); text-decoration: none; }
+
+@media (max-width: 640px) {
+  .hero-stats { gap: 20px; }
+  .nav-links { display: none; }
+  .fund-box { padding: 20px; }
+  .tier-table { font-size: 12px; }
+  .tier-table th, .tier-table td { padding: 10px 10px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" style="text-decoration:none;">Mission Aviation Academy <span>Infinity Aero Club Tampa Bay, Inc.</span></a>
+    <ul class="nav-links">
+      <li><a href="#faq-parent">For Families</a></li>
+      <li><a href="#faq-admin">For Schools</a></li>
+      <li><a href="#tiers">Partnership Tiers</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#fund">Scholarship Fund</a></li>
+      <li><a href="#courses">Courses</a></li>
+    </ul>
+    <a href="/saturday#rsvp" style="background:var(--gold);color:var(--navy);padding:8px 18px;font-size:12px;font-weight:700;text-decoration:none;border-radius:3px;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0;">Start Your Flight Path</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Private School &amp; Homeschool Partner Package · 2026–2027</div>
+    <h1>Aviation, STEM, Entrepreneurship &amp; AI — brought to your school community.</h1>
+    <p class="hero-sub">Mission Aviation Academy is a SUFS-approved 501(c)(3) nonprofit provider operating at Tampa North Aero Park (X39). We deliver FAA-credentialed aviation and STEM programs for private school cohorts and homeschool families — in person every Saturday and virtually Monday through Friday.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">730+</div><div class="stat-label">FAA Credentials Issued</div></div>
+      <div class="stat"><div class="stat-num">1,380+</div><div class="stat-label">Discovery Flights</div></div>
+      <div class="stat"><div class="stat-num">38+</div><div class="stat-label">SUFS-Approved Courses</div></div>
+      <div class="stat"><div class="stat-num">300K+</div><div class="stat-label">Youth &amp; Families Reached</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ PARENTS -->
+<section id="faq-parent">
+  <div class="section-inner">
+    <div class="section-label">For Families</div>
+    <h2>Frequently Asked Questions</h2>
+    <p class="section-intro">Everything a parent or homeschool family needs to know before enrolling — from how SUFS funding works to what a typical Saturday looks like at X39.</p>
+
+    <div class="faq-section-head">Getting Started</div>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <div class="faq-q">What is Mission Aviation Academy?</div>
+        <div class="faq-a">Mission Aviation Academy (MAA) is the academic division of Infinity Aero Club Tampa Bay, Inc. — a Florida 501(c)(3) nonprofit operating at Tampa North Aero Park (X39) in Lutz, FL. We deliver FAA-credentialed aviation, drone, STEM, entrepreneurship, and AI programs for students ages 9 through adult. Every student enters through an individualized orientation, skills assessment, and personal training roadmap — we do not run generic classes. We are a registered SUFS provider, SAM.gov active, and EIN 85-1110607.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">My child attends a private school or homeschool co-op. Can they enroll?</div>
+        <div class="faq-a">Yes — and enrollment is the same regardless of school type. Private school students, homeschoolers, and co-op students all follow the same entry process: register and complete onboarding, take an initial assessment, receive a personal training roadmap, and begin their first session. If your school has a partnership MOU with MAA, your cohort may have dedicated session blocks and scholarship-funded seats available. Contact us to check whether your school is a current partner.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the first step to enroll?</div>
+        <div class="faq-a">The first step is the <strong>Registration &amp; Onboarding ($200, one-time)</strong>. This covers your student's individual orientation, account setup, skills assessment, and a personalized training blueprint built around their goals — approximately two hours of direct staff time. It is required before any course begins and is SUFS-fundable. After onboarding, your student selects their first course or subscription tier and books their first session.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What ages do you serve?</div>
+        <div class="faq-a">We serve students ages 9 through adult. Age-based track recommendations:<ul><li><strong>Ages 9–12:</strong> Tier 1–2 enrichment, morning Saturday sessions — drone discovery, simulator intro, STEM foundations</li><li><strong>Ages 13–15:</strong> Tier 2–3, afternoon Saturday sessions — drone certification pathway begins, AI Innovation</li><li><strong>Ages 16–17:</strong> Tier 3–4, certification focus — FAA Part 107 eligibility, Part 107 Phase 1 ($800)</li><li><strong>Ages 18+:</strong> Tier 4 and career track — full Part 107, flight simulator program, apprenticeship pathway</li></ul></div>
+      </div>
+
+      <div class="faq-section-head">SUFS Funding</div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can we use our Step Up For Students scholarship funds at MAA?</div>
+        <div class="faq-a">Yes. MAA is a registered SUFS provider and 38+ of our courses and programs are live and bookable through the SUFS EMA marketplace. If your family holds an active FES-UA, FTC, or AAA scholarship balance, you can apply those funds directly toward MAA enrollment — including the one-time onboarding fee, monthly enrichment tiers, AI Innovation courses, drone certification, and the flight simulator program. Contact us or log into your SUFS account and search "Mission Aviation Academy" to apply funds directly.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What does SUFS funding actually cover?</div>
+        <div class="faq-a">SUFS funds can cover: Registration &amp; Onboarding ($200), Monthly Enrichment Tier subscriptions ($99–$249/mo), Academic Tutoring sessions ($90–$100/hr), AI Innovation courses ($450–$825), Drone &amp; Aerospace STEM courses ($450 each), FAA Part 107 Phase 1 Foundations ($800), and the Flight Simulator Program ($3,395). Ground school, solo flight training, workforce programs, and camps are available but not yet SUFS-listed — contact us for those options directly.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Our SUFS balance is limited. What's the most strategic way to use it?</div>
+        <div class="faq-a">Start with Registration &amp; Onboarding ($200) — required and SUFS-fundable. Then, depending on your student's age and goals: for ages 9–15, a Tier 2 or Tier 3 monthly subscription ($149–$199/mo) gives the broadest course access. For ages 16+, the Part 107 Phase 1 course ($800) is the highest-credential, highest-career-value use of a larger balance. For families with limited balances, à la carte sessions at $99/individual or $49/person in a group are available without a subscription commitment.</div>
+      </div>
+
+      <div class="faq-section-head">Schedule &amp; Delivery</div>
+
+      <div class="faq-item">
+        <div class="faq-q">When can my child attend?</div>
+        <div class="faq-a"><strong>Saturday in-person at X39 (Lutz, FL):</strong> 8:30 AM–5:00 PM. Group and individual sessions in drone, simulator, and STEM tracks. This is our flagship delivery — students work hands-on with real aircraft, FAA-approved simulators, and certified instructors.<br><br><strong>Virtual sessions (Monday–Friday):</strong> Individual or small group appointments by booking, SUFS-approved courses only. Available 12:30–2:30 PM and 3:00–5:00 PM Monday, Wednesday, Thursday. Friday: 8:30–10:30 AM overflow window by request. All virtual sessions are 2 hours.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does a typical Saturday work?</div>
+        <div class="faq-a"><strong>Morning (Ages 9–15 primary):</strong><ul><li>8:30 AM — Group session or individual arrival</li><li>10:00 AM — Check-in, badge scan, mentor connect</li><li>10:15 AM — Course Session 1: Drone Discovery, Simulator, or Career Assessment</li><li>12:00 PM — Lunch break</li><li>12:30 PM — Course Session 2: Drone Training, Ground School, or AI Apps</li></ul><strong>Afternoon (Ages 13–18+ primary):</strong><ul><li>2:00 PM — Afternoon check-in</li><li>2:15 PM — Course Sessions 3–4 continue through 5:00 PM</li></ul>New students always begin with orientation and assessment before joining a session track.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is transportation provided?</div>
+        <div class="faq-a">Transportation to X39 is the family's responsibility. MAA is located at Tampa North Aero Park, 4639 Birdsong Blvd, Lutz, FL 33559 (Parking GPS: 4661 Birdsong Blvd). Virtual sessions eliminate the travel requirement entirely — students join by Zoom appointment from home. School partner cohorts may coordinate group transportation through their school's existing resources; contact your school's MAA liaison for details.</div>
+      </div>
+
+      <div class="faq-section-head">Credentials &amp; Outcomes</div>
+
+      <div class="faq-item">
+        <div class="faq-q">What credentials can my child earn?</div>
+        <div class="faq-a">Credentials available through MAA programs:<ul><li><strong>FAA TRUST Certificate</strong> — Recreational drone operator (ages 12+, Part I Drone course)</li><li><strong>FAA Part 107 Remote Pilot Certificate</strong> — Commercial drone pilot (ages 16+, Part 107 Phase 1–3)</li><li><strong>Drone Business Certificates</strong> — 8 specializations including mapping, inspection, agriculture (ages 16+)</li><li><strong>Flight Simulator Completion Certificate</strong> — 26 sessions on FAA-approved simulator with CFI (ages 12+)</li><li><strong>AI Innovation Certificates</strong> — Parts 1 and 2, app-building with AI tools (all ages)</li><li><strong>MAA Internship Certificate</strong> — For students completing the MAA Internship Program or equivalent tracks</li></ul>Every student receives a portfolio, logbook entries, and letters of recommendation documenting their training pathway.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Are your instructors background-checked?</div>
+        <div class="faq-a">Yes. Background checks are a condition of any student-contact role at MAA — for lead instructors, drone instructors, simulator instructors, and any staff or volunteer with unsupervised student access. Documentation is available to school partners upon request as part of the MOU process.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ ADMIN -->
+<section id="faq-admin">
+  <div class="section-inner">
+    <div class="section-label">For School Administrators &amp; Principals</div>
+    <h2>Partnership Process &amp; Requirements</h2>
+    <p class="section-intro">What school administrators need to know before signing a partnership MOU — compliance, curriculum, cohort structure, and the School Partner Scholarship Fund.</p>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <div class="faq-q">What does a school partnership with MAA actually look like?</div>
+        <div class="faq-a">A school partnership begins with a <strong>Tier 1 Exploratory Partnership MOU</strong> — a non-binding framework agreement that establishes intent and the addendum structure. No financial commitments are made at this stage. From there, a <strong>Tier 2 School Cohort Addendum</strong> names the specific student cohort, credentials, schedule, location, cost, funding source, and outcome reporting requirements. The MOU and addendum together define the working relationship; each addendum covers a specific program area (drone, internships, STEM lab, field trips, fundraising, books, gala).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What does MAA require before the MOU can advance?</div>
+        <div class="faq-a">Three items are required before a school MOU can progress beyond the exploratory stage:<ul><li><strong>Background checks</strong> — completed for all MAA instructors with student contact (online or in-person). Documentation provided to the school upon request.</li><li><strong>Cohort Addendum terms agreed</strong> — specific program, credential, schedule, location, and funding source named in writing.</li><li><strong>No-duplication-of-payment budget</strong> — a written per-student budget identifying every funding source (SUFS, WIA, grant, sponsor, school, family) so no expense is billed twice.</li></ul></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What curriculum does MAA actually deliver — and does MAA create it?</div>
+        <div class="faq-a">MAA creates and delivers its own aviation, drone, STEM, entrepreneurship, and AI curriculum — we are not a broker. Lead instruction is provided by Ricardo E. Foster (LCDR, USN Ret., FAA Remote Pilot, LSRM certificate holder) as primary instructor. Drone practicals are delivered by FAA-credentialed drone instructors. Flight simulator sessions are conducted with a CFI (Phillip Mednick, FAA Cert. No. 3205411, Exp. April 2028). Curriculum scope and sequence, instructor qualifications, and student-to-instructor ratios are available in the MAA Master Course Catalog (v2.6) — provided to school partners upon request.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What does FERPA compliance look like for school partner students?</div>
+        <div class="faq-a">MAA operates as a third-party service provider under FERPA. Student records generated by MAA (session logs, credential documentation, internship hours, assessment results) are shared with the partnering school as part of the cohort's outcome reporting requirements — named in the School Cohort Addendum. No student information is shared with third parties outside the MOU. Schools retain primary FERPA responsibility for their students; MAA complies with school-specific data handling requirements as documented in the addendum.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does the School Partner Scholarship Fund work?</div>
+        <div class="faq-a">The <strong>MAA School Partner Scholarship Fund</strong> is a dedicated fundraising vehicle that covers the cost of program enrollment for school partner students — so the school pays nothing and families pay nothing out-of-pocket beyond what their SUFS balance covers. Each school partner receives a named cohort fund (e.g., "[Your School Name] Student Access Fund"). Donors contribute to that specific fund; contributions are tracked and reported to the school. The fund is activated through the MOU and managed by MAA's development team. Each school's fund has a designated Campaign Chair responsible for donor cultivation, the I Fly student storytelling campaign, bulk book outreach, and the annual gala at X39.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Our families cannot redirect SUFS balances to MAA. Does that block the partnership?</div>
+        <div class="faq-a">No. The School Partner Scholarship Fund was specifically designed for this situation. When SUFS cross-funding is not available at the school level, the scholarship fund covers the enrollment cost directly — students receive the same program at no out-of-pocket cost to the family. The fund is seeded through employer sponsors, individual donors, bulk book purchases, and the annual joint fundraising gala. Contact us to discuss the fund structure and the initial fundraising target for your school cohort.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What outcome data does MAA provide to school partners?</div>
+        <div class="faq-a">MAA provides the following outcome data to school partners as part of the Cohort Addendum reporting requirements: session attendance records, credentials earned per student, internship hours logged, employer interviews completed, simulator hours, assessment scores, and letters of recommendation issued. Reporting cadence (monthly, quarterly, or semester) is negotiated in the addendum. All data is provided in a format compatible with the school's existing reporting systems.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERSHIP TIERS -->
+<section id="tiers">
+  <div class="section-inner">
+    <div class="section-label">Partnership Structure</div>
+    <h2>Four Ways to Partner with MAA</h2>
+    <p class="section-intro">Partnership with MAA is tiered — schools and families enter at the level that fits their current relationship and deepen from there. Each tier activates additional program elements and funding pathways.</p>
+
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+    <table class="tier-table">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Who It's For</th>
+          <th>What It Covers</th>
+          <th>Funding Pathway</th>
+          <th>Next Step</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="tier-name">Tier 1 <span class="tier-badge">Entry</span></div>Exploratory Partnership MOU</td>
+          <td>Private schools, Montessori schools, faith-based schools, charter schools exploring the partnership</td>
+          <td>Framework agreement only — no financial commitments. Establishes intent, addendum structure, and program areas of interest. Head of School signs.</td>
+          <td>None required at this stage. SUFS and scholarship fund options presented.</td>
+          <td>Schedule an exploratory call. Ricardo presents the program overview and MOU framework. School reviews and returns annotated draft.</td>
+        </tr>
+        <tr>
+          <td><div class="tier-name">Tier 2</div>School Cohort Addendum</td>
+          <td>Schools that have signed Tier 1 and are ready to enroll a student cohort</td>
+          <td>Names the specific cohort (grades, size, ages), credentials, schedule (Saturday in-person or virtual), location, exact cost per student, and funding source. Outcome reporting cadence defined. Background check documentation provided.</td>
+          <td>School Partner Scholarship Fund (MAA-managed, donor-funded). SUFS where applicable. WIA youth contracts where eligible. Employer cohort seat sponsors.</td>
+          <td>Cohort Addendum signed. Background checks confirmed. School Partner Scholarship Fund activated. First cohort session scheduled.</td>
+        </tr>
+        <tr>
+          <td><div class="tier-name">Tier 3</div>Homeschool Co-op Agreement</td>
+          <td>Parent-governed homeschool co-ops and hybrid school networks</td>
+          <td>Lighter structure than Tier 2 — designed for organizations without formal administration. Names the student group, program, schedule (Saturday cohort or virtual appointment track), and SUFS enrollment process. Parent liaison designated.</td>
+          <td>Individual SUFS balances applied per family. Co-op scholarship fund available upon request. À la carte and group session pricing available.</td>
+          <td>Co-op agreement signed. Parent liaison confirmed. SUFS enrollment guide distributed to families. First Saturday cohort or virtual orientation scheduled.</td>
+        </tr>
+        <tr>
+          <td><div class="tier-name">Tier 4 <span class="tier-badge">Direct</span></div>SUFS Parent Direct Enrollment</td>
+          <td>Individual SUFS-holding families — private school, homeschool, or unaffiliated — enrolling directly without a school MOU</td>
+          <td>Direct family enrollment through the SUFS EMA marketplace. Covers all 38+ SUFS-approved MAA courses. No school involvement required. Same entry process: onboarding, assessment, roadmap, first session.</td>
+          <td>FES-UA, FTC, or AAA scholarship balance applied directly. À la carte, group, or subscription tier. No school-level financial commitment.</td>
+          <td>Family visits the SUFS EMA marketplace, searches "Mission Aviation Academy," selects Registration &amp; Onboarding ($200), and books first Saturday or virtual session.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-label">Enrollment Pricing</div>
+    <h2>Homeschool STEM Program — Rates &amp; Enrollment</h2>
+    <p class="section-intro">All pricing is SUFS-fundable where noted. School partner cohort seats are priced separately through the MOU — contact us for cohort rates. All programs run on 12-week quarters aligned to the SUFS reimbursement schedule.</p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Required First Step</div>
+        <div class="pricing-name">Registration &amp; Onboarding</div>
+        <div class="pricing-amount">$200</div>
+        <div class="pricing-period">One-time · All ages · SUFS-fundable</div>
+        <ul class="pricing-features">
+          <li>Student &amp; parent orientation</li>
+          <li>Account setup on all platforms</li>
+          <li>Initial skills assessment</li>
+          <li>Personalized training blueprint</li>
+          <li>Gleim study materials</li>
+          <li>Personal pilot logbook</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Monthly Subscription</div>
+        <div class="pricing-name">Tier 1 — Foundations</div>
+        <div class="pricing-amount">$99</div>
+        <div class="pricing-period">Per month · Ages 9+ · SUFS-fundable</div>
+        <ul class="pricing-features">
+          <li>2 sessions / 4 hrs per month</li>
+          <li>Choose 2 of 8 starter courses</li>
+          <li>Virtual or Saturday in-person</li>
+          <li>1–4 month commitment</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Monthly Subscription</div>
+        <div class="pricing-name">Tier 2 — Builder</div>
+        <div class="pricing-amount">$149</div>
+        <div class="pricing-period">Per month · All ages · SUFS-fundable</div>
+        <ul class="pricing-features">
+          <li>4 sessions / 8 hrs per month</li>
+          <li>Choose 4 of 20 courses</li>
+          <li>Virtual or Saturday in-person</li>
+          <li>1–5 month commitment</li>
+          <li>Most popular for homeschoolers</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Monthly Subscription</div>
+        <div class="pricing-name">Tier 3 — Intermediate</div>
+        <div class="pricing-amount">$199</div>
+        <div class="pricing-period">Per month · All ages · SUFS-fundable</div>
+        <ul class="pricing-features">
+          <li>6 sessions / 12 hrs per month</li>
+          <li>Choose 6 of 30 courses</li>
+          <li>Includes AI Apps &amp; entrepreneurship content</li>
+          <li>1–6 month commitment</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Monthly Subscription</div>
+        <div class="pricing-name">Tier 4 — Advanced</div>
+        <div class="pricing-amount">$249</div>
+        <div class="pricing-period">Per month · All ages · SUFS-fundable</div>
+        <ul class="pricing-features">
+          <li>8 sessions / 16 hrs per month</li>
+          <li>Choose 8 of 40 courses</li>
+          <li>Customizable per-student options</li>
+          <li>Career track priority scheduling</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">No Subscription Required</div>
+        <div class="pricing-name">À La Carte</div>
+        <div class="pricing-amount">$99</div>
+        <div class="pricing-period">Per 2-hr session · All ages · SUFS-fundable</div>
+        <ul class="pricing-features">
+          <li>Individual: $99/session</li>
+          <li>Group: $49/person (2-person min)</li>
+          <li>Any tier-level course</li>
+          <li>Virtual or Saturday in-person</li>
+          <li>Book by appointment</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="font-size:13px; color: var(--gray-mid); margin-top: 20px;">School partner cohort pricing: $650/student/quarter for cohorts of 10 or more enrolled through a signed MOU. 12-week quarter aligned to SUFS reimbursement schedule. Contact us for cohort enrollment.</p>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="section-inner">
+    <div class="section-label">Program Schedule</div>
+    <h2>When &amp; How Sessions Run</h2>
+    <p class="section-intro">MAA runs Saturday in-person sessions at X39 and virtual appointments Monday through Friday. Every student's schedule is built from their individual roadmap — not a one-size-fits-all calendar.</p>
+
+    <div class="schedule-grid">
+      <div class="schedule-card">
+        <div class="schedule-day">Monday</div>
+        <div class="schedule-slot"><div class="slot-time">12:30–2:30 PM</div><div class="slot-desc">Virtual session block — SUFS-approved courses, by appointment</div></div>
+        <div class="schedule-slot"><div class="slot-time">3:00–5:00 PM</div><div class="slot-desc">Virtual session block — individual or group</div></div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-day">Wednesday</div>
+        <div class="schedule-slot"><div class="slot-time">12:30–2:30 PM</div><div class="slot-desc">Virtual session block — SUFS-approved courses, by appointment</div></div>
+        <div class="schedule-slot"><div class="slot-time">3:00–5:00 PM</div><div class="slot-desc">Virtual session block — individual or group</div></div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-day">Thursday</div>
+        <div class="schedule-slot"><div class="slot-time">12:30–2:30 PM</div><div class="slot-desc">Virtual session block — SUFS-approved courses, by appointment</div></div>
+        <div class="schedule-slot"><div class="slot-time">3:00–5:00 PM</div><div class="slot-desc">Virtual session block — individual or group</div></div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-day">Friday</div>
+        <div class="schedule-slot"><div class="slot-time">8:30–10:30 AM</div><div class="slot-desc">Virtual overflow window — by request, limited availability</div></div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-day gold">Saturday — In-Person at X39</div>
+        <div class="schedule-slot"><div class="slot-time">8:30–10:30 AM</div><div class="slot-desc">Morning group or individual sessions — drone, STEM, simulator</div></div>
+        <div class="schedule-slot"><div class="slot-time">10:00 AM</div><div class="slot-desc">Check-in, badge scan, mentor connect</div></div>
+        <div class="schedule-slot"><div class="slot-time">10:15 AM–12:00 PM</div><div class="slot-desc">Course Session 1 — Drone Discovery, Simulator, Career Assessment</div></div>
+        <div class="schedule-slot"><div class="slot-time">12:30–2:00 PM</div><div class="slot-desc">Course Session 2 — Drone Training, Ground School, AI Apps</div></div>
+        <div class="schedule-slot"><div class="slot-time">2:00–5:00 PM</div><div class="slot-desc">Afternoon sessions — ages 13–18+ priority, certification tracks</div></div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-day">Sunday</div>
+        <div class="schedule-slot"><div class="slot-time">Closed</div><div class="slot-desc">No sessions — staff planning and curriculum development</div></div>
+      </div>
+    </div>
+
+    <p style="font-size:13px; color: var(--gray-mid); margin-top: 20px;">Virtual sessions run on Zoom by appointment. Book through Flight Circle or contact MAA directly. School partner cohorts may have dedicated session blocks — see your school's MOU for details. All virtual SUFS-approved courses are available in the virtual window. Saturday in-person sessions are the only format for drone flight, simulator access, and hands-on aerospace training.</p>
+  </div>
+</section>
+
+<!-- SCHOLARSHIP FUND -->
+<section id="fund">
+  <div class="section-inner">
+    <div class="section-label">School Partner Scholarship Fund</div>
+    <h2>How We Fund School Partner Enrollment</h2>
+    <p class="section-intro">When SUFS cross-funding is not available at the school level, the MAA School Partner Scholarship Fund covers enrollment costs directly — so schools pay nothing and families pay nothing out-of-pocket. Each school partner receives a named, trackable fund.</p>
+
+    <div class="fund-box">
+      <div class="fund-label">Organizational Template</div>
+      <div class="fund-title">MAA School Partner Scholarship Fund</div>
+      <p style="font-size:14px; line-height:1.65; max-width:680px;">A dedicated fundraising vehicle established for each school partner that signs a Tier 2 MOU with MAA. Donors contribute to the school's named fund; contributions cover the cost of enrollment, credential fees, and session costs for that school's student cohort. Every dollar is tracked and reported back to the school as a named impact unit — "your gift funded X students through the drone certification pathway this semester."</p>
+      <div class="fund-row">
+        <div class="fund-item">
+          <div class="fund-item-label">What It Covers</div>
+          <div class="fund-item-val">Registration &amp; Onboarding · Monthly tier subscriptions · Credential exam fees · Field trip costs · Materials</div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-item-label">Funding Sources</div>
+          <div class="fund-item-val">Individual donors · Employer cohort seat sponsors ($2,500/seat) · Bulk book purchases · Annual gala at X39</div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-item-label">Campaign Chair</div>
+          <div class="fund-item-val">Designated per school — leads donor cultivation, I Fly storytelling campaign, and gala table sales</div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-item-label">Reporting</div>
+          <div class="fund-item-val">Quarterly impact reports to school and donors · Named student outcomes (with permission) · Credential completion rates</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fund-box specific">
+      <div class="fund-label">School-Specific Example — How It Works in Practice</div>
+      <div class="fund-title">[Your School Name] Student Aviation &amp; STEM Scholarship Fund</div>
+      <p style="font-size:14px; line-height:1.65; max-width:680px; color:rgba(255,255,255,0.85);">When a school signs a Tier 2 MOU with MAA, a named scholarship fund is established for that school's students. The example below shows what a typical school fund looks like — with your school's name, your cohort size, and your designated Campaign Chair replacing the placeholders.</p>
+      <div class="fund-row">
+        <div class="fund-item">
+          <div class="fund-item-label">Initial Fundraising Target</div>
+          <div class="fund-item-val"><strong>$10,000–$15,000</strong> — covers one semester cohort of 10–15 students through Registration &amp; Onboarding and a full Tier 2 semester. Scales with cohort size.</div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-item-label">Campaign Chair Role</div>
+          <div class="fund-item-val">Designated by the school — leads donor cultivation, the I Fly student storytelling campaign, bulk book outreach, and annual gala table sales at X39.</div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-item-label">Employer Seat Sponsor</div>
+          <div class="fund-item-val"><strong>$2,500</strong> sponsors one student through the full drone certification pathway — CSR-ready, impact-documented, named in the school's annual impact report.</div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-item-label">Annual Fundraising Event</div>
+          <div class="fund-item-val"><strong>Joint school × iACT/MAA fundraiser at X39</strong> — no venue cost · Campaign Chair manages sponsors and table sales · Proceeds fund the following year's cohort seats.</div>
+        </div>
+      </div>
+      <p style="font-size:12px; color:rgba(255,255,255,0.55); margin-top:20px; font-style:italic;">Contact MAA to discuss establishing a named scholarship fund for your school community.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE REFERENCE -->
+<section id="courses">
+  <div class="section-inner">
+    <div class="section-label">SUFS Approved Course Reference</div>
+    <h2>All Live SUFS-Approved Programs</h2>
+    <p class="section-intro">Every program below is currently active and bookable through the SUFS EMA marketplace. Prices shown are the authoritative rates (v3.5 — portal update in progress). Delivery: virtual or Saturday in-person unless noted.</p>
+
+    <table class="course-table">
+      <thead>
+        <tr><th>Program</th><th>Ages</th><th>Price</th><th>Hours</th><th>Delivery</th></tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="5" class="course-group">Onboarding</td></tr>
+        <tr><td>Registration &amp; Onboarding <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$200</td><td>~2 hrs staff time</td><td>In-person or virtual</td></tr>
+
+        <tr><td colspan="5" class="course-group">Monthly Enrichment Subscription</td></tr>
+        <tr><td>Tier 1 — Foundations (2 sessions/mo, 8 courses) <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$99/mo</td><td>4 hrs/mo</td><td>Virtual or Sat</td></tr>
+        <tr><td>Tier 2 — Builder (4 sessions/mo, 20 courses) <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$149/mo</td><td>8 hrs/mo</td><td>Virtual or Sat</td></tr>
+        <tr><td>Tier 3 — Intermediate (6 sessions/mo, 30 courses) <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$199/mo</td><td>12 hrs/mo</td><td>Virtual or Sat</td></tr>
+        <tr><td>Tier 4 — Advanced (8 sessions/mo, 40 courses) <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$249/mo</td><td>16 hrs/mo</td><td>Virtual or Sat</td></tr>
+        <tr><td>À La Carte — Individual Session <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$99</td><td>2 hrs</td><td>Virtual or Sat</td></tr>
+        <tr><td>À La Carte — Group Session (2+ students) <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$49/person</td><td>2 hrs</td><td>Virtual or Sat</td></tr>
+
+        <tr><td colspan="5" class="course-group">Academic Tutoring</td></tr>
+        <tr><td>High Dosage Reading &amp; Math <span class="sufs-badge">SUFS</span></td><td>K–12</td><td class="price-cell">$90/hr</td><td>Per session</td><td>Virtual or Sat</td></tr>
+        <tr><td>STEM Tutoring — Algebra, Physics, Calculus <span class="sufs-badge">SUFS</span></td><td>HS / College-prep</td><td class="price-cell">$94/hr</td><td>Per session</td><td>Virtual or Sat</td></tr>
+        <tr><td>Writing Acceleration Lab <span class="sufs-badge">SUFS</span></td><td>K–12</td><td class="price-cell">$100/hr</td><td>Per session</td><td>Virtual or Sat</td></tr>
+        <tr><td>SAT/ACT Test Prep <span class="sufs-badge">SUFS</span></td><td>HS</td><td class="price-cell">$100/hr</td><td>Per session</td><td>Virtual or Sat</td></tr>
+
+        <tr><td colspan="5" class="course-group">AI Innovation</td></tr>
+        <tr><td>Part 1 — Intro to Building Apps with AI <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$450</td><td>10 hrs</td><td>Virtual or Sat</td></tr>
+        <tr><td>Part 2 — Build Apps with AI <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$450</td><td>10 hrs</td><td>Virtual or Sat</td></tr>
+        <tr><td>Parts 1 &amp; 2 Bundle <span class="sufs-badge">SUFS</span></td><td>All</td><td class="price-cell">$825</td><td>20 hrs</td><td>Virtual or Sat</td></tr>
+
+        <tr><td colspan="5" class="course-group">Drone &amp; Aerospace STEM</td></tr>
+        <tr><td>Part I — Recreational Drone Certificate (TRUST) <span class="sufs-badge">SUFS</span></td><td>12–18+</td><td class="price-cell">$450</td><td>4 hrs</td><td>Virtual + Sat flight</td></tr>
+        <tr><td>Part II — Drone Fly, Repair &amp; Maintenance <span class="sufs-badge">SUFS</span></td><td>14–21+</td><td class="price-cell">$450</td><td>4 hrs</td><td>Saturday (in-person)</td></tr>
+        <tr><td>Part III — Drone Evolution &amp; Opportunities <span class="sufs-badge">SUFS</span></td><td>16–21+</td><td class="price-cell">$450</td><td>4 hrs</td><td>Virtual or Sat</td></tr>
+        <tr><td>Drone Business Courses — DB101–DB108 (8 available) <span class="sufs-badge">SUFS</span></td><td>16–21+</td><td class="price-cell">$350 each</td><td>Per course</td><td>Virtual or Sat</td></tr>
+
+        <tr><td colspan="5" class="course-group">FAA Part 107 Commercial Drone Pilot Certification</td></tr>
+        <tr><td>Phase 1 — Foundations (20+ hrs FAA ground curriculum) <span class="sufs-badge">SUFS</span></td><td>16+</td><td class="price-cell">$800</td><td>20+ hrs</td><td>Virtual or Sat</td></tr>
+        <tr><td>Phase 2 — Test Prep <span class="sufs-badge">SUFS</span></td><td>16+</td><td class="price-cell">$450</td><td>10 hrs</td><td>Virtual or Sat</td></tr>
+        <tr><td>Phase 3 — Flight Check &amp; Certification <span class="sufs-badge">SUFS</span></td><td>16+</td><td class="price-cell">$780</td><td>4 hrs</td><td>Saturday (in-person)</td></tr>
+        <tr><td>Full Bundle — Phases 1–3 <span class="sufs-badge">SUFS</span></td><td>16+</td><td class="price-cell">$2,000–$2,500</td><td>34+ hrs</td><td>Virtual + Saturday</td></tr>
+
+        <tr><td colspan="5" class="course-group">Flight Simulator Program</td></tr>
+        <tr><td>Private Pilot Flight Simulator — 26 sessions with CFI <span class="sufs-badge">SUFS</span></td><td>12+</td><td class="price-cell">$3,395</td><td>26 sessions</td><td>Saturday (in-person)</td></tr>
+      </tbody>
+    </table>
+        </div>
+
+    <p style="font-size:12px; color:var(--gray-mid); margin-top:16px;">Ground School, Solo Flight training, camps, tours, workforce/AMT training, and JROTC programs are available but not currently SUFS-listed. Contact MAA directly for those options. Drone Soccer removed from Tier 3 — targeting Fall 2027 reintroduction.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-bar">
+  <div class="cta-inner">
+    <h2>Ready to bring MAA to your school or family?</h2>
+    <p>Start with a conversation. Ricardo Foster meets personally with every new school partner and every homeschool family before enrollment begins.</p>
+    <div class="cta-links">
+      <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-navy">Become a Co-Op Partner</a>
+      <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Talk to Admissions</a>
+      <a href="tel:8134458889" class="btn btn-outline">(813) 445-8889</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      Mission Aviation Academy
+      <span>Infinity Aero Club Tampa Bay, Inc. · EIN 85-1110607 · 501(c)(3) Nonprofit</span>
+      <span style="margin-top:4px;">Tampa North Aero Park (X39) · 4639 Birdsong Blvd · Lutz, FL 33559 · Parking GPS: 4661 Birdsong Blvd</span>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a><br>
+      (813) 445-8889 · <a href="tel:8134458889">(833) FLY-STEM</a><br>
+      <a href="https://www.infinityaeroclub.org">www.infinityaeroclub.org</a><br>
+      SUFS Approved Provider · SAM.gov Active<br>
+      "It's ALL About The Kids" · Flight Plan 2030
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
