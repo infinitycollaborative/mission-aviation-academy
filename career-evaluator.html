@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Career Evaluator — Mission Aviation Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root {
+  --navy:#001838; --navy-deep:#001838; --red:#8B0000; --red-dark:#6B0000;
+  --gold:#FFD700; --gold-faint:#FFFDE7; --white:#FFFFFF;
+  --g50:#F7F8FA; --g100:#ECEEF2; --g300:#D1D5DB; --g500:#6B7280; --g700:#374151; --g900:#111827;
+  --green:#16A34A; --scarlet:#DC2626;
+  --fh:'Rajdhani',sans-serif; --fb:'Inter',sans-serif;
+  --r:8px; --rl:14px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+body{font-family:var(--fb);background:var(--g50);color:var(--g900);min-height:100%;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:200;background:var(--navy-deep);}
+
+/* HDR */
+.hdr{background:var(--navy-deep);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;top:env(safe-area-inset-top,0px);z-index:100;border-bottom:3px solid #FFD700;gap:10px;}
+.logo{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.logo-mark{width:32px;height:32px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:700;font-size:16px;color:var(--navy);flex-shrink:0;}
+.logo-name{font-family:var(--fh);font-size:13px;font-weight:600;color:var(--white);line-height:1.2;}
+.logo-tagline{font-size:9px;color:rgba(245,166,35,.65);letter-spacing:.3px;}
+.hdr-nav{display:flex;gap:4px;flex-shrink:0;}
+.hdr-tab{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.65);padding:6px 10px;border-radius:6px;font-size:11px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .2s;white-space:nowrap;}
+.hdr-tab:hover{border-color:rgba(255,255,255,.25);color:var(--white);}
+.hdr-tab.on{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700;}
+.hdr-qr{background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);color:var(--gold);padding:6px 10px;border-radius:6px;font-size:11px;cursor:pointer;font-family:var(--fb);transition:all .2s;}
+.hdr-qr:hover{background:rgba(245,166,35,.2);}
+.progress-strip{height:2px;background:rgba(255,255,255,.1);display:none;}
+.progress-fill{height:100%;background:var(--gold);width:0%;transition:width .5s ease;}
+
+/* SCREENS */
+.screen{display:none;}
+.screen.active{display:block;}
+
+/* SHARED */
+.wrap{max-width:660px;margin:0 auto;padding:36px 18px;}
+.step-tag{font-size:11px;color:var(--red);font-weight:600;letter-spacing:.6px;text-transform:uppercase;margin-bottom:7px;}
+.sh2{font-family:var(--fh);font-size:26px;font-weight:700;color:var(--navy);margin-bottom:5px;line-height:1.2;}
+.ssub{font-size:14px;color:var(--g500);line-height:1.6;margin-bottom:28px;}
+.q-block{margin-bottom:22px;}
+.q-label{display:block;font-size:13.5px;font-weight:500;color:var(--g700);margin-bottom:6px;line-height:1.5;}
+.q-num{font-family:var(--fh);font-weight:700;color:var(--gold);margin-right:3px;}
+textarea,input[type=text],input[type=email],select{width:100%;border:1.5px solid var(--g100);border-radius:var(--r);padding:10px 12px;font-size:14px;font-family:var(--fb);color:var(--g900);background:var(--white);outline:none;resize:vertical;transition:border-color .2s;appearance:none;}
+textarea:focus,input:focus,select:focus{border-color:var(--navy);}
+textarea{min-height:72px;}
+textarea.big{min-height:180px;}
+.field-group{margin-bottom:20px;}
+.field-label{font-size:13px;font-weight:500;color:var(--g700);margin-bottom:6px;display:block;}
+.card-row{display:grid;gap:9px;margin-bottom:22px;}
+.card-row.c3{grid-template-columns:repeat(3,1fr);}
+.card-row.c4{grid-template-columns:repeat(4,1fr);}
+.card-row.c5{grid-template-columns:repeat(5,1fr);}
+@media(max-width:560px){.card-row.c5{grid-template-columns:repeat(3,1fr);}.card-row.c4{grid-template-columns:repeat(2,1fr);}.card-row.c3{grid-template-columns:1fr 1fr;}}
+@media(max-width:360px){.card-row.c5,.card-row.c4,.card-row.c3{grid-template-columns:1fr 1fr;}}
+.sel-card{border:2px solid var(--g100);border-radius:var(--r);padding:12px 10px;cursor:pointer;background:var(--white);transition:border-color .18s,background .18s;}
+.sel-card:hover{border-color:var(--navy);}
+.sel-card.on{border-color:var(--navy);background:rgba(13,31,78,.04);}
+.sel-card .ic{font-size:20px;margin-bottom:5px;}
+.sel-card .ct{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--navy);}
+.sel-card .cd{font-size:10px;color:var(--g500);margin-top:2px;line-height:1.3;}
+.btn-row{display:flex;gap:9px;align-items:center;margin-top:24px;flex-wrap:wrap;}
+.btn-go{background:var(--red);color:var(--white);border:none;padding:13px 28px;font-size:15px;font-weight:600;border-radius:var(--r);cursor:pointer;font-family:var(--fb);transition:background .2s;}
+.btn-go:hover{background:var(--red-dark);}
+.btn-go:disabled{opacity:.5;cursor:not-allowed;}
+.btn-back{background:none;border:1.5px solid var(--g300);color:var(--g500);padding:12px 20px;font-size:13px;font-weight:500;border-radius:var(--r);cursor:pointer;font-family:var(--fb);}
+.err{background:#FEF2F2;border:1px solid #FCA5A5;color:#B91C1C;padding:10px 13px;border-radius:var(--r);font-size:13px;margin-top:12px;display:none;}
+.info-note{background:var(--gold-faint);border:1px solid rgba(245,166,35,.3);border-radius:var(--r);padding:11px 14px;font-size:12.5px;color:var(--g700);line-height:1.55;margin-bottom:16px;}
+
+/* HERO */
+.hero{background:var(--navy);padding:48px 20px 64px;text-align:center;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(to bottom,transparent,var(--g50));pointer-events:none;}
+.hero-pill{display:inline-block;background:rgba(245,166,35,.14);border:1px solid rgba(245,166,35,.28);color:var(--gold);font-size:10px;font-weight:500;letter-spacing:1px;padding:5px 13px;border-radius:100px;margin-bottom:22px;text-transform:uppercase;}
+.hero h1{font-family:var(--fh);font-size:clamp(28px,5.5vw,48px);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:16px;max-width:620px;margin-left:auto;margin-right:auto;}
+.hero h1 em{font-style:normal;color:var(--gold);}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.62);font-weight:300;max-width:500px;margin:0 auto 30px;line-height:1.7;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:34px;}
+.tag{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);padding:4px 13px;border-radius:100px;font-size:12px;}
+.btn-cta{background:var(--red);color:var(--white);border:none;padding:14px 36px;font-size:15px;font-weight:600;border-radius:var(--r);cursor:pointer;font-family:var(--fb);transition:background .2s;}
+.btn-cta:hover{background:var(--red-dark);}
+.hero-trust{margin-top:28px;font-size:11px;color:rgba(255,255,255,.3);line-height:1.9;}
+.hero-trust strong{color:rgba(255,255,255,.5);}
+
+/* ANALYZING */
+.analyzing{background:var(--navy);min-height:calc(100vh - 62px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;}
+.spin-ring{width:64px;height:64px;border-radius:50%;border:2px solid rgba(245,166,35,.2);border-top-color:var(--gold);animation:spin 1.1s linear infinite;margin:0 auto 24px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.analyzing h2{font-family:var(--fh);font-size:24px;color:var(--white);margin-bottom:8px;}
+.an-status{font-size:13px;color:var(--gold);margin-bottom:30px;min-height:18px;}
+.an-list{list-style:none;text-align:left;width:100%;max-width:360px;}
+.an-item{display:flex;align-items:center;gap:11px;padding:7px 0;font-size:12.5px;color:rgba(255,255,255,.32);transition:color .4s;}
+.an-item.done{color:rgba(255,255,255,.7);}
+.an-item.active{color:var(--gold);}
+.an-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15);flex-shrink:0;transition:background .4s;}
+.an-item.done .an-dot{background:var(--green);}
+.an-item.active .an-dot{background:var(--gold);}
+
+/* VERDICT */
+.verdict-hero{background:var(--navy);padding:40px 20px;text-align:center;}
+.v-badge{display:inline-flex;align-items:center;gap:8px;padding:9px 22px;border-radius:100px;font-family:var(--fh);font-size:19px;font-weight:700;letter-spacing:.8px;margin-bottom:12px;}
+.v-badge.OVERHAUL{background:rgba(220,38,38,.15);color:#F87171;border:1.5px solid rgba(220,38,38,.3);}
+.v-badge.REVISE{background:rgba(217,119,6,.15);color:#FBBF24;border:1.5px solid rgba(217,119,6,.3);}
+.v-badge.POLISH{background:rgba(22,163,74,.15);color:#4ADE80;border:1.5px solid rgba(22,163,74,.3);}
+.v-score{font-family:var(--fh);font-size:56px;font-weight:700;color:var(--white);line-height:1;}
+.v-score sub{font-size:20px;color:rgba(255,255,255,.35);vertical-align:baseline;}
+.v-desc{font-size:14px;color:rgba(255,255,255,.58);max-width:420px;margin:10px auto 0;line-height:1.6;}
+.scores-block{background:var(--white);padding:26px 18px;border-bottom:1px solid var(--g100);}
+.scores-inner{max-width:580px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.s-row{display:flex;align-items:center;gap:10px;}
+.s-lbl{font-size:11.5px;color:var(--g500);width:142px;flex-shrink:0;}
+.s-bar{flex:1;height:6px;background:var(--g100);border-radius:100px;overflow:hidden;}
+.s-fill{height:100%;border-radius:100px;background:var(--navy);width:0%;transition:width 1s ease .2s;}
+.s-val{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--navy);width:28px;text-align:right;}
+.fixes-block{background:var(--g50);padding:26px 18px;}
+.fixes-block h3{font-family:var(--fh);font-size:19px;font-weight:700;color:var(--navy);margin-bottom:14px;}
+.fix{display:flex;gap:12px;background:var(--white);border-radius:var(--r);padding:13px 14px;margin-bottom:9px;border-left:3px solid var(--red);align-items:flex-start;}
+.fix-n{font-family:var(--fh);font-size:18px;font-weight:700;color:var(--red);line-height:1;margin-top:1px;}
+.fix-t{font-size:13.5px;color:var(--g900);line-height:1.55;}
+.gate-banner{background:var(--navy-deep);padding:36px 18px;text-align:center;border-top:1px solid rgba(245,166,35,.14);}
+.gate-banner h3{font-family:var(--fh);font-size:22px;color:var(--white);margin-bottom:9px;}
+.gate-banner p{font-size:13.5px;color:rgba(255,255,255,.58);max-width:440px;margin:0 auto 20px;line-height:1.65;}
+.gate-chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:24px;}
+.gate-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);color:rgba(255,255,255,.68);padding:4px 12px;border-radius:100px;font-size:11.5px;}
+.gate-chip::before{content:'✓ ';color:var(--gold);}
+.email-form-wrap{background:var(--g50);padding:30px 18px;}
+.email-card{background:var(--white);border-radius:var(--rl);padding:26px;max-width:460px;margin:0 auto;box-shadow:0 2px 10px rgba(0,0,0,.07);}
+.email-card h3{font-family:var(--fh);font-size:20px;color:var(--navy);margin-bottom:5px;}
+.email-card p{font-size:12.5px;color:var(--g500);margin-bottom:18px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+@media(max-width:430px){.f-row{grid-template-columns:1fr;}}
+.f-g{margin-bottom:12px;}
+.f-g label{font-size:11.5px;font-weight:500;color:var(--g700);display:block;margin-bottom:4px;}
+.opt-row{display:flex;align-items:flex-start;gap:8px;margin:12px 0 18px;font-size:12px;color:var(--g500);line-height:1.5;}
+.opt-row input[type=checkbox]{margin-top:2px;flex-shrink:0;accent-color:var(--navy);}
+.privacy{font-size:10.5px;color:var(--g300);text-align:center;margin-top:9px;}
+
+/* REPORT */
+.rpt-hero{background:var(--navy);padding:32px 18px;text-align:center;}
+.rpt-hero h2{font-family:var(--fh);font-size:28px;color:var(--white);margin-bottom:5px;}
+.rpt-hero p{font-size:12px;color:rgba(255,255,255,.42);}
+.rpt-sec{padding:28px 18px;border-bottom:1px solid var(--g100);background:var(--white);}
+.rpt-sec.alt{background:var(--g50);}
+.rpt-sec h3{font-family:var(--fh);font-size:19px;font-weight:700;color:var(--navy);margin-bottom:13px;}
+.rpt-sec p{font-size:13.5px;color:var(--g700);line-height:1.7;margin-bottom:11px;}
+.rpt-sec p:last-child{margin-bottom:0;}
+.kf{display:flex;gap:9px;align-items:flex-start;background:#FEF2F2;border-radius:var(--r);padding:10px 12px;margin-bottom:7px;}
+.kf .ki{color:var(--scarlet);flex-shrink:0;margin-top:1px;}
+.kf .kt{font-size:12.5px;color:#7F1D1D;line-height:1.5;}
+.no-flags{font-size:12.5px;color:var(--green);background:#F0FDF4;border:1px solid #BBF7D0;border-radius:var(--r);padding:10px 12px;}
+.rw-card{margin-bottom:16px;border-radius:var(--r);overflow:hidden;}
+.rw-orig{background:#FEF2F2;border-left:3px solid var(--scarlet);padding:11px 13px;}
+.rw-new{background:#F0FDF4;border-left:3px solid var(--green);padding:11px 13px;}
+.rw-lbl{font-size:9.5px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;margin-bottom:3px;opacity:.65;}
+.rw-orig .rw-lbl{color:var(--scarlet);}
+.rw-new .rw-lbl{color:var(--green);}
+.rw-text{font-size:12.5px;line-height:1.55;}
+.rw-orig .rw-text{color:#7F1D1D;}
+.rw-new .rw-text{color:#14532D;}
+.shape-card{background:var(--gold-faint);border:1px solid rgba(245,166,35,.3);border-radius:var(--r);padding:14px 16px;}
+.shape-card .slbl{font-size:9.5px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;}
+.shape-card p{font-size:13px;color:var(--g700);line-height:1.65;margin:0;}
+.golden-card{background:linear-gradient(135deg,var(--navy),#1b3f82);border-radius:var(--rl);padding:22px;border:1px solid rgba(245,166,35,.22);position:relative;overflow:hidden;}
+.golden-card::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(245,166,35,.09),transparent 65%);pointer-events:none;}
+.gld-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(245,166,35,.14);border:1px solid rgba(245,166,35,.3);color:var(--gold);padding:4px 12px;border-radius:100px;font-size:10.5px;font-weight:600;letter-spacing:.5px;margin-bottom:10px;}
+.gld-num{font-family:var(--fh);font-size:42px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:2px;}
+.gld-name{font-family:var(--fh);font-size:19px;color:var(--white);margin-bottom:12px;}
+.gld-move{font-size:13px;color:rgba(255,255,255,.7);line-height:1.6;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);}
+.gld-move strong{color:var(--gold);}
+.levels-bar{display:flex;gap:5px;margin-bottom:14px;}
+.lv-block{flex:1;padding:7px 5px;border-radius:6px;text-align:center;background:rgba(255,255,255,.06);}
+.lv-block.current{background:rgba(245,166,35,.18);border:1px solid rgba(245,166,35,.3);}
+.lv-block .lv-n{font-family:var(--fh);font-size:13px;font-weight:700;color:rgba(255,255,255,.38);}
+.lv-block.current .lv-n{color:var(--gold);}
+.lv-block .lv-l{font-size:8.5px;color:rgba(255,255,255,.27);margin-top:1px;line-height:1.3;}
+.lv-block.current .lv-l{color:rgba(245,166,35,.65);}
+.roadmap-list{display:flex;flex-direction:column;gap:16px;}
+.rm-step{display:flex;gap:12px;align-items:flex-start;}
+.rm-circle{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--white);font-family:var(--fh);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rm-body h4{font-family:var(--fh);font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.rm-body p{font-size:13px;color:var(--g700);line-height:1.6;margin:0;}
+.rm-assess-list{list-style:none;margin:5px 0 0;}
+.rm-assess-list li{font-size:13px;color:var(--g700);padding:4px 0;border-bottom:1px solid var(--g100);display:flex;gap:7px;line-height:1.5;}
+.rm-assess-list li:last-child{border:none;}
+.rm-assess-list li::before{content:'→';color:var(--red);flex-shrink:0;font-weight:600;}
+.act-box{background:var(--navy);color:var(--white);border-radius:var(--r);padding:12px 14px;font-size:13px;line-height:1.6;margin-top:5px;}
+.act-box strong{color:var(--gold);display:block;font-family:var(--fh);font-size:11px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px;}
+
+/* REPORT ACTIONS */
+.rpt-actions{display:flex;gap:8px;flex-wrap:wrap;padding:16px 18px;background:var(--g50);border-bottom:1px solid var(--g100);}
+.btn-action{display:flex;align-items:center;gap:6px;background:var(--white);border:1.5px solid var(--g100);color:var(--g700);padding:9px 14px;border-radius:var(--r);font-size:12.5px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:border-color .2s;}
+.btn-action:hover{border-color:var(--navy);color:var(--navy);}
+
+/* BUNDLE / CTA */
+.rpt-cta{background:var(--navy);padding:40px 18px;text-align:center;}
+.rpt-cta h2{font-family:var(--fh);font-size:26px;color:var(--white);margin-bottom:9px;}
+.rpt-cta > p{font-size:13.5px;color:rgba(255,255,255,.58);max-width:440px;margin:0 auto 22px;line-height:1.65;}
+.yab-inline{display:none;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.24);border-radius:var(--r);padding:11px 14px;margin-bottom:14px;font-size:12.5px;color:rgba(255,255,255,.68);line-height:1.55;}
+.yab-inline strong{color:var(--gold);}
+.bundle-card{background:rgba(255,255,255,.06);border:1px solid rgba(245,166,35,.3);border-radius:var(--rl);padding:20px;max-width:500px;margin:0 auto 20px;text-align:left;}
+.bundle-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:14px;flex-wrap:wrap;}
+.bundle-title{font-family:var(--fh);font-size:18px;font-weight:700;color:var(--white);line-height:1.2;}
+.bundle-sub{font-size:11px;color:rgba(255,255,255,.45);margin-top:3px;}
+.price-block{text-align:right;flex-shrink:0;}
+.price-was{font-size:12px;color:rgba(255,255,255,.32);text-decoration:line-through;}
+.price-now{font-family:var(--fh);font-size:30px;font-weight:700;color:var(--gold);line-height:1;}
+.price-save{font-size:10px;color:var(--green);background:rgba(22,163,74,.15);border:1px solid rgba(22,163,74,.25);padding:2px 7px;border-radius:100px;display:inline-block;margin-top:2px;}
+.bundle-includes{list-style:none;margin:0 0 16px;display:flex;flex-direction:column;gap:6px;}
+.bundle-includes li{font-size:12.5px;color:rgba(255,255,255,.7);display:flex;gap:7px;align-items:flex-start;line-height:1.45;}
+.bundle-includes li::before{content:'✓';color:var(--gold);flex-shrink:0;font-weight:700;}
+.bundle-cta{display:block;background:var(--gold);color:var(--navy);border:none;padding:13px 20px;font-size:14px;font-weight:700;border-radius:var(--r);cursor:pointer;font-family:var(--fb);text-decoration:none;text-align:center;transition:opacity .2s;width:100%;}
+.bundle-cta:hover{opacity:.88;}
+.divider-or{display:flex;align-items:center;gap:10px;max-width:500px;margin:0 auto 16px;color:rgba(255,255,255,.22);font-size:11px;}
+.divider-or::before,.divider-or::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1);}
+.cta-btns{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;padding:13px 26px;font-size:14px;font-weight:700;border-radius:var(--r);cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-block;transition:opacity .2s;}
+.btn-gold:hover{opacity:.88;}
+.btn-outline{background:none;color:var(--white);border:1.5px solid rgba(255,255,255,.28);padding:12px 22px;font-size:13.5px;font-weight:500;border-radius:var(--r);cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-block;transition:border-color .2s;}
+.btn-outline:hover{border-color:rgba(255,255,255,.6);}
+.restart-btn{background:none;border:none;color:rgba(255,255,255,.3);font-size:11.5px;cursor:pointer;font-family:var(--fb);margin-top:18px;text-decoration:underline;display:block;margin-left:auto;margin-right:auto;}
+.restart-btn:hover{color:rgba(255,255,255,.55);}
+.yab-note{font-size:10.5px;color:rgba(255,255,255,.24);margin-top:14px;}
+
+/* ============================================
+   CAREER WEEK
+   ============================================ */
+.cw-hero{background:var(--navy);padding:44px 18px;text-align:center;position:relative;overflow:hidden;}
+.cw-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(13,31,78,1) 60%,rgba(27,63,130,.8));pointer-events:none;}
+.cw-hero > *{position:relative;}
+.cw-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.3);color:var(--gold);padding:5px 13px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:1px;margin-bottom:18px;text-transform:uppercase;}
+.cw-hero h1{font-family:var(--fh);font-size:clamp(26px,5vw,42px);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:10px;}
+.cw-hero p{font-size:14px;color:rgba(255,255,255,.58);max-width:460px;margin:0 auto 28px;line-height:1.65;}
+.cw-dates{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+.cw-date-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);padding:5px 12px;border-radius:100px;font-size:11.5px;}
+.cw-date-chip.today{background:rgba(245,166,35,.18);border-color:rgba(245,166,35,.35);color:var(--gold);font-weight:600;}
+.day-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px;}
+@media(max-width:540px){.day-cards{grid-template-columns:repeat(3,1fr);}}.
+@media(max-width:360px){.day-cards{grid-template-columns:1fr 1fr;}}
+.day-card{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:var(--r);padding:12px 8px;cursor:pointer;text-align:center;transition:all .2s;}
+.day-card:hover{border-color:var(--gold);background:rgba(245,166,35,.08);}
+.day-card.today-card{border-color:var(--gold);background:rgba(245,166,35,.14);}
+.day-card.past-card{opacity:.55;}
+.day-card .dc-day{font-size:9px;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px;}
+.day-card .dc-num{font-family:var(--fh);font-size:20px;font-weight:700;color:var(--white);}
+.day-card.today-card .dc-num{color:var(--gold);}
+.day-card .dc-title{font-size:9px;color:rgba(255,255,255,.45);margin-top:3px;line-height:1.3;}
+.cw-hub-btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;}
+
+/* SURVEY */
+.survey-wrap{max-width:640px;margin:0 auto;padding:32px 18px;}
+.survey-header{margin-bottom:24px;}
+.survey-day-tag{font-size:11px;color:var(--red);font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;}
+.survey-title{font-family:var(--fh);font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.survey-date{font-size:13px;color:var(--g500);}
+.q-block-survey{margin-bottom:22px;}
+.q-label-survey{display:block;font-size:13.5px;font-weight:500;color:var(--g700);margin-bottom:9px;line-height:1.5;}
+.q-num-survey{font-family:var(--fh);font-weight:700;color:var(--red);margin-right:4px;}
+
+/* Scale slider */
+.scale-row{display:flex;flex-direction:column;gap:7px;}
+.scale-labels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--g500);}
+input[type=range]{width:100%;accent-color:var(--navy);height:6px;}
+.scale-val-display{text-align:center;font-family:var(--fh);font-size:24px;font-weight:700;color:var(--navy);margin-top:2px;}
+
+/* Stars */
+.stars-row{display:flex;gap:8px;align-items:center;font-size:28px;}
+.star{cursor:pointer;color:var(--g300);transition:color .15s;user-select:none;}
+.star.on{color:var(--gold);}
+
+/* Multicheck */
+.multicheck-grid{display:flex;flex-direction:column;gap:8px;}
+.mc-item{display:flex;align-items:center;gap:9px;cursor:pointer;font-size:13.5px;color:var(--g700);padding:10px 13px;border:1.5px solid var(--g100);border-radius:var(--r);background:var(--white);transition:border-color .15s,background .15s;}
+.mc-item:hover{border-color:var(--navy);}
+.mc-item.checked{border-color:var(--navy);background:rgba(13,31,78,.04);}
+.mc-item input[type=checkbox]{accent-color:var(--navy);flex-shrink:0;}
+
+/* Survey thanks */
+.thanks-screen{background:var(--navy);min-height:calc(100vh - 62px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;}
+.thanks-icon{font-size:56px;margin-bottom:20px;}
+.thanks-screen h2{font-family:var(--fh);font-size:28px;color:var(--white);margin-bottom:10px;}
+.thanks-screen p{font-size:14px;color:rgba(255,255,255,.6);max-width:420px;margin:0 auto 24px;line-height:1.65;}
+
+/* QR SCREEN */
+.qr-screen-wrap{max-width:440px;margin:0 auto;padding:40px 18px;text-align:center;}
+.qr-screen-wrap h2{font-family:var(--fh);font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.qr-screen-wrap p{font-size:13.5px;color:var(--g500);line-height:1.6;margin-bottom:24px;}
+.qr-box{background:var(--white);border:2px solid var(--g100);border-radius:var(--rl);padding:24px;display:inline-flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:18px;box-shadow:0 2px 12px rgba(0,0,0,.07);}
+#qrCanvas{display:flex;align-items:center;justify-content:center;}
+.qr-url{font-size:11px;color:var(--g500);word-break:break-all;max-width:280px;line-height:1.5;}
+.qr-maa-label{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--navy);}
+.btn-dl-qr{background:var(--navy);color:var(--white);border:none;padding:12px 24px;font-size:14px;font-weight:600;border-radius:var(--r);cursor:pointer;font-family:var(--fb);transition:opacity .2s;}
+.btn-dl-qr:hover{opacity:.85;}
+.qr-note{font-size:11.5px;color:var(--g500);background:var(--g50);border-radius:var(--r);padding:12px 14px;text-align:left;margin-top:14px;line-height:1.6;}
+
+/* PRINT STYLES */
+@media print {
+  .hdr,.progress-strip,.hdr-nav,.hdr-qr,.rpt-actions,.rpt-cta,.screen:not(#s-report),.gate-banner,.fixes-block,.scores-block,.verdict-hero { display:none !important; }
+  #s-report { display:block !important; }
+  .rpt-sec { break-inside:avoid; border:none; padding:16px 0; }
+  .rpt-sec h3 { color:#000; font-size:14pt; }
+  .rpt-sec p { font-size:10pt; color:#222; }
+  body { background:#fff; font-size:10pt; }
+  .rpt-hero { background:#fff !important; border-bottom:2pt solid #001838; padding:12px 0; }
+  .rpt-hero h2, .rpt-hero p { color:#000 !important; }
+  .v-badge { border:1pt solid #000 !important; color:#000 !important; background:none !important; }
+  .golden-card { background:#f5f5f5 !important; color:#000; border:1pt solid #ccc; }
+  .gld-num, .gld-name, .gld-move { color:#000 !important; }
+  .act-box { background:#f5f5f5 !important; color:#000 !important; border:1pt solid #ccc; }
+  .shape-card { border:1pt solid #ccc; background:#fff; }
+  @page { margin:0.75in; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="logo">
+    <div class="logo-mark">M</div>
+    <div>
+      <div class="logo-name">Mission Aviation Academy</div>
+      <div class="logo-tagline">AI Career Evaluator</div>
+    </div>
+  </div>
+  <div class="hdr-nav">
+    <button class="hdr-tab on" id="tab-eval" onclick="switchTab('eval')">Career Eval</button>
+    <button class="hdr-tab" id="tab-cw" onclick="switchTab('cw')">MAA Experience</button>
+    <button class="hdr-qr" onclick="showScreen('s-qr');buildQR()">⬛ QR</button>
+    <a href="/saturday#rsvp" style="background:#FFD700;color:#001838;font-size:11px;font-weight:700;padding:7px 13px;border-radius:5px;text-decoration:none;white-space:nowrap;flex-shrink:0;">Start Your Flight Path</a>
+  </div>
+</header>
+<div class="progress-strip" id="pStrip"><div class="progress-fill" id="pFill"></div></div>
+
+<!-- ================================================
+     CAREER EVALUATOR SCREENS
+     ================================================ -->
+
+<!-- HERO -->
+<div class="screen active" id="s-hero">
+  <section class="hero">
+    <div class="hero-pill">✦ Evidence-Based Career Assessment</div>
+    <h1>Know exactly where your<br>career stands — and where<br>it needs to <em>go.</em></h1>
+    <p class="hero-sub">AI-powered evaluation rooted in Harvard research, Google's hiring data, O*NET, Rick Warren's SHAPE framework, and Myron Golden's Boss Moves.</p>
+    <div class="tags">
+      <span class="tag">✈ Aviation</span><span class="tag">⚗ STEM</span>
+      <span class="tag">🚀 Entrepreneurship</span><span class="tag">🤖 AI Innovation</span>
+      <span class="tag">🎖 Military / Veteran</span>
+    </div>
+    <button class="btn-cta" onclick="startEval()">Start My Evaluation — Free</button>
+    <p class="hero-trust">
+      <strong>Free. No account required.</strong> Takes about 5 minutes.<br>
+      Holland RIASEC · Bock's Achievement Formula · Golden's 4 Levels of Value · Warren's SHAPE
+    </p>
+  </section>
+</div>
+
+<!-- PURPOSE ASSESSMENT -->
+<div class="screen" id="s-purpose">
+  <div class="wrap">
+    <div class="step-tag">Step 1 of 3 — Your Purpose (SHAPE Profile)</div>
+    <h2 class="sh2">Before we look at your resume, we need to understand who you are.</h2>
+    <p class="ssub">Rick Warren's SHAPE framework surfaces what you were built for. Your answers shape the career roadmap — not just the score.</p>
+    <div class="q-block"><label class="q-label"><span class="q-num">1.</span>What work makes you feel most alive — when you lose track of time?</label><textarea id="q1" placeholder="Describe the type of work, not just the title..."></textarea></div>
+    <div class="q-block"><label class="q-label"><span class="q-num">2.</span>What do people consistently come to you for — without you asking to be the expert?</label><textarea id="q2" placeholder="Your natural gifts usually show up here..."></textarea></div>
+    <div class="q-block"><label class="q-label"><span class="q-num">3.</span>Describe the one experience — professional or personal — that shaped your career direction most.</label><textarea id="q3" placeholder="Positive or difficult — both count..."></textarea></div>
+    <div class="q-block"><label class="q-label"><span class="q-num">4.</span>If money weren't a factor, what would you spend the next five years doing?</label><textarea id="q4" placeholder="Be specific — the work, the people, the problem you'd solve..."></textarea></div>
+    <div class="q-block"><label class="q-label"><span class="q-num">5.</span>What is the single biggest obstacle between you and your target career right now?</label><textarea id="q5" placeholder="Be honest — this directly shapes your roadmap..."></textarea></div>
+    <div id="err-purpose" class="err">Please answer at least questions 1, 2, and 5 to continue.</div>
+    <div class="btn-row">
+      <button class="btn-go" onclick="goToResume()">Next: Your Resume →</button>
+      <button class="btn-back" onclick="showScreen('s-hero')">Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESUME SETUP -->
+<div class="screen" id="s-resume">
+  <div class="wrap">
+    <div class="step-tag">Step 2 of 3 — Your Resume</div>
+    <h2 class="sh2">Set your career context.</h2>
+    <p class="ssub">The more accurate your inputs, the more precise your evaluation and roadmap.</p>
+    <div class="field-group">
+      <label class="field-label">Career Tier</label>
+      <div class="card-row c3">
+        <div class="sel-card" id="t-entry" onclick="selectTier('entry')"><div class="ic">🌱</div><div class="ct">Entry Level</div><div class="cd">0–5 yrs experience</div></div>
+        <div class="sel-card" id="t-mid" onclick="selectTier('mid')"><div class="ic">📈</div><div class="ct">Mid Career</div><div class="cd">5–15 yrs experience</div></div>
+        <div class="sel-card" id="t-exec" onclick="selectTier('exec')"><div class="ic">🏛</div><div class="ct">Senior / Executive</div><div class="cd">15+ yrs or C-suite</div></div>
+      </div>
+    </div>
+    <div class="field-group">
+      <label class="field-label">Target Sector</label>
+      <div class="card-row c5">
+        <div class="sel-card" id="sec-aviation" onclick="selectSector('aviation')"><div class="ic">✈️</div><div class="ct">Aviation</div><div class="cd">Pilot, ATC, MRO, ops</div></div>
+        <div class="sel-card" id="sec-stem" onclick="selectSector('stem')"><div class="ic">⚗️</div><div class="ct">STEM</div><div class="cd">Engineering, research</div></div>
+        <div class="sel-card" id="sec-entrepreneur" onclick="selectSector('entrepreneur')"><div class="ic">🚀</div><div class="ct">Entrepreneur</div><div class="cd">Founders, startups</div></div>
+        <div class="sel-card" id="sec-ai" onclick="selectSector('ai')"><div class="ic">🤖</div><div class="ct">AI Innovation</div><div class="cd">ML, AI products, data</div></div>
+        <div class="sel-card" id="sec-veteran" onclick="selectSector('veteran')"><div class="ic">🎖️</div><div class="ct">Military / Vet</div><div class="cd">MOS translation, SkillBridge</div></div>
+      </div>
+    </div>
+    <div class="field-group"><label class="field-label">Target Role <span style="color:var(--g300);font-weight:400">(optional)</span></label><input type="text" id="targetRole" placeholder="e.g. Commercial Pilot, Aerospace Engineer, AI Startup Founder..."></div>
+    <div class="field-group"><label class="field-label">Paste Your Resume Text</label><textarea class="big" id="resumeText" placeholder="Copy and paste your full resume here. Plain text works best."></textarea></div>
+    <div id="err-resume" class="err">Please select a tier, a sector, and paste your resume text.</div>
+    <div class="btn-row">
+      <button class="btn-go" onclick="runEvaluation()">Evaluate My Resume →</button>
+      <button class="btn-back" onclick="showScreen('s-purpose')">Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- ANALYZING -->
+<div class="screen" id="s-analyzing">
+  <div class="analyzing">
+    <div class="spin-ring"></div>
+    <h2>Evaluating your resume…</h2>
+    <p class="an-status" id="anStatus">Starting analysis…</p>
+    <ul class="an-list" id="anList">
+      <li class="an-item" id="an-0"><span class="an-dot"></span>Reading your SHAPE profile</li>
+      <li class="an-item" id="an-1"><span class="an-dot"></span>Scanning for ATS keyword density</li>
+      <li class="an-item" id="an-2"><span class="an-dot"></span>Measuring achievement ratio (Bock formula)</li>
+      <li class="an-item" id="an-3"><span class="an-dot"></span>Calibrating against sector benchmarks (O*NET)</li>
+      <li class="an-item" id="an-4"><span class="an-dot"></span>Applying Myron Golden's Value framework</li>
+      <li class="an-item" id="an-5"><span class="an-dot"></span>Building your career roadmap</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PREVIEW (UNGATED) -->
+<div class="screen" id="s-preview">
+  <div class="verdict-hero"><div id="vBadge" class="v-badge">—</div><div class="v-score"><span id="vScore">—</span><sub>/100</sub></div><p class="v-desc" id="vDesc"></p></div>
+  <div class="scores-block"><div class="scores-inner" id="scoreBars"></div></div>
+  <div class="fixes-block"><h3>Your Top 3 Fixes</h3><div id="fixesList"></div></div>
+  <div class="gate-banner">
+    <h3>Your full report is ready.</h3>
+    <p>Get your complete evaluation, rewritten bullets, Myron Golden Career Level, SHAPE alignment, and your personalized career roadmap — all free.</p>
+    <div class="gate-chips">
+      <span class="gate-chip">Full scored analysis</span><span class="gate-chip">Rewritten bullets</span>
+      <span class="gate-chip">Boss Moves Level</span><span class="gate-chip">SHAPE alignment</span>
+      <span class="gate-chip">Orient → Assess → Act roadmap</span>
+    </div>
+    <button class="btn-cta" onclick="showScreen('s-gate')">Get My Full Report — Free</button>
+  </div>
+</div>
+
+<!-- EMAIL GATE -->
+<div class="screen" id="s-gate">
+  <div class="gate-banner" style="padding:30px 18px 22px;">
+    <h3>Almost there.</h3>
+    <p>Enter your details and your full career report unlocks instantly.</p>
+  </div>
+  <div class="email-form-wrap">
+    <div class="email-card">
+      <h3>Where should we send your report?</h3>
+      <p>We'll also send MAA career resources and program updates. Unsubscribe anytime.</p>
+      <div class="f-row">
+        <div class="f-g"><label>First Name</label><input type="text" id="gFirst" placeholder="First name"></div>
+        <div class="f-g"><label>Last Name</label><input type="text" id="gLast" placeholder="Last name"></div>
+      </div>
+      <div class="f-g"><label>Email Address</label><input type="email" id="gEmail" placeholder="you@example.com"></div>
+      <div class="opt-row">
+        <input type="checkbox" id="gOpt" checked>
+        <label for="gOpt">Send me MAA career resources, program updates, and opportunities. (Unsubscribe anytime.)</label>
+      </div>
+      <button class="btn-go" style="width:100%" onclick="submitEmail()">Unlock My Full Report →</button>
+      <p class="privacy">🔒 Your resume is never stored. Your email is never sold or shared.</p>
+      <div id="err-gate" class="err"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FULL REPORT -->
+<div class="screen" id="s-report">
+  <div class="rpt-hero">
+    <div class="v-badge" id="rptVbadge" style="margin-bottom:8px">—</div>
+    <h2>Your Career Evaluation Report</h2>
+    <p id="rptSubline">Prepared by MAA Career Evaluator</p>
+  </div>
+  <div class="rpt-actions">
+    <button class="btn-action" onclick="printReport()">🖨 Print / Save PDF</button>
+    <button class="btn-action" onclick="shareReport()">↗ Share Results</button>
+    <button class="btn-action" onclick="switchTab('cw');showScreen('s-cw-hub')">📋 MAA Career Experience Surveys</button>
+  </div>
+  <div class="rpt-sec"><h3>Full Analysis</h3><div id="rptAnalysis"></div></div>
+  <div class="rpt-sec alt" id="rptFlagsWrap"><h3>Critical Issues</h3><div id="rptFlags"></div></div>
+  <div class="rpt-sec"><h3>Score Breakdown</h3><div class="scores-inner" id="rptScoreBars" style="margin-bottom:0"></div></div>
+  <div class="rpt-sec alt" id="rptRewritesWrap"><h3>Bullet Rewrites</h3><p style="margin-bottom:14px">Your weakest bullets — before and after applying the achievement formula.</p><div id="rptRewrites"></div></div>
+  <div class="rpt-sec"><h3>Purpose Alignment (SHAPE)</h3><p style="margin-bottom:12px">How well your resume reflects who you actually are:</p><div class="shape-card"><div class="slbl">SHAPE Analysis</div><p id="rptShape"></p></div></div>
+  <div class="rpt-sec alt"><h3>Your Myron Golden Career Level</h3><p style="margin-bottom:16px">Myron Golden's 4 Levels of Value explain why some people earn $30K and others earn $300K. It is not about effort — it is about what level of value you operate at.</p><div class="golden-card"><div class="gld-pill">✦ Boss Moves Framework — Tampa, FL</div><div class="levels-bar" id="gldLevels"></div><div class="gld-num" id="gldNum">—</div><div class="gld-name" id="gldName">—</div><div class="gld-move"><strong>The Boss Move →</strong> <span id="gldMove"></span></div></div></div>
+  <div class="rpt-sec"><h3>Your Career Roadmap</h3><p style="margin-bottom:18px">Three steps. Each one moves you forward from exactly where you are right now.</p><div class="roadmap-list"><div class="rm-step"><div class="rm-circle">1</div><div class="rm-body"><h4>ORIENT — Where you actually stand</h4><p id="rmOrient"></p></div></div><div class="rm-step"><div class="rm-circle">2</div><div class="rm-body"><h4>ASSESS — What you need next</h4><ul class="rm-assess-list" id="rmAssess"></ul></div></div><div class="rm-step"><div class="rm-circle">3</div><div class="rm-body"><h4>ACT — Do this in the next 24 hours</h4><div class="act-box"><strong>Your next move</strong><span id="rmAct"></span></div></div></div></div></div>
+  <div class="rpt-cta">
+    <h2>Your AI report is just the start.</h2>
+    <p>The evaluation shows you the gap. Ricardo closes it. One focused session will do more for your trajectory than six months of guessing.</p>
+    <div class="yab-inline" id="yabInlineNote"><strong>✈ Aviation track detected.</strong> Your Career Blueprint Session includes a personal review of your evaluation results + a copy of <em>Your Aviation Blueprint</em> — the definitive guide to a $1M aviation career without a college degree.</div>
+    <div class="bundle-card">
+      <div class="bundle-top">
+        <div><div class="bundle-title" id="bundleTitle">Career Blueprint Strategy Session</div><div class="bundle-sub">60 min · 1-on-1 with Ricardo "Infinity" Foster · LCDR USN Ret.</div></div>
+        <div class="price-block"><div class="price-was">$300</div><div class="price-now">$200</div><div class="price-save">App Exclusive — $100 Off</div></div>
+      </div>
+      <ul class="bundle-includes" id="bundleIncludes">
+        <li>Personal review of your AI evaluation results with Ricardo</li>
+        <li>Custom 30-day career action plan built around your roadmap</li>
+        <li>Resume strategy specific to your tier and sector</li>
+        <li>Access to Ricardo's MAA and HTN network (24+ countries)</li>
+        <li>Priority follow-up email support for 7 days post-session</li>
+      </ul>
+      <a href="https://www.flightcircle.com/shop/f2ef4eacb717/4000016315" target="_blank" class="bundle-cta" id="bundleCtaBtn">Book My Career Blueprint Session — $200 →</a>
+    </div>
+    <div class="divider-or">or</div>
+    <div class="cta-btns">
+      <a href="https://missionaviationacademy.org/yab-preorder" target="_blank" class="btn-outline" id="yabBtn">Pre-Order Your Aviation Blueprint</a>
+    </div>
+    <p class="yab-note">App Exclusive: $100 off regular $300 session rate. Discount applied automatically at checkout.</p>
+    <button class="restart-btn" onclick="restart()">Evaluate another resume</button>
+  </div>
+</div>
+
+<!-- ================================================
+     CAREER WEEK SCREENS
+     ================================================ -->
+
+<!-- CW HUB -->
+<div class="screen" id="s-cw-hub">
+  <div class="cw-hero">
+    <div class="cw-badge">🎯 MAA Career Experience — Ongoing</div>
+    <h1>MAA Career<br>Experience</h1>
+    <p>Work through each module at your own pace. Complete a module check-in after each session — your responses go directly to Ricardo and inform your personalized follow-up.</p>
+    <div class="cw-dates" id="cwDates"></div>
+    <div class="day-cards" id="daySelectorCards"></div>
+    <div class="cw-hub-btns">
+      <button class="btn-cta" id="cwDailyCta" onclick="openDailySurvey(selectedCwDay)">Complete Module Check-In</button>
+      <button class="btn-outline" onclick="showScreen('s-cw-weekly')" style="margin-left:0">Full Experience Reflection</button>
+    </div>
+  </div>
+</div>
+
+<!-- CW DAILY SURVEY -->
+<div class="screen" id="s-cw-daily">
+  <div class="survey-wrap">
+    <div class="survey-header">
+      <div class="survey-day-tag" id="surveyDayTag">Day — Survey</div>
+      <div class="survey-title" id="surveyTitle">Daily Check-In</div>
+      <div class="survey-date" id="surveyDate"></div>
+    </div>
+    <div id="surveyRespondent" style="margin-bottom:20px">
+      <div class="f-row">
+        <div class="f-g"><label class="field-label" style="font-size:12px">Your Name</label><input type="text" id="srName" placeholder="First Last"></div>
+        <div class="f-g"><label class="field-label" style="font-size:12px">Email (optional)</label><input type="email" id="srEmail" placeholder="For follow-up"></div>
+      </div>
+    </div>
+    <div id="surveyQuestionsContainer"></div>
+    <div id="err-survey" class="err">Please answer the required questions before submitting.</div>
+    <div class="btn-row">
+      <button class="btn-go" onclick="submitDailySurvey()">Submit Check-In →</button>
+      <button class="btn-back" onclick="showScreen('s-cw-hub')">Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- CW WEEKLY POST SURVEY -->
+<div class="screen" id="s-cw-weekly">
+  <div class="survey-wrap">
+    <div class="survey-header">
+      <div class="survey-day-tag">End-of-Week Reflection</div>
+      <div class="survey-title">MAA Career Experience — Module Check-In</div>
+      <div class="survey-date">Mission Aviation Academy · Tampa North Aero Park (X39)</div>
+    </div>
+    <div style="margin-bottom:20px">
+      <div class="f-row">
+        <div class="f-g"><label class="field-label" style="font-size:12px">Your Name</label><input type="text" id="wkName" placeholder="First Last"></div>
+        <div class="f-g"><label class="field-label" style="font-size:12px">Email (optional)</label><input type="email" id="wkEmail" placeholder="For follow-up"></div>
+      </div>
+    </div>
+    <div id="weeklyQuestionsContainer"></div>
+    <div id="err-weekly" class="err">Please answer the required questions.</div>
+    <div class="btn-row">
+      <button class="btn-go" onclick="submitWeeklySurvey()">Submit Reflection →</button>
+      <button class="btn-back" onclick="showScreen('s-cw-hub')">Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- SURVEY THANKS -->
+<div class="screen" id="s-cw-thanks">
+  <div class="thanks-screen">
+    <div class="thanks-icon">✅</div>
+    <h2 id="thanksTitle">Check-In Submitted</h2>
+    <p id="thanksMsg">Thank you. Ricardo and the MAA team review every response. Your input shapes the program.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      <button class="btn-cta" onclick="showScreen('s-cw-hub')">Back to MAA Experience</button>
+      <button class="btn-outline" onclick="switchTab('eval');showScreen('s-hero')">Go to Career Evaluator</button>
+    </div>
+  </div>
+</div>
+
+<!-- QR CODE SCREEN -->
+<div class="screen" id="s-qr">
+  <div class="qr-screen-wrap">
+    <div class="step-tag" style="text-align:center">Share This Tool</div>
+    <h2>MAA Career Evaluator</h2>
+    <p>Scan this QR code to open the Career Evaluator on any device. Print it, share it at events, or display it in your classroom.</p>
+    <div class="qr-box">
+      <div class="qr-maa-label">Mission Aviation Academy</div>
+      <div id="qrCanvas"></div>
+      <div class="qr-url" id="qrUrlDisplay"></div>
+    </div>
+    <button class="btn-dl-qr" onclick="downloadQR()">⬇ Download QR Code (PNG)</button>
+    <div class="qr-note">
+      <strong>Printing tip:</strong> This QR code links to the live web app. When you embed this tool on your MAA website, update the URL in the code so the QR always points to the right place. Right-click the QR image and save, or use the download button above.
+    </div>
+    <div class="btn-row" style="justify-content:center;margin-top:20px">
+      <button class="btn-back" onclick="showScreen('s-hero')">← Back to Evaluator</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================
+     JAVASCRIPT
+     ================================================ -->
+<script>
+// ── Config ────────────────────────────────────────────────────────
+const FORMSPREE = 'maeqejkp';
+const APP_URL   = 'https://missionaviationacademy.org/career-evaluator';
+const BOOKING   = 'https://www.flightcircle.com/shop/f2ef4eacb717/4000016315';
+const YAB_URL   = 'https://missionaviationacademy.org/yab-preorder';
+const CW_WEEK   = { start: null, end: null }; // Evergreen — no fixed dates
+
+// ── State ─────────────────────────────────────────────────────────
+const S = { tier:null, sector:null, role:'', shape:[], resume:'', name:'', email:'', result:null };
+let selectedCwDay = null;
+let qrInstance = null;
+
+// ── Analytics stub (connect GA4 later) ───────────────────────────
+function track(name, params={}) {
+  if (typeof gtag !== 'undefined') gtag('event', name, params);
+  console.log('[MAA]', name, params);
+}
+
+// ── Rate limiting ─────────────────────────────────────────────────
+function checkRateLimit() {
+  try {
+    const last = sessionStorage.getItem('maa_last_eval');
+    if (last && Date.now() - parseInt(last) < 60000) return false; // 1 min cooldown
+    sessionStorage.setItem('maa_last_eval', Date.now().toString());
+  } catch(e){}
+  return true;
+}
+
+// ── Navigation ────────────────────────────────────────────────────
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+  updateProgress(id);
+}
+function updateProgress(id) {
+  const strip = document.getElementById('pStrip'), fill = document.getElementById('pFill');
+  const map = {'s-hero':0,'s-purpose':25,'s-resume':50,'s-analyzing':70,'s-preview':80,'s-gate':88,'s-report':100};
+  const pct = map[id] || 0;
+  strip.style.display = pct > 0 ? 'block' : 'none';
+  fill.style.width = pct + '%';
+}
+function switchTab(tab) {
+  document.getElementById('tab-eval').classList.toggle('on', tab==='eval');
+  document.getElementById('tab-cw').classList.toggle('on', tab==='cw');
+  if (tab==='eval') showScreen('s-hero');
+  if (tab==='cw')   { buildCWHub(); showScreen('s-cw-hub'); }
+}
+function startEval() { track('eval_started'); showScreen('s-purpose'); }
+
+// ── Purpose ───────────────────────────────────────────────────────
+function goToResume() {
+  const q1=val('q1'),q2=val('q2'),q5=val('q5');
+  if (!q1||!q2||!q5) { show('err-purpose'); return; }
+  hide('err-purpose');
+  S.shape=[val('q1'),val('q2'),val('q3'),val('q4'),val('q5')];
+  track('purpose_completed');
+  showScreen('s-resume');
+}
+
+// ── Selectors ─────────────────────────────────────────────────────
+function selectTier(t) {
+  S.tier=t;
+  ['entry','mid','exec'].forEach(x=>document.getElementById('t-'+x).classList.toggle('on',x===t));
+}
+function selectSector(s) {
+  S.sector=s;
+  ['aviation','stem','entrepreneur','ai','veteran'].forEach(x=>document.getElementById('sec-'+x).classList.toggle('on',x===s));
+}
+
+// ── Evaluation ────────────────────────────────────────────────────
+function runEvaluation() {
+  S.role = val('targetRole'); S.resume = val('resumeText');
+  const errEl = document.getElementById('err-resume');
+  if (!S.tier) { errEl.textContent='Please select a career tier.'; show('err-resume'); return; }
+  if (!S.sector) { errEl.textContent='Please select a target sector.'; show('err-resume'); return; }
+  if (S.resume.length < 80) { errEl.textContent='Please paste your resume text (at least a paragraph).'; show('err-resume'); return; }
+  if (!checkRateLimit()) { errEl.textContent='Please wait a moment before running another evaluation.'; show('err-resume'); return; }
+  hide('err-resume');
+  showScreen('s-analyzing');
+  animateAnalyzing();
+  callClaude();
+  track('resume_submitted', { tier: S.tier, sector: S.sector });
+}
+
+function animateAnalyzing() {
+  const steps=document.querySelectorAll('.an-item');
+  const statuses=['Reading your SHAPE profile…','Scanning ATS keyword density…','Measuring achievement ratio…','Calibrating against '+S.sector+' benchmarks (O*NET)…',"Applying Myron Golden's Value framework…",'Building your career roadmap…'];
+  let i=0;
+  const st=document.getElementById('anStatus');
+  function tick(){ if(i>0) steps[i-1].classList.replace('active','done'); if(i<steps.length){steps[i].classList.add('active');st.textContent=statuses[i];i++;setTimeout(tick,1500);} }
+  tick();
+}
+
+async function callClaude() {
+  const tLbl={entry:'Entry Level (0–5 years)',mid:'Mid Career (5–15 years)',exec:'Senior / Executive (15+ years)'}[S.tier];
+  const sLbl={aviation:'Aviation',stem:'STEM',entrepreneur:'Entrepreneurship',ai:'AI Innovation',veteran:'Military / Veteran'}[S.sector];
+  const role=S.role||'Not specified';
+  const prompt=`You are a senior career strategist and expert resume evaluator. Return ONLY valid JSON — no prose, no markdown, no code fences.
+
+EVALUATION INPUTS:
+Career Tier: ${tLbl}
+Target Sector: ${sLbl}
+Target Role: ${role}
+
+PURPOSE PROFILE (Rick Warren SHAPE Framework):
+1. Work they feel most alive doing: ${S.shape[0]||'Not answered'}
+2. What others come to them for: ${S.shape[1]||'Not answered'}
+3. Defining experience: ${S.shape[2]||'Not answered'}
+4. Ideal 5-year focus: ${S.shape[3]||'Not answered'}
+5. Biggest obstacle: ${S.shape[4]||'Not answered'}
+
+RESUME TEXT:
+${S.resume.slice(0,5000)}
+
+SCORING WEIGHTS by tier:
+Entry: ATS 30%, Achievement 20%, Narrative 15%, Scope 0%, Sector 20%, Format 15%
+Mid: ATS 20%, Achievement 30%, Narrative 20%, Scope 10%, Sector 15%, Format 5%
+Executive: ATS 10%, Achievement 25%, Narrative 30%, Scope 25%, Sector 10%, Format 0%
+Veteran: ATS 25%, Achievement 25%, Narrative 20%, Scope 10%, Sector 20% (MOS translation), Format 0%
+
+KILL FLAGS (auto-OVERHAUL): no measurable results anywhere; wrong length for tier; generic objective; ATS-breaking formatting.
+VERDICTS: POLISH=75-100, REVISE=50-74, OVERHAUL=0-49. Kill flags override score.
+GOLDEN LEVELS: 1=Implementation, 2=Unification, 3=Communication, 4=Imagination.
+VETERAN NOTE: If sector=veteran, flag MOS codes not translated to civilian equivalents and missing SkillBridge or civilian-keyword issues.
+
+Return exactly this JSON:
+{"verdict":"OVERHAUL|REVISE|POLISH","weighted_total":0,"scores":{"ats_readiness":0,"achievement_ratio":0,"narrative_clarity":0,"scope_signals":0,"sector_calibration":0,"format_discipline":0},"kill_flags":[],"top_3_fixes":["specific fix referencing real resume content","fix 2","fix 3"],"full_analysis":"2-3 paragraphs honest assessment referencing actual resume content — no hype","rewrites":[{"original":"exact weak bullet from resume","rewritten":"improved version with achievement formula"}],"golden_level":{"current":1,"label":"Implementation","boss_move":"specific next action to move to next level"},"shape_alignment":"1-2 sentences on whether resume reflects their SHAPE answers","roadmap":{"orient":"honest 1-2 sentence gap statement","assess":["named step 1","named step 2","named step 3"],"act":"one specific 24-hour action"}}`;
+
+  try {
+    const res=await fetch('/api/evaluate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1800,messages:[{role:'user',content:prompt}]})});
+    const data=await res.json();
+    const raw=data.content?.[0]?.text||'';
+    const parsed=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    S.result=parsed;
+    renderPreview(parsed);
+    showScreen('s-preview');
+    track('eval_complete',{verdict:parsed.verdict,score:parsed.weighted_total,tier:S.tier,sector:S.sector});
+  } catch(e) {
+    console.error(e);
+    showScreen('s-resume');
+    const el=document.getElementById('err-resume');
+    el.textContent='Evaluation failed. Check your resume text and try again.';
+    show('err-resume');
+  }
+}
+
+function renderPreview(d) {
+  const vb=document.getElementById('vBadge');
+  vb.textContent=d.verdict; vb.className='v-badge '+d.verdict;
+  document.getElementById('vScore').textContent=d.weighted_total;
+  const dm={OVERHAUL:'Your resume has fundamental gaps. Every one is fixable — but fix them before applying anywhere.',REVISE:'Solid foundation with material weaknesses. Targeted revisions will significantly improve your chances.',POLISH:'Structurally strong. Targeted polish on a few areas will put you at the top of the pile.'};
+  document.getElementById('vDesc').textContent=dm[d.verdict]||'';
+  const sLbls={ats_readiness:'ATS Readiness',achievement_ratio:'Achievement Ratio',narrative_clarity:'Narrative Clarity',scope_signals:'Scope Signals',sector_calibration:'Sector Calibration',format_discipline:'Format Discipline'};
+  const bars=document.getElementById('scoreBars'); bars.innerHTML='';
+  Object.entries(sLbls).forEach(([k,l])=>{
+    const v=d.scores?.[k]??0;
+    const r=document.createElement('div'); r.className='s-row';
+    r.innerHTML=`<span class="s-lbl">${l}</span><div class="s-bar"><div class="s-fill" data-w="${v}"></div></div><span class="s-val">${v}</span>`;
+    bars.appendChild(r);
+  });
+  requestAnimationFrame(()=>{ document.querySelectorAll('#scoreBars .s-fill').forEach(el=>el.style.width=el.dataset.w+'%'); });
+  const fx=document.getElementById('fixesList'); fx.innerHTML='';
+  (d.top_3_fixes||[]).slice(0,3).forEach((f,i)=>{ fx.innerHTML+=`<div class="fix"><span class="fix-n">${i+1}</span><span class="fix-t">${esc(f)}</span></div>`; });
+}
+
+// ── Email gate ────────────────────────────────────────────────────
+async function submitEmail() {
+  const first=val('gFirst'), email=val('gEmail'), opt=document.getElementById('gOpt').checked;
+  const errEl=document.getElementById('err-gate');
+  if (!first||!email||!email.includes('@')) { errEl.textContent='Please enter your first name and a valid email.'; show('err-gate'); return; }
+  hide('err-gate');
+  S.name=first+(val('gLast')?' '+val('gLast'):''); S.email=email;
+  try { const leads=JSON.parse(localStorage.getItem('maa_leads')||'[]'); leads.push({name:S.name,email,tier:S.tier,sector:S.sector,verdict:S.result?.verdict,score:S.result?.weighted_total,goldenLevel:S.result?.golden_level?.label,opt,ts:new Date().toISOString()}); localStorage.setItem('maa_leads',JSON.stringify(leads)); } catch(e){}
+  if (FORMSPREE) {
+    try { fetch(`https://formspree.io/f/${FORMSPREE}`,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:S.name,email,tier:S.tier,sector:S.sector,targetRole:S.role||'Not specified',verdict:S.result?.verdict,score:S.result?.weighted_total,goldenLevel:S.result?.golden_level?.label,optIn:opt?'Yes':'No',_subject:`MAA Lead — ${S.result?.verdict||'New'} | ${S.sector} | ${S.tier}`})}).catch(()=>{}); } catch(e){}
+  }
+  track('email_captured',{tier:S.tier,sector:S.sector,verdict:S.result?.verdict});
+  renderFullReport(S.result);
+  showScreen('s-report');
+}
+
+function renderFullReport(d) {
+  if (!d) return;
+  const rb=document.getElementById('rptVbadge'); rb.textContent=d.verdict; rb.className='v-badge '+d.verdict;
+  document.getElementById('rptSubline').textContent=`Prepared for ${S.name||'you'} — ${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}`;
+  document.getElementById('rptAnalysis').innerHTML=(d.full_analysis||'').split('\n\n').map(p=>p.trim()?`<p>${esc(p)}</p>`:'').join('');
+  const fl=document.getElementById('rptFlags');
+  fl.innerHTML=d.kill_flags?.length ? d.kill_flags.map(f=>`<div class="kf"><span class="ki">⚠</span><span class="kt">${esc(f)}</span></div>`).join('') : '<p class="no-flags">✓ No critical kill flags detected.</p>';
+  const sLbls={ats_readiness:'ATS Readiness',achievement_ratio:'Achievement Ratio',narrative_clarity:'Narrative Clarity',scope_signals:'Scope Signals',sector_calibration:'Sector Calibration',format_discipline:'Format Discipline'};
+  const rsb=document.getElementById('rptScoreBars'); rsb.innerHTML='';
+  Object.entries(sLbls).forEach(([k,l])=>{ const v=d.scores?.[k]??0; const r=document.createElement('div'); r.className='s-row'; r.innerHTML=`<span class="s-lbl">${l}</span><div class="s-bar"><div class="s-fill" data-w="${v}"></div></div><span class="s-val">${v}</span>`; rsb.appendChild(r); });
+  requestAnimationFrame(()=>{ rsb.querySelectorAll('.s-fill').forEach(el=>el.style.width=el.dataset.w+'%'); });
+  const rw=document.getElementById('rptRewrites');
+  if (!d.rewrites?.length) { document.getElementById('rptRewritesWrap').style.display='none'; }
+  else { rw.innerHTML=d.rewrites.map(r=>`<div class="rw-card"><div class="rw-orig"><div class="rw-lbl">Before</div><div class="rw-text">${esc(r.original)}</div></div><div class="rw-new"><div class="rw-lbl">After</div><div class="rw-text">${esc(r.rewritten)}</div></div></div>`).join(''); }
+  document.getElementById('rptShape').textContent=d.shape_alignment||'';
+  const gl=d.golden_level||{current:1,label:'Implementation',boss_move:'Define the next level of value you offer.'};
+  document.getElementById('gldNum').textContent=gl.current;
+  document.getElementById('gldName').textContent='Level '+gl.current+' — '+gl.label;
+  document.getElementById('gldMove').textContent=gl.boss_move;
+  const lvls=['Implementation','Unification','Communication','Imagination'];
+  document.getElementById('gldLevels').innerHTML=lvls.map((n,i)=>`<div class="lv-block${i+1===gl.current?' current':''}"><div class="lv-n">${i+1}</div><div class="lv-l">${n}</div></div>`).join('');
+  document.getElementById('rmOrient').textContent=d.roadmap?.orient||'';
+  document.getElementById('rmAssess').innerHTML=(d.roadmap?.assess||[]).map(s=>`<li>${esc(s)}</li>`).join('');
+  document.getElementById('rmAct').textContent=d.roadmap?.act||'';
+  // Sector-aware CTA
+  const isAv=S.sector==='aviation';
+  const yabNote=document.getElementById('yabInlineNote');
+  const bt=document.getElementById('bundleTitle'), bi=document.getElementById('bundleIncludes'), bc=document.getElementById('bundleCtaBtn'), yabBtn=document.getElementById('yabBtn');
+  if (isAv) {
+    yabNote.style.display='block';
+    bt.textContent='Your Aviation Blueprint Career Session';
+    bi.innerHTML='<li>Personal review of your AI evaluation results with Ricardo</li><li>Signed digital copy of <em>Your Aviation Blueprint</em> — included</li><li>Custom aviation career roadmap: FAA cert path, hours strategy, and job targeting</li><li>Access to Ricardo\'s MAA, HTN, and aviation industry network</li><li>Priority follow-up support for 7 days post-session</li>';
+    bc.textContent='Book My Aviation Blueprint Session — $200 →';
+    yabBtn.textContent='Pre-Order Physical Copy — Your Aviation Blueprint';
+  } else if (S.sector==='veteran') {
+    bt.textContent='Military-to-Civilian Career Blueprint Session';
+    bi.innerHTML='<li>MOS/AFSC/NEC code translation to civilian career paths</li><li>SkillBridge program identification and application strategy</li><li>Resume rewrite from military to civilian language</li><li>Custom civilian career roadmap with Ricardo</li><li>Priority follow-up support for 7 days post-session</li>';
+    bc.textContent='Book My Military-to-Civilian Session — $200 →';
+    yabBtn.style.display='none';
+  } else {
+    const sMap={stem:'STEM',entrepreneur:'Entrepreneurship',ai:'AI Innovation'};
+    bt.textContent=(sMap[S.sector]||'Career')+' Blueprint Strategy Session';
+    bc.textContent='Book My Career Blueprint Session — $200 →';
+  }
+}
+
+// ── Print & Share ─────────────────────────────────────────────────
+function printReport() {
+  track('report_printed');
+  window.print();
+}
+function shareReport() {
+  const verdict=S.result?.verdict||'';
+  const score=S.result?.weighted_total||'';
+  const text=`I just got my AI career evaluation from Mission Aviation Academy — Verdict: ${verdict} (${score}/100). Get yours free:`;
+  if (navigator.share) {
+    navigator.share({ title:'MAA Career Evaluator', text, url: APP_URL }).catch(()=>{});
+  } else {
+    navigator.clipboard?.writeText(`${text} ${APP_URL}`).then(()=>alert('Link copied to clipboard!')).catch(()=>alert(`Share this link: ${APP_URL}`));
+  }
+  track('report_shared', { verdict });
+}
+
+// ── MAA Career Experience Hub ───────────────────────────────────────
+const CW_DAYS = [
+  { day:1, label:'Module 1', date:'', title:'Setting the Foundation', full:'Module 1 — Setting the Foundation' },
+  { day:2, label:'Module 2', date:'', title:'Building Your Blueprint', full:'Module 2 — Building Your Blueprint' },
+  { day:3, label:'Module 3', date:'', title:'Finding Your SHAPE', full:'Module 3 — Finding Your SHAPE' },
+  { day:4, label:'Module 4', date:'', title:'Boss Moves', full:'Module 4 — Boss Moves' },
+  { day:5, label:'Module 5', date:'', title:'Your Flight Plan', full:'Module 5 — Your Flight Path' }
+];
+
+function getTodayCwDay() {
+  const now=new Date(); const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const starts=[];
+  for(let i=0;i<starts.length;i++){const d=new Date(starts[i].getFullYear(),starts[i].getMonth(),starts[i].getDate());if(today.getTime()===d.getTime())return i+1;}
+  return null;
+}
+
+function buildCWHub() {
+  const today=getTodayCwDay();
+  selectedCwDay=today||1; // default to Module 1
+  const cards=document.getElementById('daySelectorCards'); cards.innerHTML='';
+  const now=new Date(); const nowDay=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  CW_DAYS.forEach(d=>{
+    const dDate=null;
+    const isPast=dDate<nowDay, isToday=d.day===today;
+    const cls='day-card'+(isToday?' today-card':isPast?' past-card':'');
+    const el=document.createElement('div'); el.className=cls;
+    el.innerHTML=`<div class="dc-day">${d.label}</div><div class="dc-num">${d.date}</div><div class="dc-title">${d.title}</div>`;
+    el.onclick=()=>{selectedCwDay=d.day; document.querySelectorAll('.day-card').forEach(c=>c.classList.remove('today-card')); el.classList.add('today-card'); document.getElementById('cwDailyCta').textContent=`Day ${d.day} Check-In`;};
+    cards.appendChild(el);
+  });
+  const dtEl=document.getElementById('cwDates'); dtEl.innerHTML='';
+  CW_DAYS.forEach(d=>{const isToday=d.day===today;const chip=document.createElement('span');chip.className='cw-date-chip'+(isToday?' today':'');chip.textContent=(isToday?'📍 Today — ':'')+d.label+' '+d.date+' — '+d.title;dtEl.appendChild(chip);});
+  document.getElementById('cwDailyCta').textContent=today?`Module ${today} Check-In`:`Module Check-In`;
+}
+
+function openDailySurvey(day) {
+  if (!day) return;
+  const meta=CW_DAYS.find(d=>d.day===day);
+  document.getElementById('surveyDayTag').textContent=`Day ${day} of 5 — Daily Check-In`;
+  document.getElementById('surveyTitle').textContent=meta.title;
+  document.getElementById('surveyDate').textContent=meta.full+' · Mission Aviation Academy';
+  buildDailySurveyQuestions(day);
+  showScreen('s-cw-daily');
+  track('survey_opened', { day });
+}
+
+// ── Daily survey question sets ─────────────────────────────────────
+const DAILY_Q = {
+  1:[
+    {id:'q_path',type:'text',label:'What career path brought you to Mission Aviation Academy?',req:true},
+    {id:'q_clarity',type:'scale',label:'How clear is your career direction right now?',min:'No clarity (1)',max:'Completely clear (10)',req:true},
+    {id:'q_hope',type:'text',label:'What\'s the #1 thing you want to take away from this MAA Career Experience?',req:true},
+    {id:'q_fear',type:'text',label:'What\'s your biggest fear about your career path? (Be honest — this is private.)'},
+    {id:'q_rating',type:'stars',label:'How valuable was today\'s session overall?',req:true}
+  ],
+  2:[
+    {id:'q_surprising',type:'text',label:'What was the most surprising thing you learned today?',req:true},
+    {id:'q_confidence',type:'scale',label:'After today, how has your career confidence shifted?',min:'Less confident (1)',max:'Much more confident (10)',req:true},
+    {id:'q_action',type:'text',label:'Name one action you\'re taking THIS WEEK based on what you heard today.',req:true},
+    {id:'q_question',type:'text',label:'What question do you still have that hasn\'t been answered?'},
+    {id:'q_rating',type:'stars',label:'How valuable was today\'s session overall?',req:true}
+  ],
+  3:[
+    {id:'q_shape',type:'select',label:'Which SHAPE dimension feels most developed in you right now?',options:['S — Spiritual Gifts (what I naturally do for others)','H — Heart (what I\'m passionate about)','A — Abilities (what I\'ve learned to do well)','P — Personality (how I\'m wired to engage the world)','E — Experiences (what has shaped me most)'],req:true},
+    {id:'q_purpose',type:'text',label:'What did today reveal about your purpose that you hadn\'t named before?',req:true},
+    {id:'q_level',type:'select',label:'On Myron Golden\'s 4-Level framework, where are you operating right now?',options:['Level 1 — Implementation (doing the work with my hands or body)','Level 2 — Unification (leading people who do the work)','Level 3 — Communication (teaching, selling, persuading at scale)','Level 4 — Imagination (creating systems and IP that others implement)'],req:true},
+    {id:'q_move',type:'text',label:'What would it take to move up one level in the next 12 months?'},
+    {id:'q_rating',type:'stars',label:'How valuable was today\'s session overall?',req:true}
+  ],
+  4:[
+    {id:'q_bossmove',type:'text',label:'What\'s the single Boss Move you need to make in your career right now?',req:true},
+    {id:'q_blocker',type:'text',label:'What has been holding you back from making it?',req:true},
+    {id:'q_belief',type:'text',label:'After today, what limiting belief is starting to lose its grip on you?'},
+    {id:'q_network',type:'text',label:'Name one person in your network you\'re reaching out to this week — and why.'},
+    {id:'q_rating',type:'stars',label:'How valuable was today\'s session overall?',req:true}
+  ],
+  5:[
+    {id:'q_before_after',type:'text',label:'Complete this: "Before MAA, I thought ___. Now I know ___."',req:true},
+    {id:'q_priority',type:'text',label:'What\'s your #1 priority action in the next 30 days?',req:true},
+    {id:'q_nps',type:'scale',label:'How likely are you to recommend the MAA Career Experience to someone you care about?',min:'Not at all (0)',max:'Absolutely (10)',req:true},
+    {id:'q_improve',type:'text',label:'What would have made this week even better?'},
+    {id:'q_rating',type:'stars',label:'Overall MAA Career Experience rating:',req:true}
+  ]
+};
+
+function buildDailySurveyQuestions(day) {
+  const qs=DAILY_Q[day]||[];
+  const container=document.getElementById('surveyQuestionsContainer');
+  container.innerHTML=qs.map((q,i)=>renderQ(q,i)).join('');
+  setupInteractiveQ(qs);
+}
+
+// ── Weekly survey questions ───────────────────────────────────────
+const WEEKLY_Q = [
+  {id:'w_shift',type:'text',label:'How has this week changed how you think about your career?',req:true},
+  {id:'w_best_day',type:'select',label:'Which day had the greatest impact on you?',options:['Module 1 — Setting the Foundation','Module 2 — Building Your Blueprint','Module 3 — Finding Your SHAPE','Module 4 — Boss Moves','Module 5 — Your Flight Path'],req:true},
+  {id:'w_conf_before',type:'scale',label:'Career confidence BEFORE this week:',min:'Low (1)',max:'High (10)',req:true},
+  {id:'w_conf_after',type:'scale',label:'Career confidence AFTER this week:',min:'Low (1)',max:'High (10)',req:true},
+  {id:'w_framework',type:'select',label:'Which framework resonated most with you?',options:['Rick Warren\'s SHAPE Profile','Myron Golden\'s 4 Levels of Value','Career Tier System (Entry / Mid / Executive)','Orient → Assess → Act Roadmap','The AI Resume Evaluator itself']},
+  {id:'w_goal',type:'text',label:'Your #1 career commitment for the next 90 days:',req:true},
+  {id:'w_nps',type:'scale',label:'How likely are you to recommend MAA Career Experience? (0 = not at all, 10 = absolutely)',min:'Not at all (0)',max:'Absolutely (10)',req:true},
+  {id:'w_return',type:'select',label:'Would you attend a future MAA program or cohort?',options:['Absolutely — sign me up for next cohort','Probably yes','Maybe','Probably not']},
+  {id:'w_interested',type:'multicheck',label:'I\'m interested in: (check all that apply)',options:['1-on-1 Career Session with Ricardo ($200)','MAA Private Pilot Program','Part 107 Drone Certification','AI Innovation & Apps Program','Your Aviation Blueprint (pre-order)','MAA Entrepreneurship Cohort']},
+  {id:'w_rating',type:'stars',label:'Overall MAA Career Experience rating:',req:true},
+  {id:'w_final',type:'text',label:'Any final thoughts, wins, or words for the MAA team?'}
+];
+
+function buildWeeklyQuestions() {
+  const container=document.getElementById('weeklyQuestionsContainer');
+  container.innerHTML=WEEKLY_Q.map((q,i)=>renderQ(q,i)).join('');
+  setupInteractiveQ(WEEKLY_Q);
+}
+
+// ── Render survey question ────────────────────────────────────────
+function renderQ(q,i) {
+  const num=i+1, req=q.req?'<span style="color:var(--red)"> *</span>':'';
+  let input='';
+  if (q.type==='text') input=`<textarea id="${q.id}" placeholder="Your answer..." rows="3"></textarea>`;
+  else if (q.type==='select') input=`<select id="${q.id}"><option value="">— Select —</option>${(q.options||[]).map(o=>`<option>${o}</option>`).join('')}</select>`;
+  else if (q.type==='scale') input=`<div class="scale-row"><input type="range" id="${q.id}" min="1" max="10" value="5" oninput="document.getElementById('${q.id}_v').textContent=this.value"><div class="scale-labels"><span>${q.min||'Low'}</span><span>${q.max||'High'}</span></div><div class="scale-val-display" id="${q.id}_v">5</div></div>`;
+  else if (q.type==='stars') input=`<div class="stars-row" id="${q.id}_stars">${[1,2,3,4,5].map(n=>`<span class="star" data-n="${n}" data-id="${q.id}" onclick="setStar('${q.id}',${n})">☆</span>`).join('')}</div><input type="hidden" id="${q.id}" value="">`;
+  else if (q.type==='multicheck') input=`<div class="multicheck-grid">${(q.options||[]).map((o,j)=>`<label class="mc-item" id="${q.id}_mc_${j}"><input type="checkbox" id="${q.id}_cb_${j}" onchange="updateMC('${q.id}')" value="${o}"> ${o}</label>`).join('')}</div><input type="hidden" id="${q.id}" value="">`;
+  return `<div class="q-block-survey"><label class="q-label-survey"><span class="q-num-survey">${num}.</span> ${q.label}${req}</label>${input}</div>`;
+}
+
+function setupInteractiveQ(qs) {
+  qs.filter(q=>q.type==='multicheck').forEach(q=>{
+    document.querySelectorAll(`[id^="${q.id}_mc_"]`).forEach(lbl=>{
+      lbl.addEventListener('click',()=>lbl.classList.toggle('checked'));
+    });
+  });
+}
+
+function setStar(id,n) {
+  document.getElementById(id).value=n;
+  document.querySelectorAll(`#${id}_stars .star`).forEach(s=>{ const sn=parseInt(s.dataset.n); s.textContent=sn<=n?'★':'☆'; s.classList.toggle('on',sn<=n); });
+}
+
+function updateMC(id) {
+  const vals=[]; document.querySelectorAll(`[id^="${id}_cb_"]`).forEach(cb=>{ if(cb.checked)vals.push(cb.value); }); document.getElementById(id).value=vals.join('|');
+}
+
+// ── Submit daily survey ───────────────────────────────────────────
+async function submitDailySurvey() {
+  const day=selectedCwDay||1, qs=DAILY_Q[day]||[];
+  const errEl=document.getElementById('err-survey');
+  const missing=qs.filter(q=>q.req&&!val(q.id));
+  if (missing.length) { errEl.textContent='Please answer all required questions (* marked).'; show('err-survey'); return; }
+  hide('err-survey');
+  const meta=CW_DAYS.find(d=>d.day===day);
+  const answers={}; qs.forEach(q=>{ answers[q.label.slice(0,50)]=val(q.id); });
+  const payload={_subject:`MAA Daily Survey — Day ${day} — ${val('srName')||'Anonymous'}`,name:val('srName')||'Anonymous',email:val('srEmail')||'Not provided',day:`Day ${day} — ${meta?.title}`,date:meta?.full,...answers};
+  await postToFormspree(payload);
+  track('survey_submitted',{type:'daily',day});
+  document.getElementById('thanksTitle').textContent=`Day ${day} Check-In Received`;
+  document.getElementById('thanksMsg').textContent=`Thank you${val('srName')?' '+val('srName'):''} — your Day ${day} check-in is in. Ricardo and the MAA team review every response. See you tomorrow.`;
+  showScreen('s-cw-thanks');
+}
+
+async function submitWeeklySurvey() {
+  if (!document.getElementById('weeklyQuestionsContainer').innerHTML) buildWeeklyQuestions();
+  const errEl=document.getElementById('err-weekly');
+  const missing=WEEKLY_Q.filter(q=>q.req&&!val(q.id));
+  if (missing.length) { errEl.textContent='Please answer all required questions (* marked).'; show('err-weekly'); return; }
+  hide('err-weekly');
+  const answers={}; WEEKLY_Q.forEach(q=>{ answers[q.label.slice(0,60)]=val(q.id); });
+  const payload={_subject:`MAA Weekly Post Survey — ${val('wkName')||'Anonymous'}`,name:val('wkName')||'Anonymous',email:val('wkEmail')||'Not provided',type:'MAA Career Experience — Full Reflection',...answers};
+  await postToFormspree(payload);
+  track('survey_submitted',{type:'weekly'});
+  document.getElementById('thanksTitle').textContent='MAA Career Experience Reflection Received';
+  document.getElementById('thanksMsg').textContent=`Thank you${val('wkName')?' '+val('wkName'):''} — your MAA Career Experience reflection is in. Ricardo reviews every response personally and will follow up within 48 hours.`;
+  showScreen('s-cw-thanks');
+}
+
+async function postToFormspree(payload) {
+  if (!FORMSPREE) return;
+  try { await fetch(`https://formspree.io/f/${FORMSPREE}`,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}); } catch(e){}
+}
+
+// ── QR Code ───────────────────────────────────────────────────────
+function buildQR() {
+  const url=APP_URL;
+  document.getElementById('qrUrlDisplay').textContent=url;
+  const canvas=document.getElementById('qrCanvas');
+  if (canvas.innerHTML) return; // already built
+  try {
+    new QRCode(canvas,{text:url,width:220,height:220,colorDark:'#001838',colorLight:'#FFFFFF',correctLevel:QRCode.CorrectLevel.H});
+  } catch(e) { canvas.innerHTML='<p style="color:var(--g500);font-size:12px">QR library loading… reload if needed.</p>'; }
+}
+function downloadQR() {
+  const img=document.querySelector('#qrCanvas img');
+  if (!img) { alert('QR code still generating. Try again in a moment.'); return; }
+  const a=document.createElement('a'); a.download='maa-career-evaluator-qr.png'; a.href=img.src; a.click();
+  track('qr_downloaded');
+}
+
+// ── Utilities ─────────────────────────────────────────────────────
+function val(id){ try{return document.getElementById(id)?.value?.trim()||'';}catch(e){return '';} }
+function show(id){ document.getElementById(id).style.display='block'; }
+function hide(id){ document.getElementById(id).style.display='none'; }
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function restart(){ Object.assign(S,{tier:null,sector:null,role:'',shape:[],resume:'',name:'',email:'',result:null}); ['q1','q2','q3','q4','q5','targetRole','resumeText','gFirst','gLast','gEmail'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';}); document.querySelectorAll('.sel-card').forEach(c=>c.classList.remove('on')); showScreen('s-hero'); }
+
+// ── Init ──────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  buildWeeklyQuestions(); // pre-build weekly survey so it renders fast
+});
+</script>
+
+  <!-- MAA Legal Footer -->
+  <div style="background:#001838;color:rgba(255,255,255,0.4);font-size:11px;text-align:center;padding:16px 24px;border-top:1px solid rgba(255,215,0,0.15);">
+    Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit · EIN 85-1110607 · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate · admissions@missionaviationacademy.org · (813) 445-8889 · (833) FLY-STEM
+  </div>
+</body>
+</html>
