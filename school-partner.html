@@ -327,22 +327,54 @@ footer { background: var(--navy); padding: 32px 24px; }
   .tier-table th, .tier-table td { padding: 10px 10px; }
 }
 </style>
+  <link rel="stylesheet" href="/maa-nav.css"/>
 </head>
-<body>
-
-<nav>
-  <div class="nav-inner">
-    <div class="nav-brand">Mission Aviation Academy <span>Infinity Aero Club Tampa Bay, Inc.</span></div>
-    <ul class="nav-links">
-      <li><a href="#faq-parent">For Families</a></li>
-      <li><a href="#faq-admin">For Schools</a></li>
-      <li><a href="#tiers">Partnership Tiers</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#schedule">Schedule</a></li>
-      <li><a href="#fund">Scholarship Fund</a></li>
-      <li><a href="#courses">Courses</a></li>
-    </ul>
-    <a href="/saturday#rsvp" style="background:var(--gold);color:var(--navy);padding:8px 18px;font-size:12px;font-weight:700;text-decoration:none;border-radius:3px;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0;">Start Your Flight Path</a>
+<body><!-- SITE NAV -->
+<nav class="maa-site-nav" id="maaSiteNav">
+  <div class="maa-nav-inner">
+    <a href="/" class="maa-logo">Mission Aviation Academy</a>
+    <button class="maa-hamburger" id="maaHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="maa-nav-links" id="maaNavLinks">
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Programs</button>
+        <div class="maa-dd-menu">
+          <a href="/saturday">Saturday Open House</a>
+          <a href="/programs">All Programs</a>
+          <a href="/scholarships">Scholarships &amp; SUFS</a>
+        </div>
+      </div>
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Career</button>
+        <div class="maa-dd-menu">
+          <a href="/career">Career Platform</a>
+          <a href="/career-evaluator">Free Career Evaluator</a>
+          <a href="/yab">Your Aviation Blueprint</a>
+          <a href="/books">Our Books</a>
+        </div>
+      </div>
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Partners</button>
+        <div class="maa-dd-menu">
+          <a href="/partners">Partners &amp; Schools</a>
+          <a href="/school-partner">School &amp; Homeschool</a>
+          <a href="/tpa-connect">TPA Career Connection</a>
+          <a href="/support">Donate &amp; Support</a>
+        </div>
+      </div>
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Media</button>
+        <div class="maa-dd-menu">
+          <a href="/press">Press &amp; Media</a>
+          <a href="/community">Community &amp; Events</a>
+          <a href="/stories">Student Stories</a>
+          <a href="/tour">Tour Schedule</a>
+        </div>
+      </div>
+      <a href="/about" class="maa-nav-link">About</a>
+      <a href="/saturday#rsvp" class="maa-nav-cta">Start Your Flight Path</a>
+    </div>
   </div>
 </nav>
 
@@ -824,5 +856,6 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 </script>
+  <script src="/maa-nav.js" defer></script>
 </body>
 </html>

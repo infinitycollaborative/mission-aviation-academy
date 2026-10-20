@@ -48,23 +48,55 @@
 .map-placeholder a{color:var(--gold);font-family:Arial,sans-serif;font-size:.9rem;font-weight:bold;}
 @media(max-width:640px){.contact-grid{grid-template-columns:1fr;}}
 </style>
+  <link rel="stylesheet" href="/maa-nav.css"/>
 </head>
-<body>
-<nav class="maa-nav">
-  <a class="maa-nav-brand" href="/">Mission Aviation Academy</a>
-  <ul class="maa-nav-links">
-    <li><a href="/saturday">Saturday</a></li>
-    <li><a href="/programs">Programs</a></li>
-    <li><a href="/scholarships">Scholarships</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/press">Press</a></li>
-    <li><a href="/community">Community</a></li>
-    <li><a href="/stories">Stories</a></li>
-    <li><a href="/contact">Contact</a></li>
-    <li><a href="/donate">Donate</a></li>
-    <li><a href="/saturday#rsvp" class="maa-nav-cta">Start Your Flight Path</a></li>
-  </ul>
-  <button class="maa-nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<body><!-- SITE NAV -->
+<nav class="maa-site-nav" id="maaSiteNav">
+  <div class="maa-nav-inner">
+    <a href="/" class="maa-logo">Mission Aviation Academy</a>
+    <button class="maa-hamburger" id="maaHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="maa-nav-links" id="maaNavLinks">
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Programs</button>
+        <div class="maa-dd-menu">
+          <a href="/saturday">Saturday Open House</a>
+          <a href="/programs">All Programs</a>
+          <a href="/scholarships">Scholarships &amp; SUFS</a>
+        </div>
+      </div>
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Career</button>
+        <div class="maa-dd-menu">
+          <a href="/career">Career Platform</a>
+          <a href="/career-evaluator">Free Career Evaluator</a>
+          <a href="/yab">Your Aviation Blueprint</a>
+          <a href="/books">Our Books</a>
+        </div>
+      </div>
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Partners</button>
+        <div class="maa-dd-menu">
+          <a href="/partners">Partners &amp; Schools</a>
+          <a href="/school-partner">School &amp; Homeschool</a>
+          <a href="/tpa-connect">TPA Career Connection</a>
+          <a href="/support">Donate &amp; Support</a>
+        </div>
+      </div>
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Media</button>
+        <div class="maa-dd-menu">
+          <a href="/press">Press &amp; Media</a>
+          <a href="/community">Community &amp; Events</a>
+          <a href="/stories">Student Stories</a>
+          <a href="/tour">Tour Schedule</a>
+        </div>
+      </div>
+      <a href="/about" class="maa-nav-link">About</a>
+      <a href="/saturday#rsvp" class="maa-nav-cta">Start Your Flight Path</a>
+    </div>
+  </div>
 </nav>
 <div class="page-hero">
   <h1>Ready to take off?</h1>

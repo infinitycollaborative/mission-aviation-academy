@@ -198,20 +198,58 @@ footer{background:var(--navy-deep);padding:48px 24px 28px;color:rgba(255,255,255
 .text-center{text-align:center;}
 .mt-0{margin-top:0!important;}
 </style>
+  <link rel="stylesheet" href="/maa-nav.css"/>
 </head>
 <body>
 
-<!-- NAV -->
-<nav style="background:#001838;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700;">
-    <a href="/" style="color:#FFD700;font-weight:700;font-size:15px;text-decoration:none;letter-spacing:0.04em;">Mission Aviation Academy</a>
-    <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-      <a href="/programs" style="color:rgba(255,255,255,.65);font-size:12px;font-weight:600;padding:6px 10px;border-radius:5px;text-decoration:none;">Programs</a>
-      <a href="/saturday" style="color:rgba(255,255,255,.65);font-size:12px;font-weight:600;padding:6px 10px;border-radius:5px;text-decoration:none;">Saturday</a>
-      <a href="/scholarships" style="color:rgba(255,255,255,.65);font-size:12px;font-weight:600;padding:6px 10px;border-radius:5px;text-decoration:none;">Scholarships</a>
-      <a href="/about" style="color:rgba(255,255,255,.65);font-size:12px;font-weight:600;padding:6px 10px;border-radius:5px;text-decoration:none;">About</a>
-      <a href="/saturday#rsvp" style="background:#FFD700;color:#001838;font-size:12px;font-weight:700;padding:8px 16px;border-radius:5px;text-decoration:none;margin-left:8px;">Start Your Flight Path</a>
+<!-- SITE NAV -->
+<nav class="maa-site-nav" id="maaSiteNav">
+  <div class="maa-nav-inner">
+    <a href="/" class="maa-logo">Mission Aviation Academy</a>
+    <button class="maa-hamburger" id="maaHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="maa-nav-links" id="maaNavLinks">
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Programs</button>
+        <div class="maa-dd-menu">
+          <a href="/saturday">Saturday Open House</a>
+          <a href="/programs">All Programs</a>
+          <a href="/scholarships">Scholarships &amp; SUFS</a>
+        </div>
+      </div>
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Career</button>
+        <div class="maa-dd-menu">
+          <a href="/career">Career Platform</a>
+          <a href="/career-evaluator">Free Career Evaluator</a>
+          <a href="/yab">Your Aviation Blueprint</a>
+          <a href="/books">Our Books</a>
+        </div>
+      </div>
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Partners</button>
+        <div class="maa-dd-menu">
+          <a href="/partners">Partners &amp; Schools</a>
+          <a href="/school-partner">School &amp; Homeschool</a>
+          <a href="/tpa-connect">TPA Career Connection</a>
+          <a href="/support">Donate &amp; Support</a>
+        </div>
+      </div>
+      <div class="maa-dropdown">
+        <button class="maa-dd-btn">Media</button>
+        <div class="maa-dd-menu">
+          <a href="/press">Press &amp; Media</a>
+          <a href="/community">Community &amp; Events</a>
+          <a href="/stories">Student Stories</a>
+          <a href="/tour">Tour Schedule</a>
+        </div>
+      </div>
+      <a href="/about" class="maa-nav-link">About</a>
+      <a href="/saturday#rsvp" class="maa-nav-cta">Start Your Flight Path</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -549,5 +587,6 @@ footer{background:var(--navy-deep);padding:48px 24px 28px;color:rgba(255,255,255
   </div>
 </footer>
 
+  <script src="/maa-nav.js" defer></script>
 </body>
 </html>
