@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>TPA Career Connection — Mission Aviation Academy</title>
+  <meta name="description" content="TPA Career Connection (TPA-CC) — join the waitlist for the next MAA cohort at Tampa International Airport Career Foundations Week."/>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
+
+    /* NAV */
+    .site-nav { background: #001838; border-bottom: 3px solid #FFD700; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; height: 64px; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { color: #FFD700; font-weight: 800; font-size: 15px; text-decoration: none; }
+    .nav-links { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .nav-links a { color: rgba(255,255,255,0.65); font-size: 12px; font-weight: 600; padding: 6px 10px; text-decoration: none; border-radius: 4px; }
+    .nav-links a:hover { color: #FFD700; }
+    .nav-cta { background: #FFD700; color: #001838 !important; font-weight: 700 !important; padding: 8px 16px !important; border-radius: 5px; }
+
+    /* HERO */
+    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 56px 24px 48px; }
+    .hero-inner { max-width: 720px; margin: 0 auto; }
+    .badge { display: inline-block; background: #8B0000; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 4px 12px; border-radius: 4px; margin-bottom: 16px; text-transform: uppercase; }
+    .hero h1 { font-size: 38px; font-weight: 900; color: #fff; margin: 0 0 12px; line-height: 1.05; }
+    .hero p { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.7; margin: 0 0 24px; }
+    .hero-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .hero-meta-item { font-size: 12px; color: rgba(255,255,255,0.5); }
+    .hero-meta-item strong { color: #FFD700; display: block; font-size: 13px; margin-bottom: 2px; }
+
+    /* CLOSED NOTICE */
+    .notice { background: #FFF8E1; border: 2px solid #FFD700; border-radius: 10px; padding: 24px 28px; margin: 40px auto; max-width: 720px; }
+    .notice-title { font-size: 16px; font-weight: 800; color: #001838; margin-bottom: 8px; }
+    .notice-body { font-size: 14px; color: #374151; line-height: 1.7; }
+
+    /* BODY */
+    .page-body { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+
+    /* WAITLIST FORM */
+    .form-section { background: #001838; border-radius: 12px; padding: 36px 32px; margin-bottom: 40px; }
+    .form-section h2 { font-size: 22px; font-weight: 800; color: #fff; margin: 0 0 6px; }
+    .form-section .sub { font-size: 13px; color: rgba(255,255,255,0.6); margin: 0 0 28px; line-height: 1.6; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 6px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { width: 100%; padding: 11px 14px; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; background: rgba(255,255,255,0.07); color: #fff; font-size: 14px; font-family: Arial, sans-serif; box-sizing: border-box; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { outline: none; border-color: #FFD700; }
+    .form-group select option { background: #001838; color: #fff; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .submit-btn { width: 100%; background: #FFD700; color: #001838; font-weight: 800; font-size: 15px; padding: 14px; border: none; border-radius: 8px; cursor: pointer; font-family: Arial, sans-serif; letter-spacing: 0.5px; margin-top: 8px; transition: opacity 0.2s; }
+    .submit-btn:hover { opacity: 0.88; }
+    .form-legal { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 12px; text-align: center; line-height: 1.6; }
+
+    /* SUCCESS STATE */
+    .success-box { display: none; background: #001838; border: 2px solid #FFD700; border-radius: 12px; padding: 36px 32px; text-align: center; margin-bottom: 40px; }
+    .success-box.visible { display: block; }
+    .success-icon { font-size: 48px; margin-bottom: 16px; }
+    .success-box h2 { font-size: 22px; font-weight: 800; color: #FFD700; margin: 0 0 12px; }
+    .success-box p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.75; margin: 0; }
+
+    /* ABOUT TPA-CC */
+    .about-section { border-top: 1px solid #e5e7eb; padding-top: 40px; margin-top: 8px; }
+    .about-section h2 { font-size: 20px; font-weight: 800; color: #001838; margin: 0 0 16px; }
+    .about-body { font-size: 14px; color: #4b5563; line-height: 1.75; margin-bottom: 16px; }
+    .past-cohort { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+    .past-cohort-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #9ca3af; text-transform: uppercase; margin-bottom: 6px; }
+    .past-cohort-title { font-size: 15px; font-weight: 700; color: #001838; margin-bottom: 4px; }
+    .past-cohort-stats { font-size: 13px; color: #6b7280; }
+
+    /* FOOTER */
+    .site-footer { background: #001838; padding: 28px 40px; border-top: 1px solid rgba(255,215,0,0.15); }
+    .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.7; text-align: center; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .form-section { padding: 24px 18px; }
+      .form-row { grid-template-columns: 1fr; }
+      .site-nav { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="/" class="nav-logo">Mission Aviation Academy</a>
+  <div class="nav-links">
+    <a href="/saturday">Saturday</a>
+    <a href="/programs">Programs</a>
+    <a href="/scholarships">Scholarships</a>
+    <a href="/career">Career Platform</a>
+    <a href="/about">About</a>
+    <a href="/saturday#rsvp" class="nav-cta">Start Your Flight Path</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge">TPA Career Connection · Cohort Closed</div>
+    <h1>TPA Career Connection (TPA-CC)</h1>
+    <p>Thank you for your interest in TPA Career Connection — MAA's partnership program with Tampa International Airport. Cohort 1 has concluded. Join the waitlist below to be first notified when the next cohort opens.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>Program</strong>TPA Career Connection (TPA-CC)</div>
+      <div class="hero-meta-item"><strong>Partner</strong>Tampa International Airport</div>
+      <div class="hero-meta-item"><strong>Status</strong>Cohort 1 Complete — Waitlist Open</div>
+      <div class="hero-meta-item"><strong>Host</strong>Mission Aviation Academy · iACT</div>
+    </div>
+  </div>
+</div>
+
+<!-- CLOSED NOTICE -->
+<div class="notice" style="margin: 0 auto; max-width: 720px; margin-top: 32px; margin-bottom: 0;">
+  <div class="notice-title">📋 Cohort 1 Has Concluded</div>
+  <div class="notice-body">
+    Thank you for your interest in TPA Career Connection (TPA-CC)! By completing the form below, you'll be added to our waitlist for a potential future cohort. If we move forward with another cohort, we'll keep you informed as details become available. Stay tuned, and thank you again for your interest!
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- SUCCESS STATE (shown after submit) -->
+  <div class="success-box" id="successBox">
+    <div class="success-icon">✈️</div>
+    <h2>You're on the waitlist!</h2>
+    <p>Thank you for your interest in TPA Career Connection (TPA-CC). We've received your information and will reach out when the next cohort details are confirmed. Ricardo reviews every submission personally.<br><br>In the meantime, join us any Saturday at Tampa North Aero Park (X39) — our programs run every week.</p>
+  </div>
+
+  <!-- WAITLIST FORM -->
+  <form class="form-section" id="waitlistForm" onsubmit="submitWaitlist(event)">
+    <h2>Join the TPA-CC Waitlist</h2>
+    <p class="sub">Complete the form below and we'll contact you when the next TPA Career Connection cohort is confirmed. All fields marked * are required.</p>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name *</label>
+        <input type="text" id="firstName" placeholder="First name" required/>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name *</label>
+        <input type="text" id="lastName" placeholder="Last name" required/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" placeholder="your@email.com" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="(813) 000-0000"/>
+    </div>
+
+    <div class="form-group">
+      <label for="orgType">I am a... *</label>
+      <select id="orgType" required>
+        <option value="">Select one</option>
+        <option>Student (High School)</option>
+        <option>Student (College / University)</option>
+        <option>Veteran or Active Military</option>
+        <option>Career Changer</option>
+        <option>Educator or School Administrator</option>
+        <option>Parent / Guardian</option>
+        <option>Workforce Professional</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="interest">Primary Aviation / STEM Interest *</label>
+      <select id="interest" required>
+        <option value="">Select one</option>
+        <option>Pilot (Private, Commercial, ATP)</option>
+        <option>Drone / UAS Operator or Part 107</option>
+        <option>Aviation Maintenance Technician (A&P)</option>
+        <option>Air Traffic Control</option>
+        <option>AI Innovation / App Building</option>
+        <option>Aerospace Engineering</option>
+        <option>Aviation Business / Entrepreneurship</option>
+        <option>Not sure — exploring options</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="heard">How did you hear about TPA-CC?</label>
+      <select id="heard">
+        <option value="">Select one</option>
+        <option>TPA Career Foundations Week</option>
+        <option>MAA Saturday Program</option>
+        <option>Social Media</option>
+        <option>Referral from someone I know</option>
+        <option>Press / News article</option>
+        <option>School or teacher</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Anything else you'd like us to know? (Optional)</label>
+      <textarea id="notes" rows="3" placeholder="Share any background, goals, or questions..."></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">Add Me to the Waitlist →</button>
+    <p class="form-legal">Your information is used only to notify you about TPA-CC cohorts and MAA programs. We do not sell or share your data. EIN 85-1110607 · 501(c)(3)</p>
+  </form>
+
+  <!-- ABOUT TPA-CC -->
+  <div class="about-section">
+    <h2>About TPA Career Connection</h2>
+    <p class="about-body">TPA Career Connection (TPA-CC) is a cohort-based aviation and STEM career development program developed by Mission Aviation Academy (MAA) in partnership with Tampa International Airport. Participants receive structured career guidance, hands-on aviation exposure, SUFS scholarship enrollment support, and direct access to airport industry professionals.</p>
+    <p class="about-body">TPA-CC operates in cohorts tied to TPA Career Foundations Week and other TPA programs. Each cohort is limited to ensure individualized attention and industry access for every participant.</p>
+
+    <div class="past-cohort">
+      <div class="past-cohort-label">Cohort 1</div>
+      <div class="past-cohort-title">TPA Career Foundations Week · October 19–23, 2026</div>
+      <div class="past-cohort-stats">Cohort complete · Participants enrolled in follow-up MAA programs · Next cohort dates TBD</div>
+    </div>
+
+    <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="/saturday#rsvp" style="background:#001838;color:#FFD700;font-weight:700;font-size:13px;padding:12px 22px;border-radius:7px;text-decoration:none;">Start Your Flight Path →</a>
+      <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer" style="background:#fff;color:#001838;border:2px solid #001838;font-weight:700;font-size:13px;padding:12px 22px;border-radius:7px;text-decoration:none;">Talk to Admissions →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p class="footer-legal">Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit organization · EIN 85-1110607 · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate · admissions@missionaviationacademy.org · (813) 445-8889 · (833) FLY-STEM · Tampa North Aero Park (X39) · 4639 Birdsong Blvd, Lutz FL 33559 · Parking GPS: 4661 Birdsong Blvd</p>
+</footer>
+
+<script>
+async function submitWaitlist(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  const payload = {
+    _subject: `TPA-CC Waitlist — ${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+    name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value || 'Not provided',
+    type: 'TPA Career Connection (TPA-CC) Waitlist',
+    orgType: document.getElementById('orgType').value,
+    interest: document.getElementById('interest').value,
+    heardFrom: document.getElementById('heard').value || 'Not specified',
+    notes: document.getElementById('notes').value || 'None',
+  };
+
+  try {
+    await fetch('https://formspree.io/f/maeqejkp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  } catch(err) {
+    console.error('Submission error:', err);
+  }
+
+  // Show success regardless — don't block the thank-you on network errors
+  document.getElementById('waitlistForm').style.display = 'none';
+  document.getElementById('successBox').classList.add('visible');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
