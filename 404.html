@@ -1,50 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="canonical" href="https://missionaviationacademy.org/404">
-<title>Page Not Found — Mission Aviation Academy</title>
-<meta name="description" content="This page could not be found. Explore Mission Aviation Academy programs, Saturday classes, and scholarships.">
-<link rel="stylesheet" href="maa-shared.css">
-<style>
-.notfound{background:var(--navy);min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem;}
-.notfound-inner{max-width:540px;}
-.notfound h1{font-size:5rem;color:var(--gold);font-family:Arial,sans-serif;font-weight:bold;line-height:1;margin-bottom:.5rem;}
-.notfound h2{color:var(--white);font-size:1.4rem;margin-bottom:1rem;}
-.notfound p{font-family:Arial,sans-serif;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:2rem;}
-.notfound-links{display:flex;flex-direction:column;gap:.6rem;max-width:280px;margin:0 auto;}
-.notfound-links a{background:rgba(255,255,255,.08);color:var(--white);font-family:Arial,sans-serif;font-size:.9rem;padding:.7rem 1.2rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);transition:.2s;}
-.notfound-links a:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Off Course — Mission Aviation Academy</title>
+  <meta name="description" content="Page not found. Find your way to MAA programs, Saturday open house, SUFS scholarships, and aviation career resources."/>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="/maa-nav.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #001838; color: #fff; min-height: 100vh; }
+
+    .stage {
+      min-height: calc(100vh - 64px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 52px 24px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background grid — runway lights effect */
+    .stage::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,215,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,215,0,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .inner {
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Compass */
+    .compass-wrap {
+      margin: 0 auto 32px;
+      width: 120px;
+      height: 120px;
+      position: relative;
+    }
+    .compass-ring {
+      animation: spin 18s linear infinite;
+      transform-origin: center;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* 404 */
+    .error-code {
+      font-size: clamp(72px, 14vw, 120px);
+      font-weight: 900;
+      color: #FFD700;
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 4px;
+    }
+    .error-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: rgba(255,215,0,0.5);
+      margin-bottom: 20px;
+    }
+
+    /* Headline & copy */
+    .headline {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .subline {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: 460px;
+      margin: 0 auto 40px;
+    }
+
+    /* Destination cards */
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .dest-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,215,0,0.15);
+      border-radius: 10px;
+      padding: 18px 16px;
+      text-decoration: none;
+      text-align: left;
+      transition: background 0.15s, border-color 0.15s, transform 0.15s;
+      display: block;
+    }
+    .dest-card:hover {
+      background: rgba(255,215,0,0.08);
+      border-color: rgba(255,215,0,0.4);
+      transform: translateY(-2px);
+    }
+    .dest-card.primary {
+      background: #FFD700;
+      border-color: #FFD700;
+    }
+    .dest-card.primary:hover {
+      background: #ffe433;
+      border-color: #ffe433;
+    }
+    .dest-waypoint {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: rgba(255,215,0,0.6);
+      margin-bottom: 6px;
+    }
+    .dest-card.primary .dest-waypoint { color: rgba(0,24,56,0.5); }
+    .dest-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .dest-card.primary .dest-name { color: #001838; }
+    .dest-desc {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+    .dest-card.primary .dest-desc { color: rgba(0,24,56,0.6); }
+
+    /* Secondary links */
+    .aux-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .aux-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .aux-link:hover { color: #FFD700; border-color: rgba(255,215,0,0.3); }
+
+    /* Divider */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,215,0,0.2);
+      margin: 0 auto 20px;
+    }
+
+    /* Contact line */
+    .contact-line {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.8;
+    }
+    .contact-line a { color: rgba(255,215,0,0.5); text-decoration: none; }
+    .contact-line a:hover { color: #FFD700; }
+
+    @media (max-width: 500px) {
+      .dest-grid { grid-template-columns: 1fr 1fr; }
+      .error-code { letter-spacing: -1px; }
+    }
+    @media (max-width: 360px) {
+      .dest-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-<nav class="maa-nav">
-  <a class="maa-nav-brand" href="/">Mission Aviation Academy</a>
-  <ul class="maa-nav-links">
-    <li><a href="/saturday">Saturday</a></li>
-    <li><a href="/programs">Programs</a></li>
-    <li><a href="/contact">Contact</a></li>
-    <li><a href="/support">Support</a></li>
-    <li><a href="/saturday#rsvp" class="maa-nav-cta">Start Your Flight Path</a></li>
-  </ul>
-  <button class="maa-nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
-<div class="notfound">
-  <div class="notfound-inner">
-    <h1>404</h1>
-    <h2>That page is still being built.</h2>
-    <p>Every airport has taxiways under construction. This one just hasn't opened yet. Here's where you probably want to go:</p>
-    <div class="notfound-links">
-      <a href="/">Homepage</a>
-      <a href="/saturday">Saturday Program &amp; Open House</a>
-      <a href="/programs">All Programs</a>
-      <a href="/scholarships">SUFS Scholarships</a>
-      <a href="/yab">Free Career Guide</a>
-      <a href="/contact">Contact Us</a>
+
+<div class="stage">
+  <div class="inner">
+
+    <!-- Compass SVG -->
+    <div class="compass-wrap" aria-hidden="true">
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+        <!-- Outer ring -->
+        <circle cx="60" cy="60" r="56" stroke="rgba(255,215,0,0.18)" stroke-width="2"/>
+        <!-- Inner ring -->
+        <circle cx="60" cy="60" r="44" stroke="rgba(255,215,0,0.1)" stroke-width="1"/>
+        <!-- Spinning tick marks -->
+        <g class="compass-ring">
+          <line x1="60" y1="4"  x2="60" y2="12" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+          <line x1="116" y1="60" x2="108" y2="60" stroke="rgba(255,215,0,0.4)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="60" y1="116" x2="60" y2="108" stroke="rgba(255,215,0,0.4)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="4" y1="60"  x2="12" y2="60" stroke="rgba(255,215,0,0.4)" stroke-width="1" stroke-linecap="round"/>
+          <!-- Diagonal ticks -->
+          <line x1="99.6" y1="20.4" x2="94.0" y2="26.0" stroke="rgba(255,215,0,0.2)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="99.6" y1="99.6" x2="94.0" y2="94.0" stroke="rgba(255,215,0,0.2)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="20.4" y1="99.6" x2="26.0" y2="94.0" stroke="rgba(255,215,0,0.2)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="20.4" y1="20.4" x2="26.0" y2="26.0" stroke="rgba(255,215,0,0.2)" stroke-width="1" stroke-linecap="round"/>
+        </g>
+        <!-- N label -->
+        <text x="60" y="18" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="8" font-weight="800" fill="#FFD700">N</text>
+        <!-- Center dot -->
+        <circle cx="60" cy="60" r="4" fill="#FFD700" opacity="0.8"/>
+        <!-- Needle — pointing off-north (tilted, meaning off course) -->
+        <g transform="rotate(38 60 60)">
+          <polygon points="60,22 57,60 63,60" fill="#FFD700" opacity="0.95"/>
+          <polygon points="60,98 57,60 63,60" fill="rgba(255,255,255,0.2)"/>
+        </g>
+      </svg>
     </div>
+
+    <div class="error-code">404</div>
+    <div class="error-label">NAVIGATION ERROR</div>
+
+    <h1 class="headline">You're off course.</h1>
+    <p class="subline">That heading doesn't lead anywhere on our charts. Every great pilot knows when to recalibrate — let's get you back on your flight plan.</p>
+
+    <!-- Primary destinations -->
+    <div class="dest-grid">
+      <a href="/saturday" class="dest-card primary">
+        <div class="dest-waypoint">WAYPOINT 01</div>
+        <div class="dest-name">Saturday Open House</div>
+        <div class="dest-desc">Free. Every Saturday. Drone, AI, simulator, discovery flight.</div>
+      </a>
+      <a href="/programs" class="dest-card">
+        <div class="dest-waypoint">WAYPOINT 02</div>
+        <div class="dest-name">All Programs</div>
+        <div class="dest-desc">FAA credentials, drone certification, AI innovation, PPL.</div>
+      </a>
+      <a href="/scholarships" class="dest-card">
+        <div class="dest-waypoint">WAYPOINT 03</div>
+        <div class="dest-name">SUFS Scholarships</div>
+        <div class="dest-desc">Most eligible families pay $0. $8K/student/cycle.</div>
+      </a>
+      <a href="/books" class="dest-card">
+        <div class="dest-waypoint">WAYPOINT 04</div>
+        <div class="dest-name">Books &amp; Career Guide</div>
+        <div class="dest-desc">Your Aviation Blueprint. Ricky the Explorer. Free career evaluator.</div>
+      </a>
+    </div>
+
+    <!-- Aux links -->
+    <div class="aux-links">
+      <a href="/" class="aux-link">Homepage</a>
+      <a href="/about" class="aux-link">About MAA</a>
+      <a href="/discovery-flight" class="aux-link">Book a Flight</a>
+      <a href="/jrotc" class="aux-link">JROTC Partnership</a>
+      <a href="/career-evaluator" class="aux-link">Free Career Evaluator</a>
+      <a href="/contact" class="aux-link">Contact</a>
+      <a href="/support" class="aux-link">Support / Donate</a>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="contact-line">
+      Can't find what you need?&nbsp;
+      <a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a>
+      &nbsp;·&nbsp;
+      <a href="tel:8134458889">(813) 445-8889</a>
+    </p>
+
   </div>
 </div>
-<script src="/maa-nav.js"></script>
+
 </body>
 </html>
