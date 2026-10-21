@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>JROTC Partnership — Mission Aviation Academy</title>
+  <meta name="description" content="MAA partners with JROTC and ROTC programs to bring aviation, drone, and AI career pathways to service-connected students. SUFS-eligible, co-op ready."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="/maa-nav.js"></script>
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
+    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 52px 24px 44px; }
+    .hero-inner { max-width: 860px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #FFD700; margin-bottom: 12px; }
+    .hero h1 { font-size: 40px; font-weight: 900; color: #fff; margin: 0 0 12px; line-height: 1.05; }
+    .hero p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 600px; margin: 0 0 20px; }
+    .hero-stats { display: flex; gap: 28px; flex-wrap: wrap; }
+    .hero-stat strong { color: #FFD700; display: block; font-size: 20px; font-weight: 900; }
+    .hero-stat span { font-size: 11px; color: rgba(255,255,255,0.5); }
+    .page-body { max-width: 860px; margin: 0 auto; padding: 52px 24px; }
+    .section-h { font-size: 22px; font-weight: 800; color: #001838; margin: 0 0 6px; }
+    .section-sub { font-size: 13px; color: #6b7280; margin: 0 0 28px; line-height: 1.6; }
+    .path-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-bottom: 52px; }
+    .path-card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px 20px; }
+    .path-icon { font-size: 24px; margin-bottom: 10px; }
+    .path-title { font-size: 14px; font-weight: 800; color: #001838; margin-bottom: 6px; }
+    .path-certs { font-size: 11px; font-weight: 700; color: #16a34a; margin-bottom: 8px; }
+    .path-desc { font-size: 12px; color: #6b7280; line-height: 1.7; }
+    .how-list { counter-reset: how; margin-bottom: 52px; }
+    .how-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid #f3f4f6; align-items: flex-start; }
+    .how-num { background: #001838; color: #FFD700; font-size: 14px; font-weight: 900; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .how-title { font-size: 14px; font-weight: 700; color: #001838; margin-bottom: 4px; }
+    .how-body { font-size: 13px; color: #4b5563; line-height: 1.7; }
+    .sufs-box { background: #f0fdf4; border: 1.5px solid #16a34a; border-radius: 12px; padding: 24px 28px; margin-bottom: 52px; }
+    .sufs-box h3 { font-size: 16px; font-weight: 800; color: #001838; margin: 0 0 8px; }
+    .sufs-box p { font-size: 13px; color: #374151; line-height: 1.75; margin: 0 0 12px; }
+    .sufs-box ul { margin: 0; padding-left: 18px; }
+    .sufs-box li { font-size: 13px; color: #374151; line-height: 1.75; }
+    .tiers { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-bottom: 52px; }
+    .tier-card { border-radius: 10px; padding: 20px; }
+    .tier-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 10px; }
+    .tier-name { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+    .tier-desc { font-size: 12px; line-height: 1.7; opacity: 0.8; }
+    .testimonial { background: #001838; border-radius: 12px; padding: 28px; margin-bottom: 52px; }
+    .testimonial-quote { font-size: 17px; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.7; margin: 0 0 14px; }
+    .testimonial-attr { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-navy { background: #001838; color: #FFD700; font-weight: 800; font-size: 13px; padding: 13px 22px; border-radius: 7px; text-decoration: none; }
+    .btn-outline { background: transparent; border: 2px solid #001838; color: #001838; font-weight: 700; font-size: 13px; padding: 11px 20px; border-radius: 7px; text-decoration: none; }
+    .site-footer { background: #001838; padding: 24px 40px; }
+    .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .path-grid, .tiers { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">MISSION AVIATION ACADEMY · CO-OP PARTNERSHIP</div>
+    <h1>JROTC &amp; ROTC Aviation Partnership</h1>
+    <p>MAA's JROTC partnership brings drone certification, AI innovation, and live aircraft experience to service-connected students — on school time, with SUFS scholarship support, and a clear path to an FAA credential.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>730+</strong><span>FAA credentials issued</span></div>
+      <div class="hero-stat"><strong>1,380+</strong><span>Students flown</span></div>
+      <div class="hero-stat"><strong>$0</strong><span>Typical SUFS family cost</span></div>
+      <div class="hero-stat"><strong>35 yrs</strong><span>Ricardo's naval service</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- WHY JROTC -->
+  <h2 class="section-h">Why JROTC students belong in aviation</h2>
+  <p class="section-sub">JROTC cadets already have discipline, chain-of-command, and mission focus. The military aviation career pipeline — from enlisted aviation ratings to pilot slots to A&amp;P maintenance credentials — rewards exactly those qualities. MAA puts the first FAA credential within reach while the cadet is still in school.</p>
+
+  <!-- CAREER PATHS -->
+  <h2 class="section-h">Career paths this program opens</h2>
+  <p class="section-sub">Each pathway has a clear JROTC-to-FAA-credential bridge.</p>
+  <div class="path-grid">
+    <div class="path-card">
+      <div class="path-icon">✈️</div>
+      <div class="path-title">Commercial Pilot (ATP)</div>
+      <div class="path-certs">Private → Instrument → Commercial → ATP</div>
+      <div class="path-desc">Military service time and GI Bill can accelerate the certificate sequence. BLS median: $226,600 (airline, BLS May 2024).</div>
+    </div>
+    <div class="path-card">
+      <div class="path-icon">🛸</div>
+      <div class="path-title">Drone / UAS Operator</div>
+      <div class="path-certs">FAA TRUST → Part 107 Remote Pilot</div>
+      <div class="path-desc">Fastest credential in aviation. Most cadets complete TRUST and Part 107 prep within one MAA Saturday series.</div>
+    </div>
+    <div class="path-card">
+      <div class="path-icon">🔧</div>
+      <div class="path-title">Aviation Maintenance (A&amp;P)</div>
+      <div class="path-certs">FAA A&amp;P Mechanic Certificate</div>
+      <div class="path-desc">Documented military maintenance experience can substitute for school graduation under 14 CFR 65.77. BLS median: $78,680.</div>
+    </div>
+    <div class="path-card">
+      <div class="path-icon">🗼</div>
+      <div class="path-title">Air Traffic Control</div>
+      <div class="path-certs">FAA AT-CTI / Military-to-ATC pathway</div>
+      <div class="path-desc">Military service opens a priority hiring lane to the FAA. BLS median: $144,580.</div>
+    </div>
+    <div class="path-card">
+      <div class="path-icon">🤖</div>
+      <div class="path-title">AI Innovation &amp; Tech</div>
+      <div class="path-certs">MAA AI App Builder Certificate</div>
+      <div class="path-desc">Build real AI applications — no coding experience required. Aviation and defense applications dominate the track.</div>
+    </div>
+    <div class="path-card">
+      <div class="path-icon">🚀</div>
+      <div class="path-title">Aerospace Engineering</div>
+      <div class="path-certs">MAA AeroSTEM pathway · 2027</div>
+      <div class="path-desc">For the cadet who wants to design what others fly. Launching 2027 — interest registration open now.</div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <h2 class="section-h">How the partnership works</h2>
+  <p class="section-sub">MAA handles the aviation — you supply the cadets and the coordination.</p>
+  <div class="how-list">
+    <div class="how-item">
+      <div class="how-num">1</div>
+      <div>
+        <div class="how-title">Become a Co-Op Partner</div>
+        <div class="how-body">Your JROTC unit or school submits a Co-Op Partner intake form. MAA's Director of Operations coordinates with your program instructor or JROTC instructor on schedule, cohort size, and SUFS eligibility screening.</div>
+      </div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">2</div>
+      <div>
+        <div class="how-title">SUFS screening for every eligible cadet</div>
+        <div class="how-body">Step Up For Students (SUFS) scholarships can cover MAA programs at $0 cost for most income-eligible families. MAA screens and supports applications — cadets don't navigate this alone.</div>
+      </div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">3</div>
+      <div>
+        <div class="how-title">Cadets enroll in the Saturday Academy</div>
+        <div class="how-body">Classes run every Saturday at Tampa North Aero Park (X39). Class A (Drone Intro), Class B (AI Innovation), simulator sessions, and discovery flights all run on the same day. Cohorts are 6–8 students per class.</div>
+      </div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">4</div>
+      <div>
+        <div class="how-title">Credential earned, record documented</div>
+        <div class="how-body">Cadets complete the program with a recognized FAA credential and an MAA program record. This feeds directly into JROTC leadership portfolios and military application records.</div>
+      </div>
+    </div>
+    <div class="how-item">
+      <div class="how-num">5</div>
+      <div>
+        <div class="how-title">School tour — bring MAA to you</div>
+        <div class="how-body">MAA's Hidden Treasures Tour brings the Red Tail Roost, book sessions, and SUFS enrollment support to your campus for a one-day aviation career day. No cost to the school for a Co-Op partner tour stop.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUFS BOX -->
+  <div class="sufs-box">
+    <h3>SUFS Scholarship — Most eligible cadets pay $0</h3>
+    <p>Step Up For Students (SUFS) is a Florida scholarship program that can cover the cost of MAA programs for income-eligible students. MAA is a SUFS-designated provider. Cycles open in July, October, January, and April.</p>
+    <ul>
+      <li>Covers Class A (Drone), Class B (AI Innovation), and PPL simulator sessions</li>
+      <li>$8,000 per student per cycle — most students exhaust their program before exhausting the scholarship</li>
+      <li>MAA handles application support — you don't navigate the portal alone</li>
+      <li>TEER and FES-UA/PEP designations tracked by compliance requirement</li>
+    </ul>
+  </div>
+
+  <!-- PARTNERSHIP TIERS -->
+  <h2 class="section-h">Partnership tiers</h2>
+  <p class="section-sub">Choose the level of engagement that fits your unit's schedule and capacity.</p>
+  <div class="tiers">
+    <div class="tier-card" style="background:#f9fafb;border:1px solid #e5e7eb;">
+      <div class="tier-label" style="color:#6b7280;">ENTRY</div>
+      <div class="tier-name" style="color:#001838;">Career Day Visit</div>
+      <div class="tier-desc" style="color:#4b5563;">MAA brings the Red Tail Roost and a career presentation to your campus. One day, zero cost to the school. SUFS enrollment on site.</div>
+    </div>
+    <div class="tier-card" style="background:#001838;border:1px solid #FFD700;">
+      <div class="tier-label" style="color:#FFD700;">STANDARD</div>
+      <div class="tier-name" style="color:#fff;">Saturday Cohort</div>
+      <div class="tier-desc" style="color:rgba(255,255,255,0.7);">Cadets enroll in the Saturday Academy — drone, AI, simulator, and discovery flight. SUFS covers most costs. 6–8 cadets per cohort.</div>
+    </div>
+    <div class="tier-card" style="background:#FFD700;border:1px solid #001838;">
+      <div class="tier-label" style="color:#001838;">FULL CO-OP</div>
+      <div class="tier-name" style="color:#001838;">Curriculum Integration</div>
+      <div class="tier-desc" style="color:#002855;">MAA curriculum delivered on your campus or at X39, integrated with your JROTC program calendar. Licensing agreement with your school or district.</div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL -->
+  <div class="testimonial">
+    <div class="testimonial-quote">"When I was young, nobody handed me a roadmap. I figured it out by failing, by showing up, and by finding mentors who saw something in me I didn't always see in myself. Lt. Col. George Hardy soloed at Tuskegee when the system said he couldn't. That legacy runs through this program."</div>
+    <div class="testimonial-attr">— LCDR Ricardo "Tattoo" Foster, USN (Ret.) · Founder, Mission Aviation Academy · Mentored by Tuskegee Airmen Lt. Col. George Hardy (Class 44-H-SE, 332nd Fighter Group)</div>
+  </div>
+
+  <!-- CTA -->
+  <h2 class="section-h">Ready to start?</h2>
+  <p class="section-sub">Contact admissions to begin the Co-Op Partnership conversation — bring your JROTC unit roster size and we'll map the right entry point.</p>
+  <div class="cta-row">
+    <a href="/enroll" class="btn-navy">Become a Co-Op Partner →</a>
+    <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-outline">Talk to Admissions</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p class="footer-legal">Facility: 4639 Birdsong Blvd, Lutz FL 33559 · Parking GPS: 4661 Birdsong Blvd · (813) 445-8889 · (833) FLY-STEM · admissions@missionaviationacademy.org · iACT/MAA is not a certificated flight school · EIN 85-1110607 · 501(c)(3)</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Book a Discovery Flight — Mission Aviation Academy</title>
+  <meta name="description" content="Fly in a real Cessna 172B over Tampa Bay with an MAA instructor. Discovery flights available for youth and adults — 30 min, 60 min, and orientation flights."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="/maa-nav.js"></script>
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
+    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 52px 24px 44px; }
+    .hero-inner { max-width: 860px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #FFD700; margin-bottom: 12px; }
+    .hero h1 { font-size: 40px; font-weight: 900; color: #fff; margin: 0 0 12px; line-height: 1.05; }
+    .hero p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 600px; margin: 0 0 20px; }
+    .hero-detail { display: flex; gap: 28px; flex-wrap: wrap; }
+    .hero-detail-item { font-size: 12px; color: rgba(255,255,255,0.5); }
+    .hero-detail-item strong { color: #FFD700; display: block; font-size: 13px; }
+    .page-body { max-width: 860px; margin: 0 auto; padding: 52px 24px; }
+    .flight-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; margin-bottom: 52px; }
+    .flight-card { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+    .flight-card-header { background: #001838; padding: 18px 20px 16px; }
+    .flight-card-badge { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; padding: 3px 8px; border-radius: 3px; margin-bottom: 10px; display: inline-block; }
+    .flight-card-title { font-size: 17px; font-weight: 800; color: #fff; margin: 0 0 4px; }
+    .flight-card-sub { font-size: 12px; color: rgba(255,255,255,0.55); }
+    .flight-card-body { padding: 18px 20px; }
+    .flight-price { font-size: 28px; font-weight: 900; color: #001838; margin-bottom: 4px; }
+    .flight-price-note { font-size: 11px; color: #9ca3af; margin-bottom: 16px; }
+    .flight-includes { font-size: 12px; color: #4b5563; line-height: 1.75; margin-bottom: 18px; }
+    .flight-includes li { list-style: none; padding-left: 16px; position: relative; }
+    .flight-includes li::before { content: "✓"; position: absolute; left: 0; color: #16a34a; font-weight: 700; }
+    .btn-book { display: block; background: #FFD700; color: #001838; font-weight: 800; font-size: 13px; padding: 12px; border-radius: 7px; text-decoration: none; text-align: center; }
+    .section-h { font-size: 22px; font-weight: 800; color: #001838; margin: 0 0 6px; }
+    .section-sub { font-size: 13px; color: #6b7280; margin: 0 0 24px; line-height: 1.6; }
+    .what-block { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 52px; }
+    .what-item { padding: 20px; background: #f9fafb; border-radius: 10px; border: 1px solid #e5e7eb; }
+    .what-num { font-size: 28px; font-weight: 900; color: #FFD700; background: #001838; width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+    .what-title { font-size: 14px; font-weight: 700; color: #001838; margin-bottom: 6px; }
+    .what-body { font-size: 12px; color: #6b7280; line-height: 1.7; }
+    .aircraft-box { background: #001838; border-radius: 12px; padding: 28px; margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+    .aircraft-text h3 { font-size: 18px; font-weight: 800; color: #FFD700; margin: 0 0 8px; }
+    .aircraft-text p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.75; margin: 0; }
+    .aircraft-specs { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; }
+    .spec { text-align: center; }
+    .spec-val { font-size: 18px; font-weight: 800; color: #FFD700; display: block; }
+    .spec-label { font-size: 10px; color: rgba(255,255,255,0.4); }
+    .faq-list { margin-bottom: 52px; }
+    .faq-item { border-bottom: 1px solid #f3f4f6; padding: 18px 0; }
+    .faq-q { font-size: 14px; font-weight: 700; color: #001838; margin-bottom: 8px; }
+    .faq-a { font-size: 13px; color: #4b5563; line-height: 1.75; }
+    .cta-bar { background: #001838; border-radius: 12px; padding: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .cta-bar h3 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; }
+    .cta-bar p { font-size: 13px; color: rgba(255,255,255,0.65); margin: 0; }
+    .btn-gold-lg { background: #FFD700; color: #001838; font-weight: 800; font-size: 14px; padding: 13px 24px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+    .site-footer { background: #001838; padding: 24px 40px; }
+    .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .what-block { grid-template-columns: 1fr; }
+      .flight-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">RED TAIL ROOST · N7480X · TAMPA NORTH AERO PARK (X39)</div>
+    <h1>Book a Discovery Flight</h1>
+    <p>Get in the seat of a real aircraft with an MAA instructor. Discovery flights are available every Saturday for youth and adults — no experience required.</p>
+    <div class="hero-detail">
+      <div class="hero-detail-item"><strong>Aircraft</strong>1960 Cessna 172B Skyhawk</div>
+      <div class="hero-detail-item"><strong>Location</strong>Tampa North Aero Park (X39)</div>
+      <div class="hero-detail-item"><strong>Schedule</strong>Every Saturday</div>
+      <div class="hero-detail-item"><strong>Ages</strong>6 and up</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- FLIGHT OPTIONS -->
+  <h2 class="section-h" style="margin-bottom:18px;">Choose your flight</h2>
+  <div class="flight-grid">
+
+    <div class="flight-card">
+      <div class="flight-card-header">
+        <div class="flight-card-badge" style="background:#16a34a;color:#fff;">MOST POPULAR</div>
+        <div class="flight-card-title">Intro Flight — 30 min</div>
+        <div class="flight-card-sub">First time in the cockpit</div>
+      </div>
+      <div class="flight-card-body">
+        <div class="flight-price">See FlightCircle</div>
+        <div class="flight-price-note">Booked and paid through FlightCircle</div>
+        <ul class="flight-includes">
+          <li>Pre-flight aircraft walkthrough</li>
+          <li>Hands-on time at the controls</li>
+          <li>Debrief with your instructor</li>
+          <li>Red Tail Roost experience</li>
+        </ul>
+        <a href="https://flightcircle.com/shop/f2ef4eacb717/4000004570" target="_blank" rel="noopener noreferrer" class="btn-book">Book 30-Min Flight →</a>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-card-header">
+        <div class="flight-card-badge" style="background:#FFD700;color:#001838;">FULL EXPERIENCE</div>
+        <div class="flight-card-title">Intro Flight — 60 min</div>
+        <div class="flight-card-sub">More airtime, more learning</div>
+      </div>
+      <div class="flight-card-body">
+        <div class="flight-price">See FlightCircle</div>
+        <div class="flight-price-note">Booked and paid through FlightCircle</div>
+        <ul class="flight-includes">
+          <li>Extended hands-on flight time</li>
+          <li>Basic maneuvers and navigation</li>
+          <li>Full debrief + next-step guidance</li>
+          <li>SUFS enrollment consult on site</li>
+        </ul>
+        <a href="https://flightcircle.com/shop/f2ef4eacb717/4000009067" target="_blank" rel="noopener noreferrer" class="btn-book">Book 60-Min Flight →</a>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-card-header">
+        <div class="flight-card-badge" style="background:#001838;color:#FFD700;border:1px solid #FFD700;">MAA PROGRAM</div>
+        <div class="flight-card-title">MAA Orientation Flight</div>
+        <div class="flight-card-sub">For enrolled MAA students</div>
+      </div>
+      <div class="flight-card-body">
+        <div class="flight-price">See FlightCircle</div>
+        <div class="flight-price-note">Part of the MAA program sequence</div>
+        <ul class="flight-includes">
+          <li>Structured first flight lesson</li>
+          <li>Aligned to PPL training syllabus</li>
+          <li>Logged flight time (with CFI)</li>
+          <li>SUFS scholarship may apply</li>
+        </ul>
+        <a href="https://flightcircle.com/shop/f2ef4eacb717/4000016759" target="_blank" rel="noopener noreferrer" class="btn-book">Book Orientation Flight →</a>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-card-header">
+        <div class="flight-card-badge" style="background:#7B3F00;color:#fff;">DRONE + FLIGHT</div>
+        <div class="flight-card-title">Drone TRUST + Intro Flight</div>
+        <div class="flight-card-sub">Two programs in one day</div>
+      </div>
+      <div class="flight-card-body">
+        <div class="flight-price">See FlightCircle</div>
+        <div class="flight-price-note">Drone certification + discovery flight combo</div>
+        <ul class="flight-includes">
+          <li>FAA TRUST drone certification</li>
+          <li>1-hour drone intro session</li>
+          <li>Discovery flight in N7480X</li>
+          <li>Full Saturday experience</li>
+        </ul>
+        <a href="https://flightcircle.com/shop/f2ef4eacb717/4000030175" target="_blank" rel="noopener noreferrer" class="btn-book">Book Drone + Flight →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHAT TO EXPECT -->
+  <h2 class="section-h">What to expect on the day</h2>
+  <p class="section-sub">Every discovery flight starts and ends at Tampa North Aero Park (X39) — our home field.</p>
+  <div class="what-block">
+    <div class="what-item">
+      <div class="what-num">1</div>
+      <div class="what-title">Arrive at X39</div>
+      <div class="what-body">Check in at the MAA facility at 4639 Birdsong Blvd, Lutz FL. Parking GPS: 4661 Birdsong Blvd. Arrive 15 minutes before your scheduled time.</div>
+    </div>
+    <div class="what-item">
+      <div class="what-num">2</div>
+      <div class="what-title">Pre-flight walkthrough</div>
+      <div class="what-body">Your instructor walks you through the aircraft — the Red Tail Roost, N7480X, a 1960 Cessna 172B in Tuskegee P-51 tribute scheme. You learn what you're about to fly.</div>
+    </div>
+    <div class="what-item">
+      <div class="what-num">3</div>
+      <div class="what-title">You take the controls</div>
+      <div class="what-body">In the air, your instructor hands you the controls. You fly. Not ride — fly. Most students handle basic maneuvers on their first flight.</div>
+    </div>
+    <div class="what-item">
+      <div class="what-num">4</div>
+      <div class="what-title">Debrief + next steps</div>
+      <div class="what-body">After landing, your instructor debriefs the flight and talks through what a full PPL or career path looks like. SUFS scholarship enrollment support available on site — most eligible families pay $0.</div>
+    </div>
+  </div>
+
+  <!-- AIRCRAFT -->
+  <div class="aircraft-box">
+    <div class="aircraft-text">
+      <h3>The Red Tail Roost — N7480X</h3>
+      <p>A 1960 Cessna 172B Skyhawk painted in the tribute scheme of the Tuskegee Airmen's P-51 Mustang. The only aircraft of its kind in the Tampa Bay area — and the aircraft every MAA student flies first.</p>
+      <div class="aircraft-specs">
+        <div class="spec"><span class="spec-val">1960</span><span class="spec-label">Year built</span></div>
+        <div class="spec"><span class="spec-val">172B</span><span class="spec-label">Model</span></div>
+        <div class="spec"><span class="spec-val">N7480X</span><span class="spec-label">Tail number</span></div>
+        <div class="spec"><span class="spec-val">X39</span><span class="spec-label">Home base</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="section-h">Common questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">How old do you have to be to fly?</div>
+      <div class="faq-a">Discovery flights are open to ages 6 and up. There is no minimum age to be a passenger in the aircraft with an instructor. Solo flight requires age 16 for a student pilot certificate.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need any experience?</div>
+      <div class="faq-a">None. Discovery flights are designed for people who have never been in a small aircraft. Your instructor handles everything — you just show up.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can a parent or guardian come?</div>
+      <div class="faq-a">Yes. Parents are welcome at X39 to watch the pre-flight and meet the instructor. The aircraft seats 3 (pilot + 2 passengers) — a second passenger can ride along for an additional fee depending on weight and balance.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can SUFS cover the cost?</div>
+      <div class="faq-a">SUFS (Step Up For Students) scholarships can be applied to eligible MAA programming. Discovery flights for enrolled program students may qualify. Contact admissions to confirm eligibility — most eligible families pay $0.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if the weather is bad?</div>
+      <div class="faq-a">Safety is the only priority. If weather prevents safe flight, we reschedule at no penalty. FlightCircle handles booking — you will receive a notification if your flight needs to move.</div>
+    </div>
+  </div>
+
+  <div class="cta-bar">
+    <div>
+      <h3>Ready to fly?</h3>
+      <p>Book through FlightCircle — secure, instant confirmation. Questions? Call (813) 445-8889.</p>
+    </div>
+    <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold-lg">Talk to Admissions →</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p class="footer-legal">Facility: 4639 Birdsong Blvd, Lutz FL 33559 · Parking GPS: 4661 Birdsong Blvd · (813) 445-8889 · (833) FLY-STEM · admissions@missionaviationacademy.org · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate · EIN 85-1110607 · 501(c)(3)</p>
+</footer>
+</body>
+</html>

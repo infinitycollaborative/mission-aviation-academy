@@ -1,196 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Books &amp; Guides — Mission Aviation Academy</title>
-<meta name="description" content="Books and guides from Mission Aviation Academy: the free Aviation &amp; Aerospace Career Pathway Guide, Your Aviation Blueprint, and Ricky the Explorer: Takes a Magic Flight.">
-<link rel="canonical" href="https://missionaviationacademy.org/books">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Mission Aviation Academy">
-<meta property="og:title" content="Books &amp; Guides — Mission Aviation Academy">
-<meta property="og:description" content="The free Career Pathway Guide, Your Aviation Blueprint, and Ricky the Explorer.">
-<meta property="og:url" content="https://missionaviationacademy.org/books">
-<meta property="og:image" content="https://missionaviationacademy.org/images/yab_cover_flat.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<style>
-  :root { --navy:#0D2240; --gold:#C9A227; --white:#FFFFFF; --offwhite:#F7F7F5; --dgray:#333333; }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { font-family: Georgia, 'Times New Roman', serif; background: var(--offwhite); color: var(--dgray); }
-  nav { background: var(--navy); padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 16px; }
-  nav a { color: var(--gold); font-family: Arial, sans-serif; font-weight: 700; font-size: 14px; text-decoration: none; }
-  nav .nav-back { color: #B0C4DE; font-weight: 400; font-size: 13px; }
-  .hero { background: linear-gradient(135deg, var(--navy) 0%, #1a3a6b 100%); padding: 56px 20px 48px; text-align: center; }
-  .eyebrow { color: var(--gold); font-size: 11px; letter-spacing: 3px; font-family: Arial, sans-serif; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
-  .hero h1 { font-size: clamp(30px, 5vw, 46px); color: var(--white); line-height: 1.15; margin-bottom: 14px; }
-  .hero p { font-size: 17px; color: #B0C4DE; font-style: italic; max-width: 620px; margin: 0 auto; line-height: 1.6; }
-  .wrap { max-width: 900px; margin: 0 auto; padding: 48px 20px 64px; }
-  .book { background: var(--white); border-top: 4px solid var(--gold); box-shadow: 0 2px 14px rgba(0,0,0,0.07); border-radius: 3px; padding: 28px; margin-bottom: 28px; display: flex; gap: 28px; align-items: flex-start; }
-  .book.featured { border-top-color: var(--navy); }
-  .book img { width: 150px; height: auto; border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,0.25); flex-shrink: 0; }
-  .book-body { flex: 1; min-width: 0; }
-  .tag { display: inline-block; background: var(--navy); color: var(--gold); font-family: Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; margin-bottom: 10px; }
-  .book h2 { font-size: clamp(21px, 3vw, 27px); color: var(--navy); line-height: 1.2; margin-bottom: 6px; }
-  .book .by { font-family: Arial, sans-serif; font-size: 13px; color: #8a6d12; font-weight: 700; margin-bottom: 12px; }
-  .book p { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 12px; }
-  .book ul { margin: 0 0 16px 18px; font-size: 14px; line-height: 1.7; color: #444; }
-  .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
-  .btn { display: inline-block; background: var(--gold); color: var(--navy); font-family: Arial, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; padding: 13px 22px; border-radius: 3px; text-decoration: none; text-align: center; }
-  .btn:hover { background: #e8b82e; }
-  .btn-line { display: inline-block; border: 2px solid var(--navy); color: var(--navy); font-family: Arial, sans-serif; font-weight: 700; font-size: 14px; padding: 11px 20px; border-radius: 3px; text-decoration: none; text-align: center; }
-  .btn-line:hover { background: var(--navy); color: var(--gold); }
-  .bulk { background: var(--navy); color: #B0C4DE; border-radius: 3px; padding: 28px; text-align: center; }
-  .bulk h2 { color: var(--white); font-size: 22px; margin-bottom: 8px; }
-  .bulk p { font-size: 15px; line-height: 1.7; margin-bottom: 16px; }
-  .bulk a.link { color: var(--gold); text-decoration: none; font-family: Arial, sans-serif; font-weight: 700; }
-  .bulk .btns { justify-content: center; }
-  .bulk .btn-line { border-color: var(--gold); color: var(--gold); }
-  .bulk .btn-line:hover { background: var(--gold); color: var(--navy); }
-  footer { background: #060f1e; padding: 30px 20px; text-align: center; }
-  footer p { font-size: 12px; color: #8899AA; font-family: Arial, sans-serif; line-height: 1.8; }
-  footer a { color: var(--gold); text-decoration: none; }
-  @media (max-width: 600px) {
-    .book { flex-direction: column; align-items: center; padding: 22px 18px; }
-    .book-body { text-align: left; width: 100%; }
-    .book img { width: 140px; }
-    .btns a { width: 100%; }
-    nav .nav-back { display: none; }
-  }
-</style>
-  <link rel="stylesheet" href="/maa-nav.css"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Books — Mission Aviation Academy</title>
+  <meta name="description" content="Your Aviation Blueprint and Ricky the Explorer — aviation career books by Ricardo Foster and Bruce Blashka. Retail, bulk, and curriculum licensing."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="/maa-nav.js"></script>
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
+    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 52px 24px 44px; }
+    .hero-inner { max-width: 900px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #FFD700; margin-bottom: 12px; }
+    .hero h1 { font-size: 40px; font-weight: 900; color: #fff; margin: 0 0 12px; line-height: 1.05; }
+    .hero p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 580px; margin: 0; }
+    .page-body { max-width: 900px; margin: 0 auto; padding: 56px 24px; }
+    .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 28px; margin-bottom: 56px; }
+    .book-card { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    .book-header { background: #001838; padding: 24px 24px 20px; display: flex; gap: 20px; align-items: flex-start; }
+    .book-cover { width: 90px; height: 128px; background: #002855; border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .book-cover-yab { background: linear-gradient(135deg, #001838, #002855); border: 1px solid #FFD700; }
+    .book-cover-ricky { background: linear-gradient(135deg, #0D47A1, #1565C0); border: 1px solid #42A5F5; }
+    .book-cover-text { font-size: 9px; font-weight: 800; color: #FFD700; text-align: center; letter-spacing: 1px; padding: 8px; line-height: 1.4; }
+    .book-meta { flex: 1; }
+    .book-tag { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.5px; padding: 3px 8px; border-radius: 3px; margin-bottom: 8px; }
+    .book-title { font-size: 17px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.2; }
+    .book-subtitle { font-size: 12px; color: rgba(255,255,255,0.6); margin: 0 0 10px; line-height: 1.5; }
+    .book-authors { font-size: 11px; color: rgba(255,255,255,0.5); }
+    .book-body { padding: 20px 24px; flex: 1; }
+    .book-desc { font-size: 13px; color: #4b5563; line-height: 1.7; margin-bottom: 16px; }
+    .book-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .price-box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; text-align: center; }
+    .price-label { font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 1px; margin-bottom: 4px; }
+    .price-amount { font-size: 22px; font-weight: 900; color: #001838; }
+    .price-note { font-size: 10px; color: #9ca3af; margin-top: 2px; }
+    .isbn-line { font-size: 11px; color: #9ca3af; margin-bottom: 14px; font-family: 'Courier New', monospace; }
+    .book-ctas { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-primary { background: #001838; color: #FFD700; font-weight: 700; font-size: 12px; padding: 10px 18px; border-radius: 6px; text-decoration: none; }
+    .btn-outline { background: transparent; color: #001838; border: 1.5px solid #001838; font-weight: 700; font-size: 12px; padding: 10px 18px; border-radius: 6px; text-decoration: none; }
+    .section-h { font-size: 22px; font-weight: 800; color: #001838; margin: 0 0 6px; }
+    .section-sub { font-size: 13px; color: #6b7280; margin: 0 0 24px; line-height: 1.6; }
+    .bulk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 40px; }
+    .bulk-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px 20px; }
+    .bulk-card-title { font-size: 14px; font-weight: 800; color: #001838; margin-bottom: 4px; }
+    .bulk-card-sub { font-size: 12px; color: #6b7280; margin-bottom: 12px; }
+    .bulk-price-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+    .bulk-price-label { font-size: 11px; color: #6b7280; }
+    .bulk-price-val { font-size: 16px; font-weight: 800; color: #001838; }
+    .bulk-min { font-size: 10px; color: #9ca3af; }
+    .contact-box { background: #001838; border-radius: 12px; padding: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+    .contact-box h3 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 6px; }
+    .contact-box p { font-size: 13px; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.6; }
+    .btn-gold { background: #FFD700; color: #001838; font-weight: 800; font-size: 13px; padding: 12px 22px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+    .site-footer { background: #001838; padding: 24px 40px; margin-top: 0; }
+    .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .book-grid { grid-template-columns: 1fr; }
+      .book-header { flex-direction: column; }
+    }
+  </style>
 </head>
-<body><!-- SITE NAV -->
-<nav class="maa-site-nav" id="maaSiteNav">
-  <div class="maa-nav-inner">
-    <a href="/" class="maa-logo">Mission Aviation Academy</a>
-    <button class="maa-hamburger" id="maaHamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="maa-nav-links" id="maaNavLinks">
-      <div class="maa-dropdown">
-        <button class="maa-dd-btn">Programs</button>
-        <div class="maa-dd-menu">
-          <a href="/saturday">Saturday Open House</a>
-          <a href="/programs">All Programs</a>
-          <a href="/scholarships">Scholarships &amp; SUFS</a>
+<body>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">TREASURE HOUSE MEDIA · TACTICAL DRONES ACADEMY &amp; SIMULATIONS</div>
+    <h1>Books by Ricardo Foster</h1>
+    <p>Career roadmaps built from 35 years of aviation service — for the student who was never handed a map. Retail copies, bulk orders, and curriculum licensing available.</p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- BOOKS -->
+  <div class="book-grid">
+
+    <!-- YAB -->
+    <div class="book-card">
+      <div class="book-header">
+        <div class="book-cover book-cover-yab">
+          <div class="book-cover-text">YOUR<br>AVIATION<br>BLUEPRINT</div>
+        </div>
+        <div class="book-meta">
+          <div class="book-tag" style="background:#FFD700;color:#001838;">FLAGSHIP TITLE</div>
+          <div class="book-title">Your Aviation Blueprint</div>
+          <div class="book-subtitle">How to Launch a $1M Aviation Career Without a College Degree</div>
+          <div class="book-authors">LCDR Ricardo "Tattoo" Foster, USN (Ret.) &amp; MAJ Bruce "BOMBER" Blashka, USMC (Ret.) · Ages 11–25+</div>
         </div>
       </div>
-      <div class="maa-dropdown">
-        <button class="maa-dd-btn">Career</button>
-        <div class="maa-dd-menu">
-          <a href="/career">Career Platform</a>
-          <a href="/career-evaluator">Free Career Evaluator</a>
-          <a href="/yab">Your Aviation Blueprint</a>
-          <a href="/books">Our Books</a>
+      <div class="book-body">
+        <p class="book-desc">Eight aviation career tracks. BLS-verified salary data. The only aviation career guide with a documented mentor chain from the 332nd Fighter Group to the students who read it. Step-by-step from first flight to FAA certificate.</p>
+        <div class="book-prices">
+          <div class="price-box">
+            <div class="price-label">PAPERBACK</div>
+            <div class="price-amount">$16</div>
+            <div class="price-note">Retail single copy</div>
+          </div>
+          <div class="price-box">
+            <div class="price-label">BULK (10+)</div>
+            <div class="price-amount">$10</div>
+            <div class="price-note">Per copy · invoice from ICV</div>
+          </div>
+        </div>
+        <div class="isbn-line">PB: 979-8-9967339-9-6 · HC: 979-8-9967339-8-9</div>
+        <div class="book-ctas">
+          <a href="/yab" class="btn-primary">Pre-Order →</a>
+          <a href="mailto:admissions@missionaviationacademy.org?subject=YAB Bulk Order" class="btn-outline">Bulk Order</a>
         </div>
       </div>
-      <div class="maa-dropdown">
-        <button class="maa-dd-btn">Partners</button>
-        <div class="maa-dd-menu">
-          <a href="/partners">Partners &amp; Schools</a>
-          <a href="/school-partner">School &amp; Homeschool</a>
-          <a href="/tpa-connect">TPA Career Connection</a>
-          <a href="/support">Donate &amp; Support</a>
+    </div>
+
+    <!-- RICKY -->
+    <div class="book-card">
+      <div class="book-header">
+        <div class="book-cover book-cover-ricky">
+          <div class="book-cover-text" style="color:#fff;">RICKY<br>THE<br>EXPLORER</div>
+        </div>
+        <div class="book-meta">
+          <div class="book-tag" style="background:#42A5F5;color:#001838;">CHILDREN'S SERIES</div>
+          <div class="book-title">Ricky the Explorer: Takes a Magic Flight</div>
+          <div class="book-subtitle">Tuskegee Airmen tribute picture book · Vol. 1 of the Ricky the Explorer Series</div>
+          <div class="book-authors">Ricardo Foster · Ages 6–10 · iACT publisher of record</div>
         </div>
       </div>
-      <div class="maa-dropdown">
-        <button class="maa-dd-btn">Media</button>
-        <div class="maa-dd-menu">
-          <a href="/press">Press &amp; Media</a>
-          <a href="/community">Community &amp; Events</a>
-          <a href="/stories">Student Stories</a>
-          <a href="/tour">Tour Schedule</a>
+      <div class="book-body">
+        <p class="book-desc">The first words little Ricky said were "the moon" — pointing at an airplane overhead. Ricky the Explorer introduces the youngest generation to aviation and the Tuskegee Airmen legacy through an adventure every child can see themselves in.</p>
+        <div class="book-prices">
+          <div class="price-box">
+            <div class="price-label">HARDCOVER</div>
+            <div class="price-amount">$17.99</div>
+            <div class="price-note">Retail single copy</div>
+          </div>
+          <div class="price-box">
+            <div class="price-label">BULK (10+)</div>
+            <div class="price-amount">$10</div>
+            <div class="price-note">Per copy · ideal for schools</div>
+          </div>
+        </div>
+        <div class="isbn-line">ISBN: 979-8-9967339-0-3</div>
+        <div class="book-ctas">
+          <a href="/ricky" class="btn-primary">Pre-Order →</a>
+          <a href="mailto:admissions@missionaviationacademy.org?subject=Ricky Bulk Order" class="btn-outline">Bulk Order</a>
         </div>
       </div>
-      <a href="/about" class="maa-nav-link">About</a>
-      <a href="/saturday#rsvp" class="maa-nav-cta">Start Your Flight Path</a>
+    </div>
+
+  </div>
+
+  <!-- COMING SOON -->
+  <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:24px 28px;margin-bottom:56px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:#9ca3af;margin-bottom:12px;">COMING SOON — RICKY THE EXPLORER SERIES</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+      <div style="font-size:13px;color:#374151;padding:10px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;">
+        <div style="font-weight:700;color:#001838;">The Tuskegee Airmen</div>
+        <div style="font-size:11px;color:#9ca3af;">Coming soon</div>
+      </div>
+      <div style="font-size:13px;color:#374151;padding:10px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;">
+        <div style="font-weight:700;color:#001838;">Bessie Coleman</div>
+        <div style="font-size:11px;color:#9ca3af;">Coming soon</div>
+      </div>
+      <div style="font-size:13px;color:#374151;padding:10px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;">
+        <div style="font-weight:700;color:#001838;">Sky of Legends</div>
+        <div style="font-size:11px;color:#9ca3af;">ISBN: 979-8-9967339-5-8</div>
+      </div>
     </div>
   </div>
-</nav>
 
-<header class="hero">
-  <div class="eyebrow">Books &amp; Guides</div>
-  <h1>Read your way into aviation.</h1>
-  <p>Everything Mission Aviation Academy publishes for students, families and educators, from the free Career Pathway Guide to the books that carry the Tuskegee legacy forward.</p>
-</header>
+  <!-- BULK & BUNDLES -->
+  <h2 class="section-h">Bulk Orders &amp; Curriculum Licensing</h2>
+  <p class="section-sub">All bulk orders are invoiced through Infinity Collaborative Ventures (ICV), the for-profit subsidiary of iACT. Sponsor-funded bundles are available — iACT receives the gift, purchases copies from ICV at bulk rate, and distributes at no cost.</p>
 
-<main class="wrap">
-
-  <!-- Career Pathway Guide: what the QR in Appendix K of Your Aviation Blueprint promises -->
-  <section class="book featured" id="career-pathway-guide">
-    <div class="book-body">
-      <span class="tag">Free &middot; Fall 2026 edition</span>
-      <h2>Aviation &amp; Aerospace Career Pathway Guide</h2>
-      <div class="by">The companion to <em>Your Aviation Blueprint</em> (Appendix K)</div>
-      <p>Every lane in aviation and aerospace, cockpit or not, with what each credential costs, how long it takes, and what it pays. Revised every edition, so the salary tables, program lists and contact points stay current.</p>
-      <ul>
-        <li>Flight operations, aviation maintenance, UAS and drone operations</li>
-        <li>Air traffic and safety, aerospace and defense, management and education</li>
-        <li>BLS-verified wages and current FAA and industry workforce figures</li>
-      </ul>
-      <div class="btns">
-        <a class="btn" href="/yab">Get the free guide &rarr;</a>
+  <div class="bulk-grid">
+    <div class="bulk-card">
+      <div class="bulk-card-title">Legacy Bundle</div>
+      <div class="bulk-card-sub">Your Aviation Blueprint + Ricky the Explorer</div>
+      <div class="bulk-price-row">
+        <span class="bulk-price-label">Retail</span>
+        <span style="font-size:12px;color:#9ca3af;text-decoration:line-through;">$33.99</span>
       </div>
-    </div>
-  </section>
-
-  <section class="book" id="your-aviation-blueprint">
-    <img src="/images/yab_cover_flat.jpg" alt="Your Aviation Blueprint book cover" width="150" loading="lazy">
-    <div class="book-body">
-      <span class="tag">Pre-order &middot; 2026</span>
-      <h2>Your Aviation Blueprint</h2>
-      <div class="by">By LCDR Ricardo "Tattoo" Foster, USN (Ret.) &amp; MAJ Bruce "BOMBER" Blashka, USMC (Ret.)</div>
-      <p><em>How to Launch a $1 Million Aviation Career Without a College Degree.</em> A step-by-step career roadmap for young people, veterans and career-changers: eight aviation career tracks, BLS-verified salary data, the funding stack most families never knew existed, and a documented mentor chain to the Tuskegee Airmen.</p>
-      <div class="btns">
-        <a class="btn" href="/yab-preorder">Pre-order the book &rarr;</a>
-        <a class="btn-line" href="/yab-arc">Read the Advance Reader Copy</a>
+      <div class="bulk-price-row">
+        <span class="bulk-price-label">Bulk (10+ sets)</span>
+        <span class="bulk-price-val">$27</span>
       </div>
+      <div class="bulk-min">per bundle</div>
     </div>
-  </section>
-
-  <section class="book" id="ricky-the-explorer">
-    <div class="book-body">
-      <span class="tag">Picture book &middot; Ages 6&ndash;10</span>
-      <h2>Ricky the Explorer: Takes a Magic Flight</h2>
-      <div class="by">For younger readers</div>
-      <p>A picture book carrying the Tuskegee legacy into a story younger readers can hold onto.</p>
-      <div class="btns">
-        <a class="btn" href="/ricky">Learn about the book &rarr;</a>
+    <div class="bulk-card">
+      <div class="bulk-card-title">Curriculum Licensing</div>
+      <div class="bulk-card-sub">Drone · AI Innovation · Aviation STEM · Workforce</div>
+      <div class="bulk-price-row">
+        <span class="bulk-price-label">School or district</span>
+        <span class="bulk-price-val">Custom</span>
       </div>
+      <div class="bulk-min">Contact admissions for quote</div>
     </div>
-  </section>
-
-  <section style="background:var(--navy);padding:40px 20px;text-align:center;border-top:4px solid var(--gold);">
-    <div style="max-width:640px;margin:0 auto;">
-      <p style="font-family:Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px;">Next Step</p>
-      <p style="font-size:clamp(22px,3vw,30px);color:var(--white);line-height:1.2;margin-bottom:10px;font-weight:700;">You read the book.</p>
-      <p style="font-size:16px;color:#B0C4DE;line-height:1.75;margin-bottom:24px;">Every Saturday at Tampa North Aero Park (X39) in Lutz, FL — free open house, drone certification, AI app building, aircraft discovery flights, and PPL simulator. Ages 6 and up. Most SUFS-eligible families pay $0.</p>
-      <a href="/saturday#rsvp" style="display:inline-block;background:var(--gold);color:var(--navy);font-family:Arial,sans-serif;font-weight:700;font-size:15px;padding:15px 32px;text-decoration:none;letter-spacing:.5px;border-radius:3px;">Start Your Flight Path &rarr;</a>
+    <div class="bulk-card">
+      <div class="bulk-card-title">Sponsor-Funded Bundles</div>
+      <div class="bulk-card-sub">Named gift fund · distributed free to students</div>
+      <div class="bulk-price-row">
+        <span class="bulk-price-label">Gift to iACT (501c3)</span>
+        <span class="bulk-price-val">Tax-deductible</span>
+      </div>
+      <div class="bulk-min">iACT buys from ICV at bulk · students receive free</div>
     </div>
-  </section>
+  </div>
 
-  <section class="bulk" id="bulk-orders">
-    <div class="eyebrow">Schools, sponsors &amp; media</div>
-    <h2>Bulk orders and school licensing</h2>
-    <p>For bulk orders, school district licensing, sponsor and media inquiries, call or text <a class="link" href="tel:8134458889">(813) 445-8889</a> or email <a class="link" href="mailto:admissions@missionaviationacademy.org?subject=Books%20inquiry">admissions@missionaviationacademy.org</a>.</p>
-    <div class="btns">
-      <a class="btn" href="/yab-press-kit">Media &amp; press kit &rarr;</a>
-      <a class="btn-line" href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener">Talk to Admissions</a>
+  <!-- CONTACT -->
+  <div class="contact-box">
+    <div>
+      <h3>Order books or license curriculum</h3>
+      <p>Bulk orders, school district licensing, event packages, and sponsor-funded bundles.<br>admissions@missionaviationacademy.org · (813) 445-8889</p>
     </div>
-  </section>
+    <a href="mailto:admissions@missionaviationacademy.org?subject=Book Order Inquiry" class="btn-gold">Contact Admissions →</a>
+  </div>
 
-</main>
+</div>
 
-<footer>
-  <p>
-    <strong>Mission Aviation Academy</strong> &nbsp;|&nbsp; Infinity Aero Club Tampa Bay, Inc. (iACT) &nbsp;|&nbsp; 501(c)(3) Nonprofit<br>
-    Facility: 4639 Birdsong Blvd, Lutz FL 33559 &nbsp;&middot;&nbsp; Parking GPS: 4661 Birdsong Blvd, Lutz FL 33559<br>
-    <a href="tel:8134458889">(813) 445-8889</a> &nbsp;&middot;&nbsp;
-    <a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a>
-  </p>
+<footer class="site-footer">
+  <p class="footer-legal">Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit · EIN 85-1110607 · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate</p>
 </footer>
-
-<script src="/maa-nav.js" defer></script>
 </body>
 </html>
