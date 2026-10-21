@@ -149,7 +149,7 @@
         { href: '/stories',          label: 'Student Stories' },
         { href: '/tour',             label: 'Tour Schedule' },
         { sep: true },
-        { href: '/tuskegee',         label: 'Tuskegee Airmen Heritage' },
+        { href: '/tuskegee',         label: 'Tuskegee Airmen Heritage',  badge: 'Red Tail', badgeColor: '#8B0000' },
       ]
     },
     { label: 'About', href: '/about' },
