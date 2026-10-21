@@ -399,7 +399,7 @@ input[type=range]{width:100%;accent-color:var(--navy);height:6px;}
   <section class="hero">
     <div class="hero-pill">✦ Evidence-Based Career Assessment</div>
     <h1>Know exactly where your<br>career stands — and where<br>it needs to <em>go.</em></h1>
-    <p class="hero-sub">AI-powered evaluation rooted in Harvard research, Google's hiring data, O*NET, Rick Warren's SHAPE framework, and Myron Golden's B.O.S.S Moves.</p>
+    <p class="hero-sub">AI-powered evaluation rooted in Harvard research, Google's hiring data, O*NET, Rick Warren's SHAPE framework, and Myron Golden's B.O.S.S. Moves.</p>
     <div class="tags">
       <span class="tag">✈ Aviation</span><span class="tag">⚗ STEM</span>
       <span class="tag">🚀 Entrepreneurship</span><span class="tag">🤖 AI Innovation</span>
@@ -493,7 +493,7 @@ input[type=range]{width:100%;accent-color:var(--navy);height:6px;}
     <p>Get your complete evaluation, rewritten bullets, Myron Golden Career Level, SHAPE alignment, and your personalized career roadmap — all free.</p>
     <div class="gate-chips">
       <span class="gate-chip">Full scored analysis</span><span class="gate-chip">Rewritten bullets</span>
-      <span class="gate-chip">B.O.S.S Moves Level</span><span class="gate-chip">SHAPE alignment</span>
+      <span class="gate-chip">B.O.S.S. Moves Level</span><span class="gate-chip">SHAPE alignment</span>
       <span class="gate-chip">Orient → Assess → Act roadmap</span>
     </div>
     <button class="btn-cta" onclick="showScreen('s-gate')">Get My Full Report — Free</button>
@@ -543,7 +543,7 @@ input[type=range]{width:100%;accent-color:var(--navy);height:6px;}
   <div class="rpt-sec"><h3>Score Breakdown</h3><div class="scores-inner" id="rptScoreBars" style="margin-bottom:0"></div></div>
   <div class="rpt-sec alt" id="rptRewritesWrap"><h3>Bullet Rewrites</h3><p style="margin-bottom:14px">Your weakest bullets — before and after applying the achievement formula.</p><div id="rptRewrites"></div></div>
   <div class="rpt-sec"><h3>Purpose Alignment (SHAPE)</h3><p style="margin-bottom:12px">How well your resume reflects who you actually are:</p><div class="shape-card"><div class="slbl">SHAPE Analysis</div><p id="rptShape"></p></div></div>
-  <div class="rpt-sec alt"><h3>Your Myron Golden Career Level</h3><p style="margin-bottom:16px">Myron Golden's 4 Levels of Value explain why some people earn $30K and others earn $300K. It is not about effort — it is about what level of value you operate at.</p><div class="golden-card"><div class="gld-pill">✦ B.O.S.S Moves Framework — Tampa, FL</div><div class="levels-bar" id="gldLevels"></div><div class="gld-num" id="gldNum">—</div><div class="gld-name" id="gldName">—</div><div class="gld-move"><strong>The Boss Move →</strong> <span id="gldMove"></span></div></div></div>
+  <div class="rpt-sec alt"><h3>Your Myron Golden Career Level</h3><p style="margin-bottom:16px">Myron Golden's 4 Levels of Value explain why some people earn $30K and others earn $300K. It is not about effort — it is about what level of value you operate at.</p><div class="golden-card"><div class="gld-pill">✦ B.O.S.S. Moves Framework — Tampa, FL</div><div class="levels-bar" id="gldLevels"></div><div class="gld-num" id="gldNum">—</div><div class="gld-name" id="gldName">—</div><div class="gld-move"><strong>The B.O.S.S. Move →</strong> <span id="gldMove"></span></div></div></div>
   <div class="rpt-sec"><h3>Your Career Roadmap</h3><p style="margin-bottom:18px">Three steps. Each one moves you forward from exactly where you are right now.</p><div class="roadmap-list"><div class="rm-step"><div class="rm-circle">1</div><div class="rm-body"><h4>ORIENT — Where you actually stand</h4><p id="rmOrient"></p></div></div><div class="rm-step"><div class="rm-circle">2</div><div class="rm-body"><h4>ASSESS — What you need next</h4><ul class="rm-assess-list" id="rmAssess"></ul></div></div><div class="rm-step"><div class="rm-circle">3</div><div class="rm-body"><h4>ACT — Do this in the next 24 hours</h4><div class="act-box"><strong>Your next move</strong><span id="rmAct"></span></div></div></div></div></div>
   <div class="rpt-cta">
     <h2>Your AI report is just the start.</h2>
@@ -925,7 +925,7 @@ const CW_DAYS = [
   { day:1, label:'Module 1', date:'', title:'Setting the Foundation', full:'Module 1 — Setting the Foundation' },
   { day:2, label:'Module 2', date:'', title:'Building Your Blueprint', full:'Module 2 — Building Your Blueprint' },
   { day:3, label:'Module 3', date:'', title:'Finding Your SHAPE', full:'Module 3 — Finding Your SHAPE' },
-  { day:4, label:'Module 4', date:'', title:'B.O.S.S Moves', full:'Module 4 — B.O.S.S Moves' },
+  { day:4, label:'Module 4', date:'', title:'B.O.S.S. Moves', full:'Module 4 — B.O.S.S. Moves' },
   { day:5, label:'Module 5', date:'', title:'Your Flight Plan', full:'Module 5 — Your Flight Path' }
 ];
 
@@ -990,7 +990,7 @@ const DAILY_Q = {
     {id:'q_rating',type:'stars',label:'How valuable was today\'s session overall?',req:true}
   ],
   4:[
-    {id:'q_bossmove',type:'text',label:'What\'s the single Boss Move you need to make in your career right now?',req:true},
+    {id:'q_bossmove',type:'text',label:'What\'s the single B.O.S.S. Move you need to make in your career right now?',req:true},
     {id:'q_blocker',type:'text',label:'What has been holding you back from making it?',req:true},
     {id:'q_belief',type:'text',label:'After today, what limiting belief is starting to lose its grip on you?'},
     {id:'q_network',type:'text',label:'Name one person in your network you\'re reaching out to this week — and why.'},
@@ -1015,7 +1015,7 @@ function buildDailySurveyQuestions(day) {
 // ── Weekly survey questions ───────────────────────────────────────
 const WEEKLY_Q = [
   {id:'w_shift',type:'text',label:'How has this week changed how you think about your career?',req:true},
-  {id:'w_best_day',type:'select',label:'Which day had the greatest impact on you?',options:['Module 1 — Setting the Foundation','Module 2 — Building Your Blueprint','Module 3 — Finding Your SHAPE','Module 4 — B.O.S.S Moves','Module 5 — Your Flight Path'],req:true},
+  {id:'w_best_day',type:'select',label:'Which day had the greatest impact on you?',options:['Module 1 — Setting the Foundation','Module 2 — Building Your Blueprint','Module 3 — Finding Your SHAPE','Module 4 — B.O.S.S. Moves','Module 5 — Your Flight Path'],req:true},
   {id:'w_conf_before',type:'scale',label:'Career confidence BEFORE this week:',min:'Low (1)',max:'High (10)',req:true},
   {id:'w_conf_after',type:'scale',label:'Career confidence AFTER this week:',min:'Low (1)',max:'High (10)',req:true},
   {id:'w_framework',type:'select',label:'Which framework resonated most with you?',options:['Rick Warren\'s SHAPE Profile','Myron Golden\'s 4 Levels of Value','Career Tier System (Entry / Mid / Executive)','Orient → Assess → Act Roadmap','The AI Resume Evaluator itself']},
