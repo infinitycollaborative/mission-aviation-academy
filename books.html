@@ -18,10 +18,8 @@
     .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 28px; margin-bottom: 56px; }
     .book-card { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
     .book-header { background: #001838; padding: 24px 24px 20px; display: flex; gap: 20px; align-items: flex-start; }
-    .book-cover { width: 90px; height: 128px; background: #002855; border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-    .book-cover-yab { background: linear-gradient(135deg, #001838, #002855); border: 1px solid #FFD700; }
-    .book-cover-ricky { background: linear-gradient(135deg, #0D47A1, #1565C0); border: 1px solid #42A5F5; }
-    .book-cover-text { font-size: 9px; font-weight: 800; color: #FFD700; text-align: center; letter-spacing: 1px; padding: 8px; line-height: 1.4; }
+    .book-cover { width: 90px; height: 128px; border-radius: 4px; flex-shrink: 0; overflow: hidden; }
+    .book-cover img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
     .book-meta { flex: 1; }
     .book-tag { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1.5px; padding: 3px 8px; border-radius: 3px; margin-bottom: 8px; }
     .book-title { font-size: 17px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.2; }
@@ -79,8 +77,8 @@
     <!-- YAB -->
     <div class="book-card">
       <div class="book-header">
-        <div class="book-cover book-cover-yab">
-          <div class="book-cover-text">YOUR<br>AVIATION<br>BLUEPRINT</div>
+        <div class="book-cover">
+          <img src="/images/yab_cover_flat.jpg" alt="Your Aviation Blueprint book cover" width="90" height="128">
         </div>
         <div class="book-meta">
           <div class="book-tag" style="background:#FFD700;color:#001838;">FLAGSHIP TITLE</div>
@@ -114,8 +112,8 @@
     <!-- RICKY -->
     <div class="book-card">
       <div class="book-header">
-        <div class="book-cover book-cover-ricky">
-          <div class="book-cover-text" style="color:#fff;">RICKY<br>THE<br>EXPLORER</div>
+        <div class="book-cover">
+          <img src="/images/ricky-cover.jpg" alt="Ricky the Explorer: Takes a Magic Flight book cover" width="90" height="128">
         </div>
         <div class="book-meta">
           <div class="book-tag" style="background:#42A5F5;color:#001838;">CHILDREN'S SERIES</div>
