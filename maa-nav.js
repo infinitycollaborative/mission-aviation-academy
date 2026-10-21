@@ -137,7 +137,7 @@
       label: 'Partners', items: [
         { href: '/partners',         label: 'Partners & Bulk Orders' },
         { href: '/enroll',           label: 'Enroll / Co-Op Partner' },
-        { href: '/tpa-connect',      label: 'TPA Career Connection' },
+        { href: '/tpa-connect',      label: 'TPA Career Connection',    badge: 'TPA',    badgeColor: '#0A4B7C' },
         { sep: true },
         { href: '/support',          label: 'Donate / Support',         badge: 'Give',   badgeColor: '#1A5C2A' },
       ]
