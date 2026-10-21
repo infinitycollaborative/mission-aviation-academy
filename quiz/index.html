@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TPA Career Connection — Day 2 Quiz</title>
+<meta name="description" content="TPA Career Connection Day 2 Quiz — 20 questions covering TPA Operations, Your Aviation Blueprint, and Financial Literacy. Includes Faceoff tiebreaker mode.">
+<link rel="canonical" href="https://missionaviationacademy.org/quiz">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap');
+
+  :root {
+    --navy: #002060;
+    --navy-deep: #001040;
+    --navy-mid: #003080;
+    --gold: #C9A84C;
+    --gold-light: #E2C97A;
+    --gold-pale: #F5EDD0;
+    --white: #FFFFFF;
+    --off-white: #F8F6F0;
+    --gray-light: #EEECF0;
+    --gray-mid: #AAAACC;
+    --green: #1A7A4A;
+    --green-bg: #E6F4ED;
+    --red: #A01E2A;
+    --red-bg: #FAE8EA;
+    --cat-ops: #1565C0;
+    --cat-yab: #6A0DAD;
+    --cat-fin: #006633;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--navy-deep);
+    min-height: 100vh;
+    color: var(--navy);
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy);
+    border-bottom: 3px solid var(--gold);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-header .logo-block { display: flex; flex-direction: column; }
+  .site-header .org { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; }
+  .site-header .event { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; color: var(--white); letter-spacing: 0.5px; }
+  .site-header .day-badge { background: var(--gold); color: var(--navy); font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 800; padding: 4px 12px; border-radius: 2px; letter-spacing: 1px; }
+
+  /* MAIN WRAPPER */
+  .main { max-width: 760px; margin: 0 auto; padding: 28px 20px 60px; }
+
+  /* PROGRESS */
+  .progress-wrap { margin-bottom: 24px; }
+  .progress-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .progress-label { font-size: 13px; font-weight: 600; color: var(--gold-light); }
+  .progress-count { font-size: 13px; font-weight: 700; color: var(--white); }
+  .progress-bar-track { height: 6px; background: rgba(255,255,255,0.12); border-radius: 3px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 3px; transition: width 0.4s ease; }
+
+  /* QUIZ CARD */
+  .quiz-card {
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+  }
+  .card-top {
+    background: var(--navy);
+    padding: 20px 24px 16px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .cat-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+  .cat-ops { background: #1E3A8A; color: #93C5FD; }
+  .cat-yab { background: #4C1D95; color: #DDD6FE; }
+  .cat-fin { background: #14532D; color: #86EFAC; }
+
+  .question-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  /* OPTIONS */
+  .options { padding: 20px 24px; display: grid; gap: 10px; }
+  .option-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border: 2px solid var(--gray-light);
+    border-radius: 4px;
+    background: var(--off-white);
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--navy);
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .option-btn:hover:not(:disabled) { border-color: var(--navy); background: var(--white); }
+  .option-btn .opt-letter {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--navy-mid);
+    min-width: 22px;
+    text-align: center;
+    border-right: 2px solid var(--gray-light);
+    padding-right: 12px;
+  }
+  .option-btn.correct { border-color: var(--green); background: var(--green-bg); }
+  .option-btn.correct .opt-letter { color: var(--green); border-color: var(--green); }
+  .option-btn.wrong { border-color: var(--red); background: var(--red-bg); }
+  .option-btn.wrong .opt-letter { color: var(--red); border-color: var(--red); }
+  .option-btn:disabled { cursor: default; }
+
+  /* FUN FACT */
+  .fun-fact-box {
+    margin: 0 24px 20px;
+    padding: 14px 18px;
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+    border-radius: 2px;
+    display: none;
+  }
+  .fun-fact-box.show { display: block; }
+  .fun-fact-label { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+  .fun-fact-text { font-size: 14px; color: var(--navy); line-height: 1.5; }
+
+  /* NEXT BUTTON */
+  .btn-next {
+    display: none;
+    margin: 0 24px 24px;
+    padding: 14px 28px;
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-next:hover { background: var(--navy-mid); }
+  .btn-next.show { display: inline-block; }
+
+  /* ROTATING FUN FACTS FOOTER */
+  .facts-footer {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+  }
+  .facts-footer-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .facts-footer-text { font-size: 13px; color: var(--gray-light); line-height: 1.5; min-height: 40px; transition: opacity 0.5s; }
+
+  /* SCORE SCREEN */
+  .score-screen { display: none; }
+  .score-screen.show { display: block; }
+  .score-hero {
+    background: var(--navy);
+    border-radius: 6px;
+    padding: 36px 28px;
+    text-align: center;
+    border: 2px solid var(--gold);
+    margin-bottom: 20px;
+  }
+  .score-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .score-number { font-family: 'Barlow Condensed', sans-serif; font-size: 72px; font-weight: 800; color: var(--white); line-height: 1; }
+  .score-denom { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 600; color: var(--gold-light); }
+  .score-msg { font-size: 16px; color: var(--gold-light); margin-top: 16px; line-height: 1.5; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+  .cat-breakdown {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 22px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .cat-breakdown h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 800; color: var(--navy); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .cat-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .cat-row-name { font-size: 13px; font-weight: 600; color: var(--navy); min-width: 180px; }
+  .cat-row-bar-track { flex: 1; height: 8px; background: var(--gray-light); border-radius: 4px; overflow: hidden; }
+  .cat-row-bar-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+  .cat-row-score { font-size: 13px; font-weight: 700; color: var(--navy); min-width: 40px; text-align: right; }
+  .fill-ops { background: #1E3A8A; }
+  .fill-yab { background: #6D28D9; }
+  .fill-fin { background: #166534; }
+
+  .score-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-action {
+    flex: 1;
+    min-width: 140px;
+    padding: 14px 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .btn-share { background: var(--gold); color: var(--navy); }
+  .btn-restart { background: var(--navy); color: var(--gold); border: 2px solid var(--gold); }
+  .btn-tiebreaker { background: var(--red); color: var(--white); display: none; }
+  .btn-tiebreaker.show { display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+  /* ── TIEBREAKER SCREEN ── */
+  .tiebreaker-screen { display: none; }
+  .tiebreaker-screen.show { display: block; }
+
+  .tb-banner {
+    background: linear-gradient(135deg, var(--red) 0%, #6B0011 100%);
+    border-radius: 6px;
+    padding: 24px 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #FF6B7A;
+  }
+  .tb-banner-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #FF9AA2; margin-bottom: 8px; }
+  .tb-banner-title { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; color: var(--white); }
+  .tb-banner-sub { font-size: 14px; color: #FFCDD2; margin-top: 8px; }
+
+  .tb-player-status {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .tb-player-card {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 14px 16px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    border-top: 3px solid var(--navy);
+    transition: border-color 0.3s;
+  }
+  .tb-player-card.eliminated { border-top-color: var(--red); opacity: 0.5; }
+  .tb-player-card.winner { border-top-color: var(--gold); background: var(--gold-pale); }
+  .tb-player-name { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .tb-player-status-label { font-size: 12px; font-weight: 600; color: var(--gray-mid); }
+  .tb-player-status-label.alive { color: var(--green); }
+  .tb-player-status-label.out { color: var(--red); }
+  .tb-player-status-label.champ { color: var(--gold); font-weight: 800; }
+
+  .tb-card {
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    margin-bottom: 16px;
+  }
+  .tb-card-top {
+    background: #6B0011;
+    padding: 16px 24px 14px;
+    border-bottom: 2px solid #FF6B7A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tb-q-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #FF9AA2; }
+  .tb-difficulty {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+  .diff-moderate { background: #FFA500; color: #fff; }
+  .diff-hard { background: #CC0000; color: #fff; }
+  .diff-hardest { background: #4B0082; color: #fff; }
+
+  .tb-question-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    padding: 16px 24px 14px;
+    background: #6B0011;
+  }
+
+  /* TIMER */
+  .tb-timer-wrap { padding: 12px 24px; background: var(--off-white); display: flex; align-items: center; gap: 12px; }
+  .tb-timer-track { flex: 1; height: 8px; background: var(--gray-light); border-radius: 4px; overflow: hidden; }
+  .tb-timer-fill { height: 100%; background: var(--green); border-radius: 4px; transition: width 1s linear, background 0.3s; }
+  .tb-timer-fill.warning { background: #FFA500; }
+  .tb-timer-fill.danger { background: var(--red); }
+  .tb-timer-count { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: var(--navy); min-width: 32px; text-align: right; }
+
+  .tb-options { padding: 16px 24px; display: grid; gap: 8px; }
+  .tb-option-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 2px solid var(--gray-light);
+    border-radius: 4px;
+    background: var(--off-white);
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    text-align: left;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .tb-option-btn:hover:not(:disabled) { border-color: #6B0011; background: var(--white); }
+  .tb-option-btn .opt-letter { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 800; color: #6B0011; min-width: 20px; text-align: center; border-right: 2px solid var(--gray-light); padding-right: 10px; }
+  .tb-option-btn.correct { border-color: var(--green); background: var(--green-bg); }
+  .tb-option-btn.wrong { border-color: var(--red); background: var(--red-bg); }
+  .tb-option-btn:disabled { cursor: default; }
+
+  .tb-reveal-box { margin: 0 24px 16px; padding: 14px 18px; background: #FFF3F3; border-left: 4px solid var(--red); border-radius: 2px; display: none; }
+  .tb-reveal-box.show { display: block; }
+  .tb-reveal-label { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red); margin-bottom: 5px; }
+  .tb-reveal-text { font-size: 14px; color: var(--navy); line-height: 1.5; }
+
+  .tb-controls { display: flex; gap: 12px; padding: 0 24px 24px; flex-wrap: wrap; }
+  .btn-tb {
+    padding: 12px 22px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .btn-tb-next { background: #6B0011; color: var(--white); }
+  .btn-tb-next:disabled { opacity: 0.4; cursor: default; }
+
+  /* WINNER SCREEN */
+  .winner-screen { display: none; }
+  .winner-screen.show { display: block; }
+  .winner-card {
+    background: var(--navy);
+    border: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 48px 32px;
+    text-align: center;
+  }
+  .winner-trophy { font-size: 64px; margin-bottom: 16px; }
+  .winner-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .winner-name { font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 800; color: var(--white); margin-bottom: 12px; }
+  .winner-sub { font-size: 16px; color: var(--gold-light); }
+  .btn-new-game { margin-top: 28px; padding: 16px 36px; background: var(--gold); color: var(--navy); font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; border: none; border-radius: 3px; cursor: pointer; }
+
+  /* SETUP SCREEN */
+  .setup-screen { }
+  .setup-card { background: var(--white); border-radius: 6px; padding: 32px 28px; box-shadow: 0 8px 40px rgba(0,0,0,0.4); margin-bottom: 20px; }
+  .setup-card h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+  .setup-card p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 20px; }
+  .setup-card label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .setup-card input { width: 100%; padding: 10px 14px; border: 2px solid var(--gray-light); border-radius: 3px; font-family: 'Barlow', sans-serif; font-size: 15px; color: var(--navy); margin-bottom: 14px; }
+  .setup-card input:focus { outline: none; border-color: var(--navy); }
+  .btn-start { width: 100%; padding: 15px; background: var(--navy); color: var(--gold); font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; border: none; border-radius: 3px; cursor: pointer; }
+  .btn-start:hover { background: var(--navy-mid); }
+
+  @media (max-width: 500px) {
+    .question-text { font-size: 18px; }
+    .tb-question-text { font-size: 19px; }
+    .score-number { font-size: 56px; }
+    .tb-player-status { grid-template-columns: 1fr; }
+    .site-header .event { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo-block">
+    <span class="org">Mission Aviation Academy</span>
+    <span class="event">TPA Career Connection</span>
+  </div>
+  <span class="day-badge">DAY 2</span>
+</header>
+
+<div class="main">
+
+  <!-- SETUP SCREEN -->
+  <div class="setup-screen" id="setupScreen">
+    <div class="setup-card">
+      <h2>Before we start&hellip;</h2>
+      <p>Enter your name so we can personalize your results — and set up a tiebreaker faceoff if needed.</p>
+      <label for="p1name">Your name</label>
+      <input type="text" id="p1name" placeholder="First name" maxlength="30">
+      <label for="p2name">Tiebreaker opponent name <span style="font-weight:400;color:#999">(optional — only used if there's a tie)</span></label>
+      <input type="text" id="p2name" placeholder="Opponent's first name" maxlength="30">
+      <button class="btn-start" onclick="startQuiz()">Start the Quiz</button>
+    </div>
+    <div class="facts-footer">
+      <div class="facts-footer-label">Did you know?</div>
+      <div class="facts-footer-text" id="setupFact"></div>
+    </div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="quizScreen" style="display:none">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span class="progress-label" id="progressLabel">Question 1 of 20</span>
+        <span class="progress-count" id="progressCount">0 correct</span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="card-top">
+        <div id="catBadge" class="cat-badge"></div>
+        <div class="question-text" id="questionText"></div>
+      </div>
+      <div class="options" id="optionsWrap"></div>
+      <div class="fun-fact-box" id="funFactBox">
+        <div class="fun-fact-label">Fun Fact</div>
+        <div class="fun-fact-text" id="funFactText"></div>
+      </div>
+      <button class="btn-next" id="btnNext" onclick="nextQuestion()">Next Question &rarr;</button>
+    </div>
+
+    <div class="facts-footer">
+      <div class="facts-footer-label">Did you know?</div>
+      <div class="facts-footer-text" id="quizFact"></div>
+    </div>
+  </div>
+
+  <!-- SCORE SCREEN -->
+  <div class="score-screen" id="scoreScreen">
+    <div class="score-hero">
+      <div class="score-label">Your Score</div>
+      <div><span class="score-number" id="scoreNum">0</span><span class="score-denom"> / 20</span></div>
+      <div class="score-msg" id="scoreMsg"></div>
+    </div>
+    <div class="cat-breakdown">
+      <h3>Score by Category</h3>
+      <div class="cat-row">
+        <div class="cat-row-name">TPA Operations</div>
+        <div class="cat-row-bar-track"><div class="cat-row-bar-fill fill-ops" id="barOps" style="width:0%"></div></div>
+        <div class="cat-row-score" id="scoreOps">0/7</div>
+      </div>
+      <div class="cat-row">
+        <div class="cat-row-name">Your Aviation Blueprint</div>
+        <div class="cat-row-bar-track"><div class="cat-row-bar-fill fill-yab" id="barYab" style="width:0%"></div></div>
+        <div class="cat-row-score" id="scoreYab">0/7</div>
+      </div>
+      <div class="cat-row">
+        <div class="cat-row-name">Financial Literacy</div>
+        <div class="cat-row-bar-track"><div class="cat-row-bar-fill fill-fin" id="barFin" style="width:0%"></div></div>
+        <div class="cat-row-score" id="scoreFin">0/6</div>
+      </div>
+    </div>
+    <div class="score-actions">
+      <button class="btn-action btn-share" onclick="shareScore()">Share My Score</button>
+      <button class="btn-action btn-tiebreaker" id="btnTiebreaker" onclick="startTiebreaker()">&#9889; Faceoff Tiebreaker</button>
+      <button class="btn-action btn-restart" onclick="restartQuiz()">Play Again</button>
+    </div>
+  </div>
+
+  <!-- TIEBREAKER SCREEN -->
+  <div class="tiebreaker-screen" id="tiebreakerScreen">
+    <div class="tb-banner">
+      <div class="tb-banner-eyebrow">Sudden Death</div>
+      <div class="tb-banner-title">FACEOFF ROUND</div>
+      <div class="tb-banner-sub">5 questions &middot; First wrong answer is eliminated &middot; Escalating difficulty</div>
+    </div>
+
+    <div class="tb-player-status" id="tbPlayerStatus"></div>
+
+    <div class="tb-card" id="tbCard">
+      <div class="tb-card-top">
+        <span class="tb-q-label" id="tbQLabel">Question 1 of 5</span>
+        <span class="tb-difficulty" id="tbDiffBadge"></span>
+      </div>
+      <div class="tb-question-text" id="tbQuestionText"></div>
+      <div class="tb-timer-wrap">
+        <div class="tb-timer-track"><div class="tb-timer-fill" id="tbTimerFill" style="width:100%"></div></div>
+        <div class="tb-timer-count" id="tbTimerCount">30</div>
+      </div>
+      <div class="tb-options" id="tbOptionsWrap"></div>
+      <div class="tb-reveal-box" id="tbRevealBox">
+        <div class="tb-reveal-label">Answer Revealed</div>
+        <div class="tb-reveal-text" id="tbRevealText"></div>
+      </div>
+      <div class="tb-controls">
+        <button class="btn-tb btn-tb-next" id="btnTbNext" onclick="nextTbQuestion()" disabled>Next Question &rarr;</button>
+      </div>
+    </div>
+
+    <div class="facts-footer">
+      <div class="facts-footer-label">Faceoff Mode</div>
+      <div class="facts-footer-text">Each player answers. First wrong answer loses the round. First to answer incorrectly is eliminated. If both survive all 5, fastest answer on Q5 wins — host decides.</div>
+    </div>
+  </div>
+
+  <!-- WINNER SCREEN -->
+  <div class="winner-screen" id="winnerScreen">
+    <div class="winner-card">
+      <div class="winner-trophy">&#127942;</div>
+      <div class="winner-label">Tiebreaker Champion</div>
+      <div class="winner-name" id="winnerName"></div>
+      <div class="winner-sub" id="winnerSub"></div>
+      <button class="btn-new-game" onclick="restartQuiz()">Play Again</button>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+const questions = [
+  // TPA OPERATIONS (7)
+  { cat:'ops', catLabel:'TPA Operations', q:'John Tiliacos serves as what role at Tampa International Airport?', opts:['Senior Director of Operations','Chief Operating Officer','VP of Airport Services','Chief Executive Officer'], ans:1, fact:'John Tiliacos presented his career journey to Career Connection participants on Day 2 — from a ticket-agent in Nassau, Bahamas to COO of one of Florida\'s busiest airports.' },
+  { cat:'ops', catLabel:'TPA Operations', q:'Where did John Tiliacos begin his aviation career before working his way up to Tampa?', opts:['Miami, Florida','Lubbock, Texas','Nassau, Bahamas','New Orleans, Louisiana'], ans:2, fact:'John described how growing up in Nassau, Bahamas and learning work ethic through his father\'s shoe business shaped his entire career philosophy.' },
+  { cat:'ops', catLabel:'TPA Operations', q:'Kelly manages what department at Tampa International Airport?', opts:['Ground Transportation','Airport Operations Center (AOC)','Security & Access Control','Customer Experience'], ans:1, fact:'The AOC is the nerve center of the airport — handling everything from access-control alarms to public safety dispatch, 24 hours a day, 7 days a week.' },
+  { cat:'ops', catLabel:'TPA Operations', q:'Approximately how many dispatchers work in the Airport Operations Center?', opts:['12','24','36','50'], ans:2, fact:'The AOC team is split between operations dispatch and public safety dispatch — two different roles with different training requirements, both running around the clock.' },
+  { cat:'ops', catLabel:'TPA Operations', q:'Before joining TPA, Kelly had experience as a what?', opts:['Flight attendant','911 / public safety dispatcher','Airport security officer','Airline customer service agent'], ans:1, fact:'Kelly\'s 911 dispatch background in Mississippi transferred directly into airport operations — proving that skills from other fields can be powerful entry points into aviation careers.' },
+  { cat:'ops', catLabel:'TPA Operations', q:'The Traffic Division at TPA is made up of approximately how many personnel?', opts:['28','45','62','80'], ans:2, fact:'Roberto leads a 62-person Traffic Division responsible for roadway movement, curbside operations, commercial transportation areas, and vehicle assistance across the airport.' },
+  { cat:'ops', catLabel:'TPA Operations', q:'New Traffic Division employees go through an initial training program of approximately how long?', opts:['1 week','2 weeks','30 days','90 days'], ans:2, fact:'Kenny G emphasized that the 30-day training is just the beginning — learning the airport\'s culture, layout, and team before pursuing other opportunities is the real foundation.' },
+  // YOUR AVIATION BLUEPRINT (7)
+  { cat:'yab', catLabel:'Your Aviation Blueprint', q:'What does OAR stand for in Ricardo Foster\'s career consultation framework?', opts:['Outline, Assess, Report','Orientation, Assessment & Roadmap','Objective, Action, Results','Opportunity, Alignment, Readiness'], ans:1, fact:'The OAR framework helps participants map where they are, where they want to go, and builds a roadmap extending at least 12 months into the future — a strategic career flight plan.' },
+  { cat:'yab', catLabel:'Your Aviation Blueprint', q:'Chris from Southwest Airlines started his career doing what job?', opts:['Baggage handling','Aircraft fueling','Gate agent check-in','Cargo sorting'], ans:1, fact:'Chris advanced from fueling aircraft to ramp supervisor to management — a classic example of using an entry-level role as the launchpad for a full aviation career.' },
+  { cat:'yab', catLabel:'Your Aviation Blueprint', q:'Shannon advised that a strong resume accomplishment bullet should explain what three things?', opts:['Title, salary, and location','What you did, how you did it, and the result','Goals, timeline, and budget','Company, team size, and outcome'], ans:1, fact:'Shannon used her own resume example — connecting culture change with a 16% year-over-year increase in engagement — to show how powerful a properly written accomplishment bullet can be.' },
+  { cat:'yab', catLabel:'Your Aviation Blueprint', q:'Kelly pursued how many management opportunities before she was finally selected?', opts:['One','Two','Multiple (more than two)','She was recruited directly'], ans:2, fact:'Kelly\'s lesson: an unsuccessful promotion attempt identifies your development gaps — it doesn\'t end your path. Each try made her stronger until she reached senior management.' },
+  { cat:'yab', catLabel:'Your Aviation Blueprint', q:'What career areas did Southwest\'s Chris say the company hires across? (Best answer)', opts:['Only ramp and customer service','Pilots and mechanics only','Ramp, customer service, tech, planning, marketing, cargo, maintenance, and more','Ground operations and security'], ans:2, fact:'Southwest is far bigger than the gate and tarmac. From cybersecurity to marketing to engineering, the airline employs people across nearly every professional field.' },
+  { cat:'yab', catLabel:'Your Aviation Blueprint', q:'John Tiliacos emphasized that career advancement most depends on what?', opts:['Having the right degree','Seniority and years of service','Strong performance, relationships, initiative, and continuing development','Being in the right place at the right time'], ans:2, fact:'John\'s career spanned Nassau, Lubbock, New Orleans, Chicago, Tampa, Dallas, and Los Angeles — each move driven by strong performance, sincere relationships, and actively pursuing opportunities.' },
+  { cat:'yab', catLabel:'Your Aviation Blueprint', q:'What did Kenny G say new Traffic Division employees should do before pursuing other departments?', opts:['Complete a college degree','Apply immediately to other openings','Get to know the airport and department before interviewing elsewhere','Request a mentor immediately'], ans:2, fact:'Kenny G\'s advice: treat your entry role as a foundation. Learn the culture, build your reputation, then move. Jumping too early without credibility can close doors instead of opening them.' },
+  // FINANCIAL LITERACY (6)
+  { cat:'fin', catLabel:'Financial Literacy', q:'A guest experience position at TPA was discussed at what reported starting hourly rate?', opts:['$17.50','$19.25','$21.49','$24.00'], ans:2, fact:'The $21.49/hr starting rate came with full benefits — a reminder to evaluate total compensation (health, retirement, advancement) not just the hourly number on the job posting.' },
+  { cat:'fin', catLabel:'Financial Literacy', q:'When evaluating a job offer, Shannon and presenters encouraged candidates to consider what beyond the hourly rate?', opts:['Uniform quality and parking','Benefits, advancement potential, and stability','The company\'s social media following','Whether the commute is free'], ans:1, fact:'Total compensation includes health insurance, retirement contributions, paid leave, and growth potential. A $21/hr job with full benefits can be worth significantly more than a $25/hr job without them.' },
+  { cat:'fin', catLabel:'Financial Literacy', q:'Ricardo\'s Red Tail Roost avionics project received a quote of approximately how much?', opts:['$12,000','$28,000','$56,000','$100,000'], ans:2, fact:'The $56,000 avionics quote — including installation labor — is part of a larger year-end fundraising objective of $100,000 to support the Red Tail Roost tribute aircraft and mission.' },
+  { cat:'fin', catLabel:'Financial Literacy', q:'What is Ricardo\'s year-end fundraising target for the Red Tail Roost project?', opts:['$25,000','$56,000','$75,000','$100,000'], ans:3, fact:'The $100,000 goal by year-end covers the avionics installation and related sponsorship needs — with the aircraft painting already complete and outreach moving into active phase.' },
+  { cat:'fin', catLabel:'Financial Literacy', q:'When TPA Career Connection discussed valuing the program\'s donated resources, what was Shannon\'s key requirement?', opts:['Get three competitive bids','Review with airport marketing and communications before publishing any dollar figure','Post the value immediately on social media','Have participants vote on the value'], ans:1, fact:'Public entities have rules around how donated experiences are described and to whom resources are allocated. Shannon\'s guidance protects both iACT and TPA from fairness and equity questions.' },
+  { cat:'fin', catLabel:'Financial Literacy', q:'Chris mentioned a Southwest Airlines program where employee volunteer hours could benefit nonprofits through what?', opts:['Cash grants','Airline ticket support','Equipment donations','Free cargo shipping'], ans:1, fact:'Southwest\'s volunteer-linked benefit program is an opportunity worth investigating — a potential source of airline ticket support for iACT\'s youth and workforce programs at no direct cost.' }
+];
+
+const tbQuestions = [
+  { diff:'moderate', q:'Kelly joined Tampa International Airport in what year?', opts:['2010','2012','2014','2016'], ans:2, reveal:'Kelly joined TPA in 2014, starting in dispatch before learning airport operations and eventually advancing to Senior Manager of the AOC.' },
+  { diff:'moderate', q:'In John Tiliacos\'s career, which city did he work in AFTER Chicago?', opts:['Los Angeles','Dallas','Tampa','New Orleans'], ans:2, reveal:'John\'s career path included Nassau → Lubbock → New Orleans → Chicago → Tampa → Dallas → Los Angeles. Tampa came after Chicago in his progression.' },
+  { diff:'hard', q:'The AOC team of 36 dispatchers is split between what two functions?', opts:['Arrivals and departures','Customer service and security','Operations dispatch and public safety dispatch','Day shift and night shift'], ans:2, reveal:'Operations dispatch handles day-to-day airport coordination. Public safety dispatch handles emergency response. Both require different training and have different entry requirements.' },
+  { diff:'hard', q:'According to the TPA Career Connection program, Pamala proposed tracking employment outcomes at what three intervals after the cohort?', opts:['2, 4, and 6 weeks','30, 60, and 90 days','3, 6, and 12 months','1 week, 1 month, 6 months'], ans:1, reveal:'The 30-60-90 day follow-up model is a workforce development standard — measuring initial placement, retention after the first month, and stability at 90 days gives the clearest picture of real outcomes.' },
+  { diff:'hardest', q:'The TPA Career Connection program discussed a future cohort start time of 9:00 a.m. for executive presentations. What was the specific improvement recommended to prevent sessions from running over?', opts:['Limit questions to one per participant','Build speaker introductions, Q&A, photographs, and transitions into the schedule','Have participants submit questions in writing only','Cut executive presentations to 15 minutes maximum'], ans:1, reveal:'The root issue wasn\'t the speakers — it was the schedule not accounting for the natural time costs of introductions, audience Q&A, group photos, and transitions between sessions. Building those in solves the problem.' }
+];
+
+const rotateFacts = [
+  'Tampa International Airport handles over 20 million passengers per year.',
+  'The Airport Operations Center runs 24/7 with dispatchers handling everything from fire alarms to lost vehicles.',
+  'Southwest Airlines operates one of the largest domestic route networks in the United States.',
+  'A 10-hour shift in TPA Traffic can give you three consecutive days off — a schedule many employees prefer.',
+  'Mission Aviation Academy\'s OAR framework builds career roadmaps extending 12+ months into the future.',
+  'Entry-level airport positions often include full benefits packages that increase total compensation significantly.',
+  'John Tiliacos started as a ticket agent and rose to Chief Operating Officer — the definition of career mobility.',
+  'The Traffic Division at TPA covers roadways, curbsides, commercial zones, and special event support.',
+  'Kelly\'s lesson: being turned down for a promotion is data, not a verdict. It tells you what to develop next.',
+  'The Red Tail Roost tribute aircraft honors the legacy of the Tuskegee Airmen and inspires the next generation.'
+];
+
+let player1 = 'You', player2 = '';
+let currentQ = 0, score = 0;
+let catScores = { ops:0, yab:0, fin:0 };
+let catTotals = { ops:0, yab:0, fin:0 };
+let answered = false, factInterval = null, factIndex = 0;
+let tbIndex = 0, tbTimer = null, tbTimeLeft = 30, tbP1Alive = true, tbP2Alive = true;
+
+questions.forEach(q => catTotals[q.cat]++);
+
+function startQuiz() {
+  player1 = document.getElementById('p1name').value.trim() || 'You';
+  player2 = document.getElementById('p2name').value.trim();
+  document.getElementById('setupScreen').style.display = 'none';
+  document.getElementById('quizScreen').style.display = 'block';
+  currentQ = 0; score = 0;
+  catScores = { ops:0, yab:0, fin:0 };
+  startFactRotation('quizFact');
+  renderQuestion();
+}
+
+function startFactRotation(elId) {
+  if (factInterval) clearInterval(factInterval);
+  const el = document.getElementById(elId);
+  if (!el) return;
+  factIndex = Math.floor(Math.random() * rotateFacts.length);
+  el.textContent = rotateFacts[factIndex];
+  factInterval = setInterval(() => {
+    el.style.opacity = '0';
+    setTimeout(() => { factIndex = (factIndex + 1) % rotateFacts.length; el.textContent = rotateFacts[factIndex]; el.style.opacity = '1'; }, 500);
+  }, 8000);
+}
+
+document.getElementById('setupFact').textContent = rotateFacts[0];
+
+function renderQuestion() {
+  if (currentQ >= questions.length) { showScore(); return; }
+  answered = false;
+  const q = questions[currentQ];
+  document.getElementById('progressLabel').textContent = `Question ${currentQ + 1} of ${questions.length}`;
+  document.getElementById('progressCount').textContent = `${score} correct`;
+  document.getElementById('progressFill').style.width = `${(currentQ / questions.length) * 100}%`;
+  const badge = document.getElementById('catBadge');
+  badge.textContent = q.catLabel;
+  badge.className = 'cat-badge cat-' + q.cat;
+  document.getElementById('questionText').textContent = q.q;
+  const wrap = document.getElementById('optionsWrap');
+  wrap.innerHTML = '';
+  ['A','B','C','D'].forEach((letter, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<span class="opt-letter">${letter}</span><span>${q.opts[i]}</span>`;
+    btn.onclick = () => selectAnswer(i);
+    wrap.appendChild(btn);
+  });
+  document.getElementById('funFactBox').className = 'fun-fact-box';
+  document.getElementById('btnNext').className = 'btn-next';
+}
+
+function selectAnswer(idx) {
+  if (answered) return;
+  answered = true;
+  const q = questions[currentQ];
+  document.querySelectorAll('.option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx) btn.classList.add('wrong');
+  });
+  if (idx === q.ans) { score++; catScores[q.cat]++; }
+  document.getElementById('progressCount').textContent = `${score} correct`;
+  document.getElementById('funFactText').textContent = q.fact;
+  document.getElementById('funFactBox').className = 'fun-fact-box show';
+  document.getElementById('btnNext').className = 'btn-next show';
+}
+
+function nextQuestion() { currentQ++; renderQuestion(); }
+
+function showScore() {
+  if (factInterval) clearInterval(factInterval);
+  document.getElementById('quizScreen').style.display = 'none';
+  document.getElementById('scoreScreen').className = 'score-screen show';
+  document.getElementById('scoreNum').textContent = score;
+  const pct = score / questions.length;
+  let msg = pct === 1 ? `Perfect score, ${player1}! You absorbed every detail from Day 2. You're mission-ready.`
+    : pct >= 0.85 ? `Outstanding, ${player1}! You were locked in all day. Strong candidate energy.`
+    : pct >= 0.70 ? `Good work, ${player1}. You caught the big ideas — review the details and you'll be unstoppable.`
+    : pct >= 0.50 ? `Nice start, ${player1}. Day 2 covered a lot of ground. Review the fun facts and try again.`
+    : `Keep pushing, ${player1}. The information is there — dig back into your notes and take another run.`;
+  document.getElementById('scoreMsg').textContent = msg;
+  document.getElementById('scoreOps').textContent = `${catScores.ops}/${catTotals.ops}`;
+  document.getElementById('scoreYab').textContent = `${catScores.yab}/${catTotals.yab}`;
+  document.getElementById('scoreFin').textContent = `${catScores.fin}/${catTotals.fin}`;
+  setTimeout(() => {
+    document.getElementById('barOps').style.width = `${(catScores.ops / catTotals.ops) * 100}%`;
+    document.getElementById('barYab').style.width = `${(catScores.yab / catTotals.yab) * 100}%`;
+    document.getElementById('barFin').style.width = `${(catScores.fin / catTotals.fin) * 100}%`;
+  }, 100);
+  if (player2) {
+    document.getElementById('btnTiebreaker').classList.add('show');
+    document.getElementById('btnTiebreaker').textContent = `⚡ Faceoff vs ${player2}`;
+  }
+}
+
+function shareScore() {
+  const txt = `I scored ${score}/${questions.length} on the TPA Career Connection Day 2 Quiz! 🏆 Test your airport knowledge at missionaviationacademy.org/quiz`;
+  if (navigator.share) {
+    navigator.share({ title: 'TPA Career Connection Quiz', text: txt, url: 'https://missionaviationacademy.org/quiz' });
+  } else {
+    navigator.clipboard.writeText(txt).then(() => alert('Score copied to clipboard!')).catch(() => alert(txt));
+  }
+}
+
+function restartQuiz() {
+  document.getElementById('scoreScreen').className = 'score-screen';
+  document.getElementById('tiebreakerScreen').className = 'tiebreaker-screen';
+  document.getElementById('winnerScreen').className = 'winner-screen';
+  document.getElementById('setupScreen').style.display = 'block';
+  document.getElementById('quizScreen').style.display = 'none';
+  document.getElementById('p1name').value = '';
+  document.getElementById('p2name').value = '';
+}
+
+function startTiebreaker() {
+  document.getElementById('scoreScreen').className = 'score-screen';
+  document.getElementById('tiebreakerScreen').className = 'tiebreaker-screen show';
+  tbIndex = 0; tbP1Alive = true; tbP2Alive = true;
+  renderTbPlayers(); renderTbQuestion();
+}
+
+function renderTbPlayers() {
+  const wrap = document.getElementById('tbPlayerStatus');
+  wrap.innerHTML = '';
+  [{ name: player1, alive: tbP1Alive }, { name: player2 || 'Opponent', alive: tbP2Alive }].forEach(p => {
+    const card = document.createElement('div');
+    const statusLabel = p.alive ? '✓ In the game' : '✗ Eliminated';
+    const statusCls = p.alive ? 'alive' : 'out';
+    card.className = 'tb-player-card' + (p.alive ? '' : ' eliminated');
+    card.innerHTML = `<div class="tb-player-name">${p.name}</div><div class="tb-player-status-label ${statusCls}">${statusLabel}</div>`;
+    wrap.appendChild(card);
+  });
+}
+
+function renderTbQuestion() {
+  if (tbIndex >= tbQuestions.length) { declareWinner('both'); return; }
+  const q = tbQuestions[tbIndex];
+  document.getElementById('tbQLabel').textContent = `Question ${tbIndex + 1} of ${tbQuestions.length}`;
+  const diffMap = { moderate:'Moderate', hard:'Hard', hardest:'Hardest' };
+  const diffCls = { moderate:'diff-moderate', hard:'diff-hard', hardest:'diff-hardest' };
+  const badge = document.getElementById('tbDiffBadge');
+  badge.textContent = diffMap[q.diff]; badge.className = 'tb-difficulty ' + diffCls[q.diff];
+  document.getElementById('tbQuestionText').textContent = q.q;
+  document.getElementById('tbRevealBox').className = 'tb-reveal-box';
+  document.getElementById('btnTbNext').disabled = true;
+  const wrap = document.getElementById('tbOptionsWrap');
+  wrap.innerHTML = '';
+  ['A','B','C','D'].forEach((letter, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'tb-option-btn';
+    btn.innerHTML = `<span class="opt-letter">${letter}</span><span>${q.opts[i]}</span>`;
+    btn.onclick = () => selectTbAnswer(i);
+    wrap.appendChild(btn);
+  });
+  startTbTimer();
+}
+
+function startTbTimer() {
+  if (tbTimer) clearInterval(tbTimer);
+  tbTimeLeft = 30; updateTbTimer();
+  tbTimer = setInterval(() => { tbTimeLeft--; updateTbTimer(); if (tbTimeLeft <= 0) { clearInterval(tbTimer); autoRevealTb(); } }, 1000);
+}
+
+function updateTbTimer() {
+  const fill = document.getElementById('tbTimerFill');
+  document.getElementById('tbTimerCount').textContent = tbTimeLeft;
+  fill.style.width = `${(tbTimeLeft / 30) * 100}%`;
+  fill.className = 'tb-timer-fill' + (tbTimeLeft <= 5 ? ' danger' : tbTimeLeft <= 10 ? ' warning' : '');
+}
+
+function autoRevealTb() {
+  const q = tbQuestions[tbIndex];
+  document.querySelectorAll('.tb-option-btn').forEach((btn, i) => { btn.disabled = true; if (i === q.ans) btn.classList.add('correct'); });
+  document.getElementById('tbRevealText').textContent = `Time's up! Correct answer: ${['A','B','C','D'][q.ans]}. ${q.reveal}`;
+  document.getElementById('tbRevealBox').className = 'tb-reveal-box show';
+  document.getElementById('btnTbNext').disabled = false;
+}
+
+function selectTbAnswer(idx) {
+  if (tbTimer) clearInterval(tbTimer);
+  const q = tbQuestions[tbIndex];
+  document.querySelectorAll('.tb-option-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    else if (i === idx) btn.classList.add('wrong');
+  });
+  const correct = idx === q.ans;
+  document.getElementById('tbRevealText').textContent = correct
+    ? `Correct! ${q.reveal}`
+    : `Incorrect. The correct answer was ${['A','B','C','D'][q.ans]}. ${q.reveal}`;
+  document.getElementById('tbRevealBox').className = 'tb-reveal-box show';
+  document.getElementById('btnTbNext').disabled = false;
+  if (!correct) {
+    const ctrl = document.querySelector('.tb-controls');
+    if (!document.getElementById('btnElimP1')) {
+      const b1 = document.createElement('button');
+      b1.id = 'btnElimP1'; b1.className = 'btn-tb'; b1.style.background = '#CC0000'; b1.style.color = '#fff';
+      b1.textContent = `Eliminate ${player1}`;
+      b1.onclick = () => { tbP1Alive = false; renderTbPlayers(); b1.remove(); const b2e = document.getElementById('btnElimP2'); if (b2e) b2e.remove(); };
+      ctrl.appendChild(b1);
+    }
+    if (!document.getElementById('btnElimP2')) {
+      const b2 = document.createElement('button');
+      b2.id = 'btnElimP2'; b2.className = 'btn-tb'; b2.style.background = '#CC0000'; b2.style.color = '#fff';
+      b2.textContent = `Eliminate ${player2 || 'Opponent'}`;
+      b2.onclick = () => { tbP2Alive = false; renderTbPlayers(); b2.remove(); const b1e = document.getElementById('btnElimP1'); if (b1e) b1e.remove(); };
+      ctrl.appendChild(b2);
+    }
+  }
+}
+
+function nextTbQuestion() {
+  const b1 = document.getElementById('btnElimP1'); const b2 = document.getElementById('btnElimP2');
+  if (b1) b1.remove(); if (b2) b2.remove();
+  if (!tbP1Alive && !tbP2Alive) { declareWinner('both-out'); return; }
+  if (!tbP1Alive) { declareWinner('p2'); return; }
+  if (!tbP2Alive) { declareWinner('p1'); return; }
+  tbIndex++;
+  if (tbIndex >= tbQuestions.length) { declareWinner('both'); return; }
+  renderTbQuestion();
+}
+
+function declareWinner(result) {
+  if (tbTimer) clearInterval(tbTimer);
+  document.getElementById('tiebreakerScreen').className = 'tiebreaker-screen';
+  document.getElementById('winnerScreen').className = 'winner-screen show';
+  let name, sub;
+  if (result === 'p1') { name = player1; sub = `${player2 || 'Opponent'} was eliminated. ${name} is the TPA Career Connection Day 2 Champion!`; }
+  else if (result === 'p2') { name = player2 || 'Opponent'; sub = `${player1} was eliminated. ${name} is the TPA Career Connection Day 2 Champion!`; }
+  else if (result === 'both') { name = "IT'S A DRAW!"; sub = 'Both players survived all 5 questions. Host awards the win based on speed on Question 5.'; }
+  else { name = 'No Winner'; sub = 'Both players were eliminated. Try again!'; }
+  document.getElementById('winnerName').textContent = name;
+  document.getElementById('winnerSub').textContent = sub;
+}
+</script>
+</body>
+</html>
