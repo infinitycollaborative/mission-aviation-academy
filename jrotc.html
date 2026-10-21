@@ -41,9 +41,14 @@
     .tier-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 10px; }
     .tier-name { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
     .tier-desc { font-size: 12px; line-height: 1.7; opacity: 0.8; }
-    .testimonial { background: #001838; border-radius: 12px; padding: 28px; margin-bottom: 52px; }
+    .testimonial { background: #001838; border-radius: 12px; padding: 28px; margin-bottom: 52px; display: flex; gap: 22px; align-items: flex-start; }
+    .tai-logo-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .tai-logo-wrap img { width: 80px; height: 80px; object-fit: contain; border-radius: 50%; }
+    .tai-logo-label { font-size: 8px; font-weight: 700; letter-spacing: 1px; color: rgba(255,255,255,0.3); text-align: center; text-transform: uppercase; line-height: 1.4; max-width: 80px; }
+    .testimonial-body { flex: 1; }
     .testimonial-quote { font-size: 17px; font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.7; margin: 0 0 14px; }
     .testimonial-attr { font-size: 12px; color: rgba(255,255,255,0.45); }
+    @media (max-width: 500px) { .testimonial { flex-direction: column; } .tai-logo-wrap { flex-direction: row; gap: 10px; align-items: center; } .tai-logo-label { max-width: none; } }
     .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-navy { background: #001838; color: #FFD700; font-weight: 800; font-size: 13px; padding: 13px 22px; border-radius: 7px; text-decoration: none; }
     .btn-outline { background: transparent; border: 2px solid #001838; color: #001838; font-weight: 700; font-size: 13px; padding: 11px 20px; border-radius: 7px; text-decoration: none; }
@@ -196,8 +201,14 @@
 
   <!-- TESTIMONIAL -->
   <div class="testimonial">
-    <div class="testimonial-quote">"When I was young, nobody handed me a roadmap. I figured it out by failing, by showing up, and by finding mentors who saw something in me I didn't always see in myself. Lt. Col. George Hardy soloed at Tuskegee when the system said he couldn't. That legacy runs through this program."</div>
-    <div class="testimonial-attr">— LCDR Ricardo "Tattoo" Foster, USN (Ret.) · Founder, Mission Aviation Academy · Mentored by Tuskegee Airmen Lt. Col. George Hardy (Class 44-H-SE, 332nd Fighter Group)</div>
+    <div class="tai-logo-wrap">
+      <img src="/images/tai-chappie-logo.jpg" alt="Tuskegee Airmen Inc. Gen. Daniel Chappie James Jr. Chapter logo">
+      <div class="tai-logo-label">Tuskegee Airmen Inc.<br>Chappie James Chapter</div>
+    </div>
+    <div class="testimonial-body">
+      <div class="testimonial-quote">"When I was young, nobody handed me a roadmap. I figured it out by failing, by showing up, and by finding mentors who saw something in me I didn't always see in myself. Lt. Col. George Hardy soloed at Tuskegee when the system said he couldn't. That legacy runs through this program."</div>
+      <div class="testimonial-attr">— LCDR Ricardo "Tattoo" Foster, USN (Ret.) · Founder, Mission Aviation Academy · Mentored by Tuskegee Airmen Lt. Col. George Hardy (Class 44-H-SE, 332nd Fighter Group)</div>
+    </div>
   </div>
 
   <!-- CTA -->
