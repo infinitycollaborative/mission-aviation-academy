@@ -64,47 +64,6 @@
 html { font-size: 18px; scroll-behavior: smooth; }
 body { font-family: Georgia, serif; color: var(--text); background: var(--white); line-height: 1.65; }
 
-/* ── NAV ── */
-nav {
-  background: var(--navy);
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 58px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.nav-brand {
-  color: var(--gold);
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: .9rem;
-  text-decoration: none;
-  letter-spacing: .02em;
-}
-.nav-links {
-  display: flex;
-  gap: 1.8rem;
-  list-style: none;
-}
-.nav-links a {
-  color: rgba(255,255,255,.75);
-  font-family: Arial, sans-serif;
-  font-size: .82rem;
-  text-decoration: none;
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--gold); }
-.nav-cta {
-  background: var(--gold);
-  color: var(--navy) !important;
-  font-weight: bold !important;
-  padding: .35rem .9rem;
-  color: var(--navy);
-}
-.nav-cta:hover { background: #a87e1a; color: var(--white) !important; }
 
 /* ── HERO ── */
 .hero {
@@ -652,21 +611,7 @@ footer p {
 }
 footer a { color: var(--gold); text-decoration: none; }
 
-/* HAMBURGER */
-.maa-nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;}
-.maa-nav-toggle span{display:block;height:2px;background:var(--gold);border-radius:2px;}
-
 /* ── MOBILE ── */
-/* Nav collapses to the hamburger before the links run out of room */
-@media (max-width: 1300px) {
-  nav { padding: 0 1rem; position: relative; }
-  .maa-nav-toggle { display: flex; }
-  .nav-links { display: none; }
-  .nav-links.nav-open{display:flex;flex-direction:column;position:absolute;top:58px;left:0;right:0;background:#0D2240;padding:1.2rem 2rem 1.8rem;gap:0;box-shadow:0 6px 16px rgba(0,0,0,.4);z-index:99;border-top:1px solid rgba(255,255,255,.1);}
-  .nav-links.nav-open li{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.07);list-style:none;}
-  .nav-links.nav-open li:last-child{border-bottom:none;padding-top:.9rem;}
-  .nav-links.nav-open a{font-size:1rem;color:rgba(255,255,255,.85);}
-}
 @media (max-width: 768px) {
   section { padding: 3rem 1.2rem; }
   .time-block { grid-template-columns: 80px 1fr; }

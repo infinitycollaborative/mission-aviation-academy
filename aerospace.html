@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Aerospace Engineering — Mission Aviation Academy</title>
+  <meta name="description" content="Mission Aviation Academy's Aerospace Engineering program — launching 2027. Register your interest to be first notified when enrollment opens."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="/maa-nav.js"></script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
+
+    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 72px 24px 64px; text-align: center; }
+    .hero-inner { max-width: 700px; margin: 0 auto; }
+    .badge { display: inline-block; background: #555; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 2px; padding: 5px 14px; border-radius: 4px; margin-bottom: 20px; text-transform: uppercase; }
+    .hero h1 { font-size: 44px; font-weight: 900; color: #fff; margin: 0 0 18px; line-height: 1.05; }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.68); line-height: 1.75; margin: 0 auto 32px; max-width: 520px; }
+
+    .page-body { max-width: 720px; margin: 0 auto; padding: 64px 24px; }
+
+    .coming-card {
+      background: #f9fafb; border: 2px solid #e5e7eb; border-radius: 16px;
+      padding: 48px 40px; text-align: center; margin-bottom: 48px;
+    }
+    .coming-icon { font-size: 56px; margin-bottom: 20px; display: block; }
+    .coming-card h2 { font-size: 28px; font-weight: 900; color: #001838; margin: 0 0 14px; }
+    .coming-card p { font-size: 15px; color: #4b5563; line-height: 1.8; margin: 0 0 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+    .interest-form { background: #001838; border-radius: 12px; padding: 36px 32px; margin-bottom: 48px; }
+    .interest-form h2 { font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 6px; }
+    .interest-form .sub { font-size: 13px; color: rgba(255,255,255,0.6); margin: 0 0 24px; line-height: 1.6; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.75); margin-bottom: 5px; }
+    .form-group input, .form-group select {
+      width: 100%; padding: 10px 13px; border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px; background: rgba(255,255,255,0.07); color: #fff;
+      font-size: 13px; font-family: 'Inter', Arial, sans-serif; box-sizing: border-box;
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #FFD700; }
+    .form-group select option { background: #001838; }
+    .submit-btn {
+      width: 100%; background: #FFD700; color: #001838; font-weight: 800;
+      font-size: 14px; padding: 13px; border: none; border-radius: 7px;
+      cursor: pointer; font-family: 'Inter', Arial, sans-serif; margin-top: 6px;
+      transition: opacity 0.2s;
+    }
+    .submit-btn:hover { opacity: 0.88; }
+    .form-legal { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 10px; text-align: center; }
+
+    .success-box { display: none; background: #001838; border: 2px solid #FFD700; border-radius: 12px; padding: 36px; text-align: center; margin-bottom: 48px; }
+    .success-box.visible { display: block; }
+    .success-box h2 { font-size: 20px; font-weight: 800; color: #FFD700; margin: 0 0 10px; }
+    .success-box p { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.7; margin: 0; }
+
+    .preview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-bottom: 48px; }
+    .preview-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px; }
+    .preview-card-icon { font-size: 24px; margin-bottom: 8px; }
+    .preview-card-title { font-size: 13px; font-weight: 800; color: #001838; margin-bottom: 4px; }
+    .preview-card-desc { font-size: 12px; color: #6b7280; line-height: 1.6; }
+
+    .nowlink-box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+    .nowlink-box h3 { font-size: 16px; font-weight: 800; color: #001838; margin: 0 0 4px; }
+    .nowlink-box p { font-size: 13px; color: #6b7280; margin: 0; line-height: 1.6; }
+    .btn-navy { background: #001838; color: #FFD700; font-weight: 800; font-size: 13px; padding: 12px 22px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+
+    .site-footer { background: #001838; padding: 24px 40px; }
+    .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 30px; }
+      .coming-card { padding: 32px 20px; }
+      .interest-form { padding: 24px 18px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge">Coming 2027</div>
+    <h1>Aerospace Engineering</h1>
+    <p class="hero-sub">Mission Aviation Academy is developing a dedicated Aerospace Engineering program — connecting students to one of the highest-demand, highest-paying career tracks in aviation and space. Register your interest below.</p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <div class="coming-card">
+    <span class="coming-icon">🚀</span>
+    <h2>Launching 2027</h2>
+    <p>The Aerospace Engineering program is in active development. Curriculum, partnerships, and enrollment details will be announced in 2027. Students who register interest will be first to know.</p>
+  </div>
+
+  <!-- INTEREST FORM -->
+  <div class="success-box" id="successBox">
+    <h2>You're registered.</h2>
+    <p>We'll notify you as soon as enrollment details and the 2027 launch date are confirmed. In the meantime, join us any Saturday at Tampa North Aero Park (X39) — programs run every week.</p>
+  </div>
+
+  <form class="interest-form" id="interestForm" onsubmit="submitInterest(event)">
+    <h2>Register Your Interest</h2>
+    <p class="sub">Be first notified when the Aerospace Engineering program opens enrollment. No commitment required.</p>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">First Name *</label>
+        <input type="text" id="firstName" placeholder="First name" required/>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name *</label>
+        <input type="text" id="lastName" placeholder="Last name" required/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" placeholder="your@email.com" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="grade">Current Grade / Status *</label>
+      <select id="grade" required>
+        <option value="">Select one</option>
+        <option>Middle School (6–8)</option>
+        <option>High School (9–12)</option>
+        <option>College / University</option>
+        <option>Working Professional</option>
+        <option>Parent / Guardian</option>
+        <option>Educator</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">Notify Me When It Launches →</button>
+    <p class="form-legal">Your information is used only to notify you about the Aerospace Engineering program. EIN 85-1110607 · 501(c)(3)</p>
+  </form>
+
+  <!-- PREVIEW -->
+  <div style="margin-bottom: 20px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:#9ca3af;text-transform:uppercase;margin-bottom:16px;">Program Preview — Subject to Change</div>
+    <div class="preview-grid">
+      <div class="preview-card">
+        <div class="preview-card-icon">🛸</div>
+        <div class="preview-card-title">Aerospace Fundamentals</div>
+        <div class="preview-card-desc">Orbital mechanics, propulsion systems, materials science, and aerospace structures.</div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-card-icon">🤖</div>
+        <div class="preview-card-title">Drone &amp; UAS Engineering</div>
+        <div class="preview-card-desc">UAS design, autopilot systems, payload integration, and Part 107 certification pathway.</div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-card-icon">💻</div>
+        <div class="preview-card-title">AI &amp; Avionics</div>
+        <div class="preview-card-desc">Embedded systems, avionics fundamentals, and AI applications in aerospace operations.</div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-card-icon">📐</div>
+        <div class="preview-card-title">Engineering Design</div>
+        <div class="preview-card-desc">CAD, prototyping, testing methodologies, and aerospace project management.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAMS NOW -->
+  <div class="nowlink-box">
+    <div>
+      <h3>Programs available right now</h3>
+      <p>Ground school, discovery flights, drone/UAS, AI Innovation, and the full SUFS-funded pilot pathway — every Saturday at X39.</p>
+    </div>
+    <a href="/programs" class="btn-navy">See All Programs →</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p class="footer-legal">Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit · EIN 85-1110607 · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate</p>
+</footer>
+
+<script>
+async function submitInterest(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  const payload = {
+    _subject: `Aerospace 2027 Interest — ${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+    name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+    email: document.getElementById('email').value,
+    grade: document.getElementById('grade').value,
+    type: 'Aerospace Engineering 2027 Interest',
+  };
+
+  try {
+    await fetch('https://formspree.io/f/maeqejkp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  } catch(err) {
+    console.error('Submission error:', err);
+  }
+
+  document.getElementById('interestForm').style.display = 'none';
+  document.getElementById('successBox').classList.add('visible');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

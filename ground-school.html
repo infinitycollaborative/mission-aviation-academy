@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Ground School — Mission Aviation Academy</title>
+  <meta name="description" content="FAA Private Pilot Knowledge Test prep and ground school at Mission Aviation Academy. SUFS-funded. Part of the full aviation pathway from zero to certificate at Tampa North Aero Park (X39)."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="/maa-nav.js"></script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
+
+    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 56px 24px 48px; }
+    .hero-inner { max-width: 900px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #FFD700; margin-bottom: 14px; text-transform: uppercase; }
+    .hero h1 { font-size: 42px; font-weight: 900; color: #fff; margin: 0 0 14px; line-height: 1.05; }
+    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.75; margin: 0 0 28px; max-width: 580px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-gold { background: #FFD700; color: #001838; font-weight: 800; font-size: 13px; padding: 13px 24px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+    .btn-outline { background: transparent; color: rgba(255,255,255,0.8); border: 2px solid rgba(255,255,255,0.3); font-weight: 700; font-size: 13px; padding: 13px 24px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+
+    .page-body { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+
+    /* STAT ROW */
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-bottom: 60px; }
+    .stat-card { background: #001838; border-radius: 10px; padding: 22px; text-align: center; }
+    .stat-number { font-size: 34px; font-weight: 900; color: #FFD700; line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+    /* PATHWAY */
+    .section { margin-bottom: 56px; }
+    .section-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #FFD700; text-transform: uppercase; margin-bottom: 10px; background: #001838; display: inline-block; padding: 4px 12px; border-radius: 3px; }
+    .section h2 { font-size: 26px; font-weight: 800; color: #001838; margin: 0 0 18px; line-height: 1.15; }
+    .section p { font-size: 15px; color: #374151; line-height: 1.85; margin-bottom: 14px; }
+
+    .pathway { display: flex; flex-direction: column; gap: 0; margin: 28px 0; }
+    .pathway-step { display: flex; gap: 18px; align-items: flex-start; }
+    .step-connector { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: #001838; color: #FFD700; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-line { width: 2px; flex: 1; background: #e5e7eb; min-height: 28px; margin: 4px 0; }
+    .step-content { padding-bottom: 24px; flex: 1; }
+    .step-title { font-size: 15px; font-weight: 800; color: #001838; margin-bottom: 4px; }
+    .step-desc { font-size: 13px; color: #6b7280; line-height: 1.6; }
+    .step-badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 2px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle; }
+
+    /* TOPICS */
+    .topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 24px 0 40px; }
+    .topic-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px 20px; }
+    .topic-icon { font-size: 22px; margin-bottom: 8px; }
+    .topic-title { font-size: 14px; font-weight: 800; color: #001838; margin-bottom: 4px; }
+    .topic-desc { font-size: 12px; color: #6b7280; line-height: 1.6; }
+
+    /* SUFS BOX */
+    .sufs-box { background: #f0fdf4; border: 2px solid #16a34a; border-radius: 12px; padding: 28px 32px; margin-bottom: 40px; display: flex; gap: 20px; align-items: flex-start; }
+    .sufs-icon { font-size: 32px; flex-shrink: 0; }
+    .sufs-content h3 { font-size: 18px; font-weight: 800; color: #15803d; margin: 0 0 8px; }
+    .sufs-content p { font-size: 14px; color: #374151; line-height: 1.7; margin: 0; }
+    .sufs-content a { color: #15803d; font-weight: 700; }
+
+    /* CTA BOX */
+    .cta-box { background: #001838; border-radius: 12px; padding: 36px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+    .cta-box h3 { font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 6px; }
+    .cta-box p { font-size: 13px; color: rgba(255,255,255,0.65); margin: 0; line-height: 1.6; }
+    .cta-btns { display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0; }
+
+    .site-footer { background: #001838; padding: 24px 40px; }
+    .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 30px; }
+      .sufs-box { flex-direction: column; gap: 12px; }
+      .cta-box { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Programs · Ground School</div>
+    <h1>Ground School &amp; FAA Knowledge Test Prep</h1>
+    <p class="hero-sub">The first certificate you earn is in your head. Ground school builds the aeronautical knowledge required for the FAA Private Pilot Knowledge Test — and every test that follows. SUFS-eligible. Part of the full MAA pathway at X39.</p>
+    <div class="hero-ctas">
+      <a href="/saturday#rsvp" class="btn-gold">Start This Saturday →</a>
+      <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-outline">Talk to Admissions →</a>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- STATS -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-number">730+</div>
+      <div class="stat-label">FAA credentials issued by MAA graduates</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">60</div>
+      <div class="stat-label">Questions on the FAA Private Pilot Knowledge Test</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">$8,000</div>
+      <div class="stat-label">SUFS value per student per cycle — covers ground school</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">1,380+</div>
+      <div class="stat-label">Students flown at Tampa North Aero Park (X39)</div>
+    </div>
+  </div>
+
+  <!-- PATHWAY -->
+  <div class="section">
+    <div class="section-eyebrow">The Pathway</div>
+    <h2>From Zero to Certificate</h2>
+    <p>Ground school is the knowledge foundation for every certificate in aviation. At MAA, it's integrated into the full pathway — from your first Saturday visit to your Private Pilot Certificate and beyond.</p>
+
+    <div class="pathway">
+      <div class="pathway-step">
+        <div class="step-connector">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Saturday Open House <span class="step-badge" style="background:#1A5C2A;color:#fff;">Free</span></div>
+          <div class="step-desc">Meet the team, tour the facility at X39, and take a discovery flight. No experience needed. Ages 13+.</div>
+        </div>
+      </div>
+      <div class="pathway-step">
+        <div class="step-connector">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Ground School &amp; Knowledge Test Prep <span class="step-badge" style="background:#001838;color:#FFD700;">You Are Here</span></div>
+          <div class="step-desc">FAA-required aeronautical knowledge: regulations, weather, navigation, aerodynamics, aircraft systems, airport operations. Covers the 60-question Private Pilot Knowledge Test and prepares students for Instrument, Commercial, and beyond.</div>
+        </div>
+      </div>
+      <div class="pathway-step">
+        <div class="step-connector">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Discovery Flight</div>
+          <div class="step-desc">Hands-on time in the cockpit of N7480X, our 1960 Cessna 172B at Tampa North Aero Park. First flight credit applied toward your training.</div>
+        </div>
+      </div>
+      <div class="pathway-step">
+        <div class="step-connector">
+          <div class="step-num">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Student Pilot Certificate</div>
+          <div class="step-desc">FAA medical, solo flight requirements, and first solo. The moment the runway becomes yours.</div>
+        </div>
+      </div>
+      <div class="pathway-step">
+        <div class="step-connector">
+          <div class="step-num">5</div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Private Pilot Certificate &amp; Beyond</div>
+          <div class="step-desc">Instrument Rating, Commercial Certificate, CFI, ATP — the full stack. MAA tracks every credential earned.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPICS -->
+  <div class="section">
+    <div class="section-eyebrow">Curriculum</div>
+    <h2>What Ground School Covers</h2>
+    <p>The FAA Private Pilot Knowledge Test draws from these subject areas. MAA ground school builds a working understanding of each — not just test answers, but real aeronautical knowledge you'll carry in the cockpit.</p>
+
+    <div class="topics-grid">
+      <div class="topic-card">
+        <div class="topic-icon">📋</div>
+        <div class="topic-title">Federal Aviation Regulations</div>
+        <div class="topic-desc">FARs governing private pilot operations, airspace, right-of-way, and currency requirements.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">🌤</div>
+        <div class="topic-title">Weather &amp; Meteorology</div>
+        <div class="topic-desc">METARs, TAFs, AIRMETs, SIGMETs, fronts, thunderstorms, icing, and pilot weather decisions.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">🗺</div>
+        <div class="topic-title">Navigation</div>
+        <div class="topic-desc">Sectional charts, VOR, GPS, dead reckoning, pilotage, and cross-country flight planning.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">✈️</div>
+        <div class="topic-title">Aerodynamics</div>
+        <div class="topic-desc">Lift, drag, thrust, weight, stalls, spins, performance, weight and balance calculations.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">⚙️</div>
+        <div class="topic-title">Aircraft Systems</div>
+        <div class="topic-desc">Powerplant, fuel, electrical, pitot-static, flight instruments, and emergency procedures.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">🏁</div>
+        <div class="topic-title">Airport &amp; Airspace</div>
+        <div class="topic-desc">Class A–G airspace, NOTAMs, airport signs, lighting, traffic patterns, and radio procedures.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">🧠</div>
+        <div class="topic-title">Human Factors &amp; Physiology</div>
+        <div class="topic-desc">Hypoxia, spatial disorientation, fatigue, aeronautical decision-making (ADM), and CRM.</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">🔢</div>
+        <div class="topic-title">Performance &amp; E6B</div>
+        <div class="topic-desc">Takeoff/landing distances, density altitude, fuel planning, and flight computer calculations.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUFS -->
+  <div class="sufs-box">
+    <div class="sufs-icon">💰</div>
+    <div class="sufs-content">
+      <h3>SUFS Scholarship Covers Ground School</h3>
+      <p>Florida's Student Upgrade to Professional Services (SUFS) scholarship funds up to <strong>$8,000 per student per cycle</strong> — covering ground school tuition, materials, and flight hours toward your certificate. MAA enrolls eligible students in SUFS as part of the pathway. <a href="/scholarships">Learn more about scholarships →</a></p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div>
+      <h3>Ready to start ground school?</h3>
+      <p>Every Saturday at Tampa North Aero Park (X39) · 4639 Birdsong Blvd, Lutz FL 33559<br>admissions@missionaviationacademy.org · (813) 445-8889</p>
+    </div>
+    <div class="cta-btns">
+      <a href="/saturday#rsvp" class="btn-gold">RSVP for Saturday →</a>
+      <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,0.1);color:#fff;font-weight:700;font-size:13px;padding:13px 24px;border-radius:7px;text-decoration:none;white-space:nowrap;">Talk to Admissions →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p class="footer-legal">Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit · EIN 85-1110607 · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate</p>
+</footer>
+</body>
+</html>

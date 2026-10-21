@@ -51,3 +51,16 @@ Disclaimer: `iACT/MAA is not a certificated flight school and does not hold an F
 
 ## Sitemap
 `sitemap.xml` in project root — add every new page at the correct priority.
+
+## PERIODIC COMPREHENSIVE AUDIT — run when asked, or at the start of a new session
+Beyond the per-change audit script, run a full gap check covering:
+
+1. **Nav vs. files** — every href in `maa-nav.js` NAV_DATA must have a corresponding `.html` file. Missing = live 404.
+2. **Sitemap vs. files** — every public-facing `.html` file should have a `<url>` entry in `sitemap.xml`. Exceptions: 404.html, thanks-*.html, *-intake.html, redirect-only files.
+3. **`maa-nav.js` presence** — every `.html` file (except redirect-only pages and 404.html) must load `<script src="/maa-nav.js"></script>` in `<head>`.
+4. **EIN in footer** — every public-facing page must include EIN 85-1110607 and the 501(c)(3) / Part 61 disclaimer. Exceptions: redirect-only pages, 404.html, thanks pages.
+5. **Dead nav CSS** — no page should have a `nav { }` element-selector CSS rule or old `.site-nav` / `.maa-site-nav` class blocks. These conflict with the maa-nav.js injected nav element.
+6. **Meta descriptions** — every public-facing page needs `<meta name="description" content="..."/>`.
+7. **Stale/past-event pages** — pages tied to concluded events should redirect or be updated.
+
+Report findings grouped as 🔴 HIGH (live 404, missing nav), 🟡 MEDIUM (EIN, old CSS, meta desc), 🟢 LOW (sitemap gaps for non-public pages). Recommend fixes in priority order.
