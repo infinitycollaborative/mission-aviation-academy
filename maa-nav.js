@@ -148,6 +148,8 @@
         { href: '/community',        label: 'Community & Events' },
         { href: '/stories',          label: 'Student Stories' },
         { href: '/tour',             label: 'Tour Schedule' },
+        { sep: true },
+        { href: '/tuskegee',         label: 'Tuskegee Airmen Heritage' },
       ]
     },
     { label: 'About', href: '/about' },
