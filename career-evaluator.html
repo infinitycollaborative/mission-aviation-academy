@@ -11,8 +11,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 :root {
-  --navy:#001838; --navy-deep:#001838; --red:#8B0000; --red-dark:#6B0000;
-  --gold:#FFD700; --gold-faint:#FFFDE7; --white:#FFFFFF;
+  --navy:#0D2240; --navy-deep:#0D2240; --red:#8B0000; --red-dark:#6B0000;
+  --gold:#C9A227; --gold-faint:#FFFDE7; --white:#FFFFFF;
   --g50:#F7F8FA; --g100:#ECEEF2; --g300:#D1D5DB; --g500:#6B7280; --g700:#374151; --g900:#111827;
   --green:#16A34A; --scarlet:#DC2626;
   --fh:'Rajdhani',sans-serif; --fb:'Inter',sans-serif;
@@ -27,7 +27,7 @@ body{font-family:var(--fb);background:var(--g50);color:var(--g900);min-height:10
 body::before{content:'';position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:200;background:var(--navy-deep);}
 
 /* HDR */
-.hdr{background:var(--navy-deep);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;top:env(safe-area-inset-top,0px);z-index:100;border-bottom:3px solid #FFD700;gap:10px;}
+.hdr{background:var(--navy-deep);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;top:env(safe-area-inset-top,0px);z-index:100;border-bottom:3px solid #C9A227;gap:10px;}
 .logo{display:flex;align-items:center;gap:8px;flex-shrink:0;}
 .logo-mark{width:32px;height:32px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:700;font-size:16px;color:var(--navy);flex-shrink:0;}
 .logo-name{font-family:var(--fh);font-size:13px;font-weight:600;color:var(--white);line-height:1.2;}
@@ -311,7 +311,7 @@ input[type=range]{width:100%;accent-color:var(--navy);height:6px;}
   .rpt-sec h3 { color:#000; font-size:14pt; }
   .rpt-sec p { font-size:10pt; color:#222; }
   body { background:#fff; font-size:10pt; }
-  .rpt-hero { background:#fff !important; border-bottom:2pt solid #001838; padding:12px 0; }
+  .rpt-hero { background:#fff !important; border-bottom:2pt solid #0D2240; padding:12px 0; }
   .rpt-hero h2, .rpt-hero p { color:#000 !important; }
   .v-badge { border:1pt solid #000 !important; color:#000 !important; background:none !important; }
   .golden-card { background:#f5f5f5 !important; color:#000; border:1pt solid #ccc; }
@@ -339,7 +339,7 @@ input[type=range]{width:100%;accent-color:var(--navy);height:6px;}
     <button class="hdr-tab on" id="tab-eval" onclick="switchTab('eval')">Career Eval</button>
     <button class="hdr-tab" id="tab-cw" onclick="switchTab('cw')">MAA Experience</button>
     <button class="hdr-qr" onclick="showScreen('s-qr');buildQR()">⬛ QR</button>
-    <a href="/saturday#rsvp" style="background:#FFD700;color:#001838;font-size:11px;font-weight:700;padding:7px 13px;border-radius:5px;text-decoration:none;white-space:nowrap;flex-shrink:0;">Start Your Flight Path</a>
+    <a href="/saturday#rsvp" style="background:#C9A227;color:#0D2240;font-size:11px;font-weight:700;padding:7px 13px;border-radius:5px;text-decoration:none;white-space:nowrap;flex-shrink:0;">Start Your Flight Path</a>
   </div>
 </header>
 <div class="progress-strip" id="pStrip"><div class="progress-fill" id="pFill"></div></div>
@@ -1058,7 +1058,7 @@ function buildQR() {
   const canvas=document.getElementById('qrCanvas');
   if (canvas.innerHTML) return; // already built
   try {
-    new QRCode(canvas,{text:url,width:220,height:220,colorDark:'#001838',colorLight:'#FFFFFF',correctLevel:QRCode.CorrectLevel.H});
+    new QRCode(canvas,{text:url,width:220,height:220,colorDark:'#0D2240',colorLight:'#FFFFFF',correctLevel:QRCode.CorrectLevel.H});
   } catch(e) { canvas.innerHTML='<p style="color:var(--g500);font-size:12px">QR library loading… reload if needed.</p>'; }
 }
 function downloadQR() {
@@ -1082,7 +1082,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
   <!-- MAA Legal Footer -->
-  <div style="background:#001838;color:rgba(255,255,255,0.4);font-size:11px;text-align:center;padding:16px 24px;border-top:1px solid rgba(255,215,0,0.15);">
+  <div style="background:#0D2240;color:rgba(255,255,255,0.4);font-size:11px;text-align:center;padding:16px 24px;border-top:1px solid rgba(255,215,0,0.15);">
     Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit · EIN 85-1110607 · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate · admissions@missionaviationacademy.org · (813) 445-8889 · (833) FLY-STEM
   </div>
 </body>

@@ -14,7 +14,7 @@
   <style>
     body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
 
-    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 72px 24px 64px; text-align: center; }
+    .hero { background: #0D2240; border-bottom: 4px solid #C9A227; padding: 72px 24px 64px; text-align: center; }
     .hero-inner { max-width: 700px; margin: 0 auto; }
     .badge { display: inline-block; background: #555; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 2px; padding: 5px 14px; border-radius: 4px; margin-bottom: 20px; text-transform: uppercase; }
     .hero h1 { font-size: 44px; font-weight: 900; color: #fff; margin: 0 0 18px; line-height: 1.05; }
@@ -27,10 +27,10 @@
       padding: 48px 40px; text-align: center; margin-bottom: 48px;
     }
     .coming-icon { font-size: 56px; margin-bottom: 20px; display: block; }
-    .coming-card h2 { font-size: 28px; font-weight: 900; color: #001838; margin: 0 0 14px; }
+    .coming-card h2 { font-size: 28px; font-weight: 900; color: #0D2240; margin: 0 0 14px; }
     .coming-card p { font-size: 15px; color: #4b5563; line-height: 1.8; margin: 0 0 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
 
-    .interest-form { background: #001838; border-radius: 12px; padding: 36px 32px; margin-bottom: 48px; }
+    .interest-form { background: #0D2240; border-radius: 12px; padding: 36px 32px; margin-bottom: 48px; }
     .interest-form h2 { font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 6px; }
     .interest-form .sub { font-size: 13px; color: rgba(255,255,255,0.6); margin: 0 0 24px; line-height: 1.6; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
@@ -42,10 +42,10 @@
       font-size: 13px; font-family: 'Inter', Arial, sans-serif; box-sizing: border-box;
     }
     .form-group input::placeholder { color: rgba(255,255,255,0.3); }
-    .form-group input:focus, .form-group select:focus { outline: none; border-color: #FFD700; }
-    .form-group select option { background: #001838; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #C9A227; }
+    .form-group select option { background: #0D2240; }
     .submit-btn {
-      width: 100%; background: #FFD700; color: #001838; font-weight: 800;
+      width: 100%; background: #C9A227; color: #0D2240; font-weight: 800;
       font-size: 14px; padding: 13px; border: none; border-radius: 7px;
       cursor: pointer; font-family: 'Inter', Arial, sans-serif; margin-top: 6px;
       transition: opacity 0.2s;
@@ -53,23 +53,23 @@
     .submit-btn:hover { opacity: 0.88; }
     .form-legal { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 10px; text-align: center; }
 
-    .success-box { display: none; background: #001838; border: 2px solid #FFD700; border-radius: 12px; padding: 36px; text-align: center; margin-bottom: 48px; }
+    .success-box { display: none; background: #0D2240; border: 2px solid #C9A227; border-radius: 12px; padding: 36px; text-align: center; margin-bottom: 48px; }
     .success-box.visible { display: block; }
-    .success-box h2 { font-size: 20px; font-weight: 800; color: #FFD700; margin: 0 0 10px; }
+    .success-box h2 { font-size: 20px; font-weight: 800; color: #C9A227; margin: 0 0 10px; }
     .success-box p { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.7; margin: 0; }
 
     .preview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-bottom: 48px; }
     .preview-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px; }
     .preview-card-icon { font-size: 24px; margin-bottom: 8px; }
-    .preview-card-title { font-size: 13px; font-weight: 800; color: #001838; margin-bottom: 4px; }
+    .preview-card-title { font-size: 13px; font-weight: 800; color: #0D2240; margin-bottom: 4px; }
     .preview-card-desc { font-size: 12px; color: #6b7280; line-height: 1.6; }
 
     .nowlink-box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
-    .nowlink-box h3 { font-size: 16px; font-weight: 800; color: #001838; margin: 0 0 4px; }
+    .nowlink-box h3 { font-size: 16px; font-weight: 800; color: #0D2240; margin: 0 0 4px; }
     .nowlink-box p { font-size: 13px; color: #6b7280; margin: 0; line-height: 1.6; }
-    .btn-navy { background: #001838; color: #FFD700; font-weight: 800; font-size: 13px; padding: 12px 22px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+    .btn-navy { background: #0D2240; color: #C9A227; font-weight: 800; font-size: 13px; padding: 12px 22px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
 
-    .site-footer { background: #001838; padding: 24px 40px; }
+    .site-footer { background: #0D2240; padding: 24px 40px; }
     .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
 
     @media (max-width: 560px) {

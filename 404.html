@@ -12,7 +12,7 @@
   <script src="/maa-nav.js" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', Arial, sans-serif; background: #001838; color: #fff; min-height: 100vh; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #0D2240; color: #fff; min-height: 100vh; }
 
     .stage {
       min-height: calc(100vh - 64px);
@@ -64,7 +64,7 @@
     .error-code {
       font-size: clamp(72px, 14vw, 120px);
       font-weight: 900;
-      color: #FFD700;
+      color: #C9A227;
       line-height: 1;
       letter-spacing: -3px;
       margin-bottom: 4px;
@@ -116,8 +116,8 @@
       transform: translateY(-2px);
     }
     .dest-card.primary {
-      background: #FFD700;
-      border-color: #FFD700;
+      background: #C9A227;
+      border-color: #C9A227;
     }
     .dest-card.primary:hover {
       background: #ffe433;
@@ -138,7 +138,7 @@
       margin-bottom: 4px;
       line-height: 1.3;
     }
-    .dest-card.primary .dest-name { color: #001838; }
+    .dest-card.primary .dest-name { color: #0D2240; }
     .dest-desc {
       font-size: 11px;
       color: rgba(255,255,255,0.5);
@@ -164,7 +164,7 @@
       border-radius: 20px;
       transition: color 0.15s, border-color 0.15s;
     }
-    .aux-link:hover { color: #FFD700; border-color: rgba(255,215,0,0.3); }
+    .aux-link:hover { color: #C9A227; border-color: rgba(255,215,0,0.3); }
 
     /* Divider */
     .divider {
@@ -181,7 +181,7 @@
       line-height: 1.8;
     }
     .contact-line a { color: rgba(255,215,0,0.5); text-decoration: none; }
-    .contact-line a:hover { color: #FFD700; }
+    .contact-line a:hover { color: #C9A227; }
 
     @media (max-width: 500px) {
       .dest-grid { grid-template-columns: 1fr 1fr; }
@@ -206,7 +206,7 @@
         <circle cx="60" cy="60" r="44" stroke="rgba(255,215,0,0.1)" stroke-width="1"/>
         <!-- Spinning tick marks -->
         <g class="compass-ring">
-          <line x1="60" y1="4"  x2="60" y2="12" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+          <line x1="60" y1="4"  x2="60" y2="12" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/>
           <line x1="116" y1="60" x2="108" y2="60" stroke="rgba(255,215,0,0.4)" stroke-width="1" stroke-linecap="round"/>
           <line x1="60" y1="116" x2="60" y2="108" stroke="rgba(255,215,0,0.4)" stroke-width="1" stroke-linecap="round"/>
           <line x1="4" y1="60"  x2="12" y2="60" stroke="rgba(255,215,0,0.4)" stroke-width="1" stroke-linecap="round"/>
@@ -217,12 +217,12 @@
           <line x1="20.4" y1="20.4" x2="26.0" y2="26.0" stroke="rgba(255,215,0,0.2)" stroke-width="1" stroke-linecap="round"/>
         </g>
         <!-- N label -->
-        <text x="60" y="18" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="8" font-weight="800" fill="#FFD700">N</text>
+        <text x="60" y="18" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="8" font-weight="800" fill="#C9A227">N</text>
         <!-- Center dot -->
-        <circle cx="60" cy="60" r="4" fill="#FFD700" opacity="0.8"/>
+        <circle cx="60" cy="60" r="4" fill="#C9A227" opacity="0.8"/>
         <!-- Needle — pointing off-north (tilted, meaning off course) -->
         <g transform="rotate(38 60 60)">
-          <polygon points="60,22 57,60 63,60" fill="#FFD700" opacity="0.95"/>
+          <polygon points="60,22 57,60 63,60" fill="#C9A227" opacity="0.95"/>
           <polygon points="60,98 57,60 63,60" fill="rgba(255,255,255,0.2)"/>
         </g>
       </svg>

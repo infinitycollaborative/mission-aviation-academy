@@ -13,51 +13,51 @@
   <script src="/maa-nav.js" defer></script>
   <style>
     body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
-    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 52px 24px 44px; }
+    .hero { background: #0D2240; border-bottom: 4px solid #C9A227; padding: 52px 24px 44px; }
     .hero-inner { max-width: 860px; margin: 0 auto; }
-    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #FFD700; margin-bottom: 12px; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #C9A227; margin-bottom: 12px; }
     .hero h1 { font-size: 40px; font-weight: 900; color: #fff; margin: 0 0 12px; line-height: 1.05; }
     .hero p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 600px; margin: 0 0 20px; }
     .hero-detail { display: flex; gap: 28px; flex-wrap: wrap; }
     .hero-detail-item { font-size: 12px; color: rgba(255,255,255,0.5); }
-    .hero-detail-item strong { color: #FFD700; display: block; font-size: 13px; }
+    .hero-detail-item strong { color: #C9A227; display: block; font-size: 13px; }
     .page-body { max-width: 860px; margin: 0 auto; padding: 52px 24px; }
     .flight-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; margin-bottom: 52px; }
     .flight-card { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
-    .flight-card-header { background: #001838; padding: 18px 20px 16px; }
+    .flight-card-header { background: #0D2240; padding: 18px 20px 16px; }
     .flight-card-badge { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; padding: 3px 8px; border-radius: 3px; margin-bottom: 10px; display: inline-block; }
     .flight-card-title { font-size: 17px; font-weight: 800; color: #fff; margin: 0 0 4px; }
     .flight-card-sub { font-size: 12px; color: rgba(255,255,255,0.55); }
     .flight-card-body { padding: 18px 20px; }
-    .flight-price { font-size: 28px; font-weight: 900; color: #001838; margin-bottom: 4px; }
+    .flight-price { font-size: 28px; font-weight: 900; color: #0D2240; margin-bottom: 4px; }
     .flight-price-note { font-size: 11px; color: #9ca3af; margin-bottom: 16px; }
     .flight-includes { font-size: 12px; color: #4b5563; line-height: 1.75; margin-bottom: 18px; }
     .flight-includes li { list-style: none; padding-left: 16px; position: relative; }
     .flight-includes li::before { content: "✓"; position: absolute; left: 0; color: #16a34a; font-weight: 700; }
-    .btn-book { display: block; background: #FFD700; color: #001838; font-weight: 800; font-size: 13px; padding: 12px; border-radius: 7px; text-decoration: none; text-align: center; }
-    .section-h { font-size: 22px; font-weight: 800; color: #001838; margin: 0 0 6px; }
+    .btn-book { display: block; background: #C9A227; color: #0D2240; font-weight: 800; font-size: 13px; padding: 12px; border-radius: 7px; text-decoration: none; text-align: center; }
+    .section-h { font-size: 22px; font-weight: 800; color: #0D2240; margin: 0 0 6px; }
     .section-sub { font-size: 13px; color: #6b7280; margin: 0 0 24px; line-height: 1.6; }
     .what-block { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 52px; }
     .what-item { padding: 20px; background: #f9fafb; border-radius: 10px; border: 1px solid #e5e7eb; }
-    .what-num { font-size: 28px; font-weight: 900; color: #FFD700; background: #001838; width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
-    .what-title { font-size: 14px; font-weight: 700; color: #001838; margin-bottom: 6px; }
+    .what-num { font-size: 28px; font-weight: 900; color: #C9A227; background: #0D2240; width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+    .what-title { font-size: 14px; font-weight: 700; color: #0D2240; margin-bottom: 6px; }
     .what-body { font-size: 12px; color: #6b7280; line-height: 1.7; }
-    .aircraft-box { background: #001838; border-radius: 12px; padding: 28px; margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
-    .aircraft-text h3 { font-size: 18px; font-weight: 800; color: #FFD700; margin: 0 0 8px; }
+    .aircraft-box { background: #0D2240; border-radius: 12px; padding: 28px; margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+    .aircraft-text h3 { font-size: 18px; font-weight: 800; color: #C9A227; margin: 0 0 8px; }
     .aircraft-text p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.75; margin: 0; }
     .aircraft-specs { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; }
     .spec { text-align: center; }
-    .spec-val { font-size: 18px; font-weight: 800; color: #FFD700; display: block; }
+    .spec-val { font-size: 18px; font-weight: 800; color: #C9A227; display: block; }
     .spec-label { font-size: 10px; color: rgba(255,255,255,0.4); }
     .faq-list { margin-bottom: 52px; }
     .faq-item { border-bottom: 1px solid #f3f4f6; padding: 18px 0; }
-    .faq-q { font-size: 14px; font-weight: 700; color: #001838; margin-bottom: 8px; }
+    .faq-q { font-size: 14px; font-weight: 700; color: #0D2240; margin-bottom: 8px; }
     .faq-a { font-size: 13px; color: #4b5563; line-height: 1.75; }
-    .cta-bar { background: #001838; border-radius: 12px; padding: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .cta-bar { background: #0D2240; border-radius: 12px; padding: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .cta-bar h3 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; }
     .cta-bar p { font-size: 13px; color: rgba(255,255,255,0.65); margin: 0; }
-    .btn-gold-lg { background: #FFD700; color: #001838; font-weight: 800; font-size: 14px; padding: 13px 24px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
-    .site-footer { background: #001838; padding: 24px 40px; }
+    .btn-gold-lg { background: #C9A227; color: #0D2240; font-weight: 800; font-size: 14px; padding: 13px 24px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+    .site-footer { background: #0D2240; padding: 24px 40px; }
     .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
     @media (max-width: 600px) {
       .hero h1 { font-size: 28px; }
@@ -110,7 +110,7 @@
 
     <div class="flight-card">
       <div class="flight-card-header">
-        <div class="flight-card-badge" style="background:#FFD700;color:#001838;">FULL EXPERIENCE</div>
+        <div class="flight-card-badge" style="background:#C9A227;color:#0D2240;">FULL EXPERIENCE</div>
         <div class="flight-card-title">Intro Flight — 60 min</div>
         <div class="flight-card-sub">More airtime, more learning</div>
       </div>
@@ -129,7 +129,7 @@
 
     <div class="flight-card">
       <div class="flight-card-header">
-        <div class="flight-card-badge" style="background:#001838;color:#FFD700;border:1px solid #FFD700;">MAA PROGRAM</div>
+        <div class="flight-card-badge" style="background:#0D2240;color:#C9A227;border:1px solid #C9A227;">MAA PROGRAM</div>
         <div class="flight-card-title">MAA Orientation Flight</div>
         <div class="flight-card-sub">For enrolled MAA students</div>
       </div>

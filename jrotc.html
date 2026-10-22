@@ -13,30 +13,30 @@
   <script src="/maa-nav.js" defer></script>
   <style>
     body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
-    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 52px 24px 44px; }
+    .hero { background: #0D2240; border-bottom: 4px solid #C9A227; padding: 52px 24px 44px; }
     .hero-inner { max-width: 860px; margin: 0 auto; }
-    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #FFD700; margin-bottom: 12px; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #C9A227; margin-bottom: 12px; }
     .hero h1 { font-size: 40px; font-weight: 900; color: #fff; margin: 0 0 12px; line-height: 1.05; }
     .hero p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 600px; margin: 0 0 20px; }
     .hero-stats { display: flex; gap: 28px; flex-wrap: wrap; }
-    .hero-stat strong { color: #FFD700; display: block; font-size: 20px; font-weight: 900; }
+    .hero-stat strong { color: #C9A227; display: block; font-size: 20px; font-weight: 900; }
     .hero-stat span { font-size: 11px; color: rgba(255,255,255,0.5); }
     .page-body { max-width: 860px; margin: 0 auto; padding: 52px 24px; }
-    .section-h { font-size: 22px; font-weight: 800; color: #001838; margin: 0 0 6px; }
+    .section-h { font-size: 22px; font-weight: 800; color: #0D2240; margin: 0 0 6px; }
     .section-sub { font-size: 13px; color: #6b7280; margin: 0 0 28px; line-height: 1.6; }
     .path-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-bottom: 52px; }
     .path-card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px 20px; }
     .path-icon { font-size: 24px; margin-bottom: 10px; }
-    .path-title { font-size: 14px; font-weight: 800; color: #001838; margin-bottom: 6px; }
+    .path-title { font-size: 14px; font-weight: 800; color: #0D2240; margin-bottom: 6px; }
     .path-certs { font-size: 11px; font-weight: 700; color: #16a34a; margin-bottom: 8px; }
     .path-desc { font-size: 12px; color: #6b7280; line-height: 1.7; }
     .how-list { counter-reset: how; margin-bottom: 52px; }
     .how-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid #f3f4f6; align-items: flex-start; }
-    .how-num { background: #001838; color: #FFD700; font-size: 14px; font-weight: 900; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .how-title { font-size: 14px; font-weight: 700; color: #001838; margin-bottom: 4px; }
+    .how-num { background: #0D2240; color: #C9A227; font-size: 14px; font-weight: 900; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .how-title { font-size: 14px; font-weight: 700; color: #0D2240; margin-bottom: 4px; }
     .how-body { font-size: 13px; color: #4b5563; line-height: 1.7; }
     .sufs-box { background: #f0fdf4; border: 1.5px solid #16a34a; border-radius: 12px; padding: 24px 28px; margin-bottom: 52px; }
-    .sufs-box h3 { font-size: 16px; font-weight: 800; color: #001838; margin: 0 0 8px; }
+    .sufs-box h3 { font-size: 16px; font-weight: 800; color: #0D2240; margin: 0 0 8px; }
     .sufs-box p { font-size: 13px; color: #374151; line-height: 1.75; margin: 0 0 12px; }
     .sufs-box ul { margin: 0; padding-left: 18px; }
     .sufs-box li { font-size: 13px; color: #374151; line-height: 1.75; }
@@ -45,7 +45,7 @@
     .tier-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 10px; }
     .tier-name { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
     .tier-desc { font-size: 12px; line-height: 1.7; opacity: 0.8; }
-    .testimonial { background: #001838; border-radius: 12px; padding: 28px; margin-bottom: 52px; display: flex; gap: 22px; align-items: flex-start; }
+    .testimonial { background: #0D2240; border-radius: 12px; padding: 28px; margin-bottom: 52px; display: flex; gap: 22px; align-items: flex-start; }
     .tai-logo-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
     .tai-logo-wrap img { width: 80px; height: 80px; object-fit: contain; border-radius: 50%; }
     .tai-logo-label { font-size: 8px; font-weight: 700; letter-spacing: 1px; color: rgba(255,255,255,0.3); text-align: center; text-transform: uppercase; line-height: 1.4; max-width: 80px; }
@@ -54,9 +54,9 @@
     .testimonial-attr { font-size: 12px; color: rgba(255,255,255,0.45); }
     @media (max-width: 500px) { .testimonial { flex-direction: column; } .tai-logo-wrap { flex-direction: row; gap: 10px; align-items: center; } .tai-logo-label { max-width: none; } }
     .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-navy { background: #001838; color: #FFD700; font-weight: 800; font-size: 13px; padding: 13px 22px; border-radius: 7px; text-decoration: none; }
-    .btn-outline { background: transparent; border: 2px solid #001838; color: #001838; font-weight: 700; font-size: 13px; padding: 11px 20px; border-radius: 7px; text-decoration: none; }
-    .site-footer { background: #001838; padding: 24px 40px; }
+    .btn-navy { background: #0D2240; color: #C9A227; font-weight: 800; font-size: 13px; padding: 13px 22px; border-radius: 7px; text-decoration: none; }
+    .btn-outline { background: transparent; border: 2px solid #0D2240; color: #0D2240; font-weight: 700; font-size: 13px; padding: 11px 20px; border-radius: 7px; text-decoration: none; }
+    .site-footer { background: #0D2240; padding: 24px 40px; }
     .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
     @media (max-width: 600px) {
       .hero h1 { font-size: 28px; }
@@ -188,17 +188,17 @@
   <div class="tiers">
     <div class="tier-card" style="background:#f9fafb;border:1px solid #e5e7eb;">
       <div class="tier-label" style="color:#6b7280;">ENTRY</div>
-      <div class="tier-name" style="color:#001838;">Career Day Visit</div>
+      <div class="tier-name" style="color:#0D2240;">Career Day Visit</div>
       <div class="tier-desc" style="color:#4b5563;">MAA brings the Red Tail Roost and a career presentation to your campus. One day, zero cost to the school. SUFS enrollment on site.</div>
     </div>
-    <div class="tier-card" style="background:#001838;border:1px solid #FFD700;">
-      <div class="tier-label" style="color:#FFD700;">STANDARD</div>
+    <div class="tier-card" style="background:#0D2240;border:1px solid #C9A227;">
+      <div class="tier-label" style="color:#C9A227;">STANDARD</div>
       <div class="tier-name" style="color:#fff;">Saturday Cohort</div>
       <div class="tier-desc" style="color:rgba(255,255,255,0.7);">Cadets enroll in the Saturday Academy — drone, AI, simulator, and discovery flight. SUFS covers most costs. 6–8 cadets per cohort.</div>
     </div>
-    <div class="tier-card" style="background:#FFD700;border:1px solid #001838;">
-      <div class="tier-label" style="color:#001838;">FULL CO-OP</div>
-      <div class="tier-name" style="color:#001838;">Curriculum Integration</div>
+    <div class="tier-card" style="background:#C9A227;border:1px solid #0D2240;">
+      <div class="tier-label" style="color:#0D2240;">FULL CO-OP</div>
+      <div class="tier-name" style="color:#0D2240;">Curriculum Integration</div>
       <div class="tier-desc" style="color:#002855;">MAA curriculum delivered on your campus or at X39, integrated with your JROTC program calendar. Licensing agreement with your school or district.</div>
     </div>
   </div>

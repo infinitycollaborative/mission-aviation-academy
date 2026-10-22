@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#002060;--gold:#C9A84C;--light:#F2F4F7;--border:#D9DCE3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--navy: #0D2240;--gold: #C9A227;--light: #F7F4EE;--border:#D9DCE3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;font-family:'Barlow',sans-serif;background:#fff;color:#141413;scroll-behavior:smooth}
 .nav{background:#fff;border-bottom:3px solid var(--gold);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:env(safe-area-inset-top,0px);z-index:100;flex-wrap:wrap}
@@ -211,7 +211,7 @@ function tick(){
   const el=document.getElementById('countdown');
   if(!el)return;
   const diff=target-new Date();
-  if(diff<=0){el.innerHTML='<div style="font-family:Barlow Condensed,sans-serif;font-weight:800;font-size:32px;color:#002060">🚀 The event is live!</div>';return;}
+  if(diff<=0){el.innerHTML='<div style="font-family:Barlow Condensed,sans-serif;font-weight:800;font-size:32px;color:#0D2240">🚀 The event is live!</div>';return;}
   const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),sec=Math.floor(diff%60000/1000);
   document.getElementById('cd-d').textContent=String(d).padStart(2,'0');
   document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
