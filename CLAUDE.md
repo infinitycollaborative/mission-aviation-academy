@@ -15,7 +15,12 @@
    python3 /tmp/claude-0/-home-user-mission-aviation-academy/68c00f99-7554-574e-97fb-756f3bf2bf2d/scratchpad/audit.py
    ```
 3. **Fix every CRIT and HIGH** before committing. Review MEDs and LOWs — fix if quick.
-4. **Commit + push** only when audit shows 0 CRIT / 0 HIGH.
+4. **Code review** — after the audit passes, verify the changed files by checking:
+   - Key wiring (links, form actions, hidden fields, JS handlers) is correct
+   - No direct PDF/download links bypassed by the change
+   - New pages have correct canonical, EIN footer, and maa-nav.js
+   - Confirm Vercel deployment READY on the correct commit SHA
+5. **Commit + push** only when audit shows 0 CRIT / 0 HIGH and code review passes.
 
 > This rule applies to every session, every change, no exceptions.
 
