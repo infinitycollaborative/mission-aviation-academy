@@ -25,6 +25,11 @@ const FORMS = {
     source: "Website — Career Pathway Guide",
     redirect: "/thanks-guide",
   },
+  "yab-arc": {
+    tags: ["yab-arc-download", "website-signup"],
+    source: "Website — Your Aviation Blueprint ARC",
+    redirect: "/thanks-arc",
+  },
   "rte-preorder": {
     tags: ["rte-preorder-waitlist", "website-signup"],
     source: "Website — Ricky the Explorer pre-order",

@@ -3,6 +3,7 @@ Allow: /
 
 # Keep transactional/utility pages out of index
 Disallow: /thanks-guide
+Disallow: /thanks-arc
 Disallow: /thanks-preorder
 Disallow: /remember
 Disallow: /catalog
