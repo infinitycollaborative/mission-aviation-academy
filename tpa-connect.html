@@ -67,10 +67,21 @@
     .site-footer { background: #0D2240; padding: 28px 40px; border-top: 1px solid rgba(255,215,0,0.15); }
     .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.7; text-align: center; }
 
+    /* PARTNER STRIP */
+    .partner-strip { background: #fff; border-top: 1px solid #e5e7eb; border-bottom: 3px solid #C9A227; padding: 22px 24px; }
+    .partner-strip-inner { max-width: 720px; margin: 0 auto; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; justify-content: center; }
+    .partner-strip-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; color: #9ca3af; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+    .partner-logos { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center; }
+    .partner-logo { display: flex; align-items: center; justify-content: center; }
+    .partner-logo img { height: 52px; width: auto; display: block; object-fit: contain; }
+
     @media (max-width: 600px) {
       .hero h1 { font-size: 28px; }
       .form-section { padding: 24px 18px; }
       .form-row { grid-template-columns: 1fr; }
+      .partner-strip-inner { gap: 12px; }
+      .partner-logos { gap: 24px; }
+      .partner-logo img { height: 38px; }
     }
   </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -90,6 +101,21 @@
       <div class="hero-meta-item"><strong>Partner</strong>Tampa International Airport</div>
       <div class="hero-meta-item"><strong>Status</strong>Cohort 1 Complete — Waitlist Open</div>
       <div class="hero-meta-item"><strong>Host</strong>Mission Aviation Academy · iACT</div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNER LOGOS -->
+<div class="partner-strip">
+  <div class="partner-strip-inner">
+    <span class="partner-strip-label">In Partnership With</span>
+    <div class="partner-logos">
+      <div class="partner-logo">
+        <img src="/images/logo-tpa.png" alt="Tampa International Airport" width="160" height="52">
+      </div>
+      <div class="partner-logo">
+        <img src="/images/logo-bona5d.png" alt="BONA5D Credit Consultants" width="156" height="52">
+      </div>
     </div>
   </div>
 </div>
