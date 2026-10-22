@@ -162,11 +162,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://missionaviationacademy.org/yab-arc</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
   <url><loc>https://missionaviationacademy.org/discovery-flight</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://missionaviationacademy.org/jrotc</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://missionaviationacademy.org/tuskegee</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
