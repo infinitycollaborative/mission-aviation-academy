@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Join Our Team — Mission Aviation Academy</title>
+  <meta name="description" content="CFI contractors, interns, and volunteers wanted at Mission Aviation Academy. Five tracks available. Letter of service, LinkedIn recommendation, intro flight opportunity, and Part 107 access included."/>
+  <link rel="canonical" href="https://missionaviationacademy.org/join"/>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="/maa-nav.js" defer></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
+
+    /* HERO */
+    .hero { background: #001838; border-bottom: 4px solid #FFD700; padding: 56px 24px 48px; }
+    .hero-inner { max-width: 860px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #FFD700; margin-bottom: 14px; }
+    .hero h1 { font-size: 42px; font-weight: 900; color: #fff; margin: 0 0 14px; line-height: 1.04; }
+    .hero p { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 620px; margin: 0 0 28px; }
+    .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn-gold { background: #FFD700; color: #001838; font-weight: 800; font-size: 13px; padding: 12px 22px; border-radius: 7px; text-decoration: none; }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.8); font-weight: 600; font-size: 13px; padding: 11px 20px; border-radius: 7px; text-decoration: none; transition: border-color 0.15s; }
+    .btn-ghost:hover { border-color: #FFD700; color: #FFD700; }
+
+    /* STATS BAR */
+    .stats-bar { background: #FFD700; padding: 16px 24px; }
+    .stats-inner { max-width: 860px; margin: 0 auto; display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
+    .stat-item { text-align: center; }
+    .stat-val { font-size: 22px; font-weight: 900; color: #001838; display: block; }
+    .stat-lbl { font-size: 10px; font-weight: 700; color: rgba(0,24,56,0.6); letter-spacing: 1px; }
+
+    /* PAGE */
+    .page { max-width: 860px; margin: 0 auto; padding: 60px 24px; }
+    .section-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #FFD700; background: #001838; display: inline-block; padding: 4px 10px; border-radius: 3px; margin-bottom: 12px; }
+    .section-h { font-size: 26px; font-weight: 900; color: #001838; margin: 0 0 8px; }
+    .section-sub { font-size: 14px; color: #6b7280; line-height: 1.7; margin: 0 0 32px; max-width: 620px; }
+    .divider { height: 1px; background: #f3f4f6; margin: 56px 0; }
+
+    /* POSITION CARDS */
+    .position-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 56px; }
+    .pos-card { border-radius: 12px; border: 1.5px solid #e5e7eb; overflow: hidden; display: flex; flex-direction: column; }
+    .pos-card-header { padding: 20px 22px 16px; }
+    .pos-tag { font-size: 9px; font-weight: 800; letter-spacing: 2px; padding: 3px 9px; border-radius: 3px; margin-bottom: 10px; display: inline-block; }
+    .pos-title { font-size: 18px; font-weight: 900; margin: 0 0 6px; }
+    .pos-sub { font-size: 12px; opacity: 0.7; line-height: 1.5; }
+    .pos-body { padding: 16px 22px 20px; flex: 1; }
+    .pos-desc { font-size: 13px; color: #4b5563; line-height: 1.75; margin-bottom: 16px; }
+    .pos-highlights { list-style: none; padding: 0; margin: 0 0 18px; }
+    .pos-highlights li { font-size: 12px; color: #374151; padding: 4px 0 4px 20px; position: relative; border-bottom: 1px solid #f9fafb; }
+    .pos-highlights li:last-child { border-bottom: none; }
+    .pos-highlights li::before { content: "→"; position: absolute; left: 0; color: #FFD700; font-weight: 700; }
+    .pos-apply { display: block; text-align: center; background: #001838; color: #FFD700; font-weight: 800; font-size: 12px; padding: 11px; border-radius: 6px; text-decoration: none; }
+
+    /* INTERN TRACKS */
+    .tracks { display: flex; flex-direction: column; gap: 14px; margin-bottom: 56px; }
+    .track-row { display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start; padding: 20px 22px; border: 1px solid #e5e7eb; border-radius: 10px; }
+    .track-num { background: #001838; color: #FFD700; font-size: 16px; font-weight: 900; width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .track-title { font-size: 15px; font-weight: 800; color: #001838; margin: 0 0 4px; }
+    .track-desc { font-size: 12px; color: #6b7280; line-height: 1.7; margin: 0 0 8px; }
+    .track-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag { font-size: 10px; font-weight: 600; background: #f3f4f6; color: #374151; padding: 3px 8px; border-radius: 4px; }
+
+    /* COMPENSATION LADDER */
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 56px; }
+    .comp-card { border-radius: 12px; padding: 24px; }
+    .comp-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px; }
+    .comp-title { font-size: 18px; font-weight: 900; margin: 0 0 10px; }
+    .comp-list { list-style: none; padding: 0; margin: 0; }
+    .comp-list li { font-size: 12px; padding: 5px 0 5px 18px; position: relative; line-height: 1.5; }
+    .comp-list li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; }
+
+    /* WHAT YOU EARN */
+    .earn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 56px; }
+    .earn-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px 18px; }
+    .earn-icon { font-size: 22px; margin-bottom: 8px; }
+    .earn-title { font-size: 13px; font-weight: 700; color: #001838; margin-bottom: 4px; }
+    .earn-desc { font-size: 11px; color: #6b7280; line-height: 1.65; }
+
+    /* MILESTONE MAP */
+    .milestone-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px; }
+    .ms-card { background: #001838; border-radius: 8px; padding: 14px 16px; }
+    .ms-wk { font-size: 10px; font-weight: 700; color: #FFD700; letter-spacing: 1px; margin-bottom: 6px; }
+    .ms-desc { font-size: 11px; color: rgba(255,255,255,0.75); line-height: 1.6; }
+    .ms-card.light { background: #f9fafb; }
+    .ms-card.light .ms-wk { color: #001838; }
+    .ms-card.light .ms-desc { color: #4b5563; }
+
+    /* HOW TO APPLY */
+    .apply-box { background: #001838; border-radius: 14px; padding: 36px; border: 2px solid #FFD700; }
+    .apply-box h2 { font-size: 24px; font-weight: 900; color: #fff; margin: 0 0 10px; }
+    .apply-box p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.75; margin: 0 0 24px; }
+    .apply-steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .apply-step { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 16px; }
+    .apply-step-num { font-size: 10px; font-weight: 700; color: #FFD700; letter-spacing: 1px; margin-bottom: 6px; }
+    .apply-step-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .apply-step-body { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+    .email-cta { background: #FFD700; border-radius: 8px; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .email-label { font-size: 12px; font-weight: 700; color: rgba(0,24,56,0.6); margin-bottom: 2px; }
+    .email-address { font-size: 17px; font-weight: 900; color: #001838; }
+    .email-note { font-size: 11px; color: rgba(0,24,56,0.6); margin-top: 2px; }
+    .email-btn { background: #001838; color: #FFD700; font-weight: 800; font-size: 13px; padding: 12px 22px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+
+    /* TEAM CREDIBILITY */
+    .team-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-bottom: 56px; }
+    .team-card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; }
+    .team-name { font-size: 14px; font-weight: 800; color: #001838; margin-bottom: 2px; }
+    .team-role { font-size: 11px; font-weight: 700; color: #FFD700; background: #001838; display: inline-block; padding: 2px 8px; border-radius: 3px; margin-bottom: 6px; }
+    .team-cred { font-size: 11px; color: #6b7280; line-height: 1.65; }
+
+    /* FOOTER */
+    .site-footer { background: #001838; padding: 24px 40px; }
+    .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 28px; }
+      .comp-grid { grid-template-columns: 1fr; }
+      .milestone-grid { grid-template-columns: 1fr 1fr; }
+      .track-row { grid-template-columns: 40px 1fr; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">FLIGHT PLAN 2030 · CAREERS &amp; SERVICE</div>
+    <h1>Join the Mission</h1>
+    <p>CFI contractors, interns, and volunteers who want to put underserved youth in cockpits, on flight simulators, and on a path to an aviation career. We're building toward 1 million lives by 2030 — and we're not doing it alone.</p>
+    <div class="hero-cta-row">
+      <a href="#apply" class="btn-gold">Apply Now →</a>
+      <a href="#tracks" class="btn-ghost">View Intern Tracks</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-val">730+</span><span class="stat-lbl">FAA Credentials Issued</span></div>
+    <div class="stat-item"><span class="stat-val">1,380+</span><span class="stat-lbl">Students Flown</span></div>
+    <div class="stat-item"><span class="stat-val">300K+</span><span class="stat-lbl">Individuals Reached</span></div>
+    <div class="stat-item"><span class="stat-val">$790K+</span><span class="stat-lbl">Raised for the Mission</span></div>
+    <div class="stat-item"><span class="stat-val">90–95th</span><span class="stat-lbl">Part 107 Pass Rate Percentile</span></div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- OPEN POSITIONS -->
+  <div class="section-eyebrow">OPEN POSITIONS</div>
+  <h2 class="section-h">Three ways to serve</h2>
+  <p class="section-sub">All positions are at Tampa North Aero Park (X39), Wesley Chapel, FL — with virtual and Saturday options. Posted roles are also listed at <a href="https://infinityaeroclub.org" target="_blank" rel="noopener noreferrer" style="color:#001838;font-weight:700;">infinityaeroclub.org</a>.</p>
+
+  <div class="position-grid">
+
+    <!-- CFI -->
+    <div class="pos-card">
+      <div class="pos-card-header" style="background:#001838;">
+        <div class="pos-tag" style="background:#FFD700;color:#001838;">CONTRACT POSITION</div>
+        <div class="pos-title" style="color:#fff;">Certified Flight Instructor (CFI)</div>
+        <div class="pos-sub" style="color:rgba(255,255,255,0.6);">Independent contractor · Volunteer within mission sets · Part 61 or Part 141 · X39</div>
+      </div>
+      <div class="pos-body">
+        <p class="pos-desc">MAA needs CFIs who believe in what this mission stands for. You'll instruct student pilots enrolled in the Private Pilot program, work with SUFS-funded students, and be part of the team that built a 90–95th percentile Part 107 pass rate.</p>
+        <ul class="pos-highlights">
+          <li>CFI or CFI/CFII/MEI certification required</li>
+          <li>Part 61 flexible pathway experience preferred</li>
+          <li>FlightCircle student management platform used</li>
+          <li>Independent contractor structure — rate and scope per written agreement</li>
+          <li>Volunteer within mission sets as schedule allows</li>
+          <li>Scheduling coordinated with MAA Program Director</li>
+        </ul>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=CFI Application — [Your Name]" class="pos-apply">Apply — CFI Position →</a>
+      </div>
+    </div>
+
+    <!-- DRONE INSTRUCTOR -->
+    <div class="pos-card">
+      <div class="pos-card-header" style="background:#1e3a5f;">
+        <div class="pos-tag" style="background:#42A5F5;color:#001838;">CONTRACT POSITION</div>
+        <div class="pos-title" style="color:#fff;">Drone Instructor</div>
+        <div class="pos-sub" style="color:rgba(255,255,255,0.6);">Independent contractor · Part 107 required · X39</div>
+      </div>
+      <div class="pos-body">
+        <p class="pos-desc">Lead MAA's Drone Bootcamp — a 54-hour program built on the Read → Watch → Do → Fly method. You'll teach beginner through advanced levels, support Part 107 prep, and help students earn one of the fastest credentials in aviation.</p>
+        <ul class="pos-highlights">
+          <li>FAA Part 107 Remote Pilot Certificate required</li>
+          <li>Drone instruction or UAS operations experience</li>
+          <li>Beginner, intermediate, and advanced level teaching</li>
+          <li>Bootcamp and Saturday session availability</li>
+          <li>LAANC, mapping, commercial ops experience a plus</li>
+        </ul>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Drone Instructor Application — [Your Name]" class="pos-apply" style="background:#1e3a5f;">Apply — Drone Instructor →</a>
+      </div>
+    </div>
+
+    <!-- INTERN / VOLUNTEER -->
+    <div class="pos-card">
+      <div class="pos-card-header" style="background:#8B0000;">
+        <div class="pos-tag" style="background:#fff;color:#8B0000;">INTERNSHIP · VOLUNTEER</div>
+        <div class="pos-title" style="color:#fff;">Intern / Volunteer</div>
+        <div class="pos-sub" style="color:rgba(255,255,255,0.6);">Five tracks · 8 weeks · Volunteer or paid contractor path</div>
+      </div>
+      <div class="pos-body">
+        <p class="pos-desc">All interns start as volunteers — nonprofit service with real deliverables, real mentorship, and a portfolio when you're done. Paid contractor positions activate when funded contracts come in. Five tracks match every skill set.</p>
+        <ul class="pos-highlights">
+          <li>Drone Ops, Pilot Observer, AeroSTEM, AI/Digital, or Marketing</li>
+          <li>Letter of service + LinkedIn rec from Ricardo on completion</li>
+          <li>Intro flight opportunity at 80+ volunteer hours</li>
+          <li>Part 107 ground school materials access</li>
+          <li>AFJROTC Flight Academy scholarship referral eligibility</li>
+        </ul>
+        <a href="#tracks" class="pos-apply" style="background:#8B0000;">View All Five Tracks →</a>
+      </div>
+    </div>
+
+    <!-- AMBASSADOR -->
+    <div class="pos-card">
+      <div id="ambassador" class="pos-card-header" style="background:#4B0082;">
+        <div class="pos-tag" style="background:#E8D5FF;color:#4B0082;">COMMUNITY ROLE</div>
+        <div class="pos-title" style="color:#fff;">MAA Ambassador</div>
+        <div class="pos-sub" style="color:rgba(255,255,255,0.6);">Volunteer · Community-based · Remote or X39</div>
+      </div>
+      <div class="pos-body">
+        <p class="pos-desc">Ambassadors are champions of the mission who advocate publicly, inspire youth and veterans, attract donors and sponsors, and serve as living examples of the 5 Platforms of Success. Three levels — every background welcome.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+          <div style="background:#f3e8ff;border-left:3px solid #7C3AED;border-radius:0 6px 6px 0;padding:8px 12px;">
+            <div style="font-size:11px;font-weight:800;color:#4B0082;margin-bottom:2px;">LOCAL — Community Champion</div>
+            <div style="font-size:11px;color:#6b7280;">Schools, clubs, churches, local business. Recruit youth, host awareness events, connect small donors. Pilots, STEM teachers, veterans, small business owners.</div>
+          </div>
+          <div style="background:#ede9fe;border-left:3px solid #4B0082;border-radius:0 6px 6px 0;padding:8px 12px;">
+            <div style="font-size:11px;font-weight:800;color:#4B0082;margin-bottom:2px;">NATIONAL — Industry Influencer</div>
+            <div style="font-size:11px;color:#6b7280;">Speaking engagements, policy advocacy, fundraising campaigns. Airline pilots, aerospace engineers, entrepreneurs, thought leaders.</div>
+          </div>
+          <div style="background:#ddd6fe;border-left:3px solid #001838;border-radius:0 6px 6px 0;padding:8px 12px;">
+            <div style="font-size:11px;font-weight:800;color:#001838;margin-bottom:2px;">GLOBAL — Legacy Leader</div>
+            <div style="font-size:11px;color:#374151;">CARICOM, Africa, Latin America, Europe, Asia partnerships. Retired generals, astronauts, tech CEOs, international philanthropists.</div>
+          </div>
+        </div>
+        <a href="mailto:admissions@missionaviationacademy.org?subject=Ambassador Program — [Your Name]" class="pos-apply" style="background:#4B0082;">Apply — MAA Ambassador →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- OPEN ROLES -->
+  <div id="tracks">
+    <div class="section-eyebrow">OPEN ROLES</div>
+    <h2 class="section-h">Ten positions. Every skill set.</h2>
+    <p class="section-sub">Most work is remote during the week. Optional in-person Saturdays 10:00 AM – 4:00 PM at Tampa North Aero Park (X39). School credit available where applicable. Each role can be filled as volunteer, unpaid intern, or paid intern based on funding and qualifications.</p>
+  </div>
+
+  <div class="tracks">
+    <div class="track-row">
+      <div class="track-num">01</div>
+      <div>
+        <div class="track-title">Website &amp; Social Media Assistant &amp; Intern</div>
+        <div class="track-desc">Update webpages, post news, create short videos and reels, schedule content, and respond to online inquiries.</div>
+        <div class="track-tags">
+          <span class="tag">Website tools</span>
+          <span class="tag">Social media</span>
+          <span class="tag">Video/reels</span>
+          <span class="tag">Design a plus</span>
+        </div>
+      </div>
+    </div>
+    <div class="track-row">
+      <div class="track-num">02</div>
+      <div>
+        <div class="track-title">Entrepreneurial Program Manager &amp; Intern <span style="font-size:10px;font-weight:700;background:#001838;color:#FFD700;padding:2px 7px;border-radius:3px;margin-left:8px;">Age 18+</span></div>
+        <div class="track-desc">Support workshops, assist with donor outreach and partnerships, help build small business projects and pitch decks. Interest in startups, finance, or marketing — prior experience helpful but not required.</div>
+        <div class="track-tags">
+          <span class="tag">Startups</span>
+          <span class="tag">Donor outreach</span>
+          <span class="tag">Pitch decks</span>
+          <span class="tag">Finance/Marketing</span>
+        </div>
+      </div>
+    </div>
+    <div class="track-row">
+      <div class="track-num">03</div>
+      <div>
+        <div class="track-title">Drone &amp; Pilot Instructor (CFI) &amp; Intern</div>
+        <div class="track-desc">Assist with Part 107 study groups, drone labs, simulator sessions, scheduling discovery flights, and documenting training. Part 107 or flight time is a plus — not required.</div>
+        <div class="track-tags">
+          <span class="tag">FAA Part 107</span>
+          <span class="tag">Drone labs</span>
+          <span class="tag">Simulator sessions</span>
+          <span class="tag">Flight scheduling</span>
+        </div>
+      </div>
+    </div>
+    <div class="track-row">
+      <div class="track-num">04</div>
+      <div>
+        <div class="track-title">Aviation Maintenance Technician Program Manager &amp; Intern</div>
+        <div class="track-desc">Help with kit-build tasks, light sport maintenance support, tool tracking, parts research, and documentation. Mechanical aptitude required — AMT or LSRM exposure is a plus.</div>
+        <div class="track-tags">
+          <span class="tag">Kit builds</span>
+          <span class="tag">Light sport maintenance</span>
+          <span class="tag">Tool tracking</span>
+          <span class="tag">AMT/LSRM a plus</span>
+        </div>
+      </div>
+    </div>
+    <div class="track-row">
+      <div class="track-num">05</div>
+      <div>
+        <div class="track-title">Human Resources Program Manager &amp; Admin Intern</div>
+        <div class="track-desc">Help with onboarding, scheduling, records, volunteer coordination, and policy drafts. Organization and clear communication are the core requirements.</div>
+        <div class="track-tags">
+          <span class="tag">Onboarding</span>
+          <span class="tag">Scheduling</span>
+          <span class="tag">Volunteer coordination</span>
+          <span class="tag">Policy drafts</span>
+        </div>
+      </div>
+    </div>
+    <div class="track-row">
+      <div class="track-num">06</div>
+      <div>
+        <div class="track-title">Executive Assistant &amp; Intern</div>
+        <div class="track-desc">Support the CEO and leadership team, prepare briefings, follow up on action items, and coordinate meetings. Strong professionalism and writing skills required — prior EA or project coordination experience preferred.</div>
+        <div class="track-tags">
+          <span class="tag">CEO support</span>
+          <span class="tag">Briefings</span>
+          <span class="tag">Action items</span>
+          <span class="tag">EA experience preferred</span>
+        </div>
+      </div>
+    </div>
+    <div class="track-row" style="border-color:#FFD700;background:#fffde7;">
+      <div class="track-num">07</div>
+      <div>
+        <div class="track-title">Donor Relations Team Coordinator &amp; Intern <span style="font-size:10px;font-weight:700;background:#FFD700;color:#001838;padding:2px 7px;border-radius:3px;margin-left:8px;">Path to paid work</span></div>
+        <div class="track-desc">Organize donor pipelines, track follow-ups, manage call-back scripts, produce weekly status reports, and coordinate thank-you touchpoints. CRM or spreadsheet comfort and excellent follow-through required.</div>
+        <div class="track-tags">
+          <span class="tag">Donor pipeline</span>
+          <span class="tag">CRM</span>
+          <span class="tag">Follow-through</span>
+          <span class="tag">Fundraising a plus</span>
+        </div>
+      </div>
+    </div>
+    <div class="track-row" style="border-color:#FFD700;background:#fffde7;">
+      <div class="track-num">08</div>
+      <div>
+        <div class="track-title">Funding Assistant Coordinator &amp; Intern <span style="font-size:10px;font-weight:700;background:#FFD700;color:#001838;padding:2px 7px;border-radius:3px;margin-left:8px;">Path to paid work</span></div>
+        <div class="track-desc">Research grants and corporate giving, draft letters of inquiry, maintain calendars and submission checklists, and help assemble proposals. Strong writing and research skills required — prior grant experience is a plus.</div>
+        <div class="track-tags">
+          <span class="tag">Grants research</span>
+          <span class="tag">Letters of inquiry</span>
+          <span class="tag">Proposal assembly</span>
+          <span class="tag">Grant experience a plus</span>
+        </div>
+      </div>
+    </div>
+    <div class="track-row">
+      <div class="track-num">09</div>
+      <div>
+        <div class="track-title">Event Lead Planner, Assistant &amp; Intern</div>
+        <div class="track-desc">Plan Saturday open-house operations, Aviation Merit Badge days, speaker events, and partner showcases. Handle run-of-show, vendor coordination, and onsite logistics. Event planning or hospitality experience helpful but not required.</div>
+        <div class="track-tags">
+          <span class="tag">Event planning</span>
+          <span class="tag">Run-of-show</span>
+          <span class="tag">Vendor coordination</span>
+          <span class="tag">Onsite logistics</span>
+        </div>
+      </div>
+    </div>
+    <div class="track-row" style="border-color:#FFD700;background:#fffde7;">
+      <div class="track-num">10</div>
+      <div>
+        <div class="track-title">Corporate Donor Relations Assistant &amp; Intern <span style="font-size:10px;font-weight:700;background:#FFD700;color:#001838;padding:2px 7px;border-radius:3px;margin-left:8px;">Path to paid work</span></div>
+        <div class="track-desc">Support corporate outreach lists, manage briefings for meetings, prep sponsorship decks, and coordinate follow-ups after calls. Business writing and professionalism required — sales or partnership background is a plus.</div>
+        <div class="track-tags">
+          <span class="tag">Corporate outreach</span>
+          <span class="tag">Sponsorship decks</span>
+          <span class="tag">Business writing</span>
+          <span class="tag">Sales a plus</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COMPENSATION -->
+  <div class="section-eyebrow">COMPENSATION STRUCTURE</div>
+  <h2 class="section-h">Volunteer first — paid when funded</h2>
+  <p class="section-sub">Every intern starts as a volunteer. Paid contractor roles activate when MAA secures funded contracts. The path is transparent — here's exactly how it works.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card" style="background:#f9fafb;border:1px solid #e5e7eb;">
+      <div class="comp-label" style="color:#6b7280;">WHERE EVERYONE STARTS</div>
+      <div class="comp-title" style="color:#001838;">Volunteer Intern</div>
+      <ul class="comp-list" style="color:#374151;">
+        <li>Nonprofit volunteer service — unpaid</li>
+        <li>Official Letter of Service on completion</li>
+        <li>LinkedIn recommendation from Ricardo</li>
+        <li>Portfolio artifacts filed in iACT Drive</li>
+        <li>Intro flight opportunity at 80+ hours</li>
+        <li>Part 107 training materials access</li>
+        <li>AFJROTC scholarship referral eligibility</li>
+        <li>8-week commitment minimum</li>
+      </ul>
+    </div>
+    <div class="comp-card" style="background:#001838;border:1.5px solid #FFD700;">
+      <div class="comp-label" style="color:#FFD700;">WHEN FUNDING ACTIVATES</div>
+      <div class="comp-title" style="color:#fff;">Paid Contractor Intern</div>
+      <ul class="comp-list" style="color:rgba(255,255,255,0.8);">
+        <li style="list-style-type:none;padding-left:0;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:8px;margin-bottom:8px;font-size:11px;color:rgba(255,255,255,0.5);">Activated by funded contract — not automatic</li>
+        <li>Independent contractor structure</li>
+        <li>Rate and scope defined per written agreement</li>
+        <li>1099 required — contractor agreement signed first</li>
+        <li>All volunteer benefits still apply</li>
+        <li>Track 05 (Funding/Marketing) most common path</li>
+        <li>Subject to Ricardo's written approval</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WHAT YOU EARN -->
+  <div class="section-eyebrow">WHAT YOU TAKE WITH YOU</div>
+  <h2 class="section-h">Real outcomes. Real credentials.</h2>
+  <p class="section-sub">Every intern who completes in good standing leaves with a documented record — not just experience on a résumé.</p>
+
+  <div class="earn-grid">
+    <div class="earn-card">
+      <div class="earn-icon">📄</div>
+      <div class="earn-title">Letter of Service</div>
+      <div class="earn-desc">Official iACT letterhead. Hours, track, deliverables completed. Signed by LCDR Ricardo Foster.</div>
+    </div>
+    <div class="earn-card">
+      <div class="earn-icon">🤝</div>
+      <div class="earn-title">LinkedIn Recommendation</div>
+      <div class="earn-desc">Personal recommendation from Ricardo for interns who complete in good standing.</div>
+    </div>
+    <div class="earn-card">
+      <div class="earn-icon">📁</div>
+      <div class="earn-title">Portfolio Artifacts</div>
+      <div class="earn-desc">Every finalized deliverable filed under your name in iACT Drive. Reference in any application.</div>
+    </div>
+    <div class="earn-card">
+      <div class="earn-icon">🛸</div>
+      <div class="earn-title">Part 107 Materials Access</div>
+      <div class="earn-desc">Full access to iACT's Part 107 ground school materials for personal study throughout your term.</div>
+    </div>
+    <div class="earn-card">
+      <div class="earn-icon">✈️</div>
+      <div class="earn-title">Introductory Flight</div>
+      <div class="earn-desc">At 80+ volunteer hours: eligibility for one introductory flight observation at X39 in the Red Tail Roost.</div>
+    </div>
+    <div class="earn-card">
+      <div class="earn-icon">🎖️</div>
+      <div class="earn-title">AFJROTC Scholarship Referral</div>
+      <div class="earn-desc">Qualifying cadets nominated for the AFJROTC Flight Academy scholarship pipeline.</div>
+    </div>
+    <div class="earn-card">
+      <div class="earn-icon">🌐</div>
+      <div class="earn-title">Ambassador Network Access</div>
+      <div class="earn-desc">MAA Ambassadors are listed as community representatives and invited to all MAA events, tour stops, and fly-ins.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 8-WEEK MILESTONE MAP -->
+  <div class="section-eyebrow">8-WEEK PROGRAM</div>
+  <h2 class="section-h">From Day 1 to capstone</h2>
+  <p class="section-sub">Every intern follows the same milestone structure. Weekly SITREPs keep everyone aligned. Saturdays at X39 are part of the commitment.</p>
+
+  <div class="milestone-grid" style="margin-bottom:12px;">
+    <div class="ms-card">
+      <div class="ms-wk">WEEK 1</div>
+      <div class="ms-desc">Orientation at X39. 3-goal card submitted. Track onboarding begins.</div>
+    </div>
+    <div class="ms-card">
+      <div class="ms-wk">WEEK 2</div>
+      <div class="ms-desc">Deliverable 1 in draft. Weekly SITREP every Friday by 1700.</div>
+    </div>
+    <div class="ms-card">
+      <div class="ms-wk">WEEK 3</div>
+      <div class="ms-desc">Mid-point check-in. Deliverable 1 finalized. Hours logged.</div>
+    </div>
+    <div class="ms-card">
+      <div class="ms-wk">WEEK 4</div>
+      <div class="ms-desc">Cross-track project. Contribute to another intern's track.</div>
+    </div>
+  </div>
+  <div class="milestone-grid" style="margin-bottom:40px;">
+    <div class="ms-card light" style="border:1px solid #e5e7eb;">
+      <div class="ms-wk">WEEK 5</div>
+      <div class="ms-desc">Deliverable 2 started. Live workshop support at X39.</div>
+    </div>
+    <div class="ms-card light" style="border:1px solid #e5e7eb;">
+      <div class="ms-wk">WEEK 6</div>
+      <div class="ms-desc">Deliverable 2 complete. All hour logs current and verified.</div>
+    </div>
+    <div class="ms-card light" style="border:1px solid #e5e7eb;">
+      <div class="ms-wk">WEEK 7</div>
+      <div class="ms-desc">Capstone draft submitted. All hours verified by mentor.</div>
+    </div>
+    <div class="ms-card" style="background:#FFD700;">
+      <div class="ms-wk" style="color:#001838;">WEEK 8</div>
+      <div class="ms-desc" style="color:#002855;font-weight:600;">15-min capstone presentation. Exit interview. Letter of service issued.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TEAM CREDIBILITY -->
+  <div class="section-eyebrow">THE TEAM YOU JOIN</div>
+  <h2 class="section-h">Work alongside this crew</h2>
+  <p class="section-sub">MAA's instructors are active practitioners — not career academics. Everyone on this team has earned their credentials through the work.</p>
+
+  <div class="team-row">
+    <div class="team-card">
+      <div class="team-name">LCDR Ricardo "Tattoo" Foster</div>
+      <div class="team-role">Founder &amp; CEO</div>
+      <div class="team-cred">USN (Ret.) · 100% Disabled Veteran · 35 years Naval Aviation Intelligence · Mentored by Tuskegee Airmen Lt. Col. George Hardy, 332nd Fighter Group</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Ahviyona Floyd</div>
+      <div class="team-role">Lead CFI / Program Director</div>
+      <div class="team-cred">CFI / CFII / MEI — all ratings earned through Infinity Aero Club. Primary flight instructor. Three aviation ratings by age 19.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Walter Matthews</div>
+      <div class="team-role">Alternate CFI</div>
+      <div class="team-cred">Independent contractor CFI. Part 61 and Part 141 qualified. X39-based instruction.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Philip Sobers</div>
+      <div class="team-role">Senior Drone Instructor</div>
+      <div class="team-cred">Part 107 program support. Senior instructor on the drone bootcamp team.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Earl Johnson</div>
+      <div class="team-role">Veteran Scholar / Senior Instructor</div>
+      <div class="team-cred">First solo flight milestone at MAA. Drone bootcamp co-instructor. Veteran student turned team member.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Christopher Marquis</div>
+      <div class="team-role">Drone Instructor</div>
+      <div class="team-cred">Part 107 ground school instructor. Drone bootcamp lead instructor.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Kimolyn Vernon</div>
+      <div class="team-role">Corporate Sponsor &amp; Scholarship Coordinator</div>
+      <div class="team-cred">Community outreach lead and corporate partnership coordinator. MAA family — son Kodie Vernon is an enrolled MAA student and AFROTC cadet.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Amanda Wyandt</div>
+      <div class="team-role">Director of Women's Outreach &amp; Executive Board Member</div>
+      <div class="team-cred">Board-level leadership. Leads women's aviation outreach and community engagement across MAA programs.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Sunni Austin</div>
+      <div class="team-role">sUAS Operator / Student-Instructor</div>
+      <div class="team-cred">UAS operator and student-instructor supporting drone operations and training at X39.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- APPLY -->
+  <!-- ELIGIBILITY + SCHEDULE -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px;">
+    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:20px 22px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:#6b7280;margin-bottom:10px;">ELIGIBILITY</div>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="font-size:12px;color:#374151;padding:4px 0 4px 16px;position:relative;border-bottom:1px solid #f3f4f6;">
+          <span style="position:absolute;left:0;color:#16a34a;font-weight:700;">✓</span>Age 16 and older
+        </li>
+        <li style="font-size:12px;color:#374151;padding:4px 0 4px 16px;position:relative;border-bottom:1px solid #f3f4f6;">
+          <span style="position:absolute;left:0;color:#16a34a;font-weight:700;">✓</span>Read and write English
+        </li>
+        <li style="font-size:12px;color:#374151;padding:4px 0 4px 16px;position:relative;border-bottom:1px solid #f3f4f6;">
+          <span style="position:absolute;left:0;color:#16a34a;font-weight:700;">✓</span>US Citizen, Green Card holder, or valid work permit
+        </li>
+        <li style="font-size:12px;color:#374151;padding:4px 0 4px 16px;position:relative;">
+          <span style="position:absolute;left:0;color:#16a34a;font-weight:700;">✓</span>School credit documentation available on request
+        </li>
+      </ul>
+    </div>
+    <div style="background:#001838;border-radius:10px;padding:20px 22px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:#FFD700;margin-bottom:10px;">TIME &amp; LOCATION</div>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="font-size:12px;color:rgba(255,255,255,0.8);padding:4px 0 4px 16px;position:relative;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <span style="position:absolute;left:0;color:#FFD700;">✈</span>Remote work during the week — flexible AM/PM
+        </li>
+        <li style="font-size:12px;color:rgba(255,255,255,0.8);padding:4px 0 4px 16px;position:relative;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <span style="position:absolute;left:0;color:#FFD700;">✈</span>Optional in-person Saturdays · 10:00 AM – 4:00 PM
+        </li>
+        <li style="font-size:12px;color:rgba(255,255,255,0.8);padding:4px 0 4px 16px;position:relative;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <span style="position:absolute;left:0;color:#FFD700;">✈</span>Tampa North Aero Park (X39) · Lutz, FL
+        </li>
+        <li style="font-size:12px;color:rgba(255,255,255,0.8);padding:4px 0 4px 16px;position:relative;">
+          <span style="position:absolute;left:0;color:#FFD700;">✈</span>Weekend in-person hours available by arrangement
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    <div id="apply" class="apply-box">
+    <h2>Ready to apply?</h2>
+    <p>Send your résumé and a brief note on which position or track you're applying for. All applications are reviewed by Ricardo personally. Use the subject line format shown below so your email routes correctly.</p>
+
+    <div class="apply-steps">
+      <div class="apply-step">
+        <div class="apply-step-num">STEP 01</div>
+        <div class="apply-step-title">Send your résumé + video</div>
+        <div class="apply-step-body">Email your résumé and a 3–4 minute video discussing your experience and why you're applying. Both are required.</div>
+      </div>
+      <div class="apply-step">
+        <div class="apply-step-num">STEP 02</div>
+        <div class="apply-step-title">Use the right subject line</div>
+        <div class="apply-step-body">Subject: "ATTN [Role Applying For]" — state your preferred track (volunteer / unpaid intern / paid intern) and your availability.</div>
+      </div>
+      <div class="apply-step">
+        <div class="apply-step-num">STEP 03</div>
+        <div class="apply-step-title">Ricardo reviews personally</div>
+        <div class="apply-step-body">Every application is read by Ricardo. Expect a response within 5 business days.</div>
+      </div>
+      <div class="apply-step">
+        <div class="apply-step-num">STEP 04</div>
+        <div class="apply-step-title">Orientation at X39</div>
+        <div class="apply-step-body">Selected candidates complete an orientation day at Tampa North Aero Park before beginning.</div>
+      </div>
+    </div>
+
+    <div class="email-cta">
+      <div>
+        <div class="email-label">SEND RÉSUMÉ &amp; APPLICATIONS TO</div>
+        <div class="email-address">admissions@missionaviationacademy.org</div>
+        <div class="email-note">Subject: "ATTN [Role Name]" · Include: résumé, 3–4 min video, preferred track, and availability</div>
+      </div>
+      <a href="mailto:admissions@missionaviationacademy.org?subject=ATTN [Role Applying For]" class="email-btn">Open Email →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p class="footer-legal">Facility: 4639 Birdsong Blvd, Lutz FL 33559 · Parking GPS: 4661 Birdsong Blvd · (813) 445-8889 · (833) FLY-STEM · admissions@missionaviationacademy.org · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate · EIN 85-1110607 · 501(c)(3) · All paid contractor positions subject to written independent contractor agreement</p>
+</footer>
+
+</body>
+</html>

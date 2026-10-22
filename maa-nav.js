@@ -131,6 +131,8 @@
         { href: '/yab',              label: 'Your Aviation Blueprint' },
         { href: '/ricky',            label: 'Ricky the Explorer' },
         { href: '/books',            label: 'All Books' },
+        { sep: true },
+        { href: '/join',             label: 'Join Our Team',            badge: 'Hiring',  badgeColor: '#1A5C2A' },
       ]
     },
     {
