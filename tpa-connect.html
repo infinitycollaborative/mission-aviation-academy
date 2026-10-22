@@ -223,23 +223,25 @@ async function submitWaitlist(e) {
   btn.disabled = true;
 
   const payload = {
-    _subject: `TPA-CC Waitlist — ${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
-    name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+    form: 'tpa-connect-waitlist',
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
     email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value || 'Not provided',
-    type: 'TPA Career Connection (TPA-CC) Waitlist',
+    phone: document.getElementById('phone').value || '',
     orgType: document.getElementById('orgType').value,
-    interest: document.getElementById('interest').value,
-    heardFrom: document.getElementById('heard').value || 'Not specified',
-    notes: document.getElementById('notes').value || 'None',
   };
 
   try {
-    await fetch('https://formspree.io/f/maeqejkp', {
+    const res = await fetch('/api/lead', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
+    const data = await res.json();
+    if (res.ok && data.redirect) {
+      window.location.href = data.redirect;
+      return;
+    }
   } catch(err) {
     console.error('Submission error:', err);
   }

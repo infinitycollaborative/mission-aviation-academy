@@ -192,19 +192,24 @@ async function submitInterest(e) {
   btn.disabled = true;
 
   const payload = {
-    _subject: `Aerospace 2027 Interest — ${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
-    name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+    form: 'aerospace-interest',
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
     email: document.getElementById('email').value,
     grade: document.getElementById('grade').value,
-    type: 'Aerospace Engineering 2027 Interest',
   };
 
   try {
-    await fetch('https://formspree.io/f/maeqejkp', {
+    const res = await fetch('/api/lead', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
+    const data = await res.json();
+    if (res.ok && data.redirect) {
+      window.location.href = data.redirect;
+      return;
+    }
   } catch(err) {
     console.error('Submission error:', err);
   }

@@ -630,7 +630,7 @@ input[type=range]{width:100%;accent-color:var(--navy);height:6px;}
      ================================================ -->
 <script>
 // ── Config ────────────────────────────────────────────────────────
-const FORMSPREE = 'maeqejkp';
+const FORMSPREE = null;
 const APP_URL   = 'https://missionaviationacademy.org/career-evaluator';
 const BOOKING   = 'https://www.flightcircle.com/shop/f2ef4eacb717/4000016315';
 const YAB_URL   = 'https://missionaviationacademy.org/yab-preorder';
@@ -803,9 +803,7 @@ async function submitEmail() {
   hide('err-gate');
   S.name=first+(val('gLast')?' '+val('gLast'):''); S.email=email;
   try { const leads=JSON.parse(localStorage.getItem('maa_leads')||'[]'); leads.push({name:S.name,email,tier:S.tier,sector:S.sector,verdict:S.result?.verdict,score:S.result?.weighted_total,goldenLevel:S.result?.golden_level?.label,opt,ts:new Date().toISOString()}); localStorage.setItem('maa_leads',JSON.stringify(leads)); } catch(e){}
-  if (FORMSPREE) {
-    try { fetch(`https://formspree.io/f/${FORMSPREE}`,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:S.name,email,tier:S.tier,sector:S.sector,targetRole:S.role||'Not specified',verdict:S.result?.verdict,score:S.result?.weighted_total,goldenLevel:S.result?.golden_level?.label,optIn:opt?'Yes':'No',_subject:`MAA Lead — ${S.result?.verdict||'New'} | ${S.sector} | ${S.tier}`})}).catch(()=>{}); } catch(e){}
-  }
+  try { fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({form:'evaluator-lead',email,firstName:first,lastName:val('gLast')||'',grade:S.tier,orgType:S.sector})}).catch(()=>{}); } catch(e){}
   track('email_captured',{tier:S.tier,sector:S.sector,verdict:S.result?.verdict});
   renderFullReport(S.result);
   showScreen('s-report');

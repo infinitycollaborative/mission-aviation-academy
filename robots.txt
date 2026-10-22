@@ -5,6 +5,8 @@ Allow: /
 Disallow: /thanks-guide
 Disallow: /thanks-arc
 Disallow: /thanks-preorder
+Disallow: /thanks-aerospace
+Disallow: /thanks-tpa
 Disallow: /remember
 Disallow: /catalog
 
