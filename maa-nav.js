@@ -6,7 +6,7 @@
   const CSS = `
 #maa-nav-global {
   position: sticky; top: 0; z-index: 999;
-  background: #001838; border-bottom: 3px solid #FFD700;
+  background: #0D2240; border-bottom: 3px solid #C9A227;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 #maa-nav-inner {
@@ -15,7 +15,7 @@
   padding: 0 24px; height: 64px; gap: 8px;
 }
 .maa-nav-logo {
-  color: #FFD700; font-weight: 800; font-size: 15px;
+  color: #C9A227; font-weight: 800; font-size: 15px;
   text-decoration: none; letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;
 }
 .maa-nav-links {
@@ -30,7 +30,7 @@
   transition: color 0.15s, background 0.15s; white-space: nowrap;
 }
 .maa-nav-link:hover, .maa-nav-link.active {
-  color: #FFD700; background: rgba(255,215,0,0.08);
+  color: #C9A227; background: rgba(201,162,39,0.08);
 }
 .maa-nav-arrow {
   font-size: 9px; opacity: 0.6; transition: transform 0.2s;
@@ -39,8 +39,8 @@
 .maa-nav-item.open .maa-nav-arrow { transform: rotate(180deg); }
 .maa-nav-dropdown {
   position: absolute; top: calc(100% + 8px); left: 0;
-  min-width: 210px; background: #001838;
-  border: 1px solid rgba(255,215,0,0.2);
+  min-width: 210px; background: #0D2240;
+  border: 1px solid rgba(201,162,39,0.2);
   border-radius: 8px; padding: 6px;
   box-shadow: 0 16px 40px rgba(0,0,0,0.5);
   opacity: 0; visibility: hidden; pointer-events: none;
@@ -57,16 +57,16 @@
   text-decoration: none; transition: background 0.12s, color 0.12s;
   gap: 8px;
 }
-.maa-nav-dd-link:hover { background: rgba(255,215,0,0.1); color: #FFD700; }
+.maa-nav-dd-link:hover { background: rgba(201,162,39,0.1); color: #C9A227; }
 .maa-nav-dd-badge {
   font-size: 9px; font-weight: 700; letter-spacing: 1px;
   padding: 2px 6px; border-radius: 3px; flex-shrink: 0;
 }
 .maa-nav-dd-sep {
-  height: 1px; background: rgba(255,215,0,0.12); margin: 4px 6px;
+  height: 1px; background: rgba(201,162,39,0.12); margin: 4px 6px;
 }
 .maa-nav-cta {
-  background: #FFD700; color: #001838; font-size: 12px; font-weight: 800;
+  background: #C9A227; color: #0D2240; font-size: 12px; font-weight: 800;
   padding: 9px 16px; border-radius: 6px; text-decoration: none;
   white-space: nowrap; flex-shrink: 0; letter-spacing: 0.03em;
   transition: opacity 0.15s;
@@ -85,12 +85,12 @@
 #maa-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 #maa-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 #maa-mobile-menu {
-  display: none; background: #001838; border-top: 1px solid rgba(255,215,0,0.15);
+  display: none; background: #0D2240; border-top: 1px solid rgba(201,162,39,0.15);
   padding: 12px 16px 20px;
 }
 #maa-mobile-menu.open { display: block; }
 .maa-mobile-section-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #FFD700;
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #C9A227;
   padding: 12px 8px 4px; text-transform: uppercase;
 }
 .maa-mobile-link {
@@ -98,9 +98,9 @@
   padding: 9px 8px; border-radius: 5px; text-decoration: none;
   transition: background 0.12s;
 }
-.maa-mobile-link:hover { background: rgba(255,215,0,0.08); color: #FFD700; }
+.maa-mobile-link:hover { background: rgba(201,162,39,0.08); color: #C9A227; }
 .maa-mobile-cta {
-  display: block; text-align: center; background: #FFD700; color: #001838;
+  display: block; text-align: center; background: #C9A227; color: #0D2240;
   font-weight: 800; font-size: 14px; padding: 13px 20px; border-radius: 7px;
   text-decoration: none; margin-top: 14px;
 }
@@ -116,6 +116,7 @@
         { href: '/saturday',        label: 'Saturday Open House',      badge: 'Free',    badgeColor: '#1A5C2A' },
         { href: '/programs',        label: 'All Programs' },
         { href: '/scholarships',    label: 'Scholarships & SUFS' },
+        { href: '/sufs',             label: 'SUFS Calculator',            badge: '$0', badgeColor: '#16a34a' },
         { sep: true },
         { href: '/discovery-flight',label: 'Book a Discovery Flight' },
         { href: '/ground-school',   label: 'Ground School' },
@@ -132,14 +133,17 @@
         { href: '/ricky',            label: 'Ricky the Explorer' },
         { href: '/books',            label: 'All Books' },
         { sep: true },
-        { href: '/join',             label: 'Join Our Team',            badge: 'Hiring',  badgeColor: '#1A5C2A' },
+        { href: '/join',             label: 'Join Our Team',              badge: 'Hiring', badgeColor: '#8B0000' },
+        { href: '/join#ambassador',     label: 'Become an Ambassador' },
+        { sep: true },
+        { href: '/tuskegee',         label: 'Tuskegee Airmen Legacy' },
       ]
     },
     {
       label: 'Partners', items: [
         { href: '/partners',         label: 'Partners & Bulk Orders' },
         { href: '/enroll',           label: 'Enroll / Co-Op Partner' },
-        { href: '/tpa-connect',      label: 'TPA Career Connection',    badge: 'TPA',    badgeColor: '#0A4B7C' },
+        { href: '/tpa-connect',      label: 'TPA Career Connection' },
         { sep: true },
         { href: '/support',          label: 'Donate / Support',         badge: 'Give',   badgeColor: '#1A5C2A' },
       ]
@@ -150,8 +154,6 @@
         { href: '/community',        label: 'Community & Events' },
         { href: '/stories',          label: 'Student Stories' },
         { href: '/tour',             label: 'Tour Schedule' },
-        { sep: true },
-        { href: '/tuskegee',         label: 'Tuskegee Airmen Heritage',  badge: 'Red Tail', badgeColor: '#8B0000' },
       ]
     },
     { label: 'About', href: '/about' },

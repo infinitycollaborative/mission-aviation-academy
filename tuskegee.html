@@ -3,251 +3,122 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>The Tuskegee Airmen — Mission Aviation Academy</title>
-  <meta name="description" content="The history of the Tuskegee Airmen and their living legacy at Mission Aviation Academy — through Lt. Col. George Hardy, Flight Officer Daniel Keel, and the students they inspire."/>
-<link rel="canonical" href="https://missionaviationacademy.org/tuskegee">
-  <meta property="og:image" content="https://missionaviationacademy.org/images/tai-chappie-logo.jpg"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <script src="/maa-nav.js" defer></script>
+  <title>Tuskegee Airmen Legacy — Mission Aviation Academy</title>
+  <meta name="description" content="The unbroken line from the 332nd Fighter Group to Tampa's North Aero Park. Ricardo Foster's story, August Martin High School, and the mentorship chain that runs through Mission Aviation Academy."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script src="/maa-nav.js"></script>
   <style>
+    * { box-sizing: border-box; }
     body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #111827; margin: 0; }
 
     /* HERO */
-    .hero {
-      background: #0D2240;
-      border-bottom: 4px solid #C9A227;
-      padding: 60px 24px 52px;
-    }
-    .hero-inner { max-width: 900px; margin: 0 auto; display: flex; gap: 32px; align-items: center; }
-    .hero-tai-logo {
-      flex-shrink: 0;
-      display: flex; flex-direction: column; align-items: center; gap: 10px;
-    }
-    .hero-tai-logo img {
-      width: 108px; height: 108px;
-      object-fit: contain; border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-      padding: 4px;
-    }
-    .hero-tai-label {
-      font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
-      color: rgba(255,215,0,0.5); text-align: center;
-      text-transform: uppercase; line-height: 1.5; max-width: 100px;
-    }
-    .hero-text { flex: 1; }
-    .hero-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      color: #C9A227; margin-bottom: 14px; text-transform: uppercase;
-    }
-    .hero h1 {
-      font-size: 42px; font-weight: 900; color: #fff;
-      margin: 0 0 14px; line-height: 1.05;
-    }
-    .hero-sub {
-      font-size: 15px; color: rgba(255,255,255,0.68);
-      line-height: 1.75; margin: 0 0 22px; max-width: 560px;
-    }
-    .hero-source {
-      font-size: 11px; color: rgba(255,255,255,0.35);
-      font-style: italic; line-height: 1.6;
-    }
+    .hero { background: #0D2240; border-bottom: 4px solid #C9A227; padding: 64px 24px 52px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(201,162,39,0.02) 60px, rgba(201,162,39,0.02) 61px); }
+    .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: #C9A227; margin-bottom: 18px; }
+    .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 52px; font-weight: 700; color: #fff; margin: 0 0 16px; line-height: 1.08; }
+    .hero h1 em { color: #C9A227; font-style: italic; }
+    .hero p { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.8; max-width: 620px; margin: 0; }
+    .hero-dates { display: flex; gap: 20px; margin-top: 24px; flex-wrap: wrap; }
+    .hero-date { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .hero-date strong { color: #C9A227; display: block; font-size: 20px; font-weight: 900; }
 
-    /* PAGE BODY */
-    .page-body { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+    .page { max-width: 860px; margin: 0 auto; padding: 64px 24px; }
 
-    /* DEDICATION */
-    .dedication {
-      background: linear-gradient(135deg, #0D2240 0%, #0a2a5e 100%);
-      border-left: 4px solid #C9A227;
-      border-radius: 0 12px 12px 0;
-      padding: 32px 36px;
-      margin-bottom: 60px;
-    }
-    .dedication-label {
-      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
-      color: #C9A227; margin-bottom: 20px; text-transform: uppercase;
-    }
-    .dedication-entry { margin-bottom: 24px; }
-    .dedication-entry:last-child { margin-bottom: 0; }
-    .dedication-name {
-      font-size: 17px; font-weight: 800; color: #fff;
-      margin-bottom: 4px;
-    }
-    .dedication-class {
-      font-size: 12px; color: rgba(255,215,0,0.7);
-      font-weight: 600; margin-bottom: 10px; letter-spacing: 0.5px;
-    }
-    .dedication-text {
-      font-size: 14px; color: rgba(255,255,255,0.72);
-      line-height: 1.8; font-style: italic;
-    }
+    /* LINEAGE VISUAL */
+    .lineage-section { margin-bottom: 72px; }
+    .lineage-h { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; color: #0D2240; margin: 0 0 8px; }
+    .lineage-sub { font-size: 14px; color: #6b7280; margin: 0 0 40px; line-height: 1.6; }
+    .lineage-chain { position: relative; }
+    .lineage-node { display: grid; grid-template-columns: 72px 1fr; gap: 20px; align-items: start; margin-bottom: 0; }
+    .lineage-left { display: flex; flex-direction: column; align-items: center; }
+    .lineage-dot { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; flex-shrink: 0; border: 3px solid; }
+    .lineage-line { width: 3px; flex: 1; min-height: 40px; }
+    .lineage-content { padding: 0 0 40px; }
+    .lineage-year { font-size: 11px; font-weight: 700; letter-spacing: 2px; margin-bottom: 4px; }
+    .lineage-name { font-size: 20px; font-weight: 900; color: #0D2240; margin-bottom: 4px; line-height: 1.2; }
+    .lineage-title { font-size: 12px; font-weight: 700; margin-bottom: 10px; }
+    .lineage-text { font-size: 13px; color: #4b5563; line-height: 1.8; }
+    .lineage-quote { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-style: italic; color: #0D2240; border-left: 3px solid #C9A227; padding: 10px 16px; margin: 12px 0; background: #fffde7; border-radius: 0 6px 6px 0; }
 
-    /* HISTORY SECTIONS */
-    .section { margin-bottom: 56px; }
-    .section-eyebrow {
-      font-size: 10px; font-weight: 700; letter-spacing: 2px;
-      color: #C9A227; text-transform: uppercase; margin-bottom: 10px;
-      background: #0D2240; display: inline-block;
-      padding: 4px 12px; border-radius: 3px;
-    }
-    .section h2 {
-      font-size: 26px; font-weight: 800; color: #0D2240;
-      margin: 0 0 20px; line-height: 1.15;
-    }
-    .section p {
-      font-size: 15px; color: #374151;
-      line-height: 1.85; margin-bottom: 16px;
-    }
-    .section p:last-child { margin-bottom: 0; }
+    /* NODE COLORS */
+    .node-gold .lineage-dot { background: #C9A227; color: #0D2240; border-color: #B8860B; }
+    .node-gold .lineage-line { background: linear-gradient(to bottom, #C9A227, #0D2240); }
+    .node-gold .lineage-year { color: #B8860B; }
+    .node-gold .lineage-title { color: #B8860B; }
+    .node-navy .lineage-dot { background: #0D2240; color: #C9A227; border-color: #002855; }
+    .node-navy .lineage-line { background: linear-gradient(to bottom, #0D2240, #8B0000); }
+    .node-navy .lineage-year { color: #0D2240; }
+    .node-navy .lineage-title { color: #0D2240; }
+    .node-red .lineage-dot { background: #8B0000; color: #fff; border-color: #6B0000; }
+    .node-red .lineage-line { background: linear-gradient(to bottom, #8B0000, #0D2240); }
+    .node-red .lineage-year { color: #8B0000; }
+    .node-red .lineage-title { color: #8B0000; }
+    .node-bright .lineage-dot { background: #0D2240; color: #C9A227; border-color: #C9A227; box-shadow: 0 0 0 4px rgba(201,162,39,0.2); }
+    .node-bright .lineage-line { background: #C9A227; }
+    .node-bright .lineage-year { color: #0D2240; }
+    .node-bright .lineage-title { color: #0D2240; }
+    .node-final .lineage-dot { background: #C9A227; color: #0D2240; border-color: #0D2240; width: 60px; height: 60px; font-size: 22px; box-shadow: 0 0 0 6px rgba(201,162,39,0.15), 0 0 0 12px rgba(201,162,39,0.05); }
+    .node-final .lineage-year { color: #16a34a; }
+    .node-final .lineage-name { color: #0D2240; font-size: 24px; }
+    .node-final .lineage-title { color: #16a34a; }
 
-    /* STAT ROW */
-    .stat-row {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 16px; margin: 32px 0;
-    }
-    .stat-card {
-      background: #f9fafb; border: 1px solid #e5e7eb;
-      border-radius: 10px; padding: 20px; text-align: center;
-    }
-    .stat-number {
-      font-size: 32px; font-weight: 900; color: #0D2240;
-      line-height: 1; margin-bottom: 6px;
-    }
-    .stat-label {
-      font-size: 11px; font-weight: 600; color: #6b7280;
-      line-height: 1.5; letter-spacing: 0.5px;
-    }
+    /* DIVIDER */
+    .divider { height: 1px; background: linear-gradient(to right, transparent, #e5e7eb, transparent); margin: 56px 0; }
 
-    /* PULLQUOTE */
-    .pullquote {
-      border-left: 4px solid #C9A227;
-      padding: 20px 28px;
-      margin: 36px 0;
-      background: #fffbeb;
-      border-radius: 0 8px 8px 0;
-    }
-    .pullquote p {
-      font-size: 17px; font-weight: 600; color: #0D2240;
-      font-style: italic; line-height: 1.7; margin: 0 0 10px;
-    }
-    .pullquote cite {
-      font-size: 12px; font-weight: 700; color: #6b7280;
-      font-style: normal; letter-spacing: 0.5px;
-    }
+    /* AUGUST MARTIN SECTION */
+    .story-section { margin-bottom: 64px; }
+    .pull-section { background: #0D2240; border-radius: 16px; padding: 40px; margin-bottom: 40px; }
+    .pull-quote { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #fff; line-height: 1.65; font-style: italic; margin: 0 0 16px; }
+    .pull-attr { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+    .story-block { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 22px; }
+    .story-block-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #9ca3af; margin-bottom: 10px; }
+    .story-block-title { font-size: 15px; font-weight: 800; color: #0D2240; margin-bottom: 8px; }
+    .story-block-text { font-size: 13px; color: #4b5563; line-height: 1.75; }
+    .story-full { font-size: 15px; color: #374151; line-height: 1.85; margin-bottom: 16px; }
 
-    /* TIMELINE */
-    .timeline { margin: 32px 0; }
-    .timeline-item {
-      display: flex; gap: 18px; margin-bottom: 20px;
-    }
-    .timeline-year {
-      flex-shrink: 0; width: 56px; text-align: right;
-      font-size: 13px; font-weight: 800; color: #C9A227;
-      background: #0D2240; border-radius: 5px;
-      padding: 6px 8px; line-height: 1.3; height: fit-content;
-    }
-    .timeline-content {
-      flex: 1; padding-top: 2px;
-      font-size: 14px; color: #374151; line-height: 1.7;
-    }
-    .timeline-content strong { color: #0D2240; }
+    /* AMBER STAT STRIP */
+    .stat-strip { background: #C9A227; border-radius: 12px; padding: 20px 24px; display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; margin-bottom: 56px; }
+    .strip-stat strong { font-size: 24px; font-weight: 900; color: #0D2240; display: block; }
+    .strip-stat span { font-size: 10px; font-weight: 700; color: rgba(0,24,56,0.6); letter-spacing: 1px; }
 
-    /* CHAPPIE JAMES SECTION */
-    .chappie-box {
-      background: #0D2240; border-radius: 12px;
-      padding: 32px 36px; margin: 40px 0;
-      display: flex; gap: 28px; align-items: flex-start;
-    }
-    .chappie-logo-wrap {
-      flex-shrink: 0; display: flex; flex-direction: column;
-      align-items: center; gap: 8px;
-    }
-    .chappie-logo-wrap img {
-      width: 90px; height: 90px;
-      object-fit: contain; border-radius: 50%;
-    }
-    .chappie-logo-label {
-      font-size: 9px; font-weight: 700; letter-spacing: 1px;
-      color: rgba(255,215,0,0.45); text-align: center;
-      text-transform: uppercase; line-height: 1.5; max-width: 90px;
-    }
-    .chappie-content { flex: 1; }
-    .chappie-content h3 {
-      font-size: 18px; font-weight: 800; color: #C9A227;
-      margin: 0 0 12px;
-    }
-    .chappie-content p {
-      font-size: 14px; color: rgba(255,255,255,0.72);
-      line-height: 1.8; margin-bottom: 12px;
-    }
-    .chappie-content p:last-child { margin-bottom: 0; }
+    /* SLIDE DECK */
+    .deck-section { margin-bottom: 56px; }
+    .deck-header { margin-bottom: 20px; }
+    .deck-header h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; color: #0D2240; margin: 0 0 6px; }
+    .deck-header p { font-size: 13px; color: #6b7280; margin: 0; line-height: 1.6; }
+    .deck-viewer { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; background: #111; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .deck-controls { background: #0D2240; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; }
+    .deck-title-text { font-size: 12px; color: rgba(255,255,255,0.6); }
+    .deck-nav-btns { display: flex; gap: 8px; align-items: center; }
+    .deck-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-family: 'Inter', sans-serif; }
+    .deck-btn:hover { background: rgba(201,162,39,0.2); border-color: #C9A227; color: #C9A227; }
+    .deck-counter { font-size: 12px; color: rgba(255,255,255,0.5); min-width: 60px; text-align: center; }
+    .deck-frame-wrap { position: relative; padding-top: 56.25%; background: #1a1a2e; }
+    .deck-frame-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .deck-caption { background: #f9fafb; padding: 14px 18px; border-top: 1px solid #e5e7eb; }
+    .deck-caption-text { font-size: 12px; color: #6b7280; line-height: 1.6; }
+    .deck-caption-attr { font-size: 11px; color: #9ca3af; margin-top: 4px; }
+    .deck-fullscreen-link { display: inline-block; margin-top: 12px; font-size: 12px; font-weight: 700; color: #0D2240; text-decoration: none; border: 1.5px solid #0D2240; padding: 7px 14px; border-radius: 6px; }
 
-    /* LEGACY CLOSE */
-    .legacy-close {
-      background: #0D2240; border-radius: 12px;
-      border-top: 4px solid #C9A227;
-      padding: 44px 40px; text-align: center;
-      margin-top: 60px;
-    }
-    .legacy-close .wings { font-size: 48px; margin-bottom: 20px; display: block; }
-    .legacy-close blockquote {
-      font-size: 20px; font-weight: 700; color: #fff;
-      font-style: italic; line-height: 1.65;
-      margin: 0 auto 20px; max-width: 600px;
-    }
-    .legacy-close cite {
-      font-size: 12px; color: rgba(255,215,0,0.6);
-      font-style: normal; font-weight: 600; letter-spacing: 1px;
-    }
-    .legacy-close .cta-row {
-      display: flex; gap: 12px; justify-content: center;
-      flex-wrap: wrap; margin-top: 32px;
-    }
-    .btn-gold {
-      background: #C9A227; color: #0D2240;
-      font-weight: 800; font-size: 13px;
-      padding: 13px 24px; border-radius: 7px;
-      text-decoration: none; white-space: nowrap;
-    }
-    .btn-outline-gold {
-      background: transparent; color: #C9A227;
-      border: 2px solid #C9A227; font-weight: 700;
-      font-size: 13px; padding: 13px 24px;
-      border-radius: 7px; text-decoration: none;
-      white-space: nowrap;
-    }
+    /* CTA */
+    .legacy-cta { background: #0D2240; border-radius: 16px; padding: 40px; text-align: center; border: 2px solid #C9A227; }
+    .legacy-cta h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; color: #fff; margin: 0 0 10px; }
+    .legacy-cta p { font-size: 14px; color: rgba(255,255,255,0.7); margin: 0 0 22px; line-height: 1.75; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold { background: #C9A227; color: #0D2240; font-weight: 800; font-size: 13px; padding: 13px 24px; border-radius: 7px; text-decoration: none; }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); font-weight: 600; font-size: 13px; padding: 12px 22px; border-radius: 7px; text-decoration: none; }
 
-    /* SOURCE NOTE */
-    .source-note {
-      background: #f9fafb; border: 1px solid #e5e7eb;
-      border-radius: 8px; padding: 18px 22px;
-      margin-top: 48px;
-    }
-    .source-note p {
-      font-size: 12px; color: #9ca3af; line-height: 1.7; margin: 0;
-    }
-
-    /* FOOTER */
     .site-footer { background: #0D2240; padding: 24px 40px; }
-    .footer-legal {
-      font-size: 11px; color: rgba(255,255,255,0.3);
-      text-align: center; line-height: 1.7;
-    }
+    .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
 
-    @media (max-width: 680px) {
-      .hero-inner { flex-direction: column; gap: 20px; }
-      .hero h1 { font-size: 30px; }
-      .hero-tai-logo { flex-direction: row; gap: 14px; align-items: center; }
-      .hero-tai-label { max-width: none; }
-      .dedication { padding: 24px 20px; }
-      .chappie-box { flex-direction: column; }
-      .chappie-logo-wrap { flex-direction: row; gap: 14px; align-items: center; }
-      .chappie-logo-label { max-width: none; }
-      .legacy-close { padding: 32px 24px; }
-      .legacy-close blockquote { font-size: 17px; }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 32px; }
+      .lineage-node { grid-template-columns: 52px 1fr; gap: 12px; }
+      .story-grid { grid-template-columns: 1fr; }
+      .pull-quote { font-size: 17px; }
     }
   </style>
 </head>
@@ -255,158 +126,209 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-tai-logo">
-      <img src="/images/tai-chappie-logo.jpg" alt="Tuskegee Airmen Inc. Gen. Daniel Chappie James Jr. Chapter logo">
-      <div class="hero-tai-label">Tuskegee Airmen Inc.<br>Chappie James Chapter</div>
-    </div>
-    <div class="hero-text">
-      <div class="hero-eyebrow">Heritage &amp; Legacy · Your Aviation Blueprint · Appendix J</div>
-      <h1>The Tuskegee Airmen</h1>
-      <p class="hero-sub">They flew two wars — one against the Nazis over Germany, one against racism at home. The runway they built is still open. Mission Aviation Academy exists because of it.</p>
-      <p class="hero-source">History drawn from Appendix J of <em>Your Aviation Blueprint</em> — originally by Daniel Haulman, PhD, Air Force Historical Research Agency, 27 April 2016. A work of the United States Government, in the public domain.</p>
+    <div class="hero-eyebrow">RED TAIL LEGACY · MISSION AVIATION ACADEMY · TAMPA NORTH AERO PARK (X39)</div>
+    <h1>The Line That Runs<br>From <em>Tuskegee</em> to Tampa</h1>
+    <p>In 1941, thirteen men entered Tuskegee Army Air Field and proved the world wrong. That act of courage set off a chain of mentorship that runs — unbroken — from the 332nd Fighter Group to the students we put in cockpits today.</p>
+    <div class="hero-dates">
+      <div class="hero-date"><strong>1941</strong>First Tuskegee class</div>
+      <div class="hero-date"><strong>332nd</strong>Fighter Group</div>
+      <div class="hero-date"><strong>Lt. Col.</strong>George Hardy · Class 44-H-SE</div>
+      <div class="hero-date"><strong>2020</strong>iACT / MAA founded</div>
+      <div class="hero-date"><strong>730+</strong>FAA credentials issued</div>
     </div>
   </div>
 </div>
 
-<div class="page-body">
+<div class="page">
 
-  <!-- DEDICATION -->
-  <div class="dedication">
-    <div class="dedication-label">Dedicated to — from Your Aviation Blueprint</div>
-    <div class="dedication-entry">
-      <div class="dedication-name">Lt. Col. George Hardy</div>
-      <div class="dedication-class">Class 44-H-SE · 332nd Fighter Group · Tuskegee Airman<br>June 8, 1925 – September 24, 2025</div>
-      <div class="dedication-text">"You flew twenty-one combat missions over Germany so that one day, a kid from Jamaica who arrived in Brooklyn with nothing could build a school that opens that same sky to everyone. You were the youngest Red Tail at 19. The last combat pilot at 100. Your baton is in good hands, sir. The sky you opened is still open."</div>
-    </div>
-    <div class="dedication-entry">
-      <div class="dedication-name">Flight Officer Daniel Keel</div>
-      <div class="dedication-class">Class 45-G-TE · 477th Bombardment Group · Tuskegee Airman · 103 years young</div>
-      <div class="dedication-text">One of only five to earn the triple airman rating: pilot, navigator, and bombardier. A living proof that excellence has no ceiling.</div>
+  <!-- LINEAGE VISUAL -->
+  <div class="lineage-section">
+    <div class="lineage-h">The Unbroken Chain</div>
+    <p class="lineage-sub">Every mentorship chain has a beginning. This one started in Alabama in 1941. It runs through South Jamaica, Queens, through the decks of naval carriers, and lands at Tampa North Aero Park — where it continues every Saturday.</p>
+
+    <div class="lineage-chain">
+
+      <!-- 1: TUSKEGEE 1941 -->
+      <div class="lineage-node node-gold">
+        <div class="lineage-left">
+          <div class="lineage-dot">✈</div>
+          <div class="lineage-line"></div>
+        </div>
+        <div class="lineage-content">
+          <div class="lineage-year">1941 — TUSKEGEE, ALABAMA</div>
+          <div class="lineage-name">The 332nd Fighter Group</div>
+          <div class="lineage-title">99th Fighter Squadron · The Red Tails</div>
+          <div class="lineage-text">Thirteen men entered Tuskegee Army Air Field when the U.S. War Department called it an "experiment" designed to fail. They were set up to prove a racist assumption. Instead, they flew 15,000+ combat sorties, destroyed 112 enemy aircraft, and earned 96 Distinguished Flying Crosses. Their red-painted tails became the most recognized aircraft markings of World War II — and the symbol of what happens when a closed door is forced open from the outside.</div>
+          <div class="lineage-quote">"These men had to prove their basic humanity before they could prove their combat excellence." — Daniel Haulman, PhD, Air Force Historical Research Agency</div>
+        </div>
+      </div>
+
+      <!-- 2: GEORGE HARDY -->
+      <div class="lineage-node node-navy">
+        <div class="lineage-left">
+          <div class="lineage-dot">⭐</div>
+          <div class="lineage-line"></div>
+        </div>
+        <div class="lineage-content">
+          <div class="lineage-year">CLASS 44-H-SE · TUSKEGEE</div>
+          <div class="lineage-name">Lt. Col. George Spencer Hardy</div>
+          <div class="lineage-title">332nd Fighter Group · Mentor to Ricardo Foster</div>
+          <div class="lineage-text">Lt. Col. George Hardy earned his wings at Tuskegee Army Air Field, Class 44-H-SE — one of nearly 1,000 African American pilots trained under a program the military expected to wash out at every turn. He soloed when the system said he couldn't. He served in the 332nd Fighter Group alongside the men who carried red tails into combat over North Africa and Germany. Years later, he reached back. He found a naval intelligence officer from Jamaica who'd arrived in Brooklyn at eleven years old with a dream bigger than his block — and he became the reason that dream had a lineage.</div>
+          <div class="lineage-quote">"He reached back for me. Just as he reached back and helped me find my purpose, I now reach back to help you discover yours." — LCDR Ricardo Foster</div>
+        </div>
+      </div>
+
+      <!-- 3: AUGUST MARTIN HIGH SCHOOL -->
+      <div class="lineage-node node-red">
+        <div class="lineage-left">
+          <div class="lineage-dot">🏫</div>
+          <div class="lineage-line"></div>
+        </div>
+        <div class="lineage-content">
+          <div class="lineage-year">SOUTH JAMAICA, QUEENS, NEW YORK</div>
+          <div class="lineage-name">August Martin High School</div>
+          <div class="lineage-title">Named for the first Black commercial airline pilot in American history</div>
+          <div class="lineage-text">Ricardo Foster was an eleven-year-old kid from Kingston, Jamaica when a 747 carried him over the Caribbean and didn't bring it back. Six years later, in Brooklyn, he tested into one of the only aviation programs in New York City — August Martin High School in South Jamaica, Queens, named for the first Black commercial airline pilot in American history. Getting in was the easy part. Getting there was two trains and two buses, one way, every single morning. He made that commute because that school, and that name on the door, told him the sky was a place he was allowed to enter.</div>
+          <div class="lineage-quote">"I was an inner-city kid in Brooklyn, and I had tested into one of the only aviation programs in New York City... named for the first Black commercial airline pilot in American history, a school most kids who wanted in never got the chance to attend." — Your Aviation Blueprint</div>
+        </div>
+      </div>
+
+      <!-- 4: THE F-18 MOMENT -->
+      <div class="lineage-node node-navy">
+        <div class="lineage-left">
+          <div class="lineage-dot">🛩</div>
+          <div class="lineage-line"></div>
+        </div>
+        <div class="lineage-content">
+          <div class="lineage-year">ISLIP AIRPORT, LONG ISLAND</div>
+          <div class="lineage-name">The F-18 Moment</div>
+          <div class="lineage-title">Training flight, age 17 · The moment everything got a name</div>
+          <div class="lineage-text">At seventeen, on a training flight out of Islip Airport in an aircraft that felt like a kite with an engine, an F-18 came up from below. It went straight up — a wall of sound and speed that Ricardo felt in his chest before his eyes caught up. The trainer shuddered in its wake. In that half-second, something that started on a 747 over the Caribbean and hardened on a two-train, two-bus commute through Brooklyn finally had a name: he wanted to fly jets. For the Navy.</div>
+        </div>
+      </div>
+
+      <!-- 5: NAVAL SERVICE -->
+      <div class="lineage-node node-navy">
+        <div class="lineage-left">
+          <div class="lineage-dot">⚓</div>
+          <div class="lineage-line"></div>
+        </div>
+        <div class="lineage-content">
+          <div class="lineage-year">1990 – 2018 · USN</div>
+          <div class="lineage-name">LCDR Ricardo "Tattoo" Foster, USN (Ret.)</div>
+          <div class="lineage-title">Naval Intelligence Officer · 28 yrs USN + 7 yrs civilian &amp; nonprofit = 35 yrs total · 100% Disabled Veteran</div>
+          <div class="lineage-text">Ricardo went to Naval flight school. And failed out. He was offered a slot as a Naval Flight Officer — the backseat, radar and weapons. He turned it down fast. "Live your destination — don't ride in the rear seat." He became a Naval Intelligence Officer instead, attached to an F/A-18 Super Hornet squadron, planning the missions that kept aviators alive. Deployed across carriers, commands, and continents over 28 years — USS Enterprise, USS Ronald Reagan (plank owner), U.S. Special Operations Command, U.S. Central Command. He flew anyway. Just not from the seat they'd offered. Years later he bought his own airplane. Finished the license the Navy didn't finish for him. Built a home on an airpark. And then he started a club. Not for himself.</div>
+        </div>
+      </div>
+
+      <!-- 6: AUGUST MARTIN CLOSES -->
+      <div class="lineage-node node-red">
+        <div class="lineage-left">
+          <div class="lineage-dot">✖</div>
+          <div class="lineage-line"></div>
+        </div>
+        <div class="lineage-content">
+          <div class="lineage-year">THE PROGRAM THAT DIDN'T SURVIVE</div>
+          <div class="lineage-name">August Martin's Aviation Program Shut Down</div>
+          <div class="lineage-title">Busing inner-city kids to fly was expensive — and expensive things that serve poor kids go first</div>
+          <div class="lineage-text">August Martin's aviation program closed. Busing inner-city youth two hours each way to fly was expensive. And expensive things that serve poor kids are always the first to go. Ricardo never got to keep his promise where he made it. So he kept it somewhere else.</div>
+          <div class="lineage-quote">"This book exists because a program that gave one Brooklyn kid his start didn't survive — and because that kid grew up and refused to let the promise die with it." — Your Aviation Blueprint</div>
+        </div>
+      </div>
+
+      <!-- 7: iACT / MAA FOUNDED -->
+      <div class="lineage-node node-final">
+        <div class="lineage-left">
+          <div class="lineage-dot">🔴</div>
+        </div>
+        <div class="lineage-content" style="padding-bottom:0;">
+          <div class="lineage-year" style="color:#16a34a;font-weight:800;">2020 — TAMPA NORTH AERO PARK (X39) · LUTZ, FLORIDA</div>
+          <div class="lineage-name">Infinity Aero Club Tampa Bay / Mission Aviation Academy</div>
+          <div class="lineage-title" style="color:#16a34a;">The promise, kept in print — and in the air</div>
+          <div class="lineage-text">iACT was founded as a nonprofit flying club. MAA followed as the academic division. The Red Tail Roost — N7480X, a 1960 Cessna 172B painted in the tribute scheme of the Tuskegee Airmen's P-51 Mustang — became the symbol: the same lineage, still flying, in a new generation's hands. 730+ FAA credentials. 1,380+ students flown. 300,000+ individuals reached. Lt. Col. George Hardy's mentorship, running through Ricardo Foster, running through every student who sits in that cockpit at X39.</div>
+          <div class="lineage-quote">"So let one Brooklyn kid who rode two trains and two buses on faith alone tell you what he knows for certain: the only thing standing between you and this industry is the belief that it was built for someone else. It wasn't. It was built by people who looked just like you — and then had it taken away. We built this one for you." — Your Aviation Blueprint</div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- SECTION 1: ORIGINS -->
-  <div class="section">
-    <div class="section-eyebrow">Origins</div>
-    <h2>Thirty Years of a Closed Sky</h2>
-    <p>The Wright Brothers invented the airplane in 1903. By the end of 1909, the Army had its first airplanes and its first pilots. For more than thirty years afterwards, however, there were no African American pilots in the American military. Racism was the primary reason. The War Department did not allow African Americans to serve as military pilots for decades.</p>
-    <p>This is the story of the first Black military pilots in American history: the Tuskegee Airmen. They were not only the pilots, but also the ground personnel who served in their units or at their bases — and they outnumbered the pilots more than ten to one.</p>
+  <!-- STATS -->
+  <div class="stat-strip">
+    <div class="strip-stat"><strong>1941</strong><span>TUSKEGEE FOUNDED</span></div>
+    <div class="strip-stat"><strong>992</strong><span>PILOTS TRAINED</span></div>
+    <div class="strip-stat"><strong>15,000+</strong><span>COMBAT SORTIES</span></div>
+    <div class="strip-stat"><strong>332nd</strong><span>FIGHTER GROUP</span></div>
+    <div class="strip-stat"><strong>730+</strong><span>MAA FAA CREDENTIALS</span></div>
+    <div class="strip-stat"><strong>2030</strong><span>1 MILLION LIVES GOAL</span></div>
+  </div>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-year">1941</div>
-        <div class="timeline-content">The War Department activated the <strong>99th Pursuit Squadron</strong> (later 99th Fighter Squadron) at Chanute Field, Illinois — but it had no pilots until a year later, when it moved to Tuskegee.</div>
+  <div class="divider"></div>
+
+  <!-- SLIDE DECK -->
+  <div class="deck-section">
+    <div class="deck-header">
+      <h2>The Tuskegee Airmen: A Condensed History</h2>
+      <p>Authored by Daniel Haulman, PhD · Air Force Historical Research Agency · April 27, 2016 · 25 slides. This is the deck MAA uses to teach the Tuskegee legacy to every student who passes through X39.</p>
+    </div>
+
+    <div class="deck-viewer">
+      <div class="deck-controls">
+        <span class="deck-title-text">Tuskegee Airmen: A Condensed History · Dr. Daniel Haulman, PhD · AFHRA</span>
+        <div class="deck-nav-btns">
+          <button class="deck-btn" onclick="prevSlide()">← Prev</button>
+          <span class="deck-counter" id="slideCounter">1 / 25</span>
+          <button class="deck-btn" onclick="nextSlide()">Next →</button>
+        </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-year">1941–42</div>
-        <div class="timeline-content">Primary flight training at <strong>Moton Field</strong>, a Tuskegee Institute facility on grass runways, with African American flight instructors — many of whom had taught civilian pilot training at Tuskegee before 1941. Advanced training followed at Tuskegee Army Air Field, commanded by Colonel Noel F. Parrish.</div>
+      <div class="deck-frame-wrap">
+        <iframe id="deckFrame" src="/tuskegee_deck.pdf#page=1" title="Tuskegee Airmen Condensed History — Dr. Daniel Haulman, AFHRA 2016"></iframe>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-year">~1,000</div>
-        <div class="timeline-content">African American pilots completed flight training — out of far more who entered. Less than half of cadets who entered flying training graduated and received their wings, becoming officers in the Army Air Forces.</div>
+      <div class="deck-caption">
+        <div class="deck-caption-text">Use the Prev / Next controls above to move through all 25 slides. The final slide connects the Tuskegee legacy directly to iACT and Mission Aviation Academy.</div>
+        <div class="deck-caption-attr">Source: Daniel Haulman, PhD · Air Force Historical Research Agency (AFHRA) · April 27, 2016 · Shared with permission for educational use.</div>
+        <a href="/tuskegee_deck.pdf" target="_blank" rel="noopener noreferrer" class="deck-fullscreen-link">⤢ Open full screen PDF →</a>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 2: COMBAT -->
-  <div class="section">
-    <div class="section-eyebrow">Combat Record</div>
-    <h2>Red Tails Over Europe</h2>
-    <p>Most of the Tuskegee Airmen pilots served in two units: the <strong>332nd Fighter Group</strong> and the <strong>477th Bombardment Group</strong>.</p>
-    <p>The 99th Fighter Squadron was the first to deploy to combat in 1943, attached to various white fighter groups in North Africa, Sicily, and Italy, flying P-40s. In early 1944 the 332nd Fighter Group deployed to Italy with its 100th, 301st, and 302nd Fighter Squadrons. In the summer of 1944, the 99th was reassigned to the 332nd — making it the only fighter group in World War II with four squadrons, with more pilots and planes than any other.</p>
-    <p>Reassigned to the Fifteenth Air Force (which flew heavy four-engine bombers such as B-17 Flying Fortresses and B-24 Liberators), the Tuskegee Airmen flew P-47s and then <strong>P-51 Mustangs with red tails</strong> — to distinguish them from the six other fighter escort groups. They are remembered most for their missions escorting bombers into central Europe, over Germany, Austria, Hungary, Czechoslovakia, Romania, and other Nazi-occupied countries.</p>
+  <div class="divider"></div>
 
-    <div class="stat-row">
-      <div class="stat-card">
-        <div class="stat-number">112</div>
-        <div class="stat-label">Enemy aircraft shot down by war's end</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">95</div>
-        <div class="stat-label">Tuskegee Airmen earned Distinguished Flying Crosses</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">27</div>
-        <div class="stat-label">Bombers lost to enemy (vs. avg. 46 for other groups)</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">179</div>
-        <div class="stat-label">Bomber escort missions — lost bombers on only 7</div>
-      </div>
-    </div>
-
-    <p>Sometimes the Tuskegee Airmen fighters were outnumbered not only by the number of bombers they had to protect, but also by the number of enemy fighters sent to shoot them down. Yet they lost significantly fewer bombers than any other escort group in the Fifteenth Air Force.</p>
-
-    <div class="pullquote">
-      <p>"They proved beyond a shadow of a doubt that they could fly the most advanced combat fighters as skillfully and effectively as the white pilots."</p>
-      <cite>— Daniel Haulman, PhD · Air Force Historical Research Agency</cite>
-    </div>
-
-    <p>The most memorable mission the Tuskegee Airmen flew was to Berlin on <strong>March 24, 1945</strong> — the longest mission ever flown by the Fifteenth Air Force. Three Tuskegee Airmen — 1st Lt. Roscoe C. Brown, 2nd Lt. Charles V. Brantley, and 1st Lt. Earl R. Lane — each shot down a German Me-262 jet that day. It was the first time Tuskegee Airmen shot down German jets.</p>
-  </div>
-
-  <!-- SECTION 3: CHAPPIE JAMES / 477th -->
-  <div class="section">
-    <div class="section-eyebrow">477th Bombardment Group · Freeman Field</div>
-    <h2>The Double Victory</h2>
-    <p>The bomber pilots who trained at Tuskegee served in the <strong>477th Bombardment Group</strong>, with its four squadrons: the 616th, 617th, 618th, and 619th. Because the group was activated late in the war — and it took longer to train bomber crews than fighter pilots — the 477th never deployed overseas. It flew twin-engine B-25s, the same kind the Doolittle Raiders flew in the first attack on Japan.</p>
-    <p>The 477th should be remembered for a famous episode: the <strong>Freeman Field Mutiny</strong>. More than 100 Black officers at Freeman Field, Indiana refused to accept a segregated officers' club policy and were arrested and reprimanded. All arrested African American officers were eventually exonerated, and the white commander was replaced by the most famous Tuskegee Airmen of all: <strong>Colonel Benjamin O. Davis, Jr.</strong> — who had earlier commanded the 99th Fighter Squadron and the 332nd Fighter Group.</p>
-  </div>
-
-  <!-- CHAPPIE BOX -->
-  <div class="chappie-box">
-    <div class="chappie-logo-wrap">
-      <img src="/images/tai-chappie-logo.jpg" alt="Tuskegee Airmen Inc. Gen. Daniel Chappie James Jr. Chapter logo">
-      <div class="chappie-logo-label">Gen. Daniel "Chappie" James Jr. Chapter</div>
-    </div>
-    <div class="chappie-content">
-      <h3>General Daniel "Chappie" James, Jr.</h3>
-      <p>The first four-star Black general in the Air Force — or in any of the armed forces of the United States — was <strong>General Daniel "Chappie" James, Jr.</strong>, who had been a member of the 477th Bombardment Group. The Tuskegee Airmen Inc. chapter that works alongside Mission Aviation Academy bears his name.</p>
-      <p>His mentor and predecessor, Colonel Benjamin O. Davis, Jr., attended West Point, and his father — Benjamin O. Davis, Sr. — was the first Black general in the U.S. Army. Benjamin O. Davis, Jr. eventually became the first Black general in the Air Force. A lineage of firsts, earned against every institutional headwind imaginable.</p>
-    </div>
-  </div>
-
-  <!-- SECTION 4: LEGACY -->
-  <div class="section">
-    <div class="section-eyebrow">Legacy</div>
-    <h2>Executive Order 9981 and the Congressional Gold Medal</h2>
-    <p>Although much of the Tuskegee Airmen story is about the pilots, <strong>most of the Tuskegee Airmen were not pilots</strong>. They served on the ground — as crew chiefs, maintenance personnel, armorers, intelligence officers, clerks, transportation personnel, instructors, nurses, parachute riggers, and weathermen. There were almost 1,000 Tuskegee Airmen pilots, but more than 13,000 other Tuskegee Airmen who were not pilots — yet on whom the pilots depended to accomplish their missions.</p>
-    <p>By demonstrating they were the equal of the whites in the Army Air Forces — and could fly the same kinds of airplanes on the same kinds of missions, just as well as anyone else — the Tuskegee Airmen helped convince the leaders of the Army Air Forces and the Air Force, which emerged in 1947, that there was no good reason for segregation in the service.</p>
-    <p>When President Harry S. Truman issued <strong>Executive Order 9981 in 1948</strong>, mandating the desegregation of the Armed Forces, the Air Force was already in the process of integrating — already training Black pilots alongside white pilots at Williams Air Force Base in Arizona.</p>
-    <p>In March 2007, President George W. Bush presided at a ceremony in the Capitol at which a <strong>Congressional Gold Medal</strong> was presented collectively to the Tuskegee Airmen, recognizing their achievements. They fought two wars: one against the Nazis overseas and one against racism at home. It was indeed a double victory.</p>
-  </div>
-
-  <!-- SECTION 5: MAA CONNECTION -->
-  <div class="section">
-    <div class="section-eyebrow">The Living Chain</div>
-    <h2>From the 332nd to the Students We Serve</h2>
-    <p>The three living Tuskegee anchors woven through <em>Your Aviation Blueprint</em> — <strong>Lt. Col. George Hardy</strong>, <strong>Flight Officer Daniel Keel</strong>, and <strong>Rev. Reginald A. Davis</strong> — are direct continuations of the history above. Their relationship with LCDR Ricardo "Tattoo" Foster was not symbolic. It was personal mentorship that redirected the trajectory of his life and the lives of the students he now serves.</p>
-    <p>Foster grew up in Jamaica, West Indies, and later moved to Brooklyn, New York, with little more than faith and determination. Aviation was nowhere in his world — not in his neighborhood, his school, or his imagination — until his mother, an educator, opened a door during a trip to the United States. One airplane ride gave him his first glimpse of what was possible. That glimpse became a beginning.</p>
-    <p>He entered aviation through <strong>August Martin High School</strong> in Queens — an aviation-focused school named for the first Black commercial airline pilot in U.S. history. He enlisted in the United States Navy in 1990 as an E-1 Aviation Boatswain's Mate Apprentice, earned his way to Lieutenant Commander over 28 years, and returned to Tampa to build a school that opens that same sky to everyone.</p>
-    <p>Mission Aviation Academy is that school. Every Saturday at Tampa North Aero Park (X39), the runway they built is in use.</p>
-  </div>
-
-  <!-- LEGACY CLOSE -->
-  <div class="legacy-close">
-    <span class="wings">✈</span>
-    <blockquote>"Every certificate this book helps a student earn stands on the runway they built."</blockquote>
-    <cite>— LCDR Ricardo "Tattoo" Foster, USN (Ret.) · Your Aviation Blueprint</cite>
+  <!-- CTA -->
+  <div class="legacy-cta">
+    <h3>The legacy continues every Saturday.</h3>
+    <p>The Red Tail Roost — N7480X — is on the field at Tampa North Aero Park (X39) every Saturday. Bring your student. Put them in the seat where the lineage lives.</p>
     <div class="cta-row">
-      <a href="/yab" class="btn-gold">Get Your Aviation Blueprint →</a>
-      <a href="/saturday#rsvp" class="btn-outline-gold">Join Us Saturday →</a>
-      <a href="/jrotc" class="btn-outline-gold">JROTC Partnership →</a>
+      <a href="/saturday#rsvp" class="btn-gold">RSVP for Saturday Open House →</a>
+      <a href="/discovery-flight" class="btn-ghost">Book a Discovery Flight</a>
     </div>
-  </div>
-
-  <!-- SOURCE NOTE -->
-  <div class="source-note">
-    <p><strong>Source note:</strong> The condensed history above is adapted from Appendix J of <em>Your Aviation Blueprint</em> by LCDR Ricardo "Tattoo" Foster, USN (Ret.) &amp; MAJ Bruce "BOMBER" Blashka, USMC (Ret.). The original text is by Daniel Haulman, PhD, Air Force Historical Research Agency, 27 April 2016 — a work of the United States Government, in the public domain. Dedication text © LCDR Ricardo Foster. TAI chapter logo used with acknowledgment of the Tuskegee Airmen Inc. Gen. Daniel "Chappie" James Jr. Chapter.</p>
   </div>
 
 </div>
 
 <footer class="site-footer">
-  <p class="footer-legal">Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit · EIN 85-1110607 · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate</p>
+  <p class="footer-legal">Mission Aviation Academy · Infinity Aero Club Tampa Bay, Inc. · EIN 85-1110607 · 501(c)(3) · Mentored by Tuskegee Airmen Lt. Col. George Spencer Hardy, Class 44-H-SE, 332nd Fighter Group · August Martin High School named for the first Black commercial airline pilot in American history · Tuskegee history deck: Daniel Haulman, PhD, Air Force Historical Research Agency, April 27, 2016 · Ricardo's story adapted from Your Aviation Blueprint (2026) · Facility: 4639 Birdsong Blvd, Lutz FL 33559 · Parking GPS: 4661 Birdsong Blvd</p>
 </footer>
+
+<script>
+let currentSlide = 1;
+const totalSlides = 25;
+
+function updateFrame() {
+  document.getElementById('deckFrame').src = `/tuskegee_deck.pdf#page=${currentSlide}`;
+  document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+}
+function nextSlide() {
+  if (currentSlide < totalSlides) { currentSlide++; updateFrame(); }
+}
+function prevSlide() {
+  if (currentSlide > 1) { currentSlide--; updateFrame(); }
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextSlide();
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevSlide();
+});
+</script>
+
 </body>
 </html>

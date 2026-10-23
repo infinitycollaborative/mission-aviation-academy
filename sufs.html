@@ -1,385 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SUFS Scholarships — Mission Aviation Academy</title>
-<meta name="description" content="Mission Aviation Academy is an approved Florida Step Up For Students (SUFS) scholarship provider. 24 live programs. Most eligible families pay $0 out of pocket.">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="canonical" href="https://missionaviationacademy.org/sufs">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Mission Aviation Academy">
-<meta property="og:title" content="SUFS Scholarships — Mission Aviation Academy">
-<meta property="og:description" content="Mission Aviation Academy is an approved Florida Step Up For Students (SUFS) scholarship provider. 24 live programs. Most eligible families pay $0 out of pocket.">
-<meta property="og:url" content="https://missionaviationacademy.org/sufs">
-<meta property="og:image" content="https://missionaviationacademy.org/images/yab_cover_flat.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SUFS Scholarships — Mission Aviation Academy">
-<meta name="twitter:description" content="Florida Step Up For Students approved aviation provider. 24 live programs, most families pay $0. Apply today. Tampa Bay, FL.">
-<meta name="twitter:image" content="https://missionaviationacademy.org/images/yab_cover_flat.jpg">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "SUFS Scholarships — Mission Aviation Academy",
-  "url": "https://missionaviationacademy.org/sufs",
-  "description": "Mission Aviation Academy is an approved Florida Step Up For Students (SUFS) scholarship provider offering 24 live aviation and STEM programs with $0 out-of-pocket cost for eligible families.",
-  "isPartOf": { "@id": "https://missionaviationacademy.org/#website" },
-  "about": {
-    "@type": "EducationalOrganization",
-    "@id": "https://missionaviationacademy.org/#organization"
-  }
-}
-</script>
-<link rel="stylesheet" href="maa-shared.css">
-<style>
-.sufs-hero{background:var(--navy);color:var(--white);padding:4rem 1.5rem 3rem;text-align:center;}
-.sufs-hero-eyebrow{font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.08em;color:var(--gold);margin-bottom:1rem;}
-.sufs-hero h1{font-size:clamp(2rem,5vw,3.25rem);font-weight:700;line-height:1.15;max-width:780px;margin:0 auto 1.5rem;}
-.sufs-hero-sub{font-size:1.05rem;font-family:Arial,sans-serif;max-width:560px;margin:0 auto 2rem;color:#C8D8E8;line-height:1.7;}
-.countdown{display:flex;justify-content:center;gap:1.25rem;margin-bottom:2rem;}
-.cd-unit{text-align:center;}
-.cd-num{font-size:2.5rem;font-weight:700;font-family:Arial,sans-serif;color:var(--white);}
-.cd-label{font-size:.7rem;color:var(--gold);font-family:Arial,sans-serif;}
-.hero-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;}
-.btn-gold-solid{background:var(--gold);color:var(--navy);padding:.85rem 2rem;font-family:Arial,sans-serif;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;}
-.btn-outline-white{background:transparent;color:var(--white);padding:.85rem 2rem;font-family:Arial,sans-serif;font-weight:600;font-size:1rem;text-decoration:none;display:inline-block;border:2px solid rgba(255,255,255,.4);}
-.stat-strip{background:var(--gold);padding:1.5rem;display:flex;justify-content:center;flex-wrap:wrap;gap:2.5rem;text-align:center;}
-.stat-val{font-family:Arial,sans-serif;font-weight:700;font-size:1.75rem;color:var(--navy);}
-.stat-lbl{font-family:Arial,sans-serif;font-size:.8rem;color:var(--navy);opacity:.75;}
-.quiz-section{background:var(--light);padding:4rem 1.5rem;}
-.quiz-inner{max-width:700px;margin:0 auto;}
-.quiz-card{background:var(--white);padding:2rem;box-shadow:0 1px 4px rgba(0,0,0,.08);}
-.quiz-q{font-family:Arial,sans-serif;font-weight:600;color:var(--navy);font-size:1.1rem;margin-bottom:1.5rem;line-height:1.5;}
-.quiz-btns{display:flex;gap:1rem;}
-.quiz-btn{flex:1;padding:.85rem;background:var(--navy);color:var(--white);border:none;font-family:Arial,sans-serif;font-weight:600;font-size:1rem;cursor:pointer;}
-.quiz-btn:hover{background:var(--sky);}
-.quiz-result-head{font-family:Arial,sans-serif;font-weight:700;color:var(--navy);font-size:1.1rem;margin-bottom:.75rem;}
-.quiz-restart{background:transparent;color:var(--mid);padding:.75rem 1.5rem;font-family:Arial,sans-serif;font-weight:600;border:1px solid var(--mid);cursor:pointer;}
-.schol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;}
-.schol-card{background:var(--light);padding:1.5rem;}
-.schol-label{font-family:Arial,sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:.25rem;}
-.schol-name{font-family:Arial,sans-serif;font-weight:600;color:var(--navy);margin-bottom:.5rem;font-size:.9rem;}
-.schol-note{color:var(--mid);font-family:Arial,sans-serif;font-size:.85rem;font-style:italic;line-height:1.6;}
-.fes-spotlight{background:var(--navy);color:var(--white);padding:4rem 1.5rem;}
-.lane-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;}
-.lane-btn{padding:.4rem 1rem;border-radius:20px;border:1px solid #d0d0d0;background:var(--white);color:var(--mid);font-family:Arial,sans-serif;font-size:.85rem;cursor:pointer;}
-.lane-btn.active{border-color:var(--navy);background:var(--navy);color:var(--white);}
-.programs-table{width:100%;border-collapse:collapse;font-size:.9rem;}
-.programs-table th{font-family:Arial,sans-serif;padding:.75rem 1rem;text-align:left;font-weight:600;background:var(--navy);color:var(--white);}
-.programs-table td{padding:.65rem 1rem;}
-.programs-table tr:nth-child(even) td{background:var(--light);}
-.programs-table tr:nth-child(odd) td{background:var(--white);}
-.status-live{background:#d1fae5;color:#065f46;padding:.2rem .6rem;border-radius:12px;font-family:Arial,sans-serif;font-size:.75rem;font-weight:700;}
-.steps{display:flex;flex-direction:column;gap:1.5rem;}
-.step{display:flex;gap:1.25rem;align-items:flex-start;}
-.step-num{background:var(--navy);color:var(--gold);border-radius:50%;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-weight:700;font-size:.9rem;flex-shrink:0;margin-top:.1rem;}
-.cycle-open-badge{background:var(--gold);color:var(--navy);display:inline-block;padding:.5rem 1.25rem;font-family:Arial,sans-serif;font-weight:700;margin-bottom:1.5rem;font-size:.9rem;}
-@media(max-width:600px){.quiz-btns{flex-direction:column;}}
-</style>
-  <script src="/maa-nav.js" defer></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>SUFS Scholarship Calculator — Mission Aviation Academy</title>
+  <meta name="description" content="Find out if your family qualifies for a Step Up For Students scholarship for MAA aviation, drone, and AI programs. Most eligible families pay $0."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script src="/maa-nav.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #f9fafb; color: #111827; margin: 0; }
+
+    .hero { background: #0D2240; border-bottom: 4px solid #C9A227; padding: 52px 24px 44px; }
+    .hero-inner { max-width: 800px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #C9A227; margin-bottom: 14px; }
+    .hero h1 { font-size: 40px; font-weight: 900; color: #fff; margin: 0 0 12px; line-height: 1.05; }
+    .hero p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 580px; margin: 0; }
+
+    .page { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+
+    /* CALCULATOR CARD */
+    .calc-card { background: #fff; border-radius: 16px; border: 1px solid #e5e7eb; overflow: hidden; margin-bottom: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .calc-header { background: #0D2240; padding: 24px 28px; }
+    .calc-header h2 { font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 4px; }
+    .calc-header p { font-size: 13px; color: rgba(255,255,255,0.6); margin: 0; }
+    .calc-body { padding: 28px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group label { font-size: 12px; font-weight: 700; color: #374151; margin-bottom: 6px; letter-spacing: 0.3px; }
+    .form-group select,
+    .form-group input { padding: 11px 14px; border: 1.5px solid #d1d5db; border-radius: 8px; font-size: 14px; font-family: 'Inter', sans-serif; color: #111827; background: #fff; transition: border-color 0.15s; }
+    .form-group select:focus,
+    .form-group input:focus { outline: none; border-color: #0D2240; }
+    .disability-row { margin-bottom: 20px; }
+    .checkbox-group { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+    .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: #0D2240; flex-shrink: 0; cursor: pointer; }
+    .checkbox-label { font-size: 13px; color: #374151; line-height: 1.5; }
+    .checkbox-label strong { display: block; font-weight: 700; color: #111827; }
+
+    .calc-btn { width: 100%; background: #0D2240; color: #C9A227; font-weight: 800; font-size: 15px; padding: 15px; border: none; border-radius: 10px; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; transition: opacity 0.15s; }
+    .calc-btn:hover { opacity: 0.88; }
+
+    /* RESULTS */
+    .results { display: none; margin-top: 24px; }
+    .results.show { display: block; }
+    .result-headline { font-size: 22px; font-weight: 900; color: #0D2240; margin-bottom: 16px; text-align: center; }
+    .result-cards { display: flex; flex-direction: column; gap: 12px; }
+    .result-card { border-radius: 10px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 14px; }
+    .result-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .result-title { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+    .result-desc { font-size: 12px; line-height: 1.65; }
+    .result-card.eligible { background: #f0fdf4; border: 1.5px solid #16a34a; }
+    .result-card.eligible .result-title { color: #15803d; }
+    .result-card.eligible .result-desc { color: #374151; }
+    .result-card.conditional { background: #fffbeb; border: 1.5px solid #d97706; }
+    .result-card.conditional .result-title { color: #92400e; }
+    .result-card.conditional .result-desc { color: #374151; }
+    .result-card.check { background: #f0f9ff; border: 1.5px solid #0284c7; }
+    .result-card.check .result-title { color: #075985; }
+    .result-card.check .result-desc { color: #374151; }
+
+    .result-cta { background: #0D2240; border-radius: 10px; padding: 20px 22px; margin-top: 20px; text-align: center; }
+    .result-cta p { font-size: 13px; color: rgba(255,255,255,0.75); margin: 0 0 14px; line-height: 1.6; }
+    .result-cta a { background: #C9A227; color: #0D2240; font-weight: 800; font-size: 13px; padding: 12px 22px; border-radius: 7px; text-decoration: none; display: inline-block; }
+
+    .disclaimer { font-size: 11px; color: #9ca3af; line-height: 1.6; margin-top: 16px; padding: 12px 14px; background: #f9fafb; border-radius: 6px; border: 1px solid #e5e7eb; }
+
+    /* HOW SUFS WORKS */
+    .sufs-section { margin-bottom: 32px; }
+    .section-h { font-size: 22px; font-weight: 800; color: #0D2240; margin: 0 0 6px; }
+    .section-sub { font-size: 13px; color: #6b7280; margin: 0 0 24px; line-height: 1.6; }
+    .program-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .program-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px 18px; }
+    .program-name { font-size: 13px; font-weight: 800; color: #0D2240; margin-bottom: 3px; }
+    .program-tag { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; padding: 2px 7px; border-radius: 3px; display: inline-block; margin-bottom: 8px; }
+    .program-desc { font-size: 11px; color: #6b7280; line-height: 1.6; }
+
+    /* APPROVED COURSES */
+    .courses-box { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px 26px; margin-bottom: 32px; }
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-top: 16px; }
+    .course-tag { background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 6px; padding: 7px 11px; font-size: 11px; font-weight: 600; color: #374151; }
+    .course-tag.eligible { background: #f0fdf4; border-color: #86efac; color: #15803d; }
+
+    /* STEPS */
+    .steps-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .step-row { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px 18px; }
+    .step-num { background: #0D2240; color: #C9A227; font-size: 15px; font-weight: 900; width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-title { font-size: 14px; font-weight: 700; color: #0D2240; margin-bottom: 4px; }
+    .step-desc { font-size: 12px; color: #6b7280; line-height: 1.65; }
+
+    /* CTA BAR */
+    .cta-bar { background: #0D2240; border-radius: 14px; padding: 32px; text-align: center; }
+    .cta-bar h3 { font-size: 22px; font-weight: 900; color: #fff; margin: 0 0 8px; }
+    .cta-bar p { font-size: 14px; color: rgba(255,255,255,0.7); margin: 0 0 20px; line-height: 1.6; }
+    .cta-bar-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold { background: #C9A227; color: #0D2240; font-weight: 800; font-size: 13px; padding: 13px 24px; border-radius: 7px; text-decoration: none; }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); font-weight: 600; font-size: 13px; padding: 12px 22px; border-radius: 7px; text-decoration: none; }
+
+    .site-footer { background: #0D2240; padding: 24px 40px; margin-top: 0; }
+    .footer-legal { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; line-height: 1.7; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      .step-row { grid-template-columns: 36px 1fr; }
+    }
+  </style>
 </head>
 <body>
-<!-- HERO -->
-<section class="sufs-hero">
-  <p class="sufs-hero-eyebrow">STEP UP FOR STUDENTS SCHOLARSHIP PROGRAM</p>
-  <h1>Your child's aviation training<br>may cost you nothing.</h1>
-  <p class="sufs-hero-sub">Mission Aviation Academy is an approved Florida SUFS scholarship provider. 24 live programs. Most eligible families pay $0 out of pocket.</p>
-  <div id="cycle-status" style="margin-bottom:1.5rem;"></div>
-  <div class="hero-ctas">
-    <a href="tel:8134458889" class="btn-gold-solid">Call 813-445-8889</a>
-    <a href="#eligibility" class="btn-outline-white">Check eligibility</a>
-  </div>
-</section>
 
-<!-- STAT STRIP -->
-<div class="stat-strip">
-  <div><div class="stat-val">24</div><div class="stat-lbl">SUFS-approved programs</div></div>
-  <div><div class="stat-val">$0</div><div class="stat-lbl">typical family cost</div></div>
-  <div><div class="stat-val">2–5 days</div><div class="stat-lbl">funds deposit timeline</div></div>
-  <div><div class="stat-val">4</div><div class="stat-lbl">scholarship types accepted</div></div>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">STEP UP FOR STUDENTS · SUFS APPROVED PROVIDER SINCE JANUARY 2026</div>
+    <h1>Most Families Pay $0.<br>Find Out If Yours Qualifies.</h1>
+    <p>Mission Aviation Academy is an approved Step Up For Students (SUFS) provider. Florida's SUFS scholarships can cover aviation, drone, AI, and STEM programs at MAA — at no cost to eligible families. Use the calculator below to see which programs may apply to you.</p>
+  </div>
 </div>
 
-<!-- ELIGIBILITY QUIZ -->
-<section class="quiz-section" id="eligibility">
-  <div class="quiz-inner">
-    <h2 style="font-family:Arial,sans-serif;color:var(--navy);font-size:1.75rem;margin-bottom:.5rem;">Does my family qualify?</h2>
-    <p style="color:var(--mid);margin-bottom:2rem;line-height:1.7;">Three questions. Takes less than 30 seconds.</p>
-    <div id="quiz-container"></div>
-  </div>
-</section>
+<div class="page">
 
-<!-- SCHOLARSHIP TYPES -->
-<section style="padding:4rem 1.5rem;">
-  <div style="max-width:1000px;margin:0 auto;">
-    <h2 style="font-family:Arial,sans-serif;color:var(--navy);font-size:1.75rem;margin-bottom:.5rem;">Four scholarship types. One program.</h2>
-    <p style="color:var(--mid);margin-bottom:2.5rem;line-height:1.7;font-family:Arial,sans-serif;">MAA is approved for all four SUFS scholarship categories. Most families qualify for at least one.</p>
-    <div class="schol-grid">
-      <div class="schol-card" style="border-top:4px solid var(--sky);">
-        <p class="schol-label" style="color:var(--sky);">FES-UA</p>
-        <p class="schol-name">Family Empowerment Scholarship — Unique Abilities</p>
-        <p style="font-size:.95rem;margin-bottom:.5rem;font-family:Arial,sans-serif;"><strong>Amount:</strong> Up to $22,000 / year</p>
-        <p style="font-size:.95rem;margin-bottom:.75rem;font-family:Arial,sans-serif;"><strong>Who qualifies:</strong> Students with an IEP, 504 plan, or documented exceptional need</p>
-        <p class="schol-note">Sensory-friendly, self-paced Saturday program. Our highest-conversion scholarship.</p>
+  <!-- CALCULATOR -->
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>SUFS Scholarship Estimator</h2>
+      <p>Answer three questions to see which Florida scholarship programs your family may qualify for.</p>
+    </div>
+    <div class="calc-body">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="familySize">Household size (including student)</label>
+          <select id="familySize">
+            <option value="">Select family size</option>
+            <option value="1">1 person</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5">5 people</option>
+            <option value="6">6 people</option>
+            <option value="7">7 people</option>
+            <option value="8">8+ people</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="income">Annual household income (approximate)</label>
+          <select id="income">
+            <option value="">Select income range</option>
+            <option value="under30">Under $30,000</option>
+            <option value="30to50">$30,000 – $50,000</option>
+            <option value="50to75">$50,000 – $75,000</option>
+            <option value="75to100">$75,000 – $100,000</option>
+            <option value="100to125">$100,000 – $125,000</option>
+            <option value="over125">Over $125,000</option>
+          </select>
+        </div>
       </div>
-      <div class="schol-card" style="border-top:4px solid var(--navy);">
-        <p class="schol-label" style="color:var(--navy);">FES-EO</p>
-        <p class="schol-name">Family Empowerment Scholarship — Equal Opportunity</p>
-        <p style="font-size:.95rem;margin-bottom:.5rem;font-family:Arial,sans-serif;"><strong>Amount:</strong> Based on household income</p>
-        <p style="font-size:.95rem;margin-bottom:.75rem;font-family:Arial,sans-serif;"><strong>Who qualifies:</strong> Income-eligible Florida families (most qualify)</p>
-        <p class="schol-note">Covers the majority of MAA program fees. Most families pay $0.</p>
+
+      <div class="form-group disability-row">
+        <label style="margin-bottom:10px;">Student eligibility (check all that apply)</label>
+        <label class="checkbox-group">
+          <input type="checkbox" id="hasIEP"/>
+          <span class="checkbox-label">
+            <strong>Student has an IEP, 504 plan, or documented disability</strong>
+            May qualify for FES-UA (Family Empowerment Scholarship for Unique Abilities)
+          </span>
+        </label>
+        <br/>
+        <label class="checkbox-group">
+          <input type="checkbox" id="isHomeschool"/>
+          <span class="checkbox-label">
+            <strong>Student is home-educated or in a non-public school</strong>
+            Affects which SUFS programs apply
+          </span>
+        </label>
       </div>
-      <div class="schol-card" style="border-top:4px solid var(--gold);">
-        <p class="schol-label" style="color:var(--gold);">PEP</p>
-        <p class="schol-name">Personal Education Pathways</p>
-        <p style="font-size:.95rem;margin-bottom:.5rem;font-family:Arial,sans-serif;"><strong>Amount:</strong> Based on student needs</p>
-        <p style="font-size:.95rem;margin-bottom:.75rem;font-family:Arial,sans-serif;"><strong>Who qualifies:</strong> Florida students with an IEP or exceptionality documentation</p>
-        <p class="schol-note">Works alongside FES-UA for students with layered support needs.</p>
-      </div>
-      <div class="schol-card" style="border-top:4px solid #5A5A5A;">
-        <p class="schol-label" style="color:#5A5A5A;">FTC</p>
-        <p class="schol-name">Family Tax Credit</p>
-        <p style="font-size:.95rem;margin-bottom:.5rem;font-family:Arial,sans-serif;"><strong>Amount:</strong> Tax credit to contributing businesses</p>
-        <p style="font-size:.95rem;margin-bottom:.75rem;font-family:Arial,sans-serif;"><strong>Who qualifies:</strong> Businesses that fund scholarships through approved SGOs</p>
-        <p class="schol-note">Ask your employer — they may be able to fund your child's MAA enrollment.</p>
+
+      <button class="calc-btn" onclick="calculate()">Check My Eligibility →</button>
+
+      <!-- RESULTS -->
+      <div class="results" id="results">
+        <div class="result-headline" id="resultHeadline"></div>
+        <div class="result-cards" id="resultCards"></div>
+        <div class="result-cta">
+          <p>These results are estimates only. MAA's admissions team will confirm your specific eligibility and walk you through the application — at no cost to you.</p>
+          <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer">Confirm Eligibility With Admissions →</a>
+        </div>
+        <div class="disclaimer">⚠️ This estimator is based on publicly available 2024–25 SUFS program guidelines and approximate federal poverty level thresholds. Income limits and program rules change annually. Eligibility is always confirmed by Step Up For Students — not by MAA. Do not make enrollment decisions based solely on these results. Contact MAA admissions or call SUFS directly at (877) 735-7837 before applying.</div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- FES-UA SPOTLIGHT -->
-<section class="fes-spotlight">
-  <div style="max-width:760px;margin:0 auto;">
-    <p style="color:var(--sky);font-family:Arial,sans-serif;font-size:.85rem;margin-bottom:.75rem;letter-spacing:.08em;">FES-UA SCHOLARSHIP</p>
-    <h2 style="font-size:2rem;margin-bottom:1rem;line-height:1.2;color:var(--white);">Where Unique Abilities Take Flight.</h2>
-    <p style="line-height:1.8;color:#C8D8E8;margin-bottom:1.5rem;font-size:1.05rem;font-family:Arial,sans-serif;">Our Saturday program is built for students who learn differently. Self-paced. Sensory-friendly. Hands-on. No two students follow the same path — every student gets an individualized training blueprint on day one.</p>
-    <p style="line-height:1.8;color:#C8D8E8;margin-bottom:2rem;font-size:1.05rem;font-family:Arial,sans-serif;">FES-UA families can access up to <strong style="color:var(--gold);">$22,000 per year</strong> in scholarship funding. MAA is approved and enrolled. The process starts with a phone call.</p>
-    <a href="tel:8134458889" style="background:var(--sky);color:var(--white);padding:.85rem 2rem;font-family:Arial,sans-serif;font-weight:700;text-decoration:none;display:inline-block;">Call 813-445-8889</a>
-  </div>
-</section>
-
-<!-- 24 PROGRAMS -->
-<section style="padding:4rem 1.5rem;">
-  <div style="max-width:1000px;margin:0 auto;">
-    <h2 style="font-family:Arial,sans-serif;color:var(--navy);font-size:1.75rem;margin-bottom:.5rem;">24 SUFS-approved programs</h2>
-    <p style="color:var(--mid);margin-bottom:1.5rem;line-height:1.7;font-family:Arial,sans-serif;">All programs below are live and scholarship-fundable today. Filter by lane or call to discuss which fits your student.</p>
-    <div class="lane-filters" id="lane-filters"></div>
-    <div style="overflow-x:auto;">
-      <table class="programs-table">
-        <thead><tr><th>Lane</th><th>Program</th><th>Price</th><th>Ages</th><th>Status</th></tr></thead>
-        <tbody id="programs-tbody"></tbody>
-      </table>
-    </div>
-    <p style="color:var(--mid);font-family:Arial,sans-serif;font-size:.85rem;margin-top:1rem;">* Discovery flight ($100) and FAA exam fees ($175) are paid directly to the provider and are not covered by SUFS. Real aircraft flight time for private pilot certification is not fundable as an elective.</p>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section style="background:var(--light);padding:4rem 1.5rem;">
-  <div style="max-width:760px;margin:0 auto;">
-    <h2 style="font-family:Arial,sans-serif;color:var(--navy);font-size:1.75rem;margin-bottom:2rem;">How enrollment works</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div><p style="font-family:Arial,sans-serif;font-weight:700;color:var(--navy);margin-bottom:.25rem;">Call or text</p><p style="line-height:1.7;font-family:Arial,sans-serif;">Reach us at 813-445-8889 or (833) FLY-STEM. We'll confirm your scholarship type and answer every question.</p></div>
+  <!-- SUFS PROGRAMS -->
+  <div class="sufs-section">
+    <h2 class="section-h">The 5 SUFS Programs MAA Accepts</h2>
+    <p class="section-sub">MAA is an approved provider under all five Step Up For Students scholarship programs as of January 2026.</p>
+    <div class="program-grid">
+      <div class="program-card">
+        <div class="program-name">PEP</div>
+        <div class="program-tag" style="background:#dbeafe;color:#1e40af;">NO INCOME LIMIT</div>
+        <div class="program-desc">Personalized Education Program. Up to $24,000 rollover. Quarterly funding cycles. Available to all Florida families.</div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div><p style="font-family:Arial,sans-serif;font-weight:700;color:var(--navy);margin-bottom:.25rem;">Enroll on SUFS EMA</p><p style="line-height:1.7;font-family:Arial,sans-serif;">We walk you through the Step Up For Students portal (EMA). Takes about 15 minutes. We do it with you.</p></div>
+      <div class="program-card">
+        <div class="program-name">FES-UA</div>
+        <div class="program-tag" style="background:#fef3c7;color:#92400e;">IEP / DISABILITY</div>
+        <div class="program-desc">Family Empowerment Scholarship for Unique Abilities. Drone certification explicitly added as eligible elective in 2025–26. For students with documented disabilities.</div>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div><p style="font-family:Arial,sans-serif;font-weight:700;color:var(--navy);margin-bottom:.25rem;">Funds deposit in 2–5 days</p><p style="line-height:1.7;font-family:Arial,sans-serif;">SUFS pays MAA directly. Most families pay $0 at that point. Your student starts on the next available Saturday.</p></div>
+      <div class="program-card">
+        <div class="program-name">FES-EO</div>
+        <div class="program-tag" style="background:#f0fdf4;color:#15803d;">INCOME-BASED</div>
+        <div class="program-desc">Family Empowerment Scholarship for Educational Options. Income-eligible families. MAA programs qualify as supplemental enrichment and elective providers.</div>
       </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div><p style="font-family:Arial,sans-serif;font-weight:700;color:var(--navy);margin-bottom:.25rem;">Student builds a plan</p><p style="line-height:1.7;font-family:Arial,sans-serif;">Day one: an individualized training blueprint. Your student's path is mapped to their goals — not a generic curriculum.</p></div>
+      <div class="program-card">
+        <div class="program-name">FTC</div>
+        <div class="program-tag" style="background:#f0fdf4;color:#15803d;">INCOME-BASED</div>
+        <div class="program-desc">Florida Tax Credit Scholarship. Corporate-funded. Income-eligible families. MAA qualifies for enrichment and elective services.</div>
+      </div>
+      <div class="program-card">
+        <div class="program-name">NWSA</div>
+        <div class="program-tag" style="background:#f5f3ff;color:#4B0082;">NEWEST PROGRAM</div>
+        <div class="program-desc">New Worlds Scholarship Account. Newest SUFS program. Eligible expense categories align with PEP. MAA qualifies for enrichment and elective services.</div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- CYCLE BANNER -->
-<section id="cycle-banner" style="padding:2.5rem 1.5rem;text-align:center;"></section>
-
-<!-- FOOTER CTA -->
-<section style="padding:3rem 1.5rem;text-align:center;border-top:1px solid #e0ddd6;">
-  <p style="color:var(--mid);margin-bottom:.5rem;font-family:Arial,sans-serif;">Questions? We answer every call.</p>
-  <p style="color:var(--navy);font-family:Arial,sans-serif;font-weight:700;font-size:1.25rem;margin-bottom:.25rem;">813-445-8889</p>
-  <p style="color:var(--mid);font-family:Arial,sans-serif;font-size:.9rem;">Tampa North Aero Park (X39) · Facility: 4639 Birdsong Blvd, Lutz FL 33559 · Parking GPS: 4661 Birdsong Blvd, Lutz FL 33559</p>
-  <p style="margin-top:2rem;color:var(--mid);font-size:.85rem;font-family:Arial,sans-serif;">Mission Aviation Academy is a DBA of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit · EIN 85-1110607 · <a href="/" style="color:var(--sky);">missionaviationacademy.org</a></p>
-  <p style="margin-top:.5rem;color:var(--mid);font-size:.8rem;font-family:Arial,sans-serif;font-style:italic;">It's ALL About The Kids.</p>
-</section>
-
-<footer class="maa-footer">
-  <div class="maa-footer-inner">
-    <nav style="display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:center;margin-bottom:1.25rem;">
-      <a href="/saturday" style="font-family:Arial,sans-serif;font-size:.85rem;color:var(--gold);text-decoration:none;">Saturday Classes</a>
-      <a href="/programs" style="font-family:Arial,sans-serif;font-size:.85rem;color:var(--gold);text-decoration:none;">Programs</a>
-      <a href="/scholarships" style="font-family:Arial,sans-serif;font-size:.85rem;color:var(--gold);text-decoration:none;">Scholarships</a>
-      <a href="/about" style="font-family:Arial,sans-serif;font-size:.85rem;color:var(--gold);text-decoration:none;">About</a>
-      <a href="/contact" style="font-family:Arial,sans-serif;font-size:.85rem;color:var(--gold);text-decoration:none;">Contact</a>
-      <a href="/support" style="font-family:Arial,sans-serif;font-size:.85rem;color:var(--gold);text-decoration:none;">Support</a>
-      <a href="/privacy" style="font-family:Arial,sans-serif;font-size:.85rem;color:var(--gold);text-decoration:none;">Privacy</a>
-    </nav>
-    <div class="maa-footer-legal">
-      <p>MAA is an approved Florida Step Up For Students (SUFS) scholarship provider. Scholarship availability, amounts, and eligibility are determined by SUFS and subject to change each cycle. Contact MAA or SUFS directly to confirm current eligibility before enrolling. MAA does not guarantee scholarship approval or specific funding amounts.</p>
-      <p style="margin-top:.5rem;">Mission Aviation Academy is a DBA of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit · EIN 85-1110607 · <a href="mailto:scholarships@missionaviationacademy.org" style="color:var(--gold);">scholarships@missionaviationacademy.org</a> · 813-445-8889</p>
-      <p style="margin-top:.5rem;">© 2026 Infinity Aero Club Tampa Bay, Inc. · Not a certificated flight school. Flight instruction through partner CFIs.</p>
+  <!-- APPROVED COURSES -->
+  <div class="courses-box">
+    <h2 class="section-h">24+ SUFS-Approved Courses at MAA</h2>
+    <p class="section-sub" style="margin-bottom:0;">Across 7 career families. All of the following are eligible for SUFS funding when applicable.</p>
+    <div class="courses-grid">
+      <div class="course-tag eligible">✓ Aviation Discovery Flights</div>
+      <div class="course-tag eligible">✓ Aviation Ground School / PPL Prep</div>
+      <div class="course-tag eligible">✓ PPL Simulator Sessions</div>
+      <div class="course-tag eligible">✓ Drone Intro (FAA TRUST)</div>
+      <div class="course-tag eligible">✓ Part 107 Prep & Certification</div>
+      <div class="course-tag eligible">✓ Drone Bootcamp (Advanced)</div>
+      <div class="course-tag eligible">✓ AI Innovation App Building</div>
+      <div class="course-tag eligible">✓ AeroSTEM Xperience</div>
+      <div class="course-tag eligible">✓ Aerospace Engineering (2027)</div>
+      <div class="course-tag eligible">✓ Aviation Maintenance Intro</div>
+      <div class="course-tag eligible">✓ Entrepreneurship for Youth</div>
+      <div class="course-tag eligible">✓ Career Blueprint Session</div>
     </div>
   </div>
+
+  <!-- HOW TO APPLY -->
+  <h2 class="section-h">How to apply for SUFS</h2>
+  <p class="section-sub">MAA walks every family through this process. You never navigate it alone.</p>
+  <div class="steps-list">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Talk to MAA Admissions First</div>
+        <div class="step-desc">Book a free 30-minute admissions call. We'll confirm your eligibility, identify the right SUFS program, and walk you through the application before you start it. No paperwork required to begin.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Apply Through SUFS — We'll Guide You</div>
+        <div class="step-desc">Applications are submitted through the SUFS Education Marketplace Account (EMA) at stepupforstudents.org. New application windows open approximately February 1 each year for the following school year. MAA can provide guidance on navigating the portal.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Scholarship Approved — Enroll in MAA Programs</div>
+        <div class="step-desc">Once your SUFS scholarship is approved, funds are deposited in quarterly cycles (July, October, January, April). You select MAA programs directly through the EMA marketplace. Payment goes directly to MAA — $0 out of pocket for eligible families.</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">Start Flying, Building, and Earning Credentials</div>
+        <div class="step-desc">Your student attends Saturday classes at Tampa North Aero Park (X39). Discovery flights, drone labs, AI app building, and simulator sessions all run the same day. Credentials are issued directly by the FAA and MAA upon course completion.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bar">
+    <h3>Questions? Talk to Admissions.</h3>
+    <p>Our admissions team confirms SUFS eligibility, walks you through the application, and makes sure no family who qualifies misses out because of the paperwork. Free. No commitment.</p>
+    <div class="cta-bar-btns">
+      <a href="https://calendly.com/admissions-missionaviationacademy/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-gold">Book Free Admissions Call →</a>
+      <a href="tel:8134458889" class="btn-ghost">(813) 445-8889</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p class="footer-legal">Mission Aviation Academy is an approved Step Up For Students (SUFS) provider as of January 2026 · EIN 85-1110607 · 501(c)(3) · iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate · SUFS eligibility is determined solely by Step Up For Students · stepupforstudents.org · (877) 735-7837 · Facility: 4639 Birdsong Blvd, Lutz FL 33559 · Parking GPS: 4661 Birdsong Blvd</p>
 </footer>
 
 <script>
-// ── CONFIG ──
-var CYCLE_OPEN  = new Date("2026-10-01T00:00:00-04:00");
-var CYCLE_CLOSE = new Date("2026-10-31T23:59:59-04:00");
-var CYCLE_LABEL = "October 2026";
-
-// ── PROGRAMS ──
-var programs = [
-  { lane:"Onboarding",            name:"Registration & Student Blueprint",              price:"$200 (one-time)",        ages:"All" },
-  { lane:"Enrichment",            name:"Tier 1 — Foundations",                          price:"$99/mo",                 ages:"All" },
-  { lane:"Enrichment",            name:"Tier 2 — Builder",                              price:"$149/mo",                ages:"All" },
-  { lane:"Enrichment",            name:"Tier 3 — Intermediate",                         price:"$199/mo",                ages:"All" },
-  { lane:"Enrichment",            name:"Tier 4 — Advanced",                             price:"$249/mo",                ages:"All" },
-  { lane:"Tutoring",              name:"Reading & Math",                                price:"$90–$100/hr",            ages:"All" },
-  { lane:"Tutoring",              name:"STEM Tutoring",                                 price:"$90–$100/hr",            ages:"All" },
-  { lane:"Tutoring",              name:"Writing Support",                               price:"$90–$100/hr",            ages:"All" },
-  { lane:"Tutoring",              name:"Test Prep",                                     price:"$90–$100/hr",            ages:"All" },
-  { lane:"AI Innovation",         name:"Intro to Building Apps with AI — Part 1",       price:"$450",                   ages:"12+" },
-  { lane:"AI Innovation",         name:"Build Apps with AI — Part 2",                   price:"$450",                   ages:"12+" },
-  { lane:"AI Innovation",         name:"Parts 1 & 2 Bundle (saves $75)",                price:"$825",                   ages:"12+" },
-  { lane:"Drone & Flight",        name:"TRUST Certificate Program (Part I)",             price:"$450",                   ages:"12+" },
-  { lane:"Drone & Flight",        name:"Fly, Repair & Maintenance (Part II)",            price:"$450",                   ages:"14+" },
-  { lane:"Drone & Flight",        name:"Drone Evolution & Opportunities (Part III)",     price:"$450",                   ages:"16+" },
-  { lane:"Drone & Flight",        name:"Aircraft Simulator Program (26 sessions)",       price:"$3,395/semester",        ages:"10+" },
-  { lane:"Drone & Flight",        name:"FAA Part 107 Remote Pilot Ground School",        price:"Bundled",                ages:"16+" },
-  { lane:"Drone & Flight",        name:"Private Pilot Ground School",                   price:"See staff",              ages:"12+" },
-  { lane:"Drone Business",        name:"Drone Business 101 — Foundations",              price:"$299",                   ages:"16+" },
-  { lane:"Drone Business",        name:"Drone Business 102 — Operations",               price:"$299",                   ages:"16+" },
-  { lane:"Drone Business",        name:"Drone Business 103 — Client Acquisition",       price:"$299",                   ages:"16+" },
-  { lane:"Aerospace Engineering", name:"sUAS / FPV Engineering",                        price:"$949.50–$1,050/qtr",     ages:"12+" },
-  { lane:"Aerospace Engineering", name:"Blueprint Reading & Fabrication",               price:"$949.50–$1,050/qtr",     ages:"14+" },
-  { lane:"Aviation Maintenance",  name:"Light Sport Repairman Maintenance (LSRM)",      price:"See staff",              ages:"18+" },
-];
-
-// ── QUIZ ──
-var questions = [
-  { id:"fl",     text:"Is your child a Florida resident?",                                                                        yes:"iep",    no:"out"    },
-  { id:"iep",    text:"Does your child have an IEP, 504 plan, or documented exceptional need?",                                   yes:"fes-ua", no:"income" },
-  { id:"income", text:"Does your family receive free or reduced lunch, or earn below 400% of the federal poverty level?",         yes:"fes-eo", no:"ftc"    },
-];
-var resultCopy = {
-  "out":    { headline:"SUFS scholarships are for Florida residents.", sub:"If you're planning to move to Florida, reach out and we'll walk you through enrollment timing.", showCall:false },
-  "fes-ua": { headline:"Your child likely qualifies for FES-UA — up to $22,000 per year.", sub:"MAA's sensory-friendly, self-paced program is specifically designed for students with unique abilities. Call us to start the process.", showCall:true },
-  "fes-eo": { headline:"Your family likely qualifies for FES-EO.", sub:"Most eligible families pay $0 for MAA programs. Enrollment takes minutes. Funds deposit in 2–5 business days.", showCall:true },
-  "ftc":    { headline:"You may qualify through the Family Tax Credit program.", sub:"Ask your employer if they participate — many businesses fund scholarships for employees' children. Call us and we'll help you find out.", showCall:true },
+// 2024 Federal Poverty Levels × 375% (FES-EO / FTC income threshold)
+// Source: HHS 2024 FPL guidelines. Verify annually — thresholds update each year.
+// These are ESTIMATES ONLY — eligibility confirmed by SUFS, not MAA.
+const FPL_375 = {
+  1: 56475, 2: 76650, 3: 96825, 4: 117000,
+  5: 137175, 6: 157350, 7: 177525, 8: 197700
 };
-var quizStep = "fl";
 
-function renderQuiz() {
-  var c = document.getElementById("quiz-container");
-  var r = resultCopy[quizStep];
-  if (r) {
-    var bg = quizStep === "out" ? "#fef2f2" : "#f0fdf4";
-    var border = quizStep === "out" ? "#fca5a5" : "#1A7A8A";
-    c.innerHTML = '<div style="background:' + bg + ';border:2px solid ' + border + ';padding:2rem;">'
-      + '<p class="quiz-result-head">' + r.headline + '</p>'
-      + '<p style="line-height:1.7;margin-bottom:1.5rem;font-family:Arial,sans-serif;">' + r.sub + '</p>'
-      + '<div style="display:flex;flex-wrap:wrap;gap:.75rem;">'
-      + (r.showCall ? '<a href="tel:8134458889" style="background:var(--navy);color:var(--white);padding:.75rem 1.5rem;font-family:Arial,sans-serif;font-weight:600;text-decoration:none;display:inline-block;">Call 813-445-8889</a>' : '')
-      + '<button class="quiz-restart" onclick="quizStep=\'fl\';renderQuiz()">Start over</button>'
-      + '</div></div>';
-  } else {
-    var q = questions.filter(function(x){return x.id===quizStep;})[0];
-    c.innerHTML = '<div class="quiz-card">'
-      + '<p class="quiz-q">' + q.text + '</p>'
-      + '<div class="quiz-btns">'
-      + '<button class="quiz-btn" onclick="quizAnswer(\'yes\')">Yes</button>'
-      + '<button class="quiz-btn" onclick="quizAnswer(\'no\')">No</button>'
-      + '</div></div>';
+const INCOME_MIDPOINTS = {
+  under30: 15000, '30to50': 40000, '50to75': 62500,
+  '75to100': 87500, '100to125': 112500, over125: 150000
+};
+
+function calculate() {
+  const size = parseInt(document.getElementById('familySize').value);
+  const incomeKey = document.getElementById('income').value;
+  const hasIEP = document.getElementById('hasIEP').checked;
+  const isHomeschool = document.getElementById('isHomeschool').checked;
+
+  if (!size || !incomeKey) {
+    alert('Please select your household size and income range.');
+    return;
   }
-}
 
-function quizAnswer(val) {
-  var q = questions.filter(function(x){return x.id===quizStep;})[0];
-  quizStep = val === "yes" ? q.yes : q.no;
-  renderQuiz();
-}
+  const income = INCOME_MIDPOINTS[incomeKey];
+  const threshold = FPL_375[Math.min(size, 8)];
+  const incomeEligible = income <= threshold;
+  const cards = [];
 
-// ── LANE FILTER ──
-var activeLane = "All";
-var laneSet = ["All"];
-programs.forEach(function(p){ if(laneSet.indexOf(p.lane)===-1) laneSet.push(p.lane); });
+  // PEP — everyone qualifies
+  cards.push({
+    type: 'eligible',
+    icon: '✅',
+    title: 'PEP — Personalized Education Program',
+    desc: `<strong>You likely qualify.</strong> PEP has no income limit — it's available to all Florida families. Up to $24,000 rollover annually. Covers MAA enrichment programs, drone courses, STEM labs, and curriculum. Quarterly funding cycles: July, October, January, April.`
+  });
 
-function renderLaneFilters() {
-  document.getElementById("lane-filters").innerHTML = laneSet.map(function(l){
-    return '<button class="lane-btn' + (l===activeLane?' active':'') + '" onclick="setLane(\'' + l + '\')">' + l + '</button>';
-  }).join("");
-}
-
-function setLane(lane) {
-  activeLane = lane;
-  renderLaneFilters();
-  renderPrograms();
-}
-
-function renderPrograms() {
-  var filtered = activeLane === "All" ? programs : programs.filter(function(p){return p.lane===activeLane;});
-  document.getElementById("programs-tbody").innerHTML = filtered.map(function(p){
-    return '<tr>'
-      + '<td style="color:var(--mid);font-family:Arial,sans-serif;font-size:.8rem;white-space:nowrap;">' + p.lane + '</td>'
-      + '<td style="font-family:Arial,sans-serif;">' + p.name + '</td>'
-      + '<td style="font-family:Arial,sans-serif;white-space:nowrap;">' + p.price + '</td>'
-      + '<td style="color:var(--mid);font-family:Arial,sans-serif;white-space:nowrap;">' + p.ages + '</td>'
-      + '<td><span class="status-live">LIVE</span></td>'
-      + '</tr>';
-  }).join("");
-}
-
-// ── CYCLE STATUS & COUNTDOWN ──
-function updateCycle() {
-  var now = Date.now();
-  var open   = now >= CYCLE_OPEN.getTime();
-  var closed = now >  CYCLE_CLOSE.getTime();
-  var statusEl = document.getElementById("cycle-status");
-  var bannerEl = document.getElementById("cycle-banner");
-
-  if (!open && !closed) {
-    var diff = CYCLE_OPEN.getTime() - now;
-    var d = Math.max(0, Math.floor(diff/86400000));
-    var h = Math.max(0, Math.floor((diff%86400000)/3600000));
-    var m = Math.max(0, Math.floor((diff%3600000)/60000));
-    var s = Math.max(0, Math.floor((diff%60000)/1000));
-    function pad(n){ return String(n).padStart(2,"0"); }
-    statusEl.innerHTML =
-      '<p style="color:var(--gold);margin-bottom:.5rem;font-family:Arial,sans-serif;font-size:.9rem;">' + CYCLE_LABEL + ' cycle opens in</p>'
-      + '<div class="countdown">'
-      + '<div class="cd-unit"><div class="cd-num">' + pad(d) + '</div><div class="cd-label">days</div></div>'
-      + '<div class="cd-unit"><div class="cd-num">' + pad(h) + '</div><div class="cd-label">hrs</div></div>'
-      + '<div class="cd-unit"><div class="cd-num">' + pad(m) + '</div><div class="cd-label">min</div></div>'
-      + '<div class="cd-unit"><div class="cd-num">' + pad(s) + '</div><div class="cd-label">sec</div></div>'
-      + '</div>';
-    bannerEl.style.background = "#C9A227";
-    bannerEl.style.color = "#0D2240";
-    bannerEl.innerHTML = '<p style="font-family:Arial,sans-serif;font-size:1.35rem;font-weight:700;color:#0D2240;margin-bottom:.75rem;">' + CYCLE_LABEL + ' cycle opens October 1. Applications are accepted starting that date.</p><a href="tel:8134458889" style="background:#0D2240;color:#fff;padding:.85rem 2rem;font-family:Arial,sans-serif;font-weight:700;text-decoration:none;display:inline-block;">Call 813-445-8889</a>';
-  } else if (open && !closed) {
-    statusEl.innerHTML = '<div class="cycle-open-badge">✅ ' + CYCLE_LABEL + ' CYCLE IS OPEN — APPLY NOW</div>';
-    bannerEl.style.background = "#1A7A8A";
-    bannerEl.innerHTML = '<p style="font-family:Arial,sans-serif;font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:.75rem;">' + CYCLE_LABEL + ' enrollment is open now. Apply before October 31.</p><a href="tel:8134458889" style="background:#C9A227;color:#0D2240;padding:.85rem 2rem;font-family:Arial,sans-serif;font-weight:700;text-decoration:none;display:inline-block;">Call 813-445-8889</a>';
-  } else {
-    statusEl.innerHTML = "";
-    bannerEl.style.background = "#C9A227";
-    bannerEl.innerHTML = '<p style="font-family:Arial,sans-serif;font-size:1.35rem;font-weight:700;color:#0D2240;margin-bottom:.75rem;">This cycle is closed. The next cycle opens January 2027.</p><a href="tel:8134458889" style="background:#0D2240;color:#fff;padding:.85rem 2rem;font-family:Arial,sans-serif;font-weight:700;text-decoration:none;display:inline-block;">Call 813-445-8889</a>';
+  // FES-UA — IEP / disability
+  if (hasIEP) {
+    cards.push({
+      type: 'eligible',
+      icon: '✅',
+      title: 'FES-UA — Family Empowerment Scholarship for Unique Abilities',
+      desc: `<strong>You may qualify.</strong> FES-UA is for students with documented disabilities, IEPs, or 504 plans. Drone certification was explicitly added as an eligible elective in 2025–26. Covers discovery flights, ground school, drone, AI, and STEM programs at MAA.`
+    });
   }
-}
 
-// ── INIT ──
-renderQuiz();
-renderLaneFilters();
-renderPrograms();
-updateCycle();
-setInterval(updateCycle, 1000);
+  // FES-EO — income-based
+  if (incomeEligible) {
+    cards.push({
+      type: 'eligible',
+      icon: '✅',
+      title: 'FES-EO — Family Empowerment Scholarship for Educational Options',
+      desc: `<strong>Your income range may qualify.</strong> Based on estimated 375% of the federal poverty level for a household of ${size} (~$${threshold.toLocaleString()}/yr), your household may be income-eligible. MAA programs qualify as supplemental enrichment and electives.`
+    });
+    cards.push({
+      type: 'eligible',
+      icon: '✅',
+      title: 'FTC — Florida Tax Credit Scholarship',
+      desc: `<strong>Your income range may qualify.</strong> Corporate-funded scholarships for income-eligible families. Same income threshold as FES-EO. MAA enrichment and elective services are eligible.`
+    });
+  } else {
+    cards.push({
+      type: 'conditional',
+      icon: '⚠️',
+      title: 'FES-EO & FTC — Income-Based Scholarships',
+      desc: `<strong>Based on your inputs, your income may be above the estimated threshold</strong> (~$${threshold.toLocaleString()}/yr for a household of ${size}). These scholarships are income-tested — confirm directly with SUFS. Income thresholds change annually and your actual eligibility may differ.`
+    });
+  }
+
+  // NWSA — always worth checking
+  cards.push({
+    type: 'check',
+    icon: 'ℹ️',
+    title: 'NWSA — New Worlds Scholarship Account',
+    desc: `<strong>Check directly with SUFS.</strong> Florida's newest scholarship program. Expense categories align with PEP. MAA qualifies for enrichment and elective services. Eligibility rules are newer — confirm with SUFS at (877) 735-7837.`
+  });
+
+  const headline = incomeEligible || hasIEP
+    ? '🎯 Good news — your family may qualify for $0 MAA enrollment.'
+    : 'Here\'s what we found for your household.';
+
+  document.getElementById('resultHeadline').textContent = headline;
+  document.getElementById('resultCards').innerHTML = cards.map(c => `
+    <div class="result-card ${c.type}">
+      <div class="result-icon">${c.icon}</div>
+      <div>
+        <div class="result-title">${c.title}</div>
+        <div class="result-desc">${c.desc}</div>
+      </div>
+    </div>
+  `).join('');
+
+  const results = document.getElementById('results');
+  results.classList.add('show');
+  results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
 </script>
+
 </body>
 </html>
