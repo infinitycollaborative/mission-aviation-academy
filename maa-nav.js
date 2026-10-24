@@ -47,6 +47,10 @@
   transform: translateY(-6px); transition: all 0.18s ease;
   z-index: 1000;
 }
+#maa-nav-overlay {
+  display: none; position: fixed; inset: 0; z-index: 998;
+}
+#maa-nav-overlay.active { display: block; }
 .maa-nav-item.open .maa-nav-dropdown {
   opacity: 1; visibility: visible; pointer-events: all; transform: translateY(0);
 }
@@ -227,26 +231,39 @@
     // Insert at top of body
     document.body.insertBefore(nav, document.body.firstChild);
 
+    // Overlay — sits above iframes so clicks over them still close dropdowns
+    const overlay = document.createElement('div');
+    overlay.id = 'maa-nav-overlay';
+    document.body.appendChild(overlay);
+
+    function closeDropdowns() {
+      nav.querySelectorAll('[data-dropdown]').forEach(d => {
+        d.classList.remove('open');
+        const btn = d.querySelector('button');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+      overlay.classList.remove('active');
+    }
+
+    overlay.addEventListener('click', closeDropdowns);
+
     // Dropdown toggle
     nav.querySelectorAll('[data-dropdown]').forEach(item => {
       const btn = item.querySelector('button');
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const isOpen = item.classList.contains('open');
-        nav.querySelectorAll('[data-dropdown]').forEach(d => d.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-        btn.setAttribute('aria-expanded', String(!isOpen));
+        closeDropdowns();
+        if (!isOpen) {
+          item.classList.add('open');
+          overlay.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
     });
 
-    // Close dropdowns on outside click
-    document.addEventListener('click', () => {
-      nav.querySelectorAll('[data-dropdown]').forEach(d => {
-        d.classList.remove('open');
-        const btn = d.querySelector('button');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      });
-    });
+    // Close dropdowns on outside click (non-iframe areas)
+    document.addEventListener('click', closeDropdowns);
 
     // Mobile hamburger
     const burger = nav.querySelector('#maa-hamburger');
