@@ -15,6 +15,13 @@
     }
   });
 
+  links.addEventListener('click', function (e) {
+    if (e.target.closest('a') && links.classList.contains('nav-open')) {
+      links.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
   document.addEventListener('click', function (e) {
     if (!e.target.closest('nav') && links.classList.contains('nav-open')) {
       links.classList.remove('nav-open');
