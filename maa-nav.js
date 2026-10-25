@@ -274,6 +274,15 @@
       burger.setAttribute('aria-expanded', String(open));
       mobileMenu.setAttribute('aria-hidden', String(!open));
     });
+
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
