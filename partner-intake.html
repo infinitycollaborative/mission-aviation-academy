@@ -198,6 +198,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             title="MAA — Co-Op Partnership Intake">
           </iframe>
         </div>
+        
+<script>
+(function () {
+  const iframe = document.getElementById("inline-dD0Tnn5Lz2xMyznwq40");
+  if (!iframe) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const url = new URL(iframe.src);
+
+  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]
+    .forEach(function (key) {
+      if (params.has(key)) {
+        url.searchParams.set(key, params.get(key));
+      }
+    });
+
+  iframe.src = url.toString();
+})();
+</script>
+
 
         <a class="coop-back" href="/partners">
           ← Back to Partnerships
