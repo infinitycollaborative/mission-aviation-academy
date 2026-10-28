@@ -341,11 +341,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Tell us about your student (or yourself), and our team will follow up with available Saturday sessions, scholarship guidance, and enrollment next steps.</p>
     <div id="ghl-form-container">
       <iframe
+        id="maa-enrollment-form"
         src="https://api.leadconnectorhq.com/widget/form/gfmaQ4QXfxJK9jPLI7kq"
         style="width:100%;min-height:500px;border:none;border-radius:8px;"
         title="MAA Enrollment — Mission Aviation Academy"
         loading="lazy"
       ></iframe>
+      <script>
+(function () {
+  const iframe = document.getElementById('maa-enrollment-form');
+  const pageParams = new URLSearchParams(window.location.search);
+  const iframeUrl = new URL(iframe.src);
+
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+    .forEach(key => {
+      const value = pageParams.get(key);
+      if (value !== null) {
+        iframeUrl.searchParams.set(key, value);
+      }
+    });
+
+  iframe.src = iframeUrl.toString();
+})();
+</script>
     </div>
   </div>
 
