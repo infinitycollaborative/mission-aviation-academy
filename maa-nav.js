@@ -47,10 +47,6 @@
   transform: translateY(-6px); transition: all 0.18s ease;
   z-index: 1000;
 }
-#maa-nav-overlay {
-  display: none; position: fixed; inset: 0; z-index: 998;
-}
-#maa-nav-overlay.active { display: block; }
 .maa-nav-item.open .maa-nav-dropdown {
   opacity: 1; visibility: visible; pointer-events: all; transform: translateY(0);
 }
@@ -231,10 +227,7 @@
     // Insert at top of body
     document.body.insertBefore(nav, document.body.firstChild);
 
-    // Overlay — sits above iframes so clicks over them still close dropdowns
-    const overlay = document.createElement('div');
-    overlay.id = 'maa-nav-overlay';
-    document.body.appendChild(overlay);
+    function iframes() { return document.querySelectorAll('iframe'); }
 
     function closeDropdowns() {
       nav.querySelectorAll('[data-dropdown]').forEach(d => {
@@ -242,10 +235,9 @@
         const btn = d.querySelector('button');
         if (btn) btn.setAttribute('aria-expanded', 'false');
       });
-      overlay.classList.remove('active');
+      // Restore iframe pointer-events
+      iframes().forEach(f => { f.style.pointerEvents = ''; });
     }
-
-    overlay.addEventListener('click', closeDropdowns);
 
     // Dropdown toggle
     nav.querySelectorAll('[data-dropdown]').forEach(item => {
@@ -256,13 +248,14 @@
         closeDropdowns();
         if (!isOpen) {
           item.classList.add('open');
-          overlay.classList.add('active');
           btn.setAttribute('aria-expanded', 'true');
+          // Disable iframe pointer-events so outside clicks propagate to document
+          iframes().forEach(f => { f.style.pointerEvents = 'none'; });
         }
       });
     });
 
-    // Close dropdowns on outside click (non-iframe areas)
+    // Close dropdowns on outside click (iframes are click-through when dropdown is open)
     document.addEventListener('click', closeDropdowns);
 
     // Mobile hamburger
