@@ -19,7 +19,12 @@
   text-decoration: none; letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;
 }
 .maa-nav-links {
-  display: flex; align-items: center; gap: 2px; flex: 1; justify-content: center;
+  display: flex !important; align-items: center; gap: 2px !important; flex: 1; justify-content: center;
+  position: static !important; background: transparent !important;
+  top: auto !important; left: auto !important; right: auto !important;
+  flex-direction: row !important; padding: 0 !important;
+  box-shadow: none !important; border-top: none !important;
+  list-style: none; z-index: auto !important;
 }
 .maa-nav-item { position: relative; }
 .maa-nav-link {
