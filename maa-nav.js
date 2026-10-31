@@ -260,6 +260,13 @@
       });
     });
 
+    // Close dropdowns immediately when a dropdown link is clicked (before navigation)
+    nav.querySelectorAll('.maa-nav-dropdown').forEach(dd => {
+      dd.addEventListener('click', (e) => {
+        if (e.target.closest('a')) closeDropdowns();
+      });
+    });
+
     // Close dropdowns on outside click (iframes are click-through when dropdown is open)
     document.addEventListener('click', closeDropdowns);
 
