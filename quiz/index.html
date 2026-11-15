@@ -723,7 +723,13 @@ function renderTbPlayers() {
     const statusLabel = p.alive ? '✓ In the game' : '✗ Eliminated';
     const statusCls = p.alive ? 'alive' : 'out';
     card.className = 'tb-player-card' + (p.alive ? '' : ' eliminated');
-    card.innerHTML = `<div class="tb-player-name">${p.name}</div><div class="tb-player-status-label ${statusCls}">${statusLabel}</div>`;
+    const name = document.createElement('div');
+    name.className = 'tb-player-name';
+    name.textContent = p.name;
+    const status = document.createElement('div');
+    status.className = 'tb-player-status-label ' + statusCls;
+    status.textContent = statusLabel;
+    card.append(name, status);
     wrap.appendChild(card);
   });
 }
