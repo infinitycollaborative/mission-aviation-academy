@@ -126,7 +126,7 @@
         { href: '/discovery-flight',label: 'Book a Discovery Flight' },
         { href: '/ground-school',   label: 'Ground School' },
         { href: '/jrotc',           label: 'JROTC Partnership' },
-        { href: '/aerospace',       label: 'Aerospace Engineering',    badge: '2027',    badgeColor: '#555' },
+        { href: '/youth-aircraft-factory', label: 'Youth Aircraft Factory', badge: 'Enroll', badgeColor: '#8B0000' },
       ]
     },
     {
