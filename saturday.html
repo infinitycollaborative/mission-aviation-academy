@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGHVKKB8');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Saturday Program — Mission Aviation Academy</title>
-<meta name="description" content="Every Saturday 8am–6pm at Tampa North Aero Park (X39). Drone certification, AI app building, PPL simulator, and a free open house. Ages 6–18+. RSVP required.">
+<meta name="description" content="Every Saturday at Tampa North Aero Park (X39) in Lutz, FL — free open house, drone certification, AI app building, aircraft discovery flights, and PPL simulator. Ages 6 and up. Most SUFS-eligible families pay $0.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://missionaviationacademy.org/saturday">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mission Aviation Academy">
 <meta property="og:title" content="Saturday Program — Mission Aviation Academy">
-<meta property="og:description" content="Every Saturday 8am–6pm at Tampa North Aero Park (X39). Drone certification, AI app building, PPL simulator, and a free open house. Ages 6–18+. RSVP required.">
+<meta property="og:description" content="Every Saturday at Tampa North Aero Park (X39) in Lutz, FL — free open house, drone certification, AI app building, aircraft discovery flights, and PPL simulator. Ages 6 and up. Most SUFS-eligible families pay $0.">
 <meta property="og:url" content="https://missionaviationacademy.org/saturday">
-<meta property="og:image" content="https://missionaviationacademy.org/og-image.jpg">
+<meta property="og:image" content="https://missionaviationacademy.org/images/yab_cover_flat.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Saturday Program — Mission Aviation Academy">
-<meta name="twitter:description" content="Drone certification, AI app building, PPL simulator, and free open house. Every Saturday at Tampa North Aero Park (X39). Ages 6–18+.">
-<meta name="twitter:image" content="https://missionaviationacademy.org/og-image.jpg">
+<meta name="twitter:description" content="Every Saturday at Tampa North Aero Park (X39) in Lutz, FL — free open house, drone certification, AI app building, aircraft discovery flights, and PPL simulator. Ages 6+. Most SUFS-eligible families pay $0.">
+<meta name="twitter:image" content="https://missionaviationacademy.org/images/yab_cover_flat.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -64,47 +71,6 @@
 html { font-size: 18px; scroll-behavior: smooth; }
 body { font-family: Georgia, serif; color: var(--text); background: var(--white); line-height: 1.65; }
 
-/* ── NAV ── */
-nav {
-  background: var(--navy);
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 58px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.nav-brand {
-  color: var(--gold);
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: .9rem;
-  text-decoration: none;
-  letter-spacing: .02em;
-}
-.nav-links {
-  display: flex;
-  gap: 1.8rem;
-  list-style: none;
-}
-.nav-links a {
-  color: rgba(255,255,255,.75);
-  font-family: Arial, sans-serif;
-  font-size: .82rem;
-  text-decoration: none;
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--gold); }
-.nav-cta {
-  background: var(--gold);
-  color: var(--navy) !important;
-  font-weight: bold !important;
-  padding: .35rem .9rem;
-  color: var(--navy);
-}
-.nav-cta:hover { background: #a87e1a; color: var(--white) !important; }
 
 /* ── HERO ── */
 .hero {
@@ -652,21 +618,7 @@ footer p {
 }
 footer a { color: var(--gold); text-decoration: none; }
 
-/* HAMBURGER */
-.maa-nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0;}
-.maa-nav-toggle span{display:block;height:2px;background:var(--gold);border-radius:2px;}
-
 /* ── MOBILE ── */
-/* Nav collapses to the hamburger before the links run out of room */
-@media (max-width: 1300px) {
-  nav { padding: 0 1rem; position: relative; }
-  .maa-nav-toggle { display: flex; }
-  .nav-links { display: none; }
-  .nav-links.nav-open{display:flex;flex-direction:column;position:absolute;top:58px;left:0;right:0;background:#0D2240;padding:1.2rem 2rem 1.8rem;gap:0;box-shadow:0 6px 16px rgba(0,0,0,.4);z-index:99;border-top:1px solid rgba(255,255,255,.1);}
-  .nav-links.nav-open li{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.07);list-style:none;}
-  .nav-links.nav-open li:last-child{border-bottom:none;padding-top:.9rem;}
-  .nav-links.nav-open a{font-size:1rem;color:rgba(255,255,255,.85);}
-}
 @media (max-width: 768px) {
   section { padding: 3rem 1.2rem; }
   .time-block { grid-template-columns: 80px 1fr; }
@@ -677,25 +629,13 @@ footer a { color: var(--gold); text-decoration: none; }
   .btn-primary, .btn-outline { width: 100%; max-width: 320px; text-align: center; }
 }
 </style>
+  <script src="/maa-nav.js" defer></script>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a class="nav-brand" href="/">Mission Aviation Academy</a>
-  <ul class="nav-links">
-    <li><a href="/programs">Programs</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/press">Press</a></li>
-    <li><a href="/community">Community</a></li>
-    <li><a href="/stories">Stories</a></li>
-    <li><a href="/scholarships">Scholarships</a></li>
-    <li><a href="/contact">Contact</a></li>
-    <li><a href="/donate">Donate</a></li>
-    <li><a href="/saturday#rsvp" class="nav-cta">Start Your Flight Path</a></li>
-  </ul>
-  <button class="maa-nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGHVKKB8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ZOOM LEAD-IN STRIP -->
 <div class="zoom-strip">
@@ -711,8 +651,7 @@ footer a { color: var(--gold); text-decoration: none; }
   <span class="hero-eyebrow">Tampa North Aero Park (X39) · Lutz / Wesley Chapel, FL</span>
   <h1>Every Saturday.<br><em>8am to 6pm.</em></h1>
   <p class="hero-sub">
-    Drone certification, AI app building, private pilot simulator,
-    and a free open house — all in one day. Ages 6 and up.
+    Free open house, drone certification, AI app building, aircraft discovery flights, and PPL simulator — all in one day. Ages 6 and up. Most SUFS-eligible families pay $0.
   </p>
   <div class="hero-badges">
     <span class="badge">6–8 students per class</span>
@@ -1220,7 +1159,7 @@ footer a { color: var(--gold); text-decoration: none; }
 <footer>
   <p>
     Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc.,
-    a Florida 501(c)(3) nonprofit organization.
+    a Florida 501(c)(3) nonprofit organization. EIN 85-1110607.
     iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate.
   </p>
   <p>
@@ -1235,7 +1174,5 @@ footer a { color: var(--gold); text-decoration: none; }
     <a href="/about">About</a>
   </p>
 </footer>
-
-<script src="maa-nav.js"></script>
 </body>
 </html>

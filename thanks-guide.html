@@ -13,8 +13,6 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { font-size: 18px; }
   body { font-family: Georgia, serif; color: var(--text); background: var(--white); line-height: 1.65; }
-  nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; height: 54px; gap: 1.5rem; }
-  .nav-brand { color: var(--gold); font-weight: bold; font-size: .9rem; text-decoration: none; font-family: Arial, sans-serif; }
   .wrap { max-width: 34rem; margin: 0 auto; padding: 4rem 1.5rem 3rem; text-align: center; }
   .check { width: 54px; height: 54px; border-radius: 50%; background: var(--gold); color: var(--navy);
     display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.4rem; }
@@ -30,9 +28,9 @@
   .back { background: var(--navy); padding: 2rem; text-align: center; }
   .back a { color: var(--gold); font-family: Arial, sans-serif; text-decoration: none; font-size: .88rem; }
 </style>
+  <script src="/maa-nav.js" defer></script>
 </head>
 <body>
-<nav><a class="nav-brand" href="/">Mission Aviation Academy</a></nav>
 <div class="wrap">
   <div class="check">&#10003;</div>
   <h1>Your guide is ready.</h1>
@@ -46,6 +44,5 @@
   </div>
 </div>
 <div class="back"><a href="/">&larr; Mission Aviation Academy home</a></div>
-<script src="/maa-nav.js" defer></script>
 </body>
 </html>

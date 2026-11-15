@@ -1,0 +1,198 @@
+/* Mission Aviation Academy — Shared Navigation */
+
+.maa-site-nav * { box-sizing: border-box; }
+
+.maa-site-nav {
+  background: #001838;
+  border-bottom: 3px solid #FFD700;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.maa-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  gap: 2px;
+}
+
+/* Logo */
+.maa-logo {
+  color: #FFD700;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-right: auto;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Nav links container */
+.maa-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Dropdown trigger buttons and plain links */
+.maa-dd-btn,
+.maa-nav-link {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.65);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  transition: color 0.15s;
+  line-height: 1;
+}
+.maa-dd-btn::after {
+  content: '▾';
+  font-size: 9px;
+  opacity: 0.7;
+  transition: transform 0.2s;
+}
+.maa-dropdown.open > .maa-dd-btn::after { transform: rotate(180deg); }
+.maa-dd-btn:hover,
+.maa-nav-link:hover { color: #FFD700; }
+
+/* Dropdown container */
+.maa-dropdown { position: relative; }
+
+/* Dropdown panel */
+.maa-dd-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #001838;
+  border: 1px solid rgba(255,215,0,0.2);
+  border-radius: 6px;
+  min-width: 210px;
+  padding: 6px 0;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+  z-index: 999;
+}
+.maa-dropdown.open > .maa-dd-menu { display: block; }
+.maa-dd-menu a {
+  display: block;
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 9px 16px;
+  text-decoration: none;
+  transition: background 0.12s, color 0.12s;
+}
+.maa-dd-menu a:hover {
+  background: rgba(255,215,0,0.1);
+  color: #FFD700;
+}
+
+/* CTA button */
+.maa-nav-cta {
+  background: #FFD700;
+  color: #001838 !important;
+  font-weight: 700 !important;
+  font-size: 13px;
+  padding: 9px 16px !important;
+  border-radius: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-left: 8px;
+  flex-shrink: 0;
+  display: inline-block;
+  transition: opacity 0.15s;
+  line-height: 1;
+}
+.maa-nav-cta:hover { opacity: 0.88; }
+
+/* Hamburger */
+.maa-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 4px;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+.maa-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #FFD700;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.maa-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.maa-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.maa-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile ── */
+@media (max-width: 820px) {
+  .maa-site-nav { padding: 0 16px; }
+  .maa-hamburger { display: flex; }
+
+  .maa-nav-links {
+    display: none;
+    position: absolute;
+    top: 67px;
+    left: 0;
+    right: 0;
+    background: #001838;
+    border-top: 1px solid rgba(255,215,0,0.15);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 0 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    z-index: 998;
+  }
+  .maa-nav-links.open { display: flex; }
+  .maa-dropdown { width: 100%; }
+
+  .maa-dd-btn,
+  .maa-nav-link {
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 0;
+    justify-content: space-between;
+    width: 100%;
+    color: rgba(255,255,255,0.8);
+  }
+  .maa-dd-menu {
+    position: static;
+    border: none;
+    border-radius: 0;
+    background: rgba(0,0,0,0.2);
+    box-shadow: none;
+    padding: 4px 0 8px;
+    min-width: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255,215,0,0.08);
+  }
+  .maa-dd-menu a { padding: 9px 20px 9px 36px; font-size: 13px; }
+  .maa-nav-cta {
+    margin: 10px 16px 4px;
+    display: block;
+    text-align: center;
+    padding: 13px 16px !important;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+}

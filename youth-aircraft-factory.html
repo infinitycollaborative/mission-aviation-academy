@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youth Aircraft Factory — Build a Plane Program | Mission Aviation Academy</title>
+<meta name="description" content="Kids build a real airplane at Tampa North Aero Park (X39). Ages 13–18 · $300/month · 16 seats · Sessions start January 2027. Mission Aviation Academy, Lutz, FL.">
+
+<link rel="canonical" href="https://missionaviationacademy.org/youth-aircraft-factory">
+
+<!-- Open Graph / Social -->
+<meta property="og:site_name" content="Mission Aviation Academy">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://missionaviationacademy.org/youth-aircraft-factory">
+<meta property="og:title" content="Youth Aircraft Factory — Build a Plane | Mission Aviation Academy">
+<meta property="og:description" content="Kids 13–18 build a real kit aircraft at Tampa North Aero Park. $300/month. 16 seats. January 2027. Register now.">
+<meta property="og:image" content="https://missionaviationacademy.org/images/yaf-photo-1.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Youth Aircraft Factory — Build a Plane">
+<meta name="twitter:description" content="Kids build a REAL airplane at X39 Tampa. $300/month · 16 seats · Jan 2027 · Mission Aviation Academy">
+<meta name="twitter:image" content="https://missionaviationacademy.org/images/yaf-photo-1.jpeg">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOccupationalProgram",
+  "name": "Youth Aircraft Factory — Build-a-Plane Program",
+  "description": "Youth ages 13–18 build a real ICP kit aircraft over multiple quarters at Tampa North Aero Park. Curriculum follows EAA and FAA A&P standards.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Mission Aviation Academy / Infinity Aero Club Tampa Bay, Inc.",
+    "url": "https://missionaviationacademy.org",
+    "telephone": "+18134458889",
+    "email": "admissions@missionaviationacademy.org",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lutz",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    }
+  },
+  "occupationalCategory": "Airframe & Powerplant Mechanic",
+  "timeToComplete": "P1Y",
+  "offers": {
+    "@type": "Offer",
+    "price": "300",
+    "priceCurrency": "USD",
+    "description": "Per month per student — Grand Opening Price"
+  }
+}
+</script>
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script src="/maa-nav.js" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap">
+
+<style>
+:root {
+  --navy:   #0D2240;
+  --yellow: #FFD100;
+  --gold:   #C9A227;
+  --red:    #8B0000;
+  --white:  #FFFFFF;
+  --offwt:  #F4F7FA;
+  --dim:    #6B7F99;
+  --dark:   #1A1A2E;
+  --warn:   #D13B1A;
+  --radius: 4px;
+  --max:    1100px;
+  --font-head: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  --font-body: 'Barlow', Arial, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--offwt);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;font-family:inherit}
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+
+/* ══ HERO ════════════════════════════════════════════════════════════════════ */
+.hero{background:var(--navy);overflow:hidden;}
+.hero-split{display:flex;align-items:stretch;min-height:520px;position:relative;}
+.hero-starburst{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%) rotate(-12deg);
+  width:140px;height:140px;z-index:20;
+  filter:drop-shadow(0 3px 8px rgba(0,0,0,.55));
+}
+.hero-text{
+  flex:1;background:var(--navy);padding:3.5rem 2rem 3rem 2.5rem;
+  display:flex;flex-direction:column;justify-content:center;position:relative;
+}
+.hero-text::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--red);}
+.hero-eyebrow{
+  font-family:var(--font-head);font-weight:700;font-size:.85rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);margin-bottom:.75rem;
+}
+.hero-title{
+  font-family:var(--font-head);font-weight:900;font-size:clamp(3.2rem,8vw,6rem);
+  line-height:.92;text-transform:uppercase;color:var(--white);
+  margin-bottom:.5rem;letter-spacing:-.02em;
+}
+.hero-title em{font-style:normal;color:var(--yellow)}
+.hero-sub{
+  font-family:var(--font-head);font-weight:700;font-size:clamp(1.1rem,2.5vw,1.5rem);
+  letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:2rem;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.25rem;}
+.hero-tag{
+  font-family:var(--font-head);font-weight:700;font-size:.82rem;
+  letter-spacing:.06em;text-transform:uppercase;
+  background:rgba(255,209,0,.12);border:1px solid rgba(255,209,0,.35);
+  color:var(--yellow);padding:.3rem .75rem;border-radius:2px;
+}
+.hero-tag.red{background:rgba(139,0,0,.25);border-color:rgba(139,0,0,.5);color:#ff9999}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{
+  display:inline-block;font-family:var(--font-head);font-weight:800;
+  font-size:1rem;letter-spacing:.07em;text-transform:uppercase;
+  padding:.85rem 2rem;border-radius:3px;transition:opacity .15s,transform .1s;
+}
+.btn:hover{opacity:.9;transform:translateY(-1px)}
+.btn-primary{background:var(--yellow);color:var(--navy)}
+.btn-outline{border:2px solid rgba(255,255,255,.4);color:var(--white)}
+.hero-heritage{
+  margin-top:1.5rem;font-family:var(--font-head);font-weight:600;font-size:.85rem;
+  letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);
+}
+.hero-photo{flex:1;position:relative;overflow:hidden;min-height:420px;}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.hero-photo-blend{position:absolute;inset:0;background:linear-gradient(to right,var(--navy) 0%,transparent 30%);}
+
+/* ══ SCARCITY BAR ════════════════════════════════════════════════════════════ */
+.scarcity{background:var(--warn);padding:1rem 0;text-align:center;}
+.scarcity-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem .75rem;}
+.scarcity-num{font-family:var(--font-head);font-weight:900;font-size:1.5rem;color:var(--yellow);}
+.scarcity-label{font-family:var(--font-head);font-weight:700;font-size:1rem;letter-spacing:.05em;text-transform:uppercase;color:var(--white);}
+.scarcity-sep{color:rgba(255,255,255,.4);font-size:1.1rem}
+.scarcity-note{font-size:.85rem;color:rgba(255,255,255,.8);letter-spacing:.03em}
+
+/* ══ SECTIONS ════════════════════════════════════════════════════════════════ */
+.section{padding:4rem 0}
+.section-label{
+  font-family:var(--font-head);font-weight:700;font-size:.75rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:.5rem;
+}
+.section-title{
+  font-family:var(--font-head);font-weight:900;font-size:clamp(2rem,4vw,2.75rem);
+  line-height:1.05;color:var(--navy);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:1.25rem;
+}
+.section-sub{font-size:1.05rem;color:var(--dim);max-width:580px;line-height:1.65}
+.section.dark{background:var(--navy)}
+.section.dark .section-title{color:var(--white)}
+.section.dark .section-sub{color:rgba(255,255,255,.6)}
+.section.dark .section-label{color:var(--yellow)}
+
+/* ══ WHAT GRID ════════════════════════════════════════════════════════════════ */
+.what-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2rem;}
+.what-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,209,0,.2);border-radius:var(--radius);padding:1.5rem 1.25rem;}
+.what-num{font-family:var(--font-head);font-weight:900;font-size:3rem;color:var(--yellow);line-height:1;margin-bottom:.2rem;}
+.what-unit{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);margin-bottom:.5rem;}
+.what-desc{font-size:.95rem;color:rgba(255,255,255,.8);line-height:1.5}
+
+/* ══ HOW IT WORKS ════════════════════════════════════════════════════════════ */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem;}
+.step{display:flex;gap:1rem;align-items:flex-start}
+.step-bubble{
+  background:var(--yellow);color:var(--navy);font-family:var(--font-head);
+  font-weight:900;font-size:1.2rem;width:2.2rem;height:2.2rem;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.step-content h3{font-family:var(--font-head);font-weight:800;font-size:1.15rem;color:var(--navy);margin-bottom:.2rem;}
+.step-content p{font-size:.95rem;color:var(--dim)}
+
+/* ══ TEAMS ════════════════════════════════════════════════════════════════════ */
+.teams{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem;}
+.team-card{background:var(--red);border-radius:var(--radius);padding:1.5rem 1.25rem;text-align:center;}
+.team-name{font-family:var(--font-head);font-weight:900;font-size:1.75rem;color:var(--white);letter-spacing:.03em;text-transform:uppercase;margin-bottom:.25rem;}
+.team-kit{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--yellow);font-weight:700;margin-bottom:.3rem;}
+.team-role{font-size:.9rem;color:rgba(255,255,255,.75)}
+
+/* ══ PRICING ══════════════════════════════════════════════════════════════════ */
+.price-block{
+  display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;
+  background:var(--white);border:2px solid var(--yellow);border-radius:var(--radius);padding:2rem;margin-top:2rem;
+}
+.price-num{font-family:var(--font-head);font-weight:900;font-size:5rem;color:var(--yellow);line-height:1;}
+.price-label-sm{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);margin-bottom:.25rem;}
+.price-badge{
+  display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(139,0,0,.1);border:1px solid rgba(139,0,0,.4);color:var(--red);
+  padding:.18rem .5rem;border-radius:2px;margin-bottom:.5rem;
+}
+.price-details{font-size:.95rem;color:var(--dim);line-height:1.7;list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.price-details strong{color:var(--dark)}
+.register-note{
+  margin-top:1rem;padding:1rem;background:var(--offwt);
+  border-left:4px solid var(--yellow);border-radius:0 var(--radius) var(--radius) 0;
+  font-size:.9rem;color:var(--dim);line-height:1.6;
+}
+.register-note strong{color:var(--dark)}
+
+/* ══ REGISTER ════════════════════════════════════════════════════════════════ */
+.register-section{background:var(--navy);padding:4rem 0;border-top:5px solid var(--yellow);}
+.reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.reg-info h2{
+  font-family:var(--font-head);font-weight:900;font-size:clamp(2rem,4vw,2.8rem);
+  color:var(--white);text-transform:uppercase;line-height:1.05;margin-bottom:.5rem;
+}
+.reg-info .accent{color:var(--yellow)}
+.reg-info p{font-size:1rem;color:rgba(255,255,255,.65);margin-bottom:1.5rem}
+.contact-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.5rem}
+.contact-list li{display:flex;align-items:center;gap:.6rem;font-size:.95rem;color:rgba(255,255,255,.85)}
+.contact-list .icon{color:var(--yellow);font-size:1rem;flex-shrink:0;width:1.1rem}
+.contact-list a{color:var(--yellow);text-decoration:underline;text-underline-offset:3px}
+.calendly-box{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,209,0,.25);
+  border-radius:var(--radius);padding:1.5rem;
+}
+.calendly-box h3{
+  font-family:var(--font-head);font-weight:800;font-size:1.3rem;
+  color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:1rem;
+}
+
+/* ══ FOOTER ══════════════════════════════════════════════════════════════════ */
+.maa-footer{background:#060E18;padding:2rem 0;border-top:2px solid rgba(255,209,0,.15);}
+.maa-footer-inner{max-width:var(--max);margin:0 auto;padding:0 1.25rem;}
+.maa-footer-legal{font-size:.8rem;color:rgba(255,255,255,.35);line-height:1.6;}
+.maa-footer-legal a{color:var(--gold);}
+
+/* ══ RESPONSIVE ══════════════════════════════════════════════════════════════ */
+@media(max-width:768px){
+  .hero-split{flex-direction:column}
+  .hero-photo{min-height:260px;flex:none;}
+  .hero-starburst{display:none}
+  .hero-photo-blend{background:linear-gradient(to bottom,var(--navy) 0%,transparent 30%);}
+  .what-grid{grid-template-columns:1fr 1fr}
+  .price-block{grid-template-columns:1fr}
+  .reg-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .what-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .teams{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- maa-nav.js injected by script in <head> -->
+
+<!-- ══ HERO ═══════════════════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Program hero">
+  <div class="hero-split">
+
+    <div class="hero-starburst" aria-hidden="true">
+      <svg viewBox="0 0 100 100" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,2 58.28,19.09 74,8.43 72.63,27.37 91.57,26 80.91,41.72 98,50 80.91,58.28 91.57,74 72.63,72.63 74,91.57 58.28,80.91 50,98 41.72,80.91 26,91.57 27.37,72.63 8.43,74 19.09,58.28 2,50 19.09,41.72 8.43,26 27.37,27.37 26,8.43 41.72,19.09"
+          fill="#FFD100" stroke="#0D2240" stroke-width="1.5"/>
+        <text x="50" y="38" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Barlow Condensed','Arial Narrow',Arial,sans-serif"
+          font-weight="900" font-size="10" fill="#0D2240" letter-spacing="0.6">GIVE THE</text>
+        <text x="50" y="51" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Barlow Condensed','Arial Narrow',Arial,sans-serif"
+          font-weight="900" font-size="10" fill="#0D2240" letter-spacing="0.6">GIFT OF</text>
+        <text x="50" y="64" text-anchor="middle" dominant-baseline="middle"
+          font-family="'Barlow Condensed','Arial Narrow',Arial,sans-serif"
+          font-weight="900" font-size="14" fill="#0D2240" letter-spacing="0.3">FLIGHT</text>
+      </svg>
+    </div>
+
+    <div class="hero-text">
+      <p class="hero-eyebrow">Now Enrolling · January 2027</p>
+      <h1 class="hero-title">Youth<br><em>Aircraft</em><br>Factory</h1>
+      <p class="hero-sub">Where Kids Build Planes</p>
+      <div class="hero-tags" role="list">
+        <span class="hero-tag" role="listitem">Ages 13–18</span>
+        <span class="hero-tag" role="listitem">$300 / Month</span>
+        <span class="hero-tag red" role="listitem">Only 16 Seats</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
+        <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
+      </div>
+      <p class="hero-heritage">Mentored by the Tuskegee Airmen · Red Tail Heritage · Build-to-Credential Pathway</p>
+    </div>
+
+    <div class="hero-photo">
+      <img src="/images/yaf-photo-1.jpeg"
+           alt="Youth building a real kit aircraft at Tampa North Aero Park"
+           loading="eager">
+      <div class="hero-photo-blend"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SCARCITY BAR ════════════════════════════════════════════════════════════ -->
+<div class="scarcity" role="alert">
+  <div class="container scarcity-inner">
+    <span class="scarcity-num">16</span>
+    <span class="scarcity-label">Seats Available</span>
+    <span class="scarcity-sep" aria-hidden="true">·</span>
+    <span class="scarcity-label">1 Airplane</span>
+    <span class="scarcity-sep" aria-hidden="true">·</span>
+    <span class="scarcity-label">0 Excuses</span>
+    <span class="scarcity-sep" aria-hidden="true">·</span>
+    <span class="scarcity-note">Sessions start each quarter · Next session <strong style="color:#fff">January 2027</strong></span>
+  </div>
+</div>
+
+<!-- ══ WHAT YOUR CHILD GETS ════════════════════════════════════════════════════ -->
+<section class="section dark" id="program">
+  <div class="container">
+    <p class="section-label">The Program</p>
+    <h2 class="section-title">What Your Child Gets</h2>
+    <p class="section-sub">Every session is structured, hands-on, and logged. Students build a real ICP Aviazione kit aircraft — from raw aluminum to a completed airframe — using the same curriculum standards as FAA-certificated mechanics.</p>
+    <div class="what-grid" role="list">
+      <article class="what-card" role="listitem">
+        <div class="what-num">4</div>
+        <div class="what-unit">Hrs Per Session</div>
+        <p class="what-desc">Hands-on build time in a real aircraft hangar at Tampa North Aero Park (X39)</p>
+      </article>
+      <article class="what-card" role="listitem">
+        <div class="what-num">1</div>
+        <div class="what-unit">Real Airplane</div>
+        <p class="what-desc">Students build an actual ICP kit aircraft — not a simulator, not a model. A certified airplane.</p>
+      </article>
+      <article class="what-card" role="listitem">
+        <div class="what-num">Est.</div>
+        <div class="what-unit">Curriculum</div>
+        <p class="what-desc">Structured aerospace and sheet-metal curriculum based on EAA courseware and FAA A&amp;P standards</p>
+      </article>
+      <article class="what-card" role="listitem">
+        <div class="what-num">✓</div>
+        <div class="what-unit">Certificate</div>
+        <p class="what-desc">Program completion certificate, build portfolio, and logged hours — the start of a credential pathway</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ════════════════════════════════════════════════════════════ -->
+<section class="section" id="how-it-works">
+  <div class="container">
+    <p class="section-label">Every Session</p>
+    <h2 class="section-title">Learn It · Do It · Earn It</h2>
+    <p class="section-sub">Every build session follows a three-part structure developed from EAA educational standards and adapted for youth aerospace builders.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-bubble" aria-hidden="true">1</div>
+        <div class="step-content">
+          <h3>Learn It</h3>
+          <p>Complete an EAA online lesson at the computer station — blueprints, procedures, and theory first.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-bubble" aria-hidden="true">2</div>
+        <div class="step-content">
+          <h3>Do It</h3>
+          <p>Apply the skill directly on the aircraft, supervised by a certified builder and credentialed instructor.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-bubble" aria-hidden="true">3</div>
+        <div class="step-content">
+          <h3>Earn It</h3>
+          <p>Log the hours, receive your build certificate, and document your work in a portfolio for future employers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RED TAIL HERITAGE TEAMS ════════════════════════════════════════════════ -->
+<section class="section dark" id="teams">
+  <div class="container">
+    <p class="section-label">Heritage Teams</p>
+    <h2 class="section-title">The Red Tail Heritage Teams</h2>
+    <p class="section-sub">16 students. 4 teams of 4. Each team is named for a Tuskegee Airmen mission, unit, or call sign — and each team owns a phase of the aircraft build.</p>
+    <div class="teams" role="list">
+      <article class="team-card" role="listitem">
+        <div class="team-name">Red Tails</div>
+        <div class="team-kit">Kit Phase 1</div>
+        <p class="team-role">Airframe &amp; Controls</p>
+      </article>
+      <article class="team-card" role="listitem">
+        <div class="team-name">Double V</div>
+        <div class="team-kit">Kit Phase 2</div>
+        <p class="team-role">Cabin &amp; Systems</p>
+      </article>
+      <article class="team-card" role="listitem">
+        <div class="team-name">Ramrod</div>
+        <div class="team-kit">Kit Phase 3</div>
+        <p class="team-role">Powerplant</p>
+      </article>
+      <article class="team-card" role="listitem">
+        <div class="team-name">Lancer</div>
+        <div class="team-kit">Kit Phase 4</div>
+        <p class="team-role">Sub-Components</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ════════════════════════════════════════════════════════════════ -->
+<section class="section" id="pricing">
+  <div class="container">
+    <p class="section-label">Investment</p>
+    <h2 class="section-title">Simple, Transparent Pricing</h2>
+    <p class="section-sub">We supply all tools and materials. You supply the student.</p>
+    <div class="price-block">
+      <div>
+        <div class="price-badge">★ Grand Opening Price</div>
+        <div class="price-label-sm">Monthly Investment</div>
+        <div class="price-num">$300</div>
+        <div class="price-label-sm" style="margin-top:.25rem">per student · per month</div>
+      </div>
+      <div>
+        <ul class="price-details">
+          <li>✓ <strong>Ages 13–18</strong> — no prior experience required</li>
+          <li>✓ <strong>All tools and materials</strong> included</li>
+          <li>✓ <strong>Named tool basket</strong> for each student</li>
+          <li>✓ <strong>EAA-established curriculum</strong> + ICP aircraft manual</li>
+          <li>✓ <strong>Build certificate</strong> upon quarterly completion</li>
+          <li>✓ <strong>Feeder into Workforce Track</strong> — the full 12-month credential program</li>
+        </ul>
+        <div class="register-note">
+          <strong>To Register:</strong> Book your admissions interview below. First month's payment secures your seat. Refundable less admin fee if you change your mind before the session starts.<br>
+          <strong>Waitlist:</strong> If seats are full, join the waitlist to hold your place for the next quarter.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REGISTER ════════════════════════════════════════════════════════════════ -->
+<section class="register-section" id="register" aria-label="Registration">
+  <div class="container">
+    <div class="reg-grid">
+
+      <div class="reg-info">
+        <h2>Reserve Your Seat<br><span class="accent">Before It's Gone</span></h2>
+        <p>Only 16 seats available. Sessions fill fast. The January 2027 session is now open — secure your child's spot by booking a 15-minute admissions interview.</p>
+        <ul class="contact-list" aria-label="Contact information">
+          <li>
+            <span class="icon" aria-hidden="true">📍</span>
+            <span>Tampa North Aero Park (X39) · Lutz, FL 33558</span>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">📅</span>
+            <span>Saturday sessions · 4 hrs each · Starts January 2027</span>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">📞</span>
+            <span><a href="tel:8134458889">(813) 445-8889</a></span>
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">✉</span>
+            <span><a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a></span>
+          </li>
+        </ul>
+        <p style="font-size:.8rem;color:rgba(255,255,255,.35);margin-top:1rem;">
+          Infinity Aero Club Tampa Bay, Inc. · 501(c)(3) nonprofit · EIN 85-1110607<br>
+          Mission Aviation Academy is an academic division of iACT.
+        </p>
+      </div>
+
+      <div class="calendly-box">
+        <h3>Book Your 15-Min Admissions Interview</h3>
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/admissions-missionaviationacademy/new-meeting?hide_gdpr_banner=1&background_color=0a2240&text_color=ffffff&primary_color=ffd100"
+             style="min-width:280px;height:660px;">
+        </div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════════════════════════ -->
+<footer class="maa-footer">
+  <div class="maa-footer-inner">
+    <div class="maa-footer-legal">
+      <p>Mission Aviation Academy is the academic division of Infinity Aero Club Tampa Bay, Inc., a Florida 501(c)(3) nonprofit organization. iACT/MAA is not a certificated flight school and does not hold an FAA Part 61 or Part 141 certificate.</p>
+      <p style="margin-top:.5rem;">© 2026 Infinity Aero Club Tampa Bay, Inc. · EIN 85-1110607 · 813-445-8889 · <a href="mailto:admissions@missionaviationacademy.org">admissions@missionaviationacademy.org</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

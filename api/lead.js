@@ -19,16 +19,42 @@ const GHL_API_VERSION = "2021-07-28";
 
 // Each form maps to the tags that fire its GHL workflow, and where the
 // visitor lands afterwards. Adding a form = adding an entry here.
+// redirect: null means the form handles its own UI (no page navigation).
 const FORMS = {
   "yab-guide": {
     tags: ["yab-guide-fall2026", "website-signup"],
     source: "Website — Career Pathway Guide",
     redirect: "/thanks-guide",
   },
+  "yab-arc": {
+    tags: ["yab-arc-download", "website-signup"],
+    source: "Website — Your Aviation Blueprint ARC",
+    redirect: "/thanks-arc",
+  },
   "rte-preorder": {
     tags: ["rte-preorder-waitlist", "website-signup"],
     source: "Website — Ricky the Explorer pre-order",
     redirect: "/thanks-preorder",
+  },
+  "aerospace-interest": {
+    tags: ["aerospace-2027-interest", "website-signup"],
+    source: "Website — Aerospace Engineering Interest",
+    redirect: "/thanks-aerospace",
+  },
+  "tpa-connect-waitlist": {
+    tags: ["tpa-connect-waitlist", "website-signup"],
+    source: "Website — TPA Career Connection Waitlist",
+    redirect: "/thanks-tpa",
+  },
+  "dispatch": {
+    tags: ["dispatch-newsletter", "website-signup"],
+    source: "Website — Red Tail Dispatch Newsletter",
+    redirect: null,
+  },
+  "evaluator-lead": {
+    tags: ["career-evaluator-lead", "website-signup"],
+    source: "Website — Career Evaluator",
+    redirect: null,
   },
 };
 
@@ -68,13 +94,25 @@ module.exports = async (req, res) => {
     return fail(req, res, 503, "Signup is temporarily unavailable.");
   }
 
-  const { firstName, lastName } = splitName(body.name);
+  // Accept firstName/lastName sent separately (aerospace, tpa-connect) or
+  // as a combined name field (yab-guide, ricky, arc). Separate wins if present.
+  let firstName, lastName;
+  if (body.firstName || body.lastName) {
+    firstName = String(body.firstName || "").trim();
+    lastName = String(body.lastName || "").trim();
+  } else {
+    ({ firstName, lastName } = splitName(body.name));
+  }
 
-  // Role and age arrive as tags rather than custom fields so this works
-  // against a fresh GHL sub-account with no field IDs to look up first.
+  // Extra fields arrive as tags so this works against any GHL sub-account
+  // without requiring custom field IDs to be configured first.
   const tags = [...form.tags];
-  if (body.role) tags.push(`role-${slug(body.role)}`);
+  if (body.role)    tags.push(`role-${slug(body.role)}`);
   if (body.ageBand) tags.push(`age-${slug(body.ageBand)}`);
+  if (body.grade)   tags.push(`grade-${slug(body.grade)}`);
+  if (body.orgType) tags.push(`org-${slug(body.orgType)}`);
+
+  const phone = String(body.phone || "").trim().replace(/[^0-9+\-() ]/g, "") || undefined;
 
   try {
     const ghl = await fetch(GHL_ENDPOINT, {
@@ -90,6 +128,7 @@ module.exports = async (req, res) => {
         firstName,
         lastName,
         name: [firstName, lastName].filter(Boolean).join(" ") || undefined,
+        phone,
         tags,
         source: form.source,
       }),
